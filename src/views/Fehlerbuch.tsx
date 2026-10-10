@@ -13,6 +13,11 @@ import { startKlausur, startTargeted } from '../lib/start';
 import { addManualError, deleteError, updateError, useApp } from '../lib/store';
 import type { ErrorEntry } from '../lib/types';
 
+/** Zeitachsen beginnen links; beim Öffnen steht die jüngste Woche im Blick. */
+const scrollToEnd = (el: HTMLElement | null) => {
+  if (el) el.scrollLeft = el.scrollWidth;
+};
+
 export interface EntryFilter {
   zeitraum: string;
   bereich: string;
@@ -717,7 +722,7 @@ function Auswertung() {
           <span className="small muted">Fehler je Typ und Woche</span>
         </div>
         {verlauf.length ? (
-          <div className="table-wrap heat" style={{ border: 0 }}>
+          <div className="table-wrap heat" style={{ border: 0 }} ref={scrollToEnd}>
             <table className="data">
               <thead>
                 <tr>

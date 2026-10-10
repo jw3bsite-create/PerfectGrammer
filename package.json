@@ -12,7 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check:content": "vitest run tests/content.test.ts",
-    "e2e": "node scripts/e2e.mjs"
+    "e2e": "npm run build && vitest run -c vitest.e2e.config.ts"
   },
   "dependencies": {
     "idb": "^8.0.4",

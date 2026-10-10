@@ -116,7 +116,7 @@ export function App() {
 
   const path = route.parts.join('/');
   useEffect(() => {
-    if (route.parts[0] !== 'sitzung') window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, [path]);
 
   if (!ready) {

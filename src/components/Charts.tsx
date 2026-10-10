@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { formatDay } from '../lib/dates';
 
 export interface Point {
@@ -25,9 +25,20 @@ export function LineChart({
   onSelect?: (p: Point) => void;
   title: string;
 }) {
-  const W = 640;
-  const H = 220;
-  const pad = { l: 40, r: 16, t: 14, b: 28 };
+  // In echten Pixeln zeichnen, damit Schrift und Linien auf jedem Bildschirm gleich groß bleiben.
+  const wrap = useRef<HTMLDivElement>(null);
+  const [W, setW] = useState(640);
+  useLayoutEffect(() => {
+    const el = wrap.current;
+    if (!el) return;
+    const measure = () => setW(Math.max(240, Math.round(el.getBoundingClientRect().width)));
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const H = 200;
+  const pad = { l: 44, r: 12, t: 14, b: 28 };
   const iw = W - pad.l - pad.r;
   const ih = H - pad.t - pad.b;
   const values = points.map((p) => p.value).filter((v): v is number => v !== null);
@@ -35,7 +46,6 @@ export function LineChart({
   const x = (i: number) => pad.l + (points.length <= 1 ? iw / 2 : (i / (points.length - 1)) * iw);
   const y = (v: number) => pad.t + ih - (v / top) * ih;
   const [hover, setHover] = useState<number | null>(null);
-  const wrap = useRef<HTMLDivElement>(null);
 
   // Linie mit Lücken für Wochen ohne Daten
   const segs: string[] = [];
@@ -51,6 +61,8 @@ export function LineChart({
   if (cur) segs.push(cur);
 
   const ticks = [0, top / 2, top];
+  // Wochenbeschriftung nur so dicht, wie sie lesbar bleibt; die jüngste Woche ist immer beschriftet.
+  const labelEvery = Math.max(1, Math.ceil((points.length * 52) / iw));
   const onMove = (e: React.PointerEvent<SVGRectElement>) => {
     const rect = (e.currentTarget.ownerSVGElement as SVGSVGElement).getBoundingClientRect();
     const px = ((e.clientX - rect.left) / rect.width) * W;
@@ -69,7 +81,7 @@ export function LineChart({
   const hp = hover !== null ? points[hover] : null;
   return (
     <div ref={wrap} style={{ position: 'relative' }}>
-      <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={title}>
+      <svg className="chart" width={W} height={H} viewBox={`0 0 ${W} ${H}`} role="img" aria-label={title}>
         {ticks.map((t) => (
           <g key={t}>
             <line className="grid-line" x1={pad.l} x2={W - pad.r} y1={y(t)} y2={y(t)} />
@@ -79,7 +91,7 @@ export function LineChart({
           </g>
         ))}
         {points.map((p, i) =>
-          i % 2 === points.length % 2 || points.length < 7 ? (
+          (points.length - 1 - i) % labelEvery === 0 ? (
             <text key={p.key} x={x(i)} y={H - 8} textAnchor="middle">
               {p.label}
             </text>
@@ -143,6 +155,7 @@ export function LineChart({
 }
 
 function niceMax(v: number): number {
-  const steps = [1, 2, 4, 5, 10, 20, 25, 40, 50, 100, 200, 250, 500, 1000];
+  // Nur Werte mit ganzzahliger Hälfte, damit die mittlere Linie eine glatte Zahl trägt.
+  const steps = [2, 4, 10, 20, 40, 50, 100, 200, 400, 500, 1000];
   return steps.find((s) => s >= v) ?? Math.ceil(v / 1000) * 1000;
 }

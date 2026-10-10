@@ -284,7 +284,7 @@ svg.ico {
   -webkit-backdrop-filter: saturate(1.4) blur(14px);
   border-top: 1px solid var(--border);
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   z-index: 20;
 }
 
@@ -313,7 +313,7 @@ svg.ico {
 @media (min-width: 768px) {
   .shell {
     display: grid;
-    grid-template-columns: var(--side-w) 1fr;
+    grid-template-columns: var(--side-w) minmax(0, 1fr);
   }
   .sidebar {
     display: flex;
@@ -522,12 +522,12 @@ svg.ico {
 .grid-2 {
   display: grid;
   gap: 16px;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 @media (min-width: 640px) {
   .grid-2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -993,18 +993,18 @@ button.list-item:hover {
 .course-grid {
   display: grid;
   gap: 14px;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 @media (min-width: 560px) {
   .course-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
   .course-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -1069,13 +1069,13 @@ button.list-item:hover {
 
 .stat-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
 @media (min-width: 720px) {
   .stat-row {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -1561,10 +1561,10 @@ a.stat:hover .value {
 
 @media (min-width: 560px) {
   .options.two {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
   .options.three {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -1721,6 +1721,9 @@ a.stat:hover .value {
 }
 
 .editbar {
+  position: sticky;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  z-index: 5;
   margin-top: 22px;
   padding: 16px;
   border-radius: var(--radius-md);
@@ -2235,7 +2238,7 @@ table.data tr.total td {
 
 .calendar {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 4px;
 }
 
@@ -2330,7 +2333,7 @@ table.data tr.total td {
 
 .bar-row {
   display: grid;
-  grid-template-columns: minmax(120px, 34%) 1fr auto;
+  grid-template-columns: minmax(120px, 34%) minmax(0, 1fr) auto;
   gap: 12px;
   align-items: center;
   font-size: 14px;
@@ -2479,12 +2482,12 @@ table.data tr.total td {
 .filters {
   display: grid;
   gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 @media (min-width: 900px) {
   .filters {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -2567,4 +2570,21 @@ table.data tr.total td {
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 8px;
+}
+
+/* Korrekturlesen: Kopf des Durchgangs bricht auf schmalen Bildschirmen um */
+.pass-head {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+
+.pass-head .badge {
+  white-space: nowrap;
+}
+
+/* Die Tastaturmarke erscheint erst, wenn mit der Tastatur gearbeitet wird */
+html:not(.kbd-nav) .word.cursor,
+html:not(.kbd-nav) .gap.cursor,
+html:not(.kbd-nav) .chunk.cursor {
+  box-shadow: none;
 }

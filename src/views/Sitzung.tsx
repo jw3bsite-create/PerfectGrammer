@@ -244,15 +244,17 @@ export function SessionView() {
                 </span>
               </div>
             ) : null}
-            <TaskView
-              key={`${s.id}-${index}`}
-              task={shownTask}
-              modus={shownItem.modus}
-              guided={guided}
-              locked={!!answered}
-              register={register}
-              onResult={onResult}
-            />
+            <div data-task={shownTask.id} data-modus={shownItem.modus ?? ''}>
+              <TaskView
+                key={`${s.id}-${index}`}
+                task={shownTask}
+                modus={shownItem.modus}
+                guided={guided}
+                locked={!!answered}
+                register={register}
+                onResult={onResult}
+              />
+            </div>
             {answered ? (
               <div ref={feedbackRef}>
                 <Feedback
@@ -399,7 +401,7 @@ function SummaryView({ session, summary }: { session: Session; summary: SessionS
 
   return (
     <div className="practice">
-      <main className="practice-body">
+      <main className="practice-body summary">
         <div className="eyebrow">{session.titel}</div>
         <h1 style={{ marginTop: 6 }}>{title}</h1>
         <div className="card" style={{ marginTop: 24 }}>

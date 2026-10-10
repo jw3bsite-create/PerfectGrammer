@@ -449,7 +449,7 @@ export function KorrekturExercise({ task, guided, locked, register, onResult }: 
             <span key={p} className={p < pass ? 'done' : p === pass ? 'now' : ''} />
           ))}
         </div>
-        <div className="row between">
+        <div className="row between pass-head">
           <strong>
             Durchgang {pass} von 3: {d.titel}
           </strong>

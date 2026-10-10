@@ -59,13 +59,16 @@ export function KommaExercise({ task, guided, locked, register, onResult }: Exer
     });
   };
 
+  const toCommas = () => {
+    setStage('kommas');
+    setCursor(0);
+  };
+
   const primary = () => {
     if (locked) return;
     if (stage === 'verben') checkVerbs();
-    else if (stage === 'verbenGeprueft') {
-      setStage('kommas');
-      setCursor(0);
-    } else checkCommas();
+    else if (stage === 'verbenGeprueft') toCommas();
+    else checkCommas();
   };
 
   useEffect(() => {
@@ -197,7 +200,7 @@ export function KommaExercise({ task, guided, locked, register, onResult }: Exer
                   : `${capitalize(numberWord(verbCount))} gebeugte Verben: ${verbsText.join(', ')}.`}
             </p>
             <div className="row">
-              <button className="btn primary" onClick={() => setStage('kommas')} autoFocus>
+              <button className="btn primary" onClick={toCommas} autoFocus>
                 Weiter: Kommas setzen <span className="kbd">↵</span>
               </button>
             </div>

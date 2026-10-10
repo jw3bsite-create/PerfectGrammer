@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { evalFehler, evalKomma, evalTyped, evalVerben, matchPattern, prepareFehler, evalTextwiedergabe } from '../src/lib/evaluate';
+import { evalFehler, evalKomma, evalTask, evalTyped, evalVerben, matchPattern, prepareFehler, prepareTask, evalTextwiedergabe } from '../src/lib/evaluate';
 import { parseKomma } from '../src/lib/markup';
 
 describe('Komma-Notation', () => {
@@ -134,5 +134,14 @@ describe('Freigestellte Stellen', () => {
     const r = evalTask(p, 'Er sagte dass er komme, und sie nickte.');
     expect(r.richtig).toBe(false);
     expect(r.stellen.length).toBe(1);
+  });
+});
+
+describe('Abkürzungen', () => {
+  it('erkennt „z.B.“ ohne Leerzeichen als Fehler, „z. B.“ mit schmalem Leerzeichen als richtig', () => {
+    const prep = prepareTask('Viele Gedichte, [[z.B.=>z. B.|z-bindestrich]] Sonette, sind streng gebaut.');
+    expect(evalTask(prep, 'Viele Gedichte, z.B. Sonette, sind streng gebaut.').richtig).toBe(false);
+    expect(evalTask(prep, 'Viele Gedichte, z. B. Sonette, sind streng gebaut.').richtig).toBe(true);
+    expect(evalTask(prep, 'Viele Gedichte, z. B. Sonette, sind streng gebaut.').richtig).toBe(true);
   });
 });
