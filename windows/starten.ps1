@@ -24,15 +24,16 @@ function Stop-WithMessage([string]$Text) {
   exit 1
 }
 
+# Node lauscht unter Windows oft nur auf der IPv6-Adresse von localhost, deshalb beide prüfen.
 function Test-PortInUse {
-  try {
-    $client = New-Object Net.Sockets.TcpClient
-    $client.Connect('127.0.0.1', $Port)
-    $client.Close()
-    return $true
-  } catch {
-    return $false
+  foreach ($addr in @('127.0.0.1', '::1')) {
+    try {
+      $client = New-Object Net.Sockets.TcpClient($addr, $Port)
+      $client.Close()
+      return $true
+    } catch { }
   }
+  return $false
 }
 
 Write-Host ''
@@ -80,11 +81,21 @@ if ($latest -and ($latest -ne $current -or -not $installed)) {
     $src = Get-ChildItem -Path $tmp -Directory | Select-Object -First 1
     if (-not $src -or -not (Test-Path (Join-Path $src.FullName 'package.json'))) { throw 'Das heruntergeladene Archiv ist unvollständig.' }
 
-    # Installierte Pakete mitnehmen, damit „npm install“ schnell bleibt.
-    $oldModules = Join-Path $App 'node_modules'
-    if (Test-Path $oldModules) { Move-Item -Path $oldModules -Destination (Join-Path $src.FullName 'node_modules') }
-    if (Test-Path $App) { Remove-Item -Path $App -Recurse -Force }
-    Move-Item -Path $src.FullName -Destination $App
+    # Alte Version erst beiseitelegen: Ist sie gesperrt, scheitert schon dieser Schritt und nichts ist verändert.
+    $alt = "$App.alt"
+    if (Test-Path $alt) { Remove-Item -Path $alt -Recurse -Force }
+    if (Test-Path $App) { Move-Item -Path $App -Destination $alt }
+    try {
+      # Installierte Pakete mitnehmen, damit „npm install“ schnell bleibt.
+      if (Test-Path (Join-Path $alt 'node_modules')) { Move-Item -Path (Join-Path $alt 'node_modules') -Destination (Join-Path $src.FullName 'node_modules') }
+      Move-Item -Path $src.FullName -Destination $App
+    } catch {
+      # Alles zurückstellen
+      if ((Test-Path (Join-Path $src.FullName 'node_modules')) -and (Test-Path $alt)) { Move-Item -Path (Join-Path $src.FullName 'node_modules') -Destination (Join-Path $alt 'node_modules') }
+      if ((-not (Test-Path $App)) -and (Test-Path $alt)) { Move-Item -Path $alt -Destination $App }
+      throw
+    }
+    if (Test-Path $alt) { Remove-Item -Path $alt -Recurse -Force -ErrorAction SilentlyContinue }
   } catch {
     if (Test-Path $tmp) { Remove-Item -Path $tmp -Recurse -Force -ErrorAction SilentlyContinue }
     if (-not (Test-Path (Join-Path $App 'package.json'))) { Stop-WithMessage "Das Update konnte nicht geladen werden: $($_.Exception.Message)" }
@@ -115,6 +126,16 @@ if ($latest -and ($latest -ne $current -or -not $installed)) {
 
 if (-not (Test-Path (Join-Path $App 'package.json'))) {
   Stop-WithMessage 'Die App ist noch nicht installiert. Für den ersten Start wird eine Internetverbindung gebraucht.'
+}
+
+# Selbstreparatur: Fehlen die Pakete (etwa nach einem abgebrochenen Update), neu installieren.
+if (-not (Test-Path (Join-Path $App 'node_modules\vite'))) {
+  Write-Host 'Pakete fehlen und werden installiert …' -ForegroundColor Yellow
+  Push-Location $App
+  & $Npm install --no-audit --no-fund
+  $ok = ($LASTEXITCODE -eq 0)
+  Pop-Location
+  if (-not $ok) { Stop-WithMessage 'Die Installation ist fehlgeschlagen. Bitte die Internetverbindung prüfen und erneut starten.' }
 }
 
 if ($env:SPRACHRICHTIGKEIT_NUR_UPDATE) { exit 0 }
