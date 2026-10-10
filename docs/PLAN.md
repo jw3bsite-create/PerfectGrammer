@@ -31,6 +31,9 @@ Die Datenversion steht in `meta`; Migrationen laufen beim Öffnen und beim Impor
 3. Übrige Kurse, tägliche Wiederholung, Einstufungstest
 4. Statistik, Export, Sicherung, Feinschliff
 5. Inhaltsprüfung (automatische Prüfung der Bank und Liste der Zweifelsfälle)
+6. Prüfung im Browser (`npm run e2e`) und Feinschliff nach den Bildschirmfotos
+
+Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 50 Lektionen, 1058 Aufgaben.
 
 ## Offene Annahmen
 
@@ -40,3 +43,10 @@ Die Datenversion steht in `meta`; Migrationen laufen beim Öffnen und beim Impor
 4. „In der Wiederholung“ umfasst tägliche Wiederholung, Mischtraining, gezieltes Üben und die Sitzung vor der Klausur.
 5. Ein Übungstag ist ein Tag mit mindestens einer beantworteten Aufgabe.
 6. PDF-Export erfolgt über eine eigene Druckansicht („Als PDF sichern“ im Druckdialog).
+7. „Gemeistert“ setzt „Sicher“ voraus: Erst der bestandene Lektionstest macht eine Lektion sicher, danach zählen 19 der letzten 20 Aufgaben an mindestens drei Tagen.
+8. Rückstufung: Gezählt werden die letzten höchstens zehn Aufgaben der Lektion in der Wiederholung seit dem Sicher-Werden oder der letzten Rückstufung. Drei falsche darunter heißen unter 80 Prozent, auch wenn noch keine zehn beantwortet sind, denn die Quote der zehn kann dann 80 Prozent nicht mehr erreichen.
+9. Aufgaben aus einem Klausurfehler (die eigene Aufgabe und fünf verwandte) sind sofort fällig, nicht erst am nächsten Tag; falsche Antworten in der App sind am nächsten Tag fällig.
+10. „Meine Fassung ist auch richtig“: Bei Umformen und Textwiedergabe, wo ganze Sätze frei formuliert werden, kann eine als falsch gewertete Fassung nachträglich als richtig gewertet werden; Fehlerbucheintrag und Wiederholung werden zurückgenommen. Das fängt gleichwertige Fassungen ab, die die Bank nicht kennt.
+11. Der Kurstest von Kurs 10 besteht aus zwei Korrekturtexten, die am längsten nicht bearbeitet wurden; bestanden ab 90 Prozent der Stellen.
+12. Die CSV-Datei nutzt Semikolon und UTF-8 mit BOM, damit Excel sie mit Umlauten öffnet.
+13. Safari auf dem iPad konnte hier nicht getestet werden; geprüft wurde mit Chromium in Tablet-Größe mit Touch-Emulation.

@@ -93,7 +93,7 @@ export const DURCHGAENGE: { nr: 1 | 2 | 3; titel: string; punkte: string[] }[] =
     titel: 'Formendurchgang',
     punkte: [
       'Fall nach jeder Präposition: maskulines Nomen einsetzen',
-      'n-Deklination: den Protagonisten, dem Autor',
+      'n-Deklination: den Protagonisten, aber dem Autor',
       'Konjunktiv in jeder wiedergegebenen Aussage, Ausweichkette',
       'Tempus: Präsens als Grundzeit, Vorzeitiges im Perfekt',
     ],

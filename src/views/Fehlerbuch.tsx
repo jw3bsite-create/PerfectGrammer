@@ -354,7 +354,7 @@ function Erfassen() {
     const { entry, related } = await addManualError({ tag, quelle, original, korrektur, fehlertyp: typ, notiz });
     setSaved((s) => [entry, ...s]);
     const lesson = getLesson(entry.lektion);
-    toast(`Gespeichert · Lektion ${lesson?.id ?? entry.lektion} · eigene Aufgabe angelegt · ${related} verwandte Aufgaben in der Wiederholung`);
+    toast(`Gespeichert · Lektion ${lesson?.id ?? entry.lektion} · eigene Aufgabe angelegt · ${related === 1 ? 'eine verwandte Aufgabe' : `${related} verwandte Aufgaben`} in der Wiederholung`);
     setOriginal('');
     setKorrektur('');
     setNotiz('');

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { LineChart, type Point } from '../components/Charts';
-import { Empty, LevelBadge } from '../components/ui';
+import { Empty, LevelBadge, plural } from '../components/ui';
 import { BANK } from '../lib/content';
 import { addDays, dayKey, formatDay, monthName, parseDay } from '../lib/dates';
 import { frequentTypes } from '../lib/errorbook';
@@ -54,7 +54,7 @@ export function Statistik() {
     key: w.woche,
     label: formatDay(w.woche, true),
     value: w.aufgaben ? (w.falsch / w.aufgaben) * 100 : null,
-    detail: w.aufgaben ? `${w.falsch} Fehler bei ${w.aufgaben} Aufgaben` : undefined,
+    detail: w.aufgaben ? `${w.falsch} Fehler bei ${plural(w.aufgaben, 'Aufgabe', 'Aufgaben')}` : undefined,
   }));
   const maxTop = Math.max(1, ...top5.map((t) => t.anzahl));
 
@@ -257,7 +257,7 @@ function Calendar({ days, today, goal }: { days: Map<string, number>; today: str
           const n = days.get(c) ?? 0;
           const cls = `day${n ? ` ${level(n)}` : ''}${c === today ? ' today' : ''}`;
           return n ? (
-            <button key={c} className={cls} onClick={() => navigate(`/statistik/aufgaben?tag=${c}`)} aria-label={`${formatDay(c)}: ${n} Aufgaben`} title={`${n} Aufgaben`}>
+            <button key={c} className={cls} onClick={() => navigate(`/statistik/aufgaben?tag=${c}`)} aria-label={`${formatDay(c)}: ${plural(n, 'Aufgabe', 'Aufgaben')}`} title={plural(n, 'Aufgabe', 'Aufgaben')}>
               {parseDay(c).getDate()}
             </button>
           ) : (

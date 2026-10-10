@@ -173,7 +173,7 @@ export function KursSeite({ kurs }: { kurs: number }) {
             {lastTest ? <span className={`badge ${lastTest.bestanden ? 'ok' : 'bad'}`}>{lastTest.bestanden ? 'bestanden' : 'nicht bestanden'}</span> : null}
           </div>
           <p className="small muted">
-            {c.id === 10 ? 'Zwei unbekannte Korrekturtexte. Bestanden ab 90 Prozent der Stellen.' : '25 gemischte Aufgaben aus allen Lektionen. Bestanden ab 90 Prozent.'}{' '}
+            {c.id === 10 ? 'Zwei Korrekturtexte, die du am längsten nicht bearbeitet hast. Bestanden ab 90 Prozent der Stellen.' : '25 gemischte Aufgaben aus allen Lektionen. Bestanden ab 90 Prozent.'}{' '}
             {allSafe ? 'Alle Lektionen sind sicher.' : 'Abgeschlossen ist der Kurs, wenn zusätzlich alle Lektionen sicher sind.'}
           </p>
           {lastTest ? (

@@ -223,7 +223,7 @@ export function UmformenExercise({ task, locked, register, onResult }: ExerciseP
           rows={3}
           {...NO_AUTOCORRECT}
         />
-        {!locked ? <p className="input-hint">Mit und ohne dass ist richtig. Geprüft werden Verbform, Pronomen und Komma.</p> : null}
+        {!locked ? <p className="input-hint">Mit oder ohne dass – beides ist richtig. Geprüft werden Verbform, Pronomen und Komma.</p> : null}
       </div>
     </div>
   );

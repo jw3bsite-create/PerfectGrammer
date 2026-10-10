@@ -126,7 +126,7 @@ export function LektionSeite({ id }: { id: string }) {
           </ul>
           <p className="small" style={{ marginTop: 12 }}>
             {last20.length
-              ? `Letzte ${last20.length} ${teile ? 'Prüfstellen' : 'Aufgaben'}: ${last20Right} richtig an ${last20Days} ${last20Days === 1 ? 'Tag' : 'Tagen'}.`
+              ? `${last20.length === 1 ? (teile ? 'Letzte Prüfstelle' : 'Letzte Aufgabe') : `Letzte ${last20.length} ${teile ? 'Prüfstellen' : 'Aufgaben'}`}: ${last20Right} richtig an ${last20Days} ${last20Days === 1 ? 'Tag' : 'Tagen'}.`
               : 'Noch keine Aufgaben beantwortet.'}
           </p>
         </div>
