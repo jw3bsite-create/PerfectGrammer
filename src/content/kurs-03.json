@@ -1,0 +1,414 @@
+{
+  "kurs": {
+    "id": 3,
+    "titel": "Konjunktiv und indirekte Rede",
+    "kurztitel": "Konjunktiv",
+    "reihenfolge": 3,
+    "probe": "Die Ausweichkette: Konjunktiv I; gleicht er dem Indikativ, Konjunktiv II; gleicht dieser dem Präteritum, würde mit Infinitiv.",
+    "beschreibung": "Wer eine Aussage wiedergibt, zeigt mit dem Konjunktiv, dass sie nicht von ihm stammt. Die Ausweichkette findet die richtige Form in drei Schritten."
+  },
+  "lektionen": [
+    {
+      "id": "3.1",
+      "titel": "Konjunktiv I bilden",
+      "regelkarte": {
+        "regel": "Der Konjunktiv I kennzeichnet wiedergegebene Aussagen. Er entsteht aus dem Infinitivstamm und den Endungen -e, -est, -e, -en, -et, -en: er komme, sie habe, es gebe. Nur sein ist unregelmäßig: sei, seiest, sei, seien, seiet, seien.",
+        "probe": "Ausweichkette, Schritt 1: Bilde den Konjunktiv I aus dem Infinitivstamm. Unterscheidet er sich vom Indikativ, bist du fertig.",
+        "beispiele": ["Die Autorin behauptet, die Lage sei ernst.", "Der Minister erklärt, er wisse von nichts.", "Der Kritiker meint, der Roman habe Längen."],
+        "falle": "Modalverben und wissen bilden den Konjunktiv I aus dem Infinitiv: er könne, er müsse, sie wisse – nicht aus kann, muss, weiß."
+      }
+    },
+    {
+      "id": "3.2",
+      "titel": "Konjunktiv II bilden",
+      "regelkarte": {
+        "regel": "Der Konjunktiv II entsteht aus dem Präteritumstamm mit -e, bei a, o, u mit Umlaut: käme, ginge, gäbe, fände, wüsste. Sein, haben und die Modalverben stehen immer in der einfachen Form: wäre, hätte, könnte. Bei schwachen Verben gleicht der Konjunktiv II dem Präteritum; dann steht würde mit Infinitiv.",
+        "probe": "Ausweichkette, Schritt 2: Gleicht der Konjunktiv I dem Indikativ, bilde den Konjunktiv II aus dem Präteritum.",
+        "beispiele": ["kam → käme, ging → ginge, gab → gäbe, wusste → wüsste", "war → wäre, hatte → hätte, konnte → könnte", "machte → würde machen"],
+        "falle": "Die Endung -e gehört dazu: käme, nicht käm; wäre, nicht wär."
+      }
+    },
+    {
+      "id": "3.3",
+      "titel": "Ausweichkette",
+      "regelkarte": {
+        "regel": "Gleicht der Konjunktiv I dem Indikativ, weichst du auf den Konjunktiv II aus; gleicht auch dieser dem Präteritum, nimmst du würde mit Infinitiv. In der 3. Person Singular unterscheidet sich der Konjunktiv I immer vom Indikativ: nie ausweichen. Bei ich, wir und sie im Plural musst du fast immer ausweichen.",
+        "probe": "1. Konjunktiv I bilden. 2. Gleicht er dem Indikativ: Konjunktiv II. 3. Gleicht dieser dem Präteritum: würde mit Infinitiv.",
+        "beispiele": ["Er sagt, er komme. (komme ≠ kommt)", "Sie sagen, sie kämen. (kommen = kommen, kämen ≠ kamen)", "Sie sagen, sie würden arbeiten. (arbeiten = arbeiten, arbeiteten = arbeiteten)"],
+        "falle": "Nicht vorschnell ausweichen: In der 3. Person Singular heißt es er komme, nicht er käme oder er würde kommen."
+      }
+    },
+    {
+      "id": "3.4",
+      "titel": "Zeitstufen",
+      "regelkarte": {
+        "regel": "Die indirekte Rede kennt drei Zeitstufen: Gegenwart mit Konjunktiv I Präsens, jede Vergangenheit mit habe oder sei und Partizip II, Zukunft mit werde und Infinitiv. Die Zeit des Einleiteverbs ist gleichgültig: Er sagt und er sagte verlangen dieselbe Form.",
+        "probe": "Bestimme die Zeitstufe des Originals, dann wende die Ausweichkette auf das Hilfsverb an: haben → hätten, werden → würden.",
+        "beispiele": ["„Ich kam gestern.“ → Er sagt, er sei gestern gekommen.", "„Wir lasen das Buch.“ → Sie sagen, sie hätten das Buch gelesen.", "„Ich werde kommen.“ → Er sagt, er werde kommen."],
+        "falle": "Präteritum, Perfekt und Plusquamperfekt des Originals werden alle zu habe oder sei mit Partizip II: Aus „Ich schrieb“ wird er habe geschrieben."
+      }
+    },
+    {
+      "id": "3.5",
+      "titel": "Umformungen",
+      "regelkarte": {
+        "regel": "Beim Wiedergeben verschiebst du Pronomen sowie Zeit- und Ortsangaben auf die Sicht des Berichtenden: ich wird zu er oder sie, hier zu dort, gestern zu am Vortag. Fragen leitest du mit ob oder dem Fragewort ein. Aufforderungen gibst du mit solle oder möge wieder.",
+        "probe": "Ausweichkette für die Verbform, dann jedes Pronomen und jede Zeit- und Ortsangabe prüfen: Wer spricht, und von wo aus wird berichtet?",
+        "beispiele": ["„Kommst du?“ → Er fragt, ob sie komme.", "„Komm!“ → Er sagt, sie solle kommen.", "„Ich war gestern hier.“ → Sie sagte, sie sei am Vortag dort gewesen."],
+        "falle": "Possessivpronomen werden gern vergessen: Aus „mein Vater“ wird ihr Vater, nicht mein Vater."
+      }
+    },
+    {
+      "id": "3.6",
+      "titel": "Sonderfälle",
+      "regelkarte": {
+        "regel": "Steht im Original schon ein Konjunktiv II, bleibt er erhalten. Nach laut, nach und zufolge steht der Indikativ, denn die Quelle ist bereits genannt. Mit und ohne dass bleibt der Konjunktiv in der indirekten Rede.",
+        "probe": "Ausweichkette nur dort, wo das Original im Indikativ steht. Ist die Quelle mit laut, nach oder zufolge genannt, bleibt der Indikativ.",
+        "beispiele": ["Laut dem Autor ist die These überholt.", "„Ich hätte gern mehr Zeit.“ → Er sagt, er hätte gern mehr Zeit.", "Der Autor erklärt, dass die Sprache ständig im Wandel sei."],
+        "falle": "Nach laut oder zufolge keinen Konjunktiv setzen: Dem Experten zufolge gibt es keine Gefahr, nicht gebe."
+      }
+    },
+    {
+      "id": "3.7",
+      "titel": "Textwiedergabe",
+      "ablauf": { "gefuehrt": 2, "frei": 4, "test": 3, "wertung": "teile" },
+      "regelkarte": {
+        "regel": "Bei der Wiedergabe eines Sachtexts steht jede Aussage des Autors in indirekter Rede. Die Redeeinleitungen stehen im Präsens und wechseln: betont, hebt hervor, räumt ein, kritisiert. Nicht jeder Satz braucht eine eigene Einleitung, denn der Konjunktiv zeigt, dass weiter berichtet wird.",
+        "probe": "Verbform für Verbform die Ausweichkette anwenden: Konjunktiv I; gleicht er dem Indikativ, Konjunktiv II; gleicht dieser dem Präteritum, würde mit Infinitiv.",
+        "beispiele": ["Die Autorin betont, die Digitalisierung verändere das Lesen.", "Sie räumt ein, die junge Generation lese mehr als früher.", "Viele würden Freiheit mit Beliebigkeit verwechseln, kritisiert die Philosophin."],
+        "falle": "Die Redeeinleitung rutscht ins Präteritum: „Die Autorin betonte …“ In der Textwiedergabe bleibt sie im Präsens."
+      }
+    }
+  ],
+  "aufgaben": [
+    { "id": "3.1-01", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Die Autorin behauptet, die Lage ___ ernst.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Ausweichkette, Schritt 1: Der Konjunktiv I sei unterscheidet sich vom Indikativ ist. Also bleibt es bei sei." },
+    { "id": "3.1-02", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Minister erklärt, er ___ nichts von dem Vorfall.", "hinweis": "wissen", "loesungen": ["wisse"], "begruendung": "Infinitivstamm wiss- mit -e ergibt wisse. Der Konjunktiv I unterscheidet sich vom Indikativ weiß, also bleibt es dabei." },
+    { "id": "3.1-03", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Bericht stellt fest, die Zahl der Leser ___ seit Jahren.", "hinweis": "sinken", "loesungen": ["sinke"], "begruendung": "Infinitivstamm sink- mit -e ergibt sinke. Er unterscheidet sich vom Indikativ sinkt, also Konjunktiv I." },
+    { "id": "3.1-04", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Erzähler berichtet, sein Vater ___ ihn nie verstanden.", "hinweis": "haben", "loesungen": ["habe"], "begruendung": "Konjunktiv I von haben in der 3. Person Singular: habe. Er unterscheidet sich vom Indikativ hat." },
+    { "id": "3.1-05", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-indikativ", "text": "Kant fordert, der Mensch ___ sich seines eigenen Verstandes bedienen.", "hinweis": "sollen", "loesungen": ["solle"], "begruendung": "Infinitivstamm soll- mit -e ergibt solle. Er unterscheidet sich vom Indikativ soll, also Konjunktiv I." },
+    { "id": "3.1-06", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Die Ministerin betont, es ___ keine Alternative.", "hinweis": "geben", "loesungen": ["gebe"], "begruendung": "Infinitivstamm geb- mit -e ergibt gebe. Er unterscheidet sich vom Indikativ gibt." },
+    { "id": "3.1-07", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Kritiker meint, der Roman ___ zu lang.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Konjunktiv I von sein: sei. Er unterscheidet sich vom Indikativ ist, die Ausweichkette endet hier." },
+    { "id": "3.1-08", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Sie gibt an, sie ___ den Brief nie erhalten.", "hinweis": "haben", "loesungen": ["habe"], "begruendung": "Konjunktiv I von haben in der 3. Person Singular: habe. Er unterscheidet sich vom Indikativ hat." },
+    { "id": "3.1-09", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-indikativ", "text": "Der Philosoph behauptet, niemand ___ die Wahrheit vollständig erkennen.", "hinweis": "können", "loesungen": ["könne"], "begruendung": "Infinitivstamm könn- mit -e ergibt könne. Er unterscheidet sich vom Indikativ kann." },
+    { "id": "3.1-10", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Die Zeitung berichtet, der Kanzler ___ morgen nach Paris.", "hinweis": "reisen", "loesungen": ["reise"], "begruendung": "Infinitivstamm reis- mit -e ergibt reise. Er unterscheidet sich vom Indikativ reist." },
+    { "id": "3.1-11", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-indikativ", "text": "Der Autor warnt, die Gesellschaft ___ sich immer weiter.", "hinweis": "spalten", "loesungen": ["spalte"], "begruendung": "Infinitivstamm spalt- mit -e ergibt spalte. Er unterscheidet sich vom Indikativ spaltet." },
+    { "id": "3.1-12", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Die Schülerin erklärt, sie ___ das Gedicht nicht.", "hinweis": "verstehen", "loesungen": ["verstehe"], "begruendung": "Infinitivstamm versteh- mit -e ergibt verstehe. Er unterscheidet sich vom Indikativ versteht." },
+    { "id": "3.1-13", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-indikativ", "text": "Er behauptet, die Ergebnisse ___ eindeutig.", "hinweis": "sein", "loesungen": ["seien"], "begruendung": "Konjunktiv I von sein im Plural: seien. Er unterscheidet sich vom Indikativ sind." },
+    { "id": "3.1-14", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-indikativ", "text": "Die Expertin sagt, man ___ das Problem nicht unterschätzen.", "hinweis": "dürfen", "loesungen": ["dürfe"], "begruendung": "Infinitivstamm dürf- mit -e ergibt dürfe. Er unterscheidet sich vom Indikativ darf." },
+    { "id": "3.1-15", "kurs": 3, "lektion": "3.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Sprecher räumt ein, die Regierung ___ Fehler gemacht.", "hinweis": "haben", "loesungen": ["habe"], "begruendung": "Konjunktiv I von haben in der 3. Person Singular: habe. Er unterscheidet sich vom Indikativ hat." },
+    { "id": "3.1-16", "kurs": 3, "lektion": "3.1", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-indikativ", "vorlage": "Die Autorin schreibt: „Die Sprache verändert sich ständig.“", "loesungen": ["Die Autorin schreibt, die Sprache verändere sich ständig.", "Die Autorin schreibt, dass sich die Sprache ständig verändere.", "Die Autorin schreibt, dass die Sprache sich ständig verändere."], "kern": ["verändere"], "begruendung": "Konjunktiv I verändere unterscheidet sich vom Indikativ verändert. Nach der Redeeinleitung steht ein Komma." },
+    { "id": "3.1-17", "kurs": 3, "lektion": "3.1", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-indikativ", "vorlage": "Der Kritiker sagt: „Der Film ist zu lang.“", "loesungen": ["Der Kritiker sagt, der Film sei zu lang.", "Der Kritiker sagt, dass der Film zu lang sei."], "kern": ["sei"], "begruendung": "Konjunktiv I sei unterscheidet sich vom Indikativ ist, also bleibt es bei sei. Mit und ohne dass ist richtig." },
+    { "id": "3.1-18", "kurs": 3, "lektion": "3.1", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-indikativ", "vorlage": "Der Forscher warnt: „Die Erde wird immer wärmer.“", "loesungen": ["Der Forscher warnt, die Erde werde immer wärmer.", "Der Forscher warnt, dass die Erde immer wärmer werde."], "kern": ["werde"], "begruendung": "Konjunktiv I werde unterscheidet sich vom Indikativ wird. Also bleibt es bei werde." },
+    { "id": "3.1-19", "kurs": 3, "lektion": "3.1", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-indikativ", "vorlage": "Die Lehrerin sagt: „Der Text ist schwierig.“", "loesungen": ["Die Lehrerin sagt, der Text sei schwierig.", "Die Lehrerin sagt, dass der Text schwierig sei."], "kern": ["sei"], "begruendung": "Konjunktiv I sei unterscheidet sich vom Indikativ ist. Nach der Redeeinleitung steht ein Komma." },
+    { "id": "3.1-20", "kurs": 3, "lektion": "3.1", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-indikativ", "vorlage": "Der Autor behauptet: „Niemand kennt die Wahrheit.“", "loesungen": ["Der Autor behauptet, niemand kenne die Wahrheit.", "Der Autor behauptet, dass niemand die Wahrheit kenne."], "kern": ["kenne"], "begruendung": "Infinitivstamm kenn- mit -e ergibt kenne. Er unterscheidet sich vom Indikativ kennt." },
+    { "id": "3.1-21", "kurs": 3, "lektion": "3.1", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Die Autorin betont, die Lage [[ist=>sei|kj-indikativ]] ernst.", "begruendung": "Die Aussage wird wiedergegeben, also Konjunktiv I. Sei unterscheidet sich vom Indikativ ist." },
+    { "id": "3.1-22", "kurs": 3, "lektion": "3.1", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Minister erklärt, er [[weiß=>wisse|kj-indikativ]] von nichts.", "begruendung": "Wiedergegebene Aussage: Konjunktiv I wisse. Er unterscheidet sich vom Indikativ weiß." },
+    { "id": "3.1-23", "kurs": 3, "lektion": "3.1", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Kritiker meint, der Roman habe Längen.", "begruendung": "Konjunktiv I habe unterscheidet sich vom Indikativ hat. Der Satz ist fehlerfrei." },
+    { "id": "3.1-24", "kurs": 3, "lektion": "3.1", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Sie behauptet, sie [[kann=>könne|kj-indikativ]] das beweisen.", "begruendung": "Wiedergegebene Aussage: Konjunktiv I könne. Er unterscheidet sich vom Indikativ kann." },
+    { "id": "3.1-25", "kurs": 3, "lektion": "3.1", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Bericht sagt, die Zahl der Arbeitslosen [[steigt=>steige|kj-indikativ]].", "begruendung": "Wiedergegebene Aussage: Konjunktiv I steige. Er unterscheidet sich vom Indikativ steigt." },
+    { "id": "3.1-26", "kurs": 3, "lektion": "3.1", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-indikativ", "text": "Der Verlag teilt mit, das Buch [[erscheint=>erscheine|kj-indikativ]] im Herbst.", "begruendung": "Wiedergegebene Aussage: Konjunktiv I erscheine. Er unterscheidet sich vom Indikativ erscheint." },
+
+    { "id": "3.2-01", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Wenn sie Zeit ___, würde sie mehr lesen.", "hinweis": "haben, Konjunktiv II", "loesungen": ["hätte"], "begruendung": "Konjunktiv II von haben: Präteritum hatte mit Umlaut ergibt hätte. Haben steht immer in der einfachen Form." },
+    { "id": "3.2-02", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Er tut so, als ___ er krank.", "hinweis": "sein, Konjunktiv II", "loesungen": ["wäre"], "begruendung": "Konjunktiv II von sein: Präteritum war mit Umlaut und -e ergibt wäre." },
+    { "id": "3.2-03", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Wenn der Zug pünktlich ___, wären wir schon da.", "hinweis": "kommen, Konjunktiv II", "loesungen": ["käme"], "begruendung": "Präteritum kam mit Umlaut und -e ergibt käme." },
+    { "id": "3.2-04", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Ohne Belege ___ man der These kaum glauben.", "hinweis": "können, Konjunktiv II", "loesungen": ["könnte"], "begruendung": "Präteritum konnte mit Umlaut ergibt könnte. Modalverben stehen immer in der einfachen Form." },
+    { "id": "3.2-05", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Wenn es eine einfache Lösung ___, hätte man sie längst gefunden.", "hinweis": "geben, Konjunktiv II", "loesungen": ["gäbe"], "begruendung": "Präteritum gab mit Umlaut und -e ergibt gäbe." },
+    { "id": "3.2-06", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Wenn der Held die Wahrheit ___, würde er anders handeln.", "hinweis": "wissen, Konjunktiv II", "loesungen": ["wüsste"], "begruendung": "Präteritum wusste mit Umlaut ergibt wüsste." },
+    { "id": "3.2-07", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 3, "fehlertyp": "kj-form", "text": "Wenn sie die Stelle ___, müsste sie umziehen.", "hinweis": "annehmen, Konjunktiv II", "loesungen": ["annähme"], "begruendung": "Präteritum nahm an mit Umlaut und -e ergibt nähme an, im Nebensatz zusammengeschrieben: annähme." },
+    { "id": "3.2-08", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Der Erzähler wünscht, er ___ nie in die Stadt gekommen.", "hinweis": "sein, Konjunktiv II", "loesungen": ["wäre"], "begruendung": "Unerfüllter Wunsch in der Vergangenheit: Konjunktiv II wäre mit Partizip II. Sein steht immer in der einfachen Form." },
+    { "id": "3.2-09", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Wenn die Polizei Spuren ___, wäre der Fall gelöst.", "hinweis": "finden, Konjunktiv II", "loesungen": ["fände"], "begruendung": "Präteritum fand mit Umlaut und -e ergibt fände." },
+    { "id": "3.2-10", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Es ___ besser, die Quellen zu prüfen.", "hinweis": "sein, Konjunktiv II", "loesungen": ["wäre"], "begruendung": "Präteritum war mit Umlaut und -e ergibt wäre." },
+    { "id": "3.2-11", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Man ___ meinen, der Autor habe es eilig gehabt.", "hinweis": "können, Konjunktiv II", "loesungen": ["könnte"], "begruendung": "Präteritum konnte mit Umlaut ergibt könnte. Modalverben stehen immer in der einfachen Form." },
+    { "id": "3.2-12", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Wenn er jetzt ___, käme er zu spät.", "hinweis": "gehen, Konjunktiv II", "loesungen": ["ginge"], "begruendung": "Präteritum ging mit -e ergibt ginge. Ein Umlaut entfällt, weil i kein a, o oder u ist." },
+    { "id": "3.2-13", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Sie sprach, als ___ sie alles.", "hinweis": "wissen, Konjunktiv II", "loesungen": ["wüsste"], "begruendung": "Präteritum wusste mit Umlaut ergibt wüsste." },
+    { "id": "3.2-14", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Du ___ den Text genauer lesen.", "hinweis": "sollen, Konjunktiv II", "loesungen": ["solltest"], "begruendung": "Präteritum solltest; das Modalverb sollen hat keinen Umlaut und steht trotzdem in der einfachen Form." },
+    { "id": "3.2-15", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Das ___ ich nicht gedacht.", "hinweis": "haben, Konjunktiv II", "loesungen": ["hätte"], "begruendung": "Präteritum hatte mit Umlaut ergibt hätte. Haben steht immer in der einfachen Form." },
+    { "id": "3.2-16", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 3, "fehlertyp": "kj-form", "text": "Wenn die Regierung wirklich handeln ___, könnte sie die Krise abwenden.", "hinweis": "wollen, Konjunktiv II", "loesungen": ["wollte"], "begruendung": "Konjunktiv II von wollen: wollte. Modalverben stehen immer in der einfachen Form, auch wenn sie dem Präteritum gleichen." },
+    { "id": "3.2-17", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Ich ___ gern wissen, was der Autor meint.", "hinweis": "mögen, Konjunktiv II", "loesungen": ["möchte"], "begruendung": "Präteritum mochte mit Umlaut ergibt möchte." },
+    { "id": "3.2-18", "kurs": 3, "lektion": "3.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Wenn wir mehr Zeit ___, könnten wir das Thema vertiefen.", "hinweis": "haben, Konjunktiv II", "loesungen": ["hätten"], "begruendung": "Präteritum hatten mit Umlaut ergibt hätten." },
+    { "id": "3.2-19", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Wenn er Zeit [[hat=>hätte|kj-form]], käme er mit.", "begruendung": "Unwirkliche Bedingung: Konjunktiv II hätte. Haben steht immer in der einfachen Form." },
+    { "id": "3.2-20", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Wenn es Belege gäbe, wäre die These stärker.", "begruendung": "Gäbe und wäre sind richtig gebildete Formen des Konjunktivs II. Der Satz ist fehlerfrei." },
+    { "id": "3.2-21", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Er tat, als [[wär=>wäre|kj-form]] nichts geschehen.", "begruendung": "Der Konjunktiv II endet auf -e: wäre, nicht wär." },
+    { "id": "3.2-22", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-form", "text": "Ohne die Hilfe ihrer Freunde [[würde=>wäre|kj-form]] sie gescheitert.", "begruendung": "Unwirkliche Vergangenheit: Konjunktiv II von sein mit Partizip II, also wäre gescheitert. Würde passt nicht zum Partizip." },
+    { "id": "3.2-23", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Wenn der Bus [[käm=>käme|kj-form]], könnten wir fahren.", "begruendung": "Der Konjunktiv II endet auf -e: käme, nicht käm." },
+    { "id": "3.2-24", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-form", "text": "Wenn sie mehr Zeit gehabt hätte, hätte sie das Buch zu Ende gelesen.", "begruendung": "Hätte mit Partizip II drückt die unwirkliche Vergangenheit aus. Der Satz ist fehlerfrei." },
+    { "id": "3.2-25", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Es [[würde=>wäre|kj-form]] klug, die Quellen zu prüfen.", "begruendung": "Sein steht immer in der einfachen Form des Konjunktivs II: wäre. Würde verlangt einen Infinitiv." },
+    { "id": "3.2-26", "kurs": 3, "lektion": "3.2", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-form", "text": "Wenn er die Lösung gewusst [[würde=>hätte|kj-form]], hätte er sie verraten.", "begruendung": "Unwirkliche Vergangenheit: hätte mit Partizip II. Würde passt nicht zum Partizip gewusst." },
+
+    { "id": "3.3-01", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Schüler sagen, sie ___ morgen.", "hinweis": "kommen", "loesungen": ["kämen"], "begruendung": "Ausweichkette: Konjunktiv I kommen gleicht dem Indikativ, also Konjunktiv II kämen. Er unterscheidet sich vom Präteritum kamen." },
+    { "id": "3.3-02", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Autoren betonen, sie ___ keine Fehler gemacht.", "hinweis": "haben", "loesungen": ["hätten"], "begruendung": "Ausweichkette: Konjunktiv I haben gleicht dem Indikativ, also Konjunktiv II hätten." },
+    { "id": "3.3-03", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Forscher erklären, sie ___ das Problem lösen.", "hinweis": "können", "loesungen": ["könnten"], "begruendung": "Ausweichkette: Konjunktiv I können gleicht dem Indikativ, also Konjunktiv II könnten." },
+    { "id": "3.3-04", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Die Eltern sagen, sie ___ von nichts.", "hinweis": "wissen", "loesungen": ["wüssten"], "begruendung": "Ausweichkette: Konjunktiv I wissen gleicht dem Indikativ, also Konjunktiv II wüssten. Er unterscheidet sich vom Präteritum wussten." },
+    { "id": "3.3-05", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Schüler klagen, sie ___ zu viele Hausaufgaben.", "hinweis": "haben", "loesungen": ["hätten"], "begruendung": "Ausweichkette: Konjunktiv I haben gleicht dem Indikativ, also Konjunktiv II hätten." },
+    { "id": "3.3-06", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Die Gewerkschaften fordern, die Arbeitgeber ___ die Löhne erhöhen.", "hinweis": "müssen", "loesungen": ["müssten"], "begruendung": "Ausweichkette: Konjunktiv I müssen gleicht dem Indikativ, also Konjunktiv II müssten." },
+    { "id": "3.3-07", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Ich sagte ihm, ich ___ krank.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Konjunktiv I sei unterscheidet sich vom Indikativ bin. Die Ausweichkette endet beim ersten Schritt." },
+    { "id": "3.3-08", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Ich behauptete, ich ___ keine Zeit.", "hinweis": "haben", "loesungen": ["hätte"], "begruendung": "Ausweichkette: Konjunktiv I habe gleicht dem Indikativ ich habe, also Konjunktiv II hätte." },
+    { "id": "3.3-09", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Die Zeugen geben an, sie ___ den Täter gesehen.", "hinweis": "haben", "loesungen": ["hätten"], "begruendung": "Ausweichkette: Konjunktiv I haben gleicht dem Indikativ, also Konjunktiv II hätten." },
+    { "id": "3.3-10", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Die Minister versichern, sie ___ alles Nötige tun.", "hinweis": "werden", "loesungen": ["würden"], "begruendung": "Ausweichkette: Konjunktiv I werden gleicht dem Indikativ, also Konjunktiv II würden." },
+    { "id": "3.3-11", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Die Bürger fürchten, es ___ zu spät.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "3. Person Singular: Konjunktiv I sei unterscheidet sich vom Indikativ ist. Hier wird nie ausgewichen." },
+    { "id": "3.3-12", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Der Lehrer sagt, er ___ morgen.", "hinweis": "kommen", "loesungen": ["komme"], "begruendung": "3. Person Singular: Konjunktiv I komme unterscheidet sich vom Indikativ kommt. Also nicht ausweichen." },
+    { "id": "3.3-13", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Die Studenten berichten, sie ___ kaum Zeit zum Lesen.", "hinweis": "finden", "loesungen": ["fänden"], "begruendung": "Ausweichkette: Konjunktiv I finden gleicht dem Indikativ, also Konjunktiv II fänden. Er unterscheidet sich vom Präteritum fanden." },
+    { "id": "3.3-14", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Die Opfer sagen, sie ___ nicht gehört worden.", "hinweis": "sein", "loesungen": ["seien"], "begruendung": "Konjunktiv I seien unterscheidet sich vom Indikativ sind. Die Ausweichkette endet beim ersten Schritt." },
+    { "id": "3.3-15", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Autoren schreiben, sie ___ die Folgen nicht absehen.", "hinweis": "können", "loesungen": ["könnten"], "begruendung": "Ausweichkette: Konjunktiv I können gleicht dem Indikativ, also Konjunktiv II könnten." },
+    { "id": "3.3-16", "kurs": 3, "lektion": "3.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Die Bewohner klagen, es ___ keine Busse mehr.", "hinweis": "geben", "loesungen": ["gebe"], "begruendung": "Subjekt ist es, also 3. Person Singular: Konjunktiv I gebe unterscheidet sich vom Indikativ gibt. Nicht ausweichen." },
+    { "id": "3.3-17", "kurs": 3, "lektion": "3.3", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-ausweich", "vorlage": "Die Schüler sagen: „Wir arbeiten jeden Tag.“", "loesungen": ["Die Schüler sagen, sie würden jeden Tag arbeiten.", "Die Schüler sagen, dass sie jeden Tag arbeiten würden."], "kern": ["würden", "arbeiten"], "begruendung": "Konjunktiv I arbeiten gleicht dem Indikativ, Konjunktiv II arbeiteten dem Präteritum. Also würden mit Infinitiv." },
+    { "id": "3.3-18", "kurs": 3, "lektion": "3.3", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-ausweich", "vorlage": "Die Autoren schreiben: „Wir haben keine Antwort.“", "loesungen": ["Die Autoren schreiben, sie hätten keine Antwort.", "Die Autoren schreiben, dass sie keine Antwort hätten."], "kern": ["hätten"], "begruendung": "Konjunktiv I haben gleicht dem Indikativ, also Konjunktiv II hätten. Aus wir wird sie." },
+    { "id": "3.3-19", "kurs": 3, "lektion": "3.3", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-ausweich", "vorlage": "Die Wähler sagen: „Wir glauben den Parteien nicht mehr.“", "loesungen": ["Die Wähler sagen, sie würden den Parteien nicht mehr glauben.", "Die Wähler sagen, dass sie den Parteien nicht mehr glauben würden."], "kern": ["würden", "glauben"], "begruendung": "Konjunktiv I glauben gleicht dem Indikativ, Konjunktiv II glaubten dem Präteritum. Also würden mit Infinitiv." },
+    { "id": "3.3-20", "kurs": 3, "lektion": "3.3", "typ": "umformen", "stufe": 3, "fehlertyp": "kj-ausweich", "vorlage": "Die Demonstranten rufen: „Wir gehen nicht nach Hause.“", "loesungen": ["Die Demonstranten rufen, sie würden nicht nach Hause gehen.", "Die Demonstranten rufen, dass sie nicht nach Hause gehen würden."], "kern": ["würden", "gehen"], "begruendung": "Konjunktiv I gehen gleicht dem Indikativ, Konjunktiv II gingen dem Präteritum. Also würden mit Infinitiv." },
+    { "id": "3.3-21", "kurs": 3, "lektion": "3.3", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-ausweich", "vorlage": "Die Kinder sagen: „Wir kommen gleich.“", "loesungen": ["Die Kinder sagen, sie kämen gleich.", "Die Kinder sagen, dass sie gleich kämen."], "kern": ["kämen"], "begruendung": "Konjunktiv I kommen gleicht dem Indikativ, also Konjunktiv II kämen. Er unterscheidet sich vom Präteritum kamen, deshalb kein würde." },
+    { "id": "3.3-22", "kurs": 3, "lektion": "3.3", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-form", "vorlage": "Der Minister sagt: „Ich trete nicht zurück.“", "loesungen": ["Der Minister sagt, er trete nicht zurück.", "Der Minister sagt, dass er nicht zurücktrete."], "kern": ["trete"], "begruendung": "3. Person Singular: Konjunktiv I trete unterscheidet sich vom Indikativ tritt. Also nicht ausweichen." },
+    { "id": "3.3-23", "kurs": 3, "lektion": "3.3", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Schüler sagen, sie [[haben=>hätten|kj-ausweich]] keine Zeit.", "begruendung": "Ausweichkette: Konjunktiv I haben gleicht dem Indikativ. Also Konjunktiv II hätten." },
+    { "id": "3.3-24", "kurs": 3, "lektion": "3.3", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Forscher erklären, sie [[können=>könnten|kj-ausweich]] das Phänomen nicht deuten.", "begruendung": "Ausweichkette: Konjunktiv I können gleicht dem Indikativ. Also Konjunktiv II könnten." },
+    { "id": "3.3-25", "kurs": 3, "lektion": "3.3", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-form", "text": "Der Autor schreibt, er [[wäre=>sei|kj-form]] missverstanden worden.", "begruendung": "3. Person Singular: Konjunktiv I sei unterscheidet sich vom Indikativ ist. Ausweichen auf wäre ist hier falsch." },
+    { "id": "3.3-26", "kurs": 3, "lektion": "3.3", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Gäste sagen, sie [[kommen=>kämen|kj-ausweich]] später.", "begruendung": "Ausweichkette: Konjunktiv I kommen gleicht dem Indikativ. Also Konjunktiv II kämen." },
+    { "id": "3.3-27", "kurs": 3, "lektion": "3.3", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-ausweich", "text": "Die Zeugen sagen, sie hätten nichts gesehen.", "begruendung": "Konjunktiv I haben gleicht dem Indikativ, also richtig hätten. Der Satz ist fehlerfrei." },
+
+    { "id": "3.4-01", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Er sagt, er ___ gestern angekommen.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Vergangenheit in der indirekten Rede: sei mit Partizip II. Konjunktiv I sei unterscheidet sich vom Indikativ ist." },
+    { "id": "3.4-02", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Sie erzählte, sie ___ den Roman in einer Nacht gelesen.", "hinweis": "haben", "loesungen": ["habe"], "begruendung": "Vergangenheit: habe mit Partizip II. Die Zeit des Einleiteverbs erzählte spielt keine Rolle." },
+    { "id": "3.4-03", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Der Zeuge sagte, er ___ den Täter nicht erkannt.", "hinweis": "haben", "loesungen": ["habe"], "begruendung": "Vergangenheit: habe mit Partizip II. Konjunktiv I habe unterscheidet sich vom Indikativ hat." },
+    { "id": "3.4-04", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Die Schüler sagen, sie ___ den Text gelesen.", "hinweis": "haben", "loesungen": ["hätten"], "begruendung": "Vergangenheit mit haben; Konjunktiv I haben gleicht dem Indikativ. Also hätten mit Partizip II." },
+    { "id": "3.4-05", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Die Ministerin kündigt an, sie ___ das Gesetz ändern.", "hinweis": "werden", "loesungen": ["werde"], "begruendung": "Zukunft: werde mit Infinitiv. Konjunktiv I werde unterscheidet sich vom Indikativ wird." },
+    { "id": "3.4-06", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Die Experten prophezeien, die Preise ___ steigen.", "hinweis": "werden", "loesungen": ["würden"], "begruendung": "Zukunft mit werden; Konjunktiv I werden gleicht dem Indikativ. Also würden mit Infinitiv." },
+    { "id": "3.4-07", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Der Autor berichtet, seine Familie ___ 1938 emigriert.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Vergangenheit: sei mit Partizip II, denn emigrieren bildet das Perfekt mit sein." },
+    { "id": "3.4-08", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Die Forscher erklärten, sie ___ das Experiment wiederholt.", "hinweis": "haben", "loesungen": ["hätten"], "begruendung": "Vergangenheit mit haben; Konjunktiv I haben gleicht dem Indikativ. Also hätten mit Partizip II." },
+    { "id": "3.4-09", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Der Angeklagte behauptete, er ___ zur Tatzeit zu Hause gewesen.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Vergangenheit: sei mit Partizip II gewesen. Die Zeit des Einleiteverbs spielt keine Rolle." },
+    { "id": "3.4-10", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Die Wanderer erzählen, sie ___ sich verlaufen.", "hinweis": "haben", "loesungen": ["hätten"], "begruendung": "Vergangenheit mit haben; Konjunktiv I haben gleicht dem Indikativ. Also hätten mit Partizip II." },
+    { "id": "3.4-11", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Die Kanzlerin versprach, sie ___ sich um das Problem kümmern.", "hinweis": "werden", "loesungen": ["werde"], "begruendung": "Zukunft: werde mit Infinitiv. Das Präteritum von versprach ändert daran nichts." },
+    { "id": "3.4-12", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Die Schülerin meint, sie ___ die Prüfung bestanden.", "hinweis": "haben", "loesungen": ["habe"], "begruendung": "Vergangenheit: habe mit Partizip II. Konjunktiv I habe unterscheidet sich vom Indikativ hat." },
+    { "id": "3.4-13", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Die Reisenden berichten, sie ___ stundenlang gewartet.", "hinweis": "haben", "loesungen": ["hätten"], "begruendung": "Vergangenheit mit haben; Konjunktiv I haben gleicht dem Indikativ. Also hätten mit Partizip II." },
+    { "id": "3.4-14", "kurs": 3, "lektion": "3.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Der Dichter schrieb, er ___ nie glücklicher gewesen.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Vergangenheit: sei mit Partizip II gewesen." },
+    { "id": "3.4-15", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-zeit", "vorlage": "Der Autor sagte: „Ich schrieb das Buch in Paris.“", "loesungen": ["Der Autor sagte, er habe das Buch in Paris geschrieben.", "Der Autor sagte, er habe in Paris das Buch geschrieben.", "Der Autor sagte, dass er das Buch in Paris geschrieben habe.", "Der Autor sagte, dass er in Paris das Buch geschrieben habe."], "kern": ["habe", "geschrieben"], "begruendung": "Präteritum im Original wird zu habe mit Partizip II. Aus ich wird er." },
+    { "id": "3.4-16", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-zeit", "vorlage": "Die Zeugin erklärt: „Ich war um zehn Uhr zu Hause.“", "loesungen": ["Die Zeugin erklärt, sie sei um zehn Uhr zu Hause gewesen.", "Die Zeugin erklärt, dass sie um zehn Uhr zu Hause gewesen sei."], "kern": ["sei", "gewesen"], "begruendung": "Präteritum im Original wird zu sei mit Partizip II gewesen. Aus ich wird sie." },
+    { "id": "3.4-17", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-zeit", "vorlage": "Die Schüler berichten: „Wir haben das Buch gelesen.“", "loesungen": ["Die Schüler berichten, sie hätten das Buch gelesen.", "Die Schüler berichten, dass sie das Buch gelesen hätten."], "kern": ["hätten", "gelesen"], "begruendung": "Vergangenheit mit haben; Konjunktiv I haben gleicht dem Indikativ. Also hätten mit Partizip II." },
+    { "id": "3.4-18", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-zeit", "vorlage": "Der Minister sagt: „Ich werde zurücktreten.“", "loesungen": ["Der Minister sagt, er werde zurücktreten.", "Der Minister sagt, dass er zurücktreten werde."], "kern": ["werde"], "begruendung": "Zukunft: werde mit Infinitiv. Konjunktiv I werde unterscheidet sich vom Indikativ wird." },
+    { "id": "3.4-19", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 3, "fehlertyp": "kj-zeit", "vorlage": "Die Forscherin schreibt: „Die Daten zeigten einen klaren Trend.“", "loesungen": ["Die Forscherin schreibt, die Daten hätten einen klaren Trend gezeigt.", "Die Forscherin schreibt, dass die Daten einen klaren Trend gezeigt hätten."], "kern": ["hätten", "gezeigt"], "begruendung": "Präteritum im Original wird zu haben mit Partizip II; im Plural gleicht haben dem Indikativ. Also hätten gezeigt." },
+    { "id": "3.4-20", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-zeit", "vorlage": "Der Kritiker meinte: „Das Stück war ein Misserfolg.“", "loesungen": ["Der Kritiker meinte, das Stück sei ein Misserfolg gewesen.", "Der Kritiker meinte, dass das Stück ein Misserfolg gewesen sei."], "kern": ["sei", "gewesen"], "begruendung": "Präteritum im Original wird zu sei mit Partizip II gewesen. Die Zeit von meinte spielt keine Rolle." },
+    { "id": "3.4-21", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-zeit", "vorlage": "Die Politiker versprechen: „Wir werden die Schulen sanieren.“", "loesungen": ["Die Politiker versprechen, sie würden die Schulen sanieren.", "Die Politiker versprechen, dass sie die Schulen sanieren würden."], "kern": ["würden"], "begruendung": "Zukunft mit werden; Konjunktiv I werden gleicht dem Indikativ. Also würden mit Infinitiv." },
+    { "id": "3.4-22", "kurs": 3, "lektion": "3.4", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-zeit", "vorlage": "Die Autorin erzählt: „Ich bin in Leipzig aufgewachsen.“", "loesungen": ["Die Autorin erzählt, sie sei in Leipzig aufgewachsen.", "Die Autorin erzählt, dass sie in Leipzig aufgewachsen sei."], "kern": ["sei"], "begruendung": "Vergangenheit: sei mit Partizip II. Aus ich wird sie." },
+    { "id": "3.4-23", "kurs": 3, "lektion": "3.4", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Er sagt, er [[habe=>sei|kj-zeit]] nach Berlin gefahren.", "begruendung": "Fahren ohne Objekt bildet die Vergangenheit mit sein: er sei gefahren." },
+    { "id": "3.4-24", "kurs": 3, "lektion": "3.4", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-zeit", "text": "Sie sagt, sie [[sei=>habe|kj-zeit]] die ganze Nacht gearbeitet.", "begruendung": "Arbeiten bildet die Vergangenheit mit haben: sie habe gearbeitet." },
+    { "id": "3.4-25", "kurs": 3, "lektion": "3.4", "typ": "fehler", "stufe": 3, "fehlertyp": "kj-zeit", "text": "Die Zeugin sagt, sie [[sah den Täter=>habe den Täter gesehen|kj-zeit]].", "begruendung": "Vergangenheit in der indirekten Rede: habe mit Partizip II. Aus sah wird habe gesehen." },
+    { "id": "3.4-26", "kurs": 3, "lektion": "3.4", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-zeit", "text": "Der Minister sagte, er werde das Gesetz prüfen.", "begruendung": "Zukunft: werde mit Infinitiv. Der Satz ist fehlerfrei." },
+
+    { "id": "3.5-01", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-pronomen", "vorlage": "Der Lehrer fragt Paul: „Hast du den Text gelesen?“", "loesungen": ["Der Lehrer fragt Paul, ob er den Text gelesen habe."], "kern": ["ob", "habe"], "begruendung": "Eine Ja-Nein-Frage wird mit ob eingeleitet, aus du wird er. Konjunktiv I habe unterscheidet sich vom Indikativ hat." },
+    { "id": "3.5-02", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-pronomen", "vorlage": "Die Journalistin fragt die Ministerin: „Treten Sie zurück?“", "loesungen": ["Die Journalistin fragt die Ministerin, ob sie zurücktrete."], "kern": ["ob", "zurücktrete"], "begruendung": "Frage mit ob, aus Sie wird sie. Konjunktiv I zurücktrete unterscheidet sich vom Indikativ zurücktritt." },
+    { "id": "3.5-03", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-pronomen", "vorlage": "Die Schüler fragen: „Ist der Test schwer?“", "loesungen": ["Die Schüler fragen, ob der Test schwer sei."], "kern": ["ob", "sei"], "begruendung": "Ja-Nein-Frage mit ob. Konjunktiv I sei unterscheidet sich vom Indikativ ist." },
+    { "id": "3.5-04", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-pronomen", "vorlage": "Die Kommissarin fragt den Zeugen: „Wo waren Sie zur Tatzeit?“", "loesungen": ["Die Kommissarin fragt den Zeugen, wo er zur Tatzeit gewesen sei."], "kern": ["wo", "sei"], "begruendung": "Die Frage behält ihr Fragewort wo, aus Sie wird er. Vergangenheit: sei mit Partizip II gewesen." },
+    { "id": "3.5-05", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-pronomen", "vorlage": "Der Leser fragt: „Warum schweigt die Heldin?“", "loesungen": ["Der Leser fragt, warum die Heldin schweige."], "kern": ["warum", "schweige"], "begruendung": "Die Frage behält ihr Fragewort warum. Konjunktiv I schweige unterscheidet sich vom Indikativ schweigt." },
+    { "id": "3.5-06", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-pronomen", "vorlage": "Die Autorin fragt: „Wer trägt die Verantwortung?“", "loesungen": ["Die Autorin fragt, wer die Verantwortung trage."], "kern": ["wer", "trage"], "begruendung": "Die Frage behält ihr Fragewort wer. Konjunktiv I trage unterscheidet sich vom Indikativ trägt." },
+    { "id": "3.5-07", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-pronomen", "vorlage": "Die Mutter sagt zu ihrem Sohn: „Räum dein Zimmer auf!“", "loesungen": ["Die Mutter sagt zu ihrem Sohn, er solle sein Zimmer aufräumen.", "Die Mutter sagt zu ihrem Sohn, dass er sein Zimmer aufräumen solle."], "kern": ["solle"], "begruendung": "Eine Aufforderung wird mit solle wiedergegeben. Aus dein wird sein." },
+    { "id": "3.5-08", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 3, "fehlertyp": "kj-pronomen", "vorlage": "Der Lehrer sagt zu den Schülern: „Lest das Kapitel bis Montag!“", "loesungen": ["Der Lehrer sagt zu den Schülern, sie sollten das Kapitel bis Montag lesen.", "Der Lehrer sagt zu den Schülern, sie sollten bis Montag das Kapitel lesen.", "Der Lehrer sagt zu den Schülern, dass sie das Kapitel bis Montag lesen sollten.", "Der Lehrer sagt zu den Schülern, dass sie bis Montag das Kapitel lesen sollten."], "kern": ["sollten"], "begruendung": "Aufforderung mit sollen; im Plural gleicht der Konjunktiv I sollen dem Indikativ. Also Konjunktiv II sollten, als Modalverb in einfacher Form." },
+    { "id": "3.5-09", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-pronomen", "vorlage": "Der Kranke sagt zur Ärztin: „Helfen Sie mir bitte!“", "loesungen": ["Der Kranke sagt zur Ärztin, sie möge ihm helfen.", "Der Kranke sagt zur Ärztin, dass sie ihm helfen möge.", "Der Kranke sagt zur Ärztin, sie möge ihm bitte helfen.", "Der Kranke sagt zur Ärztin, dass sie ihm bitte helfen möge."], "kern": ["möge"], "begruendung": "Eine höfliche Bitte wird mit möge wiedergegeben. Aus Sie wird sie, aus mir wird ihm." },
+    { "id": "3.5-10", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-pronomen", "vorlage": "Lena schreibt ihrem Bruder: „Ich besuche dich nächste Woche.“", "loesungen": ["Lena schreibt ihrem Bruder, sie besuche ihn nächste Woche.", "Lena schreibt ihrem Bruder, dass sie ihn nächste Woche besuche."], "kern": ["besuche"], "begruendung": "Aus ich wird sie, aus dich wird ihn. Konjunktiv I besuche unterscheidet sich vom Indikativ besucht." },
+    { "id": "3.5-11", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 3, "fehlertyp": "kj-pronomen", "vorlage": "Der Bürgermeister sagte bei seinem Besuch in Leipzig: „Hier entsteht ein neuer Park.“", "loesungen": ["Der Bürgermeister sagte bei seinem Besuch in Leipzig, dort entstehe ein neuer Park.", "Der Bürgermeister sagte bei seinem Besuch in Leipzig, dass dort ein neuer Park entstehe."], "kern": ["dort", "entstehe"], "begruendung": "Die Ortsangabe hier wird aus Sicht des Berichtenden zu dort. Konjunktiv I entstehe unterscheidet sich vom Indikativ entsteht." },
+    { "id": "3.5-12", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-pronomen", "vorlage": "Die Schülerin sagt zum Lehrer: „Ich habe Ihre Frage nicht verstanden.“", "loesungen": ["Die Schülerin sagt zum Lehrer, sie habe seine Frage nicht verstanden.", "Die Schülerin sagt zum Lehrer, dass sie seine Frage nicht verstanden habe."], "kern": ["habe", "seine"], "begruendung": "Aus ich wird sie, aus Ihre wird seine. Vergangenheit: habe mit Partizip II." },
+    { "id": "3.5-13", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-pronomen", "vorlage": "Der Trainer sagt zu den Spielern: „Ihr müsst euch mehr anstrengen.“", "loesungen": ["Der Trainer sagt zu den Spielern, sie müssten sich mehr anstrengen.", "Der Trainer sagt zu den Spielern, dass sie sich mehr anstrengen müssten."], "kern": ["müssten"], "begruendung": "Aus ihr wird sie, aus euch wird sich. Konjunktiv I müssen gleicht dem Indikativ, also müssten." },
+    { "id": "3.5-14", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-pronomen", "vorlage": "Die Großmutter erzählt: „Mein Vater war Lehrer.“", "loesungen": ["Die Großmutter erzählt, ihr Vater sei Lehrer gewesen.", "Die Großmutter erzählt, dass ihr Vater Lehrer gewesen sei."], "kern": ["ihr", "sei"], "begruendung": "Aus mein wird ihr. Vergangenheit: sei mit Partizip II gewesen." },
+    { "id": "3.5-15", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-pronomen", "vorlage": "Der Reporter fragt die Schauspielerin: „Wann beginnt der Dreh?“", "loesungen": ["Der Reporter fragt die Schauspielerin, wann der Dreh beginne."], "kern": ["wann", "beginne"], "begruendung": "Die Frage behält ihr Fragewort wann. Konjunktiv I beginne unterscheidet sich vom Indikativ beginnt." },
+    { "id": "3.5-16", "kurs": 3, "lektion": "3.5", "typ": "umformen", "stufe": 3, "fehlertyp": "kj-pronomen", "vorlage": "Der Zeuge sagte vor Gericht: „Ich war gestern in Berlin.“", "loesungen": ["Der Zeuge sagte vor Gericht, er sei am Vortag in Berlin gewesen.", "Der Zeuge sagte vor Gericht, er sei am Tag zuvor in Berlin gewesen.", "Der Zeuge sagte vor Gericht, er sei tags zuvor in Berlin gewesen.", "Der Zeuge sagte vor Gericht, er sei am vorigen Tag in Berlin gewesen.", "Der Zeuge sagte vor Gericht, er sei am Tag davor in Berlin gewesen.", "Der Zeuge sagte vor Gericht, dass er am Vortag in Berlin gewesen sei.", "Der Zeuge sagte vor Gericht, dass er am Tag zuvor in Berlin gewesen sei.", "Der Zeuge sagte vor Gericht, dass er tags zuvor in Berlin gewesen sei.", "Der Zeuge sagte vor Gericht, dass er am vorigen Tag in Berlin gewesen sei.", "Der Zeuge sagte vor Gericht, dass er am Tag davor in Berlin gewesen sei."], "kern": ["sei", "gewesen"], "begruendung": "Gestern wird aus Sicht des Berichtenden zu am Vortag. Vergangenheit: sei mit Partizip II gewesen." },
+    { "id": "3.5-17", "kurs": 3, "lektion": "3.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-pronomen", "text": "„Hast du die Aufgabe verstanden?“ – Er fragt sie, ___ sie die Aufgabe verstanden habe.", "hinweis": "Einleitewort", "loesungen": ["ob"], "begruendung": "Eine Ja-Nein-Frage wird in der indirekten Rede mit ob eingeleitet." },
+    { "id": "3.5-18", "kurs": 3, "lektion": "3.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-pronomen", "text": "„Wann fährt der Zug ab?“ – Sie fragt, ___ der Zug abfahre.", "hinweis": "Einleitewort", "loesungen": ["wann"], "begruendung": "Eine Frage mit Fragewort behält ihr Fragewort: wann." },
+    { "id": "3.5-19", "kurs": 3, "lektion": "3.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-pronomen", "text": "„Schonen Sie sich!“ – Der Arzt rät ihr, sie ___ sich schonen.", "hinweis": "sollen", "loesungen": ["solle"], "begruendung": "Eine Aufforderung wird mit solle wiedergegeben. Konjunktiv I solle unterscheidet sich vom Indikativ soll." },
+    { "id": "3.5-20", "kurs": 3, "lektion": "3.5", "typ": "eintippen", "stufe": 3, "fehlertyp": "kj-pronomen", "text": "„Ich war gestern in Berlin.“ – Der Zeuge sagte vor Gericht, er sei ___ in Berlin gewesen.", "hinweis": "gestern", "loesungen": ["am Vortag", "am Tag zuvor", "tags zuvor", "am vorigen Tag", "am Tag davor"], "begruendung": "Aus Sicht des Berichtenden wird gestern zu am Vortag. Ebenso richtig sind am Tag zuvor und tags zuvor." },
+    { "id": "3.5-21", "kurs": 3, "lektion": "3.5", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-pronomen", "text": "Paul sagt, [[ich=>er|kj-pronomen]] habe keine Zeit.", "begruendung": "In der indirekten Rede wird ich zum Pronomen des Sprechers: er." },
+    { "id": "3.5-22", "kurs": 3, "lektion": "3.5", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-pronomen", "text": "Die Lehrerin fragt, [[dass=>ob|kj-pronomen]] Paul das Gedicht kenne.", "begruendung": "Eine Ja-Nein-Frage wird mit ob eingeleitet, nicht mit dass." },
+    { "id": "3.5-23", "kurs": 3, "lektion": "3.5", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Die Mutter sagt, Tim [[soll=>solle|kj-indikativ]] sein Zimmer aufräumen.", "begruendung": "Die Aufforderung steht im Konjunktiv I solle. Er unterscheidet sich vom Indikativ soll." },
+    { "id": "3.5-24", "kurs": 3, "lektion": "3.5", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-pronomen", "text": "Anna erzählt, [[mein=>ihr|kj-pronomen]] Bruder studiere in Wien.", "begruendung": "Aus Annas Sicht wird mein zu ihr." },
+    { "id": "3.5-25", "kurs": 3, "lektion": "3.5", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-pronomen", "text": "Er fragt sie, wann sie nach Hause komme.", "begruendung": "Fragewort wann, Pronomen sie und Konjunktiv I komme sind richtig. Der Satz ist fehlerfrei." },
+    { "id": "3.5-26", "kurs": 3, "lektion": "3.5", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-ausweich", "text": "Die Trainerin ruft, die Spieler [[sollen=>sollten|kj-ausweich]] schneller laufen.", "begruendung": "Im Plural gleicht der Konjunktiv I sollen dem Indikativ. Also Konjunktiv II sollten." },
+
+    { "id": "3.6-01", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Laut dem Autor ___ die These überholt.", "hinweis": "sein", "loesungen": ["ist"], "begruendung": "Nach laut ist die Quelle schon genannt, deshalb steht der Indikativ: ist." },
+    { "id": "3.6-02", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Dem Bericht zufolge ___ die Arbeitslosigkeit gesunken.", "hinweis": "sein", "loesungen": ["ist"], "begruendung": "Nach zufolge steht der Indikativ, denn die Quelle ist genannt: ist gesunken." },
+    { "id": "3.6-03", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Nach Angaben der Polizei ___ niemand verletzt worden.", "hinweis": "sein", "loesungen": ["ist"], "begruendung": "Nach „nach Angaben“ steht der Indikativ: ist verletzt worden." },
+    { "id": "3.6-04", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "„Ich hätte gern mehr Zeit.“ – Er sagt, er ___ gern mehr Zeit.", "hinweis": "haben", "loesungen": ["hätte"], "begruendung": "Das Original steht schon im Konjunktiv II. Er bleibt erhalten: hätte." },
+    { "id": "3.6-05", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "„Das wäre eine gute Idee gewesen.“ – Sie meint, das ___ eine gute Idee gewesen.", "hinweis": "sein", "loesungen": ["wäre"], "begruendung": "Das Original steht im Konjunktiv II. Er bleibt in der indirekten Rede erhalten: wäre." },
+    { "id": "3.6-06", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Autor erklärt, dass die Sprache ständig im Wandel ___.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Auch mit dass bleibt der Konjunktiv: sei unterscheidet sich vom Indikativ ist." },
+    { "id": "3.6-07", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Laut der Studie ___ Jugendliche weniger als früher.", "hinweis": "lesen", "loesungen": ["lesen"], "begruendung": "Nach laut steht der Indikativ, denn die Quelle ist genannt: lesen." },
+    { "id": "3.6-08", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 3, "fehlertyp": "kj-form", "text": "„Wenn ich Geld hätte, würde ich investieren.“ – Der Unternehmer sagt, wenn er Geld ___, würde er investieren.", "hinweis": "haben", "loesungen": ["hätte"], "begruendung": "Der Konjunktiv II des Originals bleibt erhalten: hätte." },
+    { "id": "3.6-09", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Die Forscherin betont, dass das Ergebnis vorläufig ___.", "hinweis": "sein", "loesungen": ["sei"], "begruendung": "Auch mit dass bleibt der Konjunktiv I: sei." },
+    { "id": "3.6-10", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "kj-form", "text": "Dem Kritiker zufolge ___ der Roman zu lang.", "hinweis": "sein", "loesungen": ["ist"], "begruendung": "Nach zufolge steht der Indikativ: ist." },
+    { "id": "3.6-11", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 3, "fehlertyp": "kj-form", "text": "„Mit mehr Zeit hätte ich den Text anders geschrieben.“ – Die Autorin schreibt, mit mehr Zeit ___ sie den Text anders geschrieben.", "hinweis": "haben", "loesungen": ["hätte"], "begruendung": "Der Konjunktiv II des Originals bleibt erhalten: hätte geschrieben." },
+    { "id": "3.6-12", "kurs": 3, "lektion": "3.6", "typ": "eintippen", "stufe": 2, "fehlertyp": "kj-form", "text": "Nach Ansicht der Richterin ___ die Klage unbegründet.", "hinweis": "sein", "loesungen": ["ist"], "begruendung": "Nach „nach Ansicht“ steht der Indikativ, denn die Quelle ist genannt: ist." },
+    { "id": "3.6-13", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Laut dem Bericht [[sei=>ist|kj-form]] die Lage stabil.", "begruendung": "Nach laut ist die Quelle genannt. Deshalb steht der Indikativ ist." },
+    { "id": "3.6-14", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Der Autor erklärt, dass die Sprache sich ständig [[verändert=>verändere|kj-indikativ]].", "begruendung": "Auch mit dass bleibt der Konjunktiv I: verändere." },
+    { "id": "3.6-15", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Dem Experten zufolge [[gebe=>gibt|kj-form]] es keine Gefahr.", "begruendung": "Nach zufolge steht der Indikativ, denn die Quelle ist genannt: gibt." },
+    { "id": "3.6-16", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 3, "fehlertyp": "kj-form", "text": "Sie sagt, sie [[habe=>hätte|kj-form]] gern geholfen, wenn sie gekonnt hätte.", "begruendung": "Das Original steht im Konjunktiv II: „Ich hätte gern geholfen.“ Er bleibt erhalten, also hätte." },
+    { "id": "3.6-17", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-form", "text": "Nach Angaben des Herstellers ist das Gerät sicher.", "begruendung": "Nach „nach Angaben“ steht der Indikativ ist. Der Satz ist fehlerfrei." },
+    { "id": "3.6-18", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 1, "fehlertyp": "kj-indikativ", "text": "Er erklärt, dass er keine Zeit [[hat=>habe|kj-indikativ]].", "begruendung": "Auch mit dass bleibt der Konjunktiv I: habe." },
+    { "id": "3.6-19", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-form", "text": "Die Zeugin sagt, sie hätte den Täter erkannt, wenn es hell gewesen wäre.", "begruendung": "Der Konjunktiv II des Originals bleibt erhalten. Der Satz ist fehlerfrei." },
+    { "id": "3.6-20", "kurs": 3, "lektion": "3.6", "typ": "fehler", "stufe": 2, "fehlertyp": "kj-form", "text": "Laut Polizei [[seien=>sind|kj-form]] zwei Personen verletzt.", "begruendung": "Nach laut steht der Indikativ, denn die Quelle ist genannt: sind." },
+    { "id": "3.6-21", "kurs": 3, "lektion": "3.6", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-form", "vorlage": "Der Gast sagt: „Ich hätte gern einen Tee.“", "loesungen": ["Der Gast sagt, er hätte gern einen Tee.", "Der Gast sagt, dass er gern einen Tee hätte."], "kern": ["hätte"], "begruendung": "Der Konjunktiv II des Originals bleibt erhalten: hätte. Aus ich wird er." },
+    { "id": "3.6-22", "kurs": 3, "lektion": "3.6", "typ": "umformen", "stufe": 3, "fehlertyp": "kj-form", "vorlage": "Die Autorin sagt: „Ohne meine Lehrerin wäre ich nie Schriftstellerin geworden.“", "loesungen": ["Die Autorin sagt, ohne ihre Lehrerin wäre sie nie Schriftstellerin geworden.", "Die Autorin sagt, sie wäre ohne ihre Lehrerin nie Schriftstellerin geworden.", "Die Autorin sagt, dass sie ohne ihre Lehrerin nie Schriftstellerin geworden wäre."], "kern": ["wäre"], "begruendung": "Der Konjunktiv II wäre bleibt erhalten. Aus meine wird ihre, aus ich wird sie." },
+    { "id": "3.6-23", "kurs": 3, "lektion": "3.6", "typ": "umformen", "stufe": 1, "fehlertyp": "kj-indikativ", "vorlage": "Der Politiker erklärt: „Die Krise ist vorbei.“", "loesungen": ["Der Politiker erklärt, die Krise sei vorbei.", "Der Politiker erklärt, dass die Krise vorbei sei."], "kern": ["sei"], "begruendung": "Mit und ohne dass steht der Konjunktiv I sei. Er unterscheidet sich vom Indikativ ist." },
+    { "id": "3.6-24", "kurs": 3, "lektion": "3.6", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-form", "vorlage": "Der Schüler sagt: „Ich würde gern mitkommen.“", "loesungen": ["Der Schüler sagt, er würde gern mitkommen.", "Der Schüler sagt, dass er gern mitkommen würde."], "kern": ["würde"], "begruendung": "Der Konjunktiv II würde steht schon im Original und bleibt erhalten." },
+    { "id": "3.6-25", "kurs": 3, "lektion": "3.6", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-form", "vorlage": "Die Forscherin sagt: „Mit mehr Geld könnten wir schneller arbeiten.“", "loesungen": ["Die Forscherin sagt, mit mehr Geld könnten sie schneller arbeiten.", "Die Forscherin sagt, sie könnten mit mehr Geld schneller arbeiten.", "Die Forscherin sagt, dass sie mit mehr Geld schneller arbeiten könnten."], "kern": ["könnten"], "begruendung": "Der Konjunktiv II könnten bleibt erhalten. Aus wir wird sie." },
+    { "id": "3.6-26", "kurs": 3, "lektion": "3.6", "typ": "umformen", "stufe": 2, "fehlertyp": "kj-form", "vorlage": "Der Kritiker schreibt: „Der Roman hätte ein besseres Ende verdient.“", "loesungen": ["Der Kritiker schreibt, der Roman hätte ein besseres Ende verdient.", "Der Kritiker schreibt, dass der Roman ein besseres Ende verdient hätte."], "kern": ["hätte"], "begruendung": "Der Konjunktiv II hätte steht schon im Original und bleibt erhalten." },
+
+    {
+      "id": "3.7-01", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Kommentar von Clara Wendt: Lesen im digitalen Zeitalter (fiktiv)",
+      "vorlage": "Die Digitalisierung verändert das Lesen grundlegend. Die junge Generation liest heute mehr Texte als früher, aber sie liest flüchtiger. Ein Roman verlangt Geduld, und diese Geduld fehlt im Alltag oft. Die Schule muss deshalb Räume für langsames Lesen schaffen.",
+      "muster": "Clara Wendt vertritt die Auffassung, die Digitalisierung verändere das Lesen grundlegend. Die junge Generation lese heute zwar mehr Texte als früher, doch sie lese flüchtiger. Die Autorin betont, ein Roman verlange Geduld, und diese Geduld fehle im Alltag oft. Deshalb müsse die Schule ihrer Ansicht nach Räume für langsames Lesen schaffen.",
+      "pruefungen": [
+        { "label": "verändert → verändere", "erwartet": ["verändere"], "vermeiden": ["verändert"], "fehlertyp": "kj-indikativ" },
+        { "label": "liest → lese", "erwartet": ["lese"], "vermeiden": ["liest"], "fehlertyp": "kj-indikativ" },
+        { "label": "liest → lese (zweites Vorkommen)", "erwartet": ["lese"], "vermeiden": ["liest"], "fehlertyp": "kj-indikativ" },
+        { "label": "verlangt → verlange", "erwartet": ["verlange"], "vermeiden": ["verlangt"], "fehlertyp": "kj-indikativ" },
+        { "label": "fehlt → fehle", "erwartet": ["fehle"], "vermeiden": ["fehlt"], "fehlertyp": "kj-indikativ" },
+        { "label": "muss → müsse", "erwartet": ["müsse"], "vermeiden": ["muss"], "fehlertyp": "kj-indikativ" }
+      ],
+      "begruendung": "In der 3. Person Singular unterscheidet sich der Konjunktiv I überall vom Indikativ: verändere, lese, verlange, fehle, müsse. Die Ausweichkette endet also jedes Mal beim ersten Schritt."
+    },
+    {
+      "id": "3.7-02", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Rede des Bürgermeisters Jonas Albrecht zur Eröffnung der Stadtbibliothek (fiktiv)",
+      "vorlage": "Ich freue mich über diesen Tag. Die neue Bibliothek ist mehr als ein Haus voller Bücher. Sie bietet allen Menschen einen Ort der Begegnung. Die Stadt hat lange auf diesen Moment gewartet.",
+      "muster": "Bürgermeister Jonas Albrecht erklärt, er freue sich über diesen Tag. Die neue Bibliothek sei mehr als ein Haus voller Bücher. Er hebt hervor, sie biete allen Menschen einen Ort der Begegnung. Die Stadt habe lange auf diesen Moment gewartet, betont Albrecht.",
+      "pruefungen": [
+        { "label": "ich freue mich → er freue sich", "erwartet": ["freue sich", "sich … freue"], "vermeiden": ["ich", "mich"], "fehlertyp": "kj-pronomen" },
+        { "label": "ist → sei", "erwartet": ["sei"], "fehlertyp": "kj-indikativ" },
+        { "label": "bietet → biete", "erwartet": ["biete"], "vermeiden": ["bietet"], "fehlertyp": "kj-indikativ" },
+        { "label": "hat gewartet → habe gewartet", "erwartet": ["habe … gewartet", "gewartet habe"], "fehlertyp": "kj-zeit" }
+      ],
+      "begruendung": "Aus ich wird er, aus mich wird sich. Die Formen freue, sei, biete und habe gewartet unterscheiden sich vom Indikativ und bleiben im Konjunktiv I."
+    },
+    {
+      "id": "3.7-03", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 3, "fehlertyp": "kj-indikativ",
+      "quelle": "Essay der Philosophin Mira Saalfeld: Über die Freiheit (fiktiv)",
+      "vorlage": "Freiheit bedeutet nicht, alles tun zu dürfen. Wer frei ist, trägt Verantwortung für sein Handeln. Viele verwechseln Freiheit mit Beliebigkeit. Diese Verwechslung gefährdet das Zusammenleben.",
+      "muster": "Mira Saalfeld stellt fest, Freiheit bedeute nicht, alles tun zu dürfen. Wer frei sei, trage Verantwortung für sein Handeln. Die Philosophin kritisiert, viele würden Freiheit mit Beliebigkeit verwechseln. Diese Verwechslung gefährde nach ihrer Auffassung das Zusammenleben.",
+      "pruefungen": [
+        { "label": "bedeutet → bedeute", "erwartet": ["bedeute"], "vermeiden": ["bedeutet"], "fehlertyp": "kj-indikativ" },
+        { "label": "ist → sei", "erwartet": ["sei"], "fehlertyp": "kj-indikativ" },
+        { "label": "trägt → trage", "erwartet": ["trage"], "vermeiden": ["trägt"], "fehlertyp": "kj-indikativ" },
+        { "label": "verwechseln → würden verwechseln", "erwartet": ["würden … verwechseln", "verwechseln würden"], "vermeiden": ["verwechselten"], "fehlertyp": "kj-ausweich" },
+        { "label": "gefährdet → gefährde", "erwartet": ["gefährde"], "vermeiden": ["gefährdet"], "fehlertyp": "kj-indikativ" }
+      ],
+      "begruendung": "Im Singular reicht der Konjunktiv I: bedeute, sei, trage, gefährde. Bei viele verwechseln gleicht der Konjunktiv I dem Indikativ und der Konjunktiv II dem Präteritum, also würden verwechseln."
+    },
+    {
+      "id": "3.7-04", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 3, "fehlertyp": "kj-ausweich",
+      "quelle": "Interview mit dem Klimaforscher Tobias Renner (fiktiv)",
+      "vorlage": "Ich halte die Lage für ernst. Die Temperaturen steigen schneller als erwartet. Die Politik hat zu lange gezögert. Noch lässt sich das Schlimmste verhindern.",
+      "muster": "Tobias Renner erklärt, er halte die Lage für ernst. Die Temperaturen würden schneller steigen als erwartet. Der Forscher kritisiert, die Politik habe zu lange gezögert. Noch lasse sich das Schlimmste aber verhindern, betont Renner.",
+      "pruefungen": [
+        { "label": "ich halte → er halte", "erwartet": ["halte"], "vermeiden": ["ich"], "fehlertyp": "kj-pronomen" },
+        { "label": "steigen → würden steigen", "erwartet": ["würden … steigen", "steigen würden"], "vermeiden": ["stiegen"], "fehlertyp": "kj-ausweich" },
+        { "label": "hat gezögert → habe gezögert", "erwartet": ["habe … gezögert", "gezögert habe"], "fehlertyp": "kj-zeit" },
+        { "label": "lässt sich → lasse sich", "erwartet": ["lasse"], "vermeiden": ["lässt"], "fehlertyp": "kj-indikativ" }
+      ],
+      "begruendung": "Bei die Temperaturen steigen gleicht der Konjunktiv I dem Indikativ und der Konjunktiv II dem Präteritum: würden steigen. Sonst reicht der Konjunktiv I: halte, habe gezögert, lasse."
+    },
+    {
+      "id": "3.7-05", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Leitartikel von Sophie Brandt: Die Zukunft der Innenstädte (fiktiv)",
+      "vorlage": "Die Innenstadt verödet. Ein Geschäft nach dem anderen schließt, weil die Kundschaft im Internet bestellt. Eine Stadt ohne Läden verliert ihr Gesicht. Die Kommunen sollten deshalb neue Ideen fördern.",
+      "muster": "Sophie Brandt beklagt, die Innenstadt veröde. Ein Geschäft nach dem anderen schließe, weil die Kundschaft im Internet bestelle. Die Autorin betont, eine Stadt ohne Läden verliere ihr Gesicht. Die Kommunen sollten deshalb ihrer Ansicht nach neue Ideen fördern.",
+      "pruefungen": [
+        { "label": "verödet → veröde", "erwartet": ["veröde"], "vermeiden": ["verödet"], "fehlertyp": "kj-indikativ" },
+        { "label": "schließt → schließe", "erwartet": ["schließe"], "vermeiden": ["schließt"], "fehlertyp": "kj-indikativ" },
+        { "label": "bestellt → bestelle", "erwartet": ["bestelle"], "vermeiden": ["bestellt"], "fehlertyp": "kj-indikativ" },
+        { "label": "verliert → verliere", "erwartet": ["verliere"], "vermeiden": ["verliert"], "fehlertyp": "kj-indikativ" },
+        { "label": "sollten bleibt sollten", "erwartet": ["sollten"], "vermeiden": ["sollen", "solle"], "fehlertyp": "kj-form" }
+      ],
+      "begruendung": "Im Singular gilt der Konjunktiv I: veröde, schließe, bestelle, verliere. Sollten steht schon im Konjunktiv II und bleibt erhalten."
+    },
+    {
+      "id": "3.7-06", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 3, "fehlertyp": "kj-zeit",
+      "quelle": "Vortrag der Historikerin Elif Kaya über die Weimarer Republik (fiktiv)",
+      "vorlage": "Die Weimarer Republik scheiterte nicht an einem einzigen Fehler. Die Wirtschaftskrise schwächte das Vertrauen in die Demokratie. Viele Eliten lehnten die Republik von Anfang an ab. Daraus lässt sich bis heute viel lernen.",
+      "muster": "Elif Kaya legt dar, die Weimarer Republik sei nicht an einem einzigen Fehler gescheitert. Die Wirtschaftskrise habe das Vertrauen in die Demokratie geschwächt. Die Historikerin hebt hervor, viele Eliten hätten die Republik von Anfang an abgelehnt. Daraus lasse sich bis heute viel lernen.",
+      "pruefungen": [
+        { "label": "scheiterte → sei gescheitert", "erwartet": ["sei … gescheitert", "gescheitert sei"], "vermeiden": ["scheiterte"], "fehlertyp": "kj-zeit" },
+        { "label": "schwächte → habe geschwächt", "erwartet": ["habe … geschwächt", "geschwächt habe"], "vermeiden": ["schwächte"], "fehlertyp": "kj-zeit" },
+        { "label": "lehnten ab → hätten abgelehnt", "erwartet": ["hätten … abgelehnt", "abgelehnt hätten"], "vermeiden": ["lehnten"], "fehlertyp": "kj-zeit" },
+        { "label": "lässt sich → lasse sich", "erwartet": ["lasse"], "vermeiden": ["lässt"], "fehlertyp": "kj-indikativ" }
+      ],
+      "begruendung": "Jede Vergangenheit wird zu habe oder sei mit Partizip II: sei gescheitert, habe geschwächt. Im Plural gleicht haben dem Indikativ, also hätten abgelehnt."
+    },
+    {
+      "id": "3.7-07", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Gastbeitrag der Schulleiterin Ruth Engel: Handys im Unterricht (fiktiv)",
+      "vorlage": "Ein generelles Handyverbot löst kein Problem. Das Smartphone gehört zum Leben der Jugendlichen. Die Schule soll den verantwortungsvollen Umgang damit lehren. Ich habe mit klaren Regeln gute Erfahrungen gemacht.",
+      "muster": "Ruth Engel vertritt die Ansicht, ein generelles Handyverbot löse kein Problem. Das Smartphone gehöre zum Leben der Jugendlichen. Die Schulleiterin fordert, die Schule solle den verantwortungsvollen Umgang damit lehren. Sie habe mit klaren Regeln gute Erfahrungen gemacht.",
+      "pruefungen": [
+        { "label": "löst → löse", "erwartet": ["löse"], "vermeiden": ["löst"], "fehlertyp": "kj-indikativ" },
+        { "label": "gehört → gehöre", "erwartet": ["gehöre"], "vermeiden": ["gehört"], "fehlertyp": "kj-indikativ" },
+        { "label": "soll → solle", "erwartet": ["solle"], "vermeiden": ["soll"], "fehlertyp": "kj-indikativ" },
+        { "label": "ich habe gemacht → sie habe gemacht", "erwartet": ["habe … gemacht", "gemacht habe"], "vermeiden": ["ich"], "fehlertyp": "kj-pronomen" }
+      ],
+      "begruendung": "Der Konjunktiv I unterscheidet sich überall vom Indikativ: löse, gehöre, solle, habe gemacht. Aus ich wird sie."
+    },
+    {
+      "id": "3.7-08", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Kommentar von Lukas Hoffmann: Ehrenamt (fiktiv)",
+      "vorlage": "Ohne Ehrenamt bricht unsere Gesellschaft zusammen. Wer sich engagiert, stärkt den Zusammenhalt. Trotzdem findet freiwillige Arbeit kaum Anerkennung. Der Staat muss Engagement stärker würdigen.",
+      "muster": "Lukas Hoffmann warnt, ohne Ehrenamt breche die Gesellschaft zusammen. Wer sich engagiere, stärke den Zusammenhalt. Der Autor kritisiert, trotzdem finde freiwillige Arbeit kaum Anerkennung. Der Staat müsse Engagement stärker würdigen.",
+      "pruefungen": [
+        { "label": "bricht zusammen → breche zusammen", "erwartet": ["breche … zusammen", "zusammenbreche"], "vermeiden": ["bricht"], "fehlertyp": "kj-indikativ" },
+        { "label": "unsere → die", "erwartet": ["Gesellschaft"], "vermeiden": ["unsere"], "fehlertyp": "kj-pronomen" },
+        { "label": "engagiert → engagiere", "erwartet": ["engagiere"], "fehlertyp": "kj-indikativ" },
+        { "label": "stärkt → stärke", "erwartet": ["stärke"], "vermeiden": ["stärkt"], "fehlertyp": "kj-indikativ" },
+        { "label": "findet → finde", "erwartet": ["finde"], "vermeiden": ["findet"], "fehlertyp": "kj-indikativ" },
+        { "label": "muss → müsse", "erwartet": ["müsse"], "vermeiden": ["muss"], "fehlertyp": "kj-indikativ" }
+      ],
+      "begruendung": "Im Singular reicht der Konjunktiv I: breche, engagiere, stärke, finde, müsse. Aus unsere Gesellschaft wird die Gesellschaft."
+    },
+    {
+      "id": "3.7-09", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 3, "fehlertyp": "kj-pronomen",
+      "quelle": "Rede der Abiturientin Hanna Vogt bei der Abschlussfeier (fiktiv)",
+      "vorlage": "Wir haben in den letzten Jahren viel gelernt. Die Schule hat uns nicht nur Wissen vermittelt. Sie hat uns auch das Zuhören beigebracht. Ich danke allen Lehrerinnen und Lehrern dafür.",
+      "muster": "Hanna Vogt betont, die Abiturienten hätten in den letzten Jahren viel gelernt. Die Schule habe ihnen nicht nur Wissen vermittelt. Sie habe ihnen auch das Zuhören beigebracht, hebt die Rednerin hervor. Sie danke allen Lehrerinnen und Lehrern dafür.",
+      "pruefungen": [
+        { "label": "wir haben gelernt → sie hätten gelernt", "erwartet": ["hätten … gelernt", "gelernt hätten"], "vermeiden": ["wir"], "fehlertyp": "kj-ausweich" },
+        { "label": "uns → ihnen", "erwartet": ["ihnen"], "vermeiden": ["uns", "unser", "unsere"], "fehlertyp": "kj-pronomen" },
+        { "label": "hat vermittelt → habe vermittelt", "erwartet": ["habe … vermittelt", "vermittelt habe"], "fehlertyp": "kj-zeit" },
+        { "label": "hat beigebracht → habe beigebracht", "erwartet": ["habe … beigebracht", "beigebracht habe"], "fehlertyp": "kj-zeit" },
+        { "label": "ich danke → sie danke", "erwartet": ["danke"], "vermeiden": ["ich"], "fehlertyp": "kj-pronomen" }
+      ],
+      "begruendung": "Aus wir haben gelernt wird sie hätten gelernt, denn haben gleicht im Plural dem Indikativ. Aus uns wird ihnen, aus ich danke wird sie danke."
+    },
+    {
+      "id": "3.7-10", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Fachartikel des Sprachwissenschaftlers Paul Lindner: Jugendsprache (fiktiv)",
+      "vorlage": "Jugendsprache bedroht die deutsche Sprache nicht. Sie beweist vielmehr, wie lebendig eine Sprache ist. Jede Generation entwickelt eigene Ausdrücke. Mancher Ausdruck verschwindet nach wenigen Jahren wieder.",
+      "muster": "Paul Lindner stellt fest, Jugendsprache bedrohe die deutsche Sprache nicht. Sie beweise vielmehr, wie lebendig eine Sprache sei. Der Sprachwissenschaftler erläutert, jede Generation entwickle eigene Ausdrücke. Mancher Ausdruck verschwinde nach wenigen Jahren wieder.",
+      "pruefungen": [
+        { "label": "bedroht → bedrohe", "erwartet": ["bedrohe"], "vermeiden": ["bedroht"], "fehlertyp": "kj-indikativ" },
+        { "label": "beweist → beweise", "erwartet": ["beweise"], "vermeiden": ["beweist"], "fehlertyp": "kj-indikativ" },
+        { "label": "ist → sei", "erwartet": ["sei"], "fehlertyp": "kj-indikativ" },
+        { "label": "entwickelt → entwickle", "erwartet": ["entwickle", "entwickele"], "vermeiden": ["entwickelt"], "fehlertyp": "kj-indikativ" },
+        { "label": "verschwindet → verschwinde", "erwartet": ["verschwinde"], "vermeiden": ["verschwindet"], "fehlertyp": "kj-indikativ" }
+      ],
+      "begruendung": "Auch der eingebettete Satz wie lebendig eine Sprache sei steht im Konjunktiv. Bei entwickeln sind entwickle und entwickele gleichermaßen richtig."
+    },
+    {
+      "id": "3.7-11", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Theaterkritik von Nora Seidel zur Neuinszenierung des „Faust“ (fiktiv)",
+      "vorlage": "Die Inszenierung wagt viel. Der Regisseur verlegt die Handlung in ein Rechenzentrum. Nicht jede Idee überzeugt, doch der Abend bleibt spannend. Das Publikum feierte die Schauspieler mit langem Applaus.",
+      "muster": "Nora Seidel urteilt, die Inszenierung wage viel. Der Regisseur verlege die Handlung in ein Rechenzentrum. Die Kritikerin räumt ein, nicht jede Idee überzeuge, doch der Abend bleibe spannend. Das Publikum habe die Schauspieler mit langem Applaus gefeiert.",
+      "pruefungen": [
+        { "label": "wagt → wage", "erwartet": ["wage"], "vermeiden": ["wagt"], "fehlertyp": "kj-indikativ" },
+        { "label": "verlegt → verlege", "erwartet": ["verlege"], "vermeiden": ["verlegt"], "fehlertyp": "kj-indikativ" },
+        { "label": "überzeugt → überzeuge", "erwartet": ["überzeuge"], "fehlertyp": "kj-indikativ" },
+        { "label": "bleibt → bleibe", "erwartet": ["bleibe"], "vermeiden": ["bleibt"], "fehlertyp": "kj-indikativ" },
+        { "label": "feierte → habe gefeiert", "erwartet": ["habe … gefeiert", "gefeiert habe"], "vermeiden": ["feierte"], "fehlertyp": "kj-zeit" }
+      ],
+      "begruendung": "Im Präsens reicht der Konjunktiv I: wage, verlege, überzeuge, bleibe. Das Präteritum feierte wird zu habe gefeiert."
+    },
+    {
+      "id": "3.7-12", "kurs": 3, "lektion": "3.7", "typ": "textwiedergabe", "stufe": 2, "fehlertyp": "kj-indikativ",
+      "quelle": "Stellungnahme des Datenschutzbeauftragten Felix Moser (fiktiv)",
+      "vorlage": "Persönliche Daten sind ein wertvolles Gut. Fast jede App sammelt mehr Informationen als nötig. Ich fordere deshalb strengere Kontrollen. Wer Daten missbraucht, muss mit hohen Strafen rechnen.",
+      "muster": "Felix Moser betont, persönliche Daten seien ein wertvolles Gut. Fast jede App sammle mehr Informationen als nötig. Er fordere deshalb strengere Kontrollen. Moser warnt, wer Daten missbrauche, müsse mit hohen Strafen rechnen.",
+      "pruefungen": [
+        { "label": "sind → seien", "erwartet": ["seien"], "fehlertyp": "kj-indikativ" },
+        { "label": "sammelt → sammle", "erwartet": ["sammle", "sammele"], "vermeiden": ["sammelt"], "fehlertyp": "kj-indikativ" },
+        { "label": "ich fordere → er fordere", "erwartet": ["fordere", "fordert"], "vermeiden": ["ich"], "fehlertyp": "kj-pronomen" },
+        { "label": "missbraucht → missbrauche", "erwartet": ["missbrauche"], "vermeiden": ["missbraucht"], "fehlertyp": "kj-indikativ" },
+        { "label": "muss → müsse", "erwartet": ["müsse"], "vermeiden": ["muss"], "fehlertyp": "kj-indikativ" }
+      ],
+      "begruendung": "Seien unterscheidet sich vom Indikativ sind; im Singular reicht der Konjunktiv I: sammle, fordere, missbrauche, müsse. Aus ich wird er."
+    }
+  ]
+}

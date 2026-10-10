@@ -54,7 +54,7 @@ export function Icon({ name, title, className }: { name: keyof typeof P | string
       strokeLinejoin="round"
       aria-hidden={title ? undefined : true}
       role={title ? 'img' : undefined}
-      className={className}
+      className={className ? `ico ${className}` : 'ico'}
     >
       {title ? <title>{title}</title> : null}
       {P[name] ?? P.dot}

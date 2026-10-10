@@ -244,6 +244,17 @@ textarea {
   }
 }
 
+svg.ico {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.title-line,
+.sub-line {
+  display: block;
+}
+
 /* ---------- Grundgerüst ---------- */
 
 .shell {
@@ -1360,7 +1371,7 @@ a.stat:hover .value {
   display: inline-block;
   position: relative;
   vertical-align: baseline;
-  min-width: 22px;
+  min-width: 19px;
   height: 1.3em;
   margin: 0 -2px;
   padding: 0;

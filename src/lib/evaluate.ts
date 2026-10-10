@@ -366,6 +366,26 @@ const PRAETERITUM_EINLEITUNGEN = [
   'behaupteten', 'erklärten', 'meinten', 'schrieben',
 ];
 
+/** Zählt, wie oft ein Muster vorkommt (verschiedene Anfangspositionen). */
+export function countPattern(words: string[], pattern: string): number {
+  const parts = pattern.split('…').map((x) => x.trim().split(/\s+/).filter(Boolean));
+  const rest = (pos: number, part: number): boolean => {
+    if (part >= parts.length) return true;
+    const seq = parts[part];
+    const maxStart = Math.min(words.length - seq.length, pos + 8);
+    for (let start = pos; start <= maxStart; start++) {
+      if (seq.every((w, k) => tokenEq(words[start + k], w)) && rest(start + seq.length, part + 1)) return true;
+    }
+    return false;
+  };
+  let n = 0;
+  const first = parts[0];
+  for (let s = 0; s + first.length <= words.length; s++) {
+    if (first.every((w, k) => tokenEq(words[s + k], w)) && rest(s + first.length, 1)) n++;
+  }
+  return n;
+}
+
 export interface PruefEval {
   richtig: boolean;
   checks: { label: string; ok: boolean; fehlertyp: string; detail?: string }[];
@@ -375,8 +395,14 @@ export interface PruefEval {
 
 export function evalTextwiedergabe(answer: string, pruefungen: Pruefung[], saetze: number): PruefEval {
   const words = wordTokens(canonicalVariants(normalizeAnswer(answer)));
+  // Gleiche Erwartungen mehrfach: Jede Prüfstelle braucht ihr eigenes Vorkommen.
+  const used = new Map<string, number>();
   const checks = pruefungen.map((p) => {
-    const hit = p.erwartet.some((e) => matchPattern(words, e));
+    const key = p.erwartet.join('|');
+    const k = used.get(key) ?? 0;
+    used.set(key, k + 1);
+    const total = p.erwartet.reduce((sum, e) => sum + countPattern(words, e), 0);
+    const hit = total > k;
     const bad = (p.vermeiden ?? []).filter((v) => matchPattern(words, v));
     const ok = hit && bad.length === 0;
     let detail: string | undefined;

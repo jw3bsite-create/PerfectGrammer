@@ -229,9 +229,11 @@ export function SessionView() {
         {shownTask && shownItem ? (
           <>
             <div className="task-meta">
-              <span>{s.titel}</span>
-              {s.art !== 'lektion' ? <span>· Lektion {shownTask.lektion}</span> : null}
-              <span>· {shownItem.modus === 'fehlertyp' ? TYP_LABEL.fehlertyp : TYP_LABEL[shownTask.typ]}</span>
+              <span>
+                {[s.titel, s.art !== 'lektion' ? `Lektion ${shownTask.lektion}` : null, shownItem.modus === 'fehlertyp' ? TYP_LABEL.fehlertyp : TYP_LABEL[shownTask.typ]]
+                  .filter(Boolean)
+                  .join(' · ')}
+              </span>
               {shownTask.geprueft === false ? <span className="badge outline">eigene Aufgabe</span> : null}
             </div>
             {guided && course && !answered ? (
@@ -333,7 +335,7 @@ function Feedback({ a, onRule, onNext, onOverride, last }: { a: Answered; onRule
           {lesson ? (
             <button className="linklike small" onClick={onRule}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                <Icon name="card" className="" /> Regelkarte {lesson.id} {lesson.titel}
+                <Icon name="card" /> Regelkarte {lesson.id} {lesson.titel}
               </span>
             </button>
           ) : null}
