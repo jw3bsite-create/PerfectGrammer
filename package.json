@@ -1,0 +1,34 @@
+{
+  "name": "sprachrichtigkeit",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lern-App für deutsche Rechtschreibung, Zeichensetzung und Grammatik – Abitur-Niveau, vollständig offline.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.app.json --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:content": "vitest run tests/content.test.ts",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "dependencies": {
+    "idb": "^8.0.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^29.1.1",
+    "playwright-core": "^1.64.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.0.3"
+  }
+}
