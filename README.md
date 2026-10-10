@@ -18,6 +18,14 @@ npm run preview    # gebaute App lokal ansehen
 
 `dist/` ist eine statische Website mit relativen Pfaden. Sie läuft auf jedem Webserver mit HTTPS, auch in einem Unterordner (etwa GitHub Pages). Installation auf dem iPad: Seite in Safari öffnen, „Teilen“ → „Zum Home-Bildschirm“. Danach startet die App ohne Netz.
 
+## Unter Windows mit automatischen Updates
+
+1. [Node.js](https://nodejs.org) (Version „LTS“) installieren.
+2. Den Branch als ZIP herunterladen, entpacken und im Ordner mit `package.json` die Datei **`Windows einrichten.bat`** doppelklicken.
+3. Auf dem Desktop liegt danach die Verknüpfung **„Sprachrichtigkeit“**. Sie prüft bei jedem Start, ob es auf GitHub eine neue Version gibt, lädt sie bei Bedarf und öffnet die App unter `http://localhost:5173`.
+
+Die App liegt danach in `%USERPROFILE%\Sprachrichtigkeit`; der entpackte Download-Ordner kann gelöscht werden. Die Lerndaten liegen im Browser und bleiben bei Updates erhalten. Ohne Internet startet die zuletzt geladene Version.
+
 ## Prüfen
 
 ```bash

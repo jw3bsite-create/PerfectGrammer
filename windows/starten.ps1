@@ -1,0 +1,128 @@
+﻿# Startet Sprachrichtigkeit und holt vorher automatisch die neueste Version von GitHub.
+# Wird über die Verknüpfung „Sprachrichtigkeit“ auf dem Desktop aufgerufen (siehe einrichten.ps1).
+# Die Lerndaten liegen im Browser unter http://localhost:5173 und bleiben bei jedem Update erhalten.
+
+$ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue'
+
+$Repo = 'jw3bsite-create/PerfectGrammer'
+$Branch = 'claude/sprachrichtigkeit-app-xzd9cl'
+$Port = 5173
+$Base = if ($env:SPRACHRICHTIGKEIT_HOME) { $env:SPRACHRICHTIGKEIT_HOME } else { Join-Path ([Environment]::GetFolderPath('UserProfile')) 'Sprachrichtigkeit' }
+$App = Join-Path $Base 'app'
+$VersionFile = Join-Path $Base 'version.txt'
+$Npm = if ($env:OS -eq 'Windows_NT') { 'npm.cmd' } else { 'npm' }
+
+try { $Host.UI.RawUI.WindowTitle = 'Sprachrichtigkeit' } catch { }
+try { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 } catch { }
+
+function Stop-WithMessage([string]$Text) {
+  Write-Host ''
+  Write-Host $Text -ForegroundColor Red
+  Write-Host ''
+  Read-Host 'Enter drücken zum Schließen'
+  exit 1
+}
+
+function Test-PortInUse {
+  try {
+    $client = New-Object Net.Sockets.TcpClient
+    $client.Connect('127.0.0.1', $Port)
+    $client.Close()
+    return $true
+  } catch {
+    return $false
+  }
+}
+
+Write-Host ''
+Write-Host '  Sprachrichtigkeit' -ForegroundColor Cyan
+Write-Host ''
+
+# Läuft die App schon (zweites Fenster), nur den Browser öffnen.
+if (Test-PortInUse) {
+  Write-Host 'Die App läuft bereits. Der Browser wird geöffnet.'
+  try { Start-Process "http://localhost:$Port/" } catch { Write-Host "Bitte im Browser http://localhost:$Port öffnen." }
+  Start-Sleep -Seconds 2
+  exit 0
+}
+
+if (-not (Get-Command $Npm -ErrorAction SilentlyContinue)) {
+  Stop-WithMessage 'Node.js wurde nicht gefunden. Bitte von https://nodejs.org die Version „LTS“ installieren und danach erneut starten.'
+}
+
+New-Item -ItemType Directory -Force -Path $Base | Out-Null
+
+# Neueste Version auf GitHub abfragen
+$latest = $null
+Write-Host 'Suche nach Updates …'
+try {
+  $info = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repo/commits/$Branch" -Headers @{ 'User-Agent' = 'Sprachrichtigkeit' } -TimeoutSec 20
+  $latest = [string]$info.sha
+} catch {
+  Write-Host 'Keine Verbindung zu GitHub. Die vorhandene Version wird gestartet.' -ForegroundColor Yellow
+}
+
+$current = ''
+if (Test-Path $VersionFile) { $current = (Get-Content $VersionFile -Raw).Trim() }
+$installed = Test-Path (Join-Path $App 'package.json')
+
+if ($latest -and ($latest -ne $current -or -not $installed)) {
+  if ($installed) { Write-Host 'Neue Version gefunden. Sie wird geladen …' -ForegroundColor Green }
+  else { Write-Host 'Die App wird zum ersten Mal eingerichtet. Das dauert ein bis zwei Minuten …' -ForegroundColor Green }
+
+  $tmp = Join-Path ([IO.Path]::GetTempPath()) ('sprachrichtigkeit-' + [guid]::NewGuid().ToString('N'))
+  New-Item -ItemType Directory -Force -Path $tmp | Out-Null
+  try {
+    $zip = Join-Path $tmp 'app.zip'
+    Invoke-WebRequest -Uri "https://codeload.github.com/$Repo/zip/$latest" -OutFile $zip -UseBasicParsing -TimeoutSec 120
+    Expand-Archive -Path $zip -DestinationPath $tmp -Force
+    $src = Get-ChildItem -Path $tmp -Directory | Select-Object -First 1
+    if (-not $src -or -not (Test-Path (Join-Path $src.FullName 'package.json'))) { throw 'Das heruntergeladene Archiv ist unvollständig.' }
+
+    # Installierte Pakete mitnehmen, damit „npm install“ schnell bleibt.
+    $oldModules = Join-Path $App 'node_modules'
+    if (Test-Path $oldModules) { Move-Item -Path $oldModules -Destination (Join-Path $src.FullName 'node_modules') }
+    if (Test-Path $App) { Remove-Item -Path $App -Recurse -Force }
+    Move-Item -Path $src.FullName -Destination $App
+  } catch {
+    if (Test-Path $tmp) { Remove-Item -Path $tmp -Recurse -Force -ErrorAction SilentlyContinue }
+    if (-not (Test-Path (Join-Path $App 'package.json'))) { Stop-WithMessage "Das Update konnte nicht geladen werden: $($_.Exception.Message)" }
+    Write-Host "Das Update konnte nicht geladen werden ($($_.Exception.Message)). Die vorhandene Version wird gestartet." -ForegroundColor Yellow
+    $latest = $null
+  }
+  if (Test-Path $tmp) { Remove-Item -Path $tmp -Recurse -Force -ErrorAction SilentlyContinue }
+
+  if ($latest) {
+    Write-Host 'Pakete werden installiert …'
+    Push-Location $App
+    & $Npm install --no-audit --no-fund
+    $ok = ($LASTEXITCODE -eq 0)
+    Pop-Location
+    if (-not $ok) { Stop-WithMessage 'Die Installation ist fehlgeschlagen. Beim nächsten Start wird es erneut versucht.' }
+    Set-Content -Path $VersionFile -Value $latest
+
+    # Startskript und Symbol selbst aktuell halten (gilt ab dem nächsten Start).
+    foreach ($f in @('starten.ps1', 'sprachrichtigkeit.ico')) {
+      $neu = Join-Path $App (Join-Path 'windows' $f)
+      if (Test-Path $neu) { Copy-Item -Path $neu -Destination (Join-Path $Base $f) -Force }
+    }
+    Write-Host 'Update abgeschlossen.' -ForegroundColor Green
+  }
+} elseif ($latest) {
+  Write-Host 'Die App ist auf dem neuesten Stand.'
+}
+
+if (-not (Test-Path (Join-Path $App 'package.json'))) {
+  Stop-WithMessage 'Die App ist noch nicht installiert. Für den ersten Start wird eine Internetverbindung gebraucht.'
+}
+
+if ($env:SPRACHRICHTIGKEIT_NUR_UPDATE) { exit 0 }
+
+Write-Host ''
+Write-Host 'Die App öffnet sich gleich im Browser.' -ForegroundColor Cyan
+Write-Host 'Dieses Fenster offen lassen, solange du lernst. Zum Beenden einfach schließen.'
+Write-Host ''
+Set-Location $App
+& $Npm run dev -- --open --port $Port --strictPort
+if ($LASTEXITCODE -ne 0) { Stop-WithMessage 'Die App wurde mit einem Fehler beendet. Die Meldung steht oben.' }
