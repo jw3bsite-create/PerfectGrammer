@@ -52,7 +52,7 @@
       "id": "6.5",
       "titel": "Nomen und Listen",
       "regelkarte": {
-        "regel": "Nominalisierte Wortgruppen schreibst du zusammen und groß: das Zustandekommen. Zusammengesetzte Nomen schreibst du immer ohne Leerzeichen: Textanalyse, Gedichtinterpretation. Getrennt bleiben vor allem, nach wie vor, noch einmal, zum Beispiel, so etwas und zu Ende; zusammen schreibst du infolgedessen, stattdessen, trotzdem, zumindest, inwiefern, anhand, außerdem, genauso und umso.",
+        "regel": "Nominalisierte Wortgruppen schreibst du zusammen und groß: das Zustandekommen. Zusammengesetzte Nomen schreibst du immer ohne Leerzeichen: Textanalyse, Gedichtinterpretation. Getrennt bleiben vor allem, nach wie vor, noch einmal, zum Beispiel, so etwas und zu Ende; zusammen schreibst du infolgedessen, stattdessen, trotzdem, zumindest, inwiefern, außerdem, genauso und umso.",
         "probe": "Betonungsprobe: Ein zusammengesetztes Nomen hat einen Hauptton vorn und ist ein Wort. Die Listen lernst du als feste Schreibungen.",
         "beispiele": ["das Zustandekommen", "die Textanalyse", "vor allem, nach wie vor – trotzdem, außerdem"],
         "falle": "Zusammengesetzte Nomen nie mit Leerzeichen: Gedichtinterpretation, nicht Gedicht Interpretation."
@@ -152,7 +152,7 @@
     { "id": "6.5-14", "kurs": 6, "lektion": "6.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-getrennt", "text": "Er hat den Roman nicht [[zuende=>zu Ende|r-getrennt]] gelesen.", "begruendung": "Zu Ende steht auf der Liste der immer getrennten Wörter." },
     { "id": "6.5-15", "kurs": 6, "lektion": "6.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-getrennt", "text": "[[Außer dem=>Außerdem|r-getrennt]] fehlt ein Fazit.", "begruendung": "Außerdem im Sinn von zusätzlich wird immer zusammengeschrieben." },
     { "id": "6.5-16", "kurs": 6, "lektion": "6.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-getrennt", "text": "So etwas habe ich noch nie gelesen.", "begruendung": "So etwas steht auf der Liste der immer getrennten Wörter. Der Satz ist fehlerfrei." },
-    { "id": "6.5-17", "kurs": 6, "lektion": "6.5", "typ": "fehler", "stufe": 2, "fehlertyp": "r-getrennt", "text": "Die Autorin argumentiert [[an Hand=>anhand|r-getrennt]] eines Beispiels.", "begruendung": "Anhand steht auf der Liste der immer zusammengeschriebenen Wörter." },
+    { "id": "6.5-17", "kurs": 6, "lektion": "6.5", "typ": "fehler", "stufe": 2, "fehlertyp": "r-getrennt", "text": "Er las den Roman nicht. [[Statt dessen=>Stattdessen|r-getrennt]] sah er den Film.", "begruendung": "Stattdessen im Sinn von dafür steht auf der Liste der immer zusammengeschriebenen Wörter." },
     { "id": "6.5-18", "kurs": 6, "lektion": "6.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-getrennt", "text": "Der Text überzeugt [[vorallem=>vor allem|r-getrennt]] durch seine Bilder.", "begruendung": "Vor allem steht auf der Liste der immer getrennten Wörter." }
   ]
 }
