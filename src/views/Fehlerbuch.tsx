@@ -351,17 +351,18 @@ function Erfassen() {
     if (!korrektur.trim()) return setFehler('Trag die korrigierte Fassung ein.');
     if (original.trim() === korrektur.trim()) return setFehler('Die korrigierte Fassung gleicht dem Original. Ändere die fehlerhafte Stelle.');
     if (!typ) return setFehler('Wähle einen Fehlertyp.');
-    const { entry, related } = await addManualError({ tag, quelle, original, korrektur, fehlertyp: typ, notiz });
-    setSaved((s) => [entry, ...s]);
-    const lesson = getLesson(entry.lektion);
-    toast(`Gespeichert · Lektion ${lesson?.id ?? entry.lektion} · eigene Aufgabe angelegt · ${related === 1 ? 'eine verwandte Aufgabe' : `${related} verwandte Aufgaben`} in der Wiederholung`);
+    // Formular sofort leeren, damit schnelles Weitertippen nicht vom Speichern überschrieben wird.
     setOriginal('');
     setKorrektur('');
     setNotiz('');
     setTyp('');
     setTypManuell(false);
     if (weiter) origRef.current?.focus();
-    else navigate('/fehlerbuch');
+    const { entry, related } = await addManualError({ tag, quelle, original, korrektur, fehlertyp: typ, notiz });
+    setSaved((s) => [entry, ...s]);
+    const lesson = getLesson(entry.lektion);
+    toast(`Gespeichert · Lektion ${lesson?.id ?? entry.lektion} · eigene Aufgabe angelegt · ${related === 1 ? 'eine verwandte Aufgabe' : `${related} verwandte Aufgaben`} in der Wiederholung`);
+    if (!weiter) navigate('/fehlerbuch');
   };
 
   return (

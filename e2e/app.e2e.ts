@@ -533,6 +533,28 @@ describe('Sprachrichtigkeit im Browser', () => {
     await ctx.close();
   }, 180_000);
 
+  it('Lektion am Stück: Knöpfe der Zusammenfassung führen zur freien Übung und zum Lektionstest', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/lektion/4.1`);
+    await page.getByRole('button', { name: 'Verstanden, zur geführten Übung' }).click();
+    expect(await solveSession(page)).toHaveLength(5);
+    await page.getByRole('button', { name: /Weiter zur freien Übung/ }).click();
+    await page.locator('[data-task]').waitFor();
+    expect(await page.locator('.task-meta').innerText()).toContain('Freie Übung');
+    expect((await solveSession(page)).length).toBeGreaterThanOrEqual(12);
+    // per Enter, wie mit der Tastatur
+    await page.getByRole('button', { name: /Weiter zum Lektionstest/ }).waitFor();
+    await page.keyboard.press('Enter');
+    await page.locator('[data-task]').waitFor();
+    expect(await page.locator('.task-meta').innerText()).toContain('Lektionstest');
+    expect(await solveSession(page)).toHaveLength(10);
+    await page.getByRole('heading', { name: 'Lektionstest bestanden' }).waitFor();
+    await ctx.close();
+  }, 300_000);
+
   it('Lektionstest bis „Sicher“, Kurstest und Kursabschluss', async () => {
     const ctx = await newContext();
     const page = await ctx.newPage();

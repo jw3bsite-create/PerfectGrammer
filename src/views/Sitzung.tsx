@@ -64,6 +64,15 @@ export function SessionView() {
     setTaskStart(Date.now());
   }, [s?.id, index]);
 
+  useEffect(() => {
+    if (s && summary && s.id !== summary.session.id) {
+      setSummary(null);
+      setAnswered(null);
+      submitRef.current = null;
+      window.scrollTo(0, 0);
+    }
+  }, [s, summary]);
+
   // Uhr für Zeitmodus und „Vor der Klausur“
   useEffect(() => {
     if (!s || (!settings.zeitmodus && !s.endetUm)) return;
@@ -171,7 +180,9 @@ export function SessionView() {
     submitRef.current = fn;
   }, []);
 
-  if (summary) return <SummaryView session={summary.session} summary={summary.summary} />;
+  // Startet die Zusammenfassung eine neue Sitzung (etwa „Weiter zum Lektionstest“), gilt die alte nicht mehr.
+  const summaryCurrent = summary && (!s || s.id === summary.session.id);
+  if (summaryCurrent) return <SummaryView session={summary.session} summary={summary.summary} />;
 
   if (!s) {
     return (
