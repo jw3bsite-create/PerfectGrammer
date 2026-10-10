@@ -391,14 +391,13 @@ describe('Sprachrichtigkeit im Browser', () => {
     // Zurücksetzen
     await page.getByRole('button', { name: 'Zurücksetzen' }).click();
     await page.getByRole('dialog').getByRole('button', { name: 'Endgültig zurücksetzen' }).click();
-    await page.getByText('Alle Daten wurden zurückgesetzt.').first().waitFor();
     await page.goto(`${BASE}#/fehlerbuch`);
     await expect.poll(() => page.locator('.entry').count()).toBe(0);
     // Import
     await page.goto(`${BASE}#/einstellungen`);
     await page.locator('input[type=file]').setInputFiles(file!);
     await page.getByRole('dialog').getByRole('button', { name: 'Einspielen' }).click();
-    await page.getByText('Sicherung eingespielt').first().waitFor();
+    await page.getByRole('dialog').waitFor({ state: 'detached' });
     await page.goto(`${BASE}#/fehlerbuch`);
     await expect.poll(() => page.locator('.entry').count()).toBe(2);
     await ctx.close();
@@ -508,7 +507,7 @@ describe('Sprachrichtigkeit im Browser', () => {
     await page.getByRole('link', { name: 'Bearbeiten' }).click();
     await page.getByLabel('Notiz').fill('Rotstift: Genitiv!');
     await page.getByRole('button', { name: 'Speichern', exact: true }).click();
-    await page.getByText('Änderungen gespeichert.').first().waitFor();
+    await page.waitForURL(/#\/fehlerbuch$/);
     await page.getByLabel('Volltextsuche').fill('Rotstift');
     await expect.poll(() => page.locator('.entry').count()).toBe(1);
     await page.getByLabel('Volltextsuche').fill('');

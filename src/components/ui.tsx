@@ -138,9 +138,10 @@ const toastListeners = new Set<ToastListener>();
 export function toast(msg: string) {
   for (const l of toastListeners) l(msg);
   window.clearTimeout(toastTimer);
+  // Längere Meldungen bleiben länger stehen, damit sie in Ruhe gelesen werden können.
   toastTimer = window.setTimeout(() => {
     for (const l of toastListeners) l(null);
-  }, 3200);
+  }, Math.max(3200, msg.length * 60));
 }
 
 export function ToastHost() {
