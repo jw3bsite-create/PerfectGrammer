@@ -45,6 +45,7 @@ Diese Liste nennt jede Stelle, an der das Regelwerk mehrere Fassungen zulässt o
 | *die anderen, die vielen* | klein; Großschreibung ebenfalls erlaubt | Beide Fassungen richtig; als Prüfstelle kommen sie nicht vor. |
 | *das Gleiche* als Nomen | groß | In Kurs 9 erscheint nur die Fügung mit Nomen („das gleiche Kleid“), die klein bleibt. |
 | *kennenlernen – kennen lernen*, *offenbleiben – offen bleiben* | beide zulässig | Kommen als Prüfstellen nicht vor. |
+| *anhand – an Hand* | Ob die Getrenntschreibung zulässig ist, war nicht sicher zu belegen | Die App schreibt *anhand*, fragt die Stelle aber nirgends ab. |
 | *ernst nehmen* | nur getrennt | Getrennt ist richtig; zusammen gilt als Fehler. |
 | *schwarz auf weiß* | klein (feste Wendung ohne Begleiter) | Klein ist richtig. |
 
@@ -63,6 +64,7 @@ Diese Liste nennt jede Stelle, an der das Regelwerk mehrere Fassungen zulässt o
 | Apostroph | Nur typografischer Apostroph (’) in Lösungen | Beim Tippen werden gerade und typografische Anführungszeichen und Apostrophe gleich gewertet; alles andere zählt streng. |
 | Abkürzungen *z. B., d. h., u. a.* | mit Leerzeichen | „z.B.“ ohne Leerzeichen ist ein Fehler. Die App zeigt schmale geschützte Leerzeichen; getippt zählt jedes Leerzeichen. |
 | Satzpunkt nach Zitat und Beleg | Der Punkt steht nach der Klammer | Ein Punkt im Zitat und keiner nach dem Beleg ist ein Fehler. |
+| Zitat, das mit Ausrufe- oder Fragezeichen endet, danach ein Beleg | Ein zusätzlicher Satzpunkt nach der Klammer wird unterschiedlich gehandhabt | Mit und ohne Punkt richtig. |
 | Nach Doppelpunkt | Ganzer Satz groß, sonst klein | So gewertet; Grundlage ist das gebeugte Verb nach dem Doppelpunkt. |
 
 ## Verwechslungen und Grammatik (Kurs 9)
