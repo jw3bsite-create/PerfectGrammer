@@ -479,6 +479,158 @@ describe('Sprachrichtigkeit im Browser', () => {
     await ctx.close();
   }, 120_000);
 
+  it('Fehlerbuch: Suche, Bearbeiten, Löschen, CSV und Druckansicht', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/fehlerbuch/neu`);
+    await page.getByLabel('Quelle').fill('Klausur 2; Textanalyse');
+    for (const [orig, korr, typ] of [
+      ['wegen dem Regen', 'wegen des Regens', 'f-genitiv'],
+      ['Er glaubt das sie kommt.', 'Er glaubt, dass sie kommt.', 'k-nebensatz'],
+    ]) {
+      await page.getByLabel('So stand es da').fill(orig);
+      await page.getByLabel('So stand es da').press('Enter');
+      await page.getByLabel('Richtig').fill(korr);
+      await page.getByLabel('Fehlertyp').selectOption(typ);
+      await page.getByLabel('Richtig').press('Enter');
+    }
+    await page.getByText('Gerade erfasst (2)').waitFor();
+    // Volltextsuche
+    await page.goto(`${BASE}#/fehlerbuch`);
+    await page.getByLabel('Volltextsuche').fill('Regen');
+    await expect.poll(() => page.locator('.entry').count()).toBe(1);
+    await page.getByLabel('Volltextsuche').fill('');
+    await expect.poll(() => page.locator('.entry').count()).toBe(2);
+    // Bearbeiten
+    await page.locator('.entry', { hasText: 'wegen dem Regen' }).locator('.entry-text').click();
+    await page.getByRole('link', { name: 'Bearbeiten' }).click();
+    await page.getByLabel('Notiz').fill('Rotstift: Genitiv!');
+    await page.getByRole('button', { name: 'Speichern', exact: true }).click();
+    await page.getByText('Änderungen gespeichert.').first().waitFor();
+    await page.getByLabel('Volltextsuche').fill('Rotstift');
+    await expect.poll(() => page.locator('.entry').count()).toBe(1);
+    await page.getByLabel('Volltextsuche').fill('');
+    // CSV: Semikolon, BOM, Feld mit Semikolon in Anführungszeichen
+    const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'CSV' }).first().click()]);
+    const csv = readFileSync((await download.path())!, 'utf8');
+    expect(csv.charCodeAt(0)).toBe(0xfeff);
+    const lines = csv.trim().split('\r\n');
+    expect(lines[0]).toContain('Datum;Herkunft;Quelle');
+    expect(lines).toHaveLength(3);
+    expect(csv).toContain('"Klausur 2; Textanalyse"');
+    // Druckansicht für das PDF
+    await page.getByRole('link', { name: 'PDF' }).first().click();
+    await page.getByRole('heading', { name: 'Fehlerbuch' }).waitFor();
+    await expect.poll(() => page.locator('table tbody tr').count()).toBe(2);
+    await shot(page, 'desktop-fehlerbuch-druck');
+    // Löschen
+    await page.goto(`${BASE}#/fehlerbuch`);
+    await page.locator('.entry', { hasText: 'Er glaubt das sie kommt.' }).locator('.entry-text').click();
+    await page.getByRole('button', { name: 'Löschen' }).first().click();
+    await page.getByRole('dialog').getByRole('button', { name: 'Löschen' }).click();
+    await expect.poll(() => page.locator('.entry').count()).toBe(1);
+    await ctx.close();
+  }, 180_000);
+
+  it('Lektionstest bis „Sicher“, Kurstest und Kursabschluss', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/lektion/4.1`);
+    await page.locator('.list-item', { hasText: 'Lektionstest' }).first().click();
+    const test = await solveSession(page, [3]);
+    expect(test).toHaveLength(10);
+    await page.getByRole('heading', { name: 'Lektionstest bestanden' }).waitFor();
+    await page.getByText('Die Lektion ist jetzt „Sicher“.').waitFor();
+    await page.goto(`${BASE}#/kurse/4`);
+    await page.getByRole('button', { name: /Kurstest/ }).click();
+    const kurstest = await solveSession(page, [7, 19]);
+    expect(kurstest).toHaveLength(25);
+    await page.getByRole('heading', { name: 'Kurstest bestanden' }).waitFor();
+    await page.goto(`${BASE}#/kurse`);
+    await page.locator('a, .list-item', { hasText: 'das oder dass' }).getByText('abgeschlossen').first().waitFor();
+    await shot(page, 'desktop-kurse-abgeschlossen');
+    await ctx.close();
+  }, 300_000);
+
+  it('Mischtraining „Fehlertyp bestimmen“ und „Vor der Klausur“ mit Prüfroutine', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/ueben`);
+    await page.getByRole('group', { name: 'Sitzungslänge' }).getByRole('button', { name: '15 Aufgaben' }).click();
+    await page.getByRole('button', { name: /^4 / }).click();
+    await page.getByRole('button', { name: /^9 / }).click();
+    await page.getByLabel(/Nur „Fehlertyp bestimmen“/).check();
+    await page.getByRole('button', { name: 'Mischtraining starten' }).click();
+    await page.locator('[data-task]').waitFor();
+    expect(await page.locator('[data-task]').getAttribute('data-modus')).toBe('fehlertyp');
+    await shot(page, 'desktop-fehlertyp-bestimmen');
+    await solveSession(page, [2]);
+    await page.goto(`${BASE}#/ueben`);
+    await page.getByRole('button', { name: '15 Minuten starten' }).click();
+    await page.locator('[data-task]').waitFor();
+    await page.getByText(/noch 1[45] min/).waitFor();
+    await solveSession(page);
+    await page.getByRole('heading', { name: 'Jetzt die Prüfroutine' }).waitFor();
+    const boxes = page.locator('.summary input[type=checkbox]');
+    expect(await boxes.count()).toBeGreaterThanOrEqual(10);
+    await boxes.first().check();
+    await shot(page, 'desktop-pruefroutine');
+    await ctx.close();
+  }, 300_000);
+
+  it('Zeitmodus: Die Aufgabe wird nach Ablauf der Zeit ausgewertet', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/einstellungen`);
+    await page.getByRole('group', { name: 'Zeitmodus' }).getByRole('button', { name: 'An' }).click();
+    await page.getByRole('group', { name: 'Sekunden je Aufgabe' }).getByRole('button', { name: '20 s' }).click();
+    await page.goto(`${BASE}#/lektion/5.1`);
+    await page.locator('.list-item', { hasText: 'Freie Übung' }).first().click();
+    await page.getByRole('timer').waitFor();
+    await page.getByRole('region', { name: 'Rückmeldung' }).waitFor({ timeout: 26_000 });
+    await shot(page, 'desktop-zeitmodus');
+    await ctx.close();
+  }, 120_000);
+
+  it('Bedienung per Antippen auf dem Handy', async () => {
+    const ctx = await newContext({ width: 390, height: 844, touch: true });
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await page.goto(BASE);
+    await page.getByRole('button', { name: 'Ohne Einstufung beginnen' }).tap();
+    await page.goto(`${BASE}#/lektion/1.3`);
+    await page.locator('.list-item', { hasText: 'Geführte Übung' }).first().tap();
+    for (let n = 0; n < 5; n++) {
+      const { task } = await currentTask(page);
+      if (task.typ === 'probe' || task.typ === 'komma') {
+        const p = parseKomma(task.text);
+        if (task.typ === 'probe') {
+          for (let i = 0; i < p.tokens.length; i++) if (p.tokens[i].verb) await page.locator('.sentence .word').nth(i).tap();
+          await page.getByRole('button', { name: /Verben prüfen/ }).tap();
+          await page.getByRole('button', { name: /Weiter: Kommas setzen/ }).tap();
+        }
+        for (let i = 0; i < p.gaps.length; i++) if (p.gaps[i] === 'ja') await page.locator('.sentence .gap').nth(i).tap();
+        await page.getByRole('button', { name: /^Prüfen/ }).tap();
+        const fb = page.getByRole('region', { name: 'Rückmeldung' });
+        await fb.waitFor();
+        expect(await fb.getAttribute('class'), task.id).toContain('ok');
+      } else {
+        await answer(page, true);
+      }
+      await page.getByRole('region', { name: 'Rückmeldung' }).getByRole('button', { name: /Weiter|Abschließen/ }).tap();
+    }
+    await page.locator('.summary').waitFor();
+    await ctx.close();
+  }, 180_000);
+
   it('keine Fehler in der Konsole', () => {
     const relevant = pageErrors.filter((e) => !/net::ERR_INTERNET_DISCONNECTED|Failed to load resource/.test(e));
     expect(relevant).toEqual([]);

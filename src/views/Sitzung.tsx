@@ -157,7 +157,7 @@ export function SessionView() {
       }
       if ((e.key === 'r' || e.key === 'R') && !e.metaKey && !e.ctrlKey && !e.altKey && tag !== 'INPUT' && tag !== 'TEXTAREA') {
         const lesson = (answered?.task ?? task)?.lektion;
-        if (lesson) {
+        if (lesson && s && (answered || ruleBeforeAnswer(s))) {
           e.preventDefault();
           setRule(lesson);
         }
@@ -165,7 +165,7 @@ export function SessionView() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [answered, next, rule, confirmEnd, task]);
+  }, [answered, next, rule, confirmEnd, task, s]);
 
   const register = useCallback((fn: (() => void) | null) => {
     submitRef.current = fn;
@@ -194,6 +194,9 @@ export function SessionView() {
   const guided = shownItem?.kontext === 'gefuehrt';
   const course = shownTask ? getCourse(shownTask.kurs) : undefined;
   const timeLeft = timed ? Math.max(0, limit - Math.floor((now - taskStart) / 1000)) : 0;
+  const hidesLesson = hidesLessonBeforeAnswer(s);
+  const ruleAvailable = !!answered || ruleBeforeAnswer(s);
+  const typLabel = shownItem?.modus === 'fehlertyp' ? TYP_LABEL.fehlertyp : shownTask ? TYP_LABEL[shownTask.typ] : null;
 
   return (
     <div className="practice">
@@ -209,7 +212,7 @@ export function SessionView() {
           ) : null}
           <Progress value={s.endetUm ? Math.min(1, (now - s.gestartet) / (s.endetUm - s.gestartet)) : done / total} label="Fortschritt" />
           <span className="count">{s.endetUm ? `${done} Aufg.` : `${Math.min(done + (answered ? 0 : 1), total)} / ${total}`}</span>
-          {lesson ? (
+          {lesson && ruleAvailable ? (
             <button className="btn small ghost" onClick={() => setRule(lesson.id)} title="Regelkarte (R)">
               <Icon name="card" /> Regel
             </button>
@@ -230,8 +233,8 @@ export function SessionView() {
           <>
             <div className="task-meta">
               <span>
-                {[s.titel, s.art !== 'lektion' ? `Lektion ${shownTask.lektion}` : null, shownItem.modus === 'fehlertyp' ? TYP_LABEL.fehlertyp : TYP_LABEL[shownTask.typ]]
-                  .filter(Boolean)
+                {[s.titel, s.art !== 'lektion' && (answered || !hidesLesson) ? `Lektion ${shownTask.lektion}` : null, typLabel]
+                  .filter((x, i, all) => x && all.indexOf(x) === i && !(i > 0 && s.titel.includes(x)))
                   .join(' · ')}
               </span>
               {shownTask.geprueft === false ? <span className="badge outline">eigene Aufgabe</span> : null}
@@ -301,6 +304,15 @@ export function SessionView() {
       ) : null}
     </div>
   );
+}
+
+// In gemischten Sitzungen und Tests verraten Lektion und Regelkarte den Fehlertyp; sie erscheinen erst nach der Antwort.
+function hidesLessonBeforeAnswer(s: Session): boolean {
+  return s.art !== 'lektion' && s.art !== 'gezielt' && s.art !== 'text';
+}
+
+function ruleBeforeAnswer(s: Session): boolean {
+  return !hidesLessonBeforeAnswer(s) && s.phase !== 'test';
 }
 
 function Feedback({ a, onRule, onNext, onOverride, last }: { a: Answered; onRule: () => void; onNext: () => void; onOverride: () => void; last: boolean }) {
