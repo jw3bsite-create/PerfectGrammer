@@ -1,0 +1,239 @@
+{
+  "kurs": {
+    "id": 2,
+    "titel": "Die vier Fälle",
+    "kurztitel": "Fälle",
+    "reihenfolge": 2,
+    "probe": "Ein maskulines Nomen einsetzen (der, des, dem, den Mann), weil nur dort jeder Fall eine eigene Form trägt.",
+    "beschreibung": "Bei femininen und neutralen Nomen klingen manche Fälle gleich. Ein maskulines Nomen macht den Fall hörbar."
+  },
+  "lektionen": [
+    {
+      "id": "2.1",
+      "titel": "Fragen und Formen",
+      "regelkarte": {
+        "regel": "Jeder Fall hat seine Frage: Nominativ wer, Genitiv wessen, Dativ wem, Akkusativ wen. Maskuline und neutrale Nomen bekommen im Genitiv Singular -s oder -es, alle Nomen im Dativ Plural ein -n. Nach sein, werden und bleiben steht der Nominativ.",
+        "probe": "Setze ein maskulines Nomen ein: der Mann, des Mannes, dem Mann, den Mann. Nur dort trägt jeder Fall eine eigene Form.",
+        "beispiele": ["Ich danke der Lehrerin. (wie: dem Mann)", "die These des Autors (wie: des Mannes)", "Er bleibt ein guter Freund. (wie: der Mann)"],
+        "falle": "Dativ Plural ohne -n: „mit den Kinder“ ist falsch, richtig ist mit den Kindern."
+      }
+    },
+    {
+      "id": "2.2",
+      "titel": "Feste Präpositionen",
+      "regelkarte": {
+        "regel": "Manche Präpositionen verlangen immer denselben Fall. Akkusativ: durch, für, gegen, ohne, um, bis. Dativ: aus, bei, mit, nach, seit, von, zu, außer, gegenüber, gemäß, entsprechend, zufolge, entgegen.",
+        "probe": "Setze ein maskulines Nomen ein: für den Mann (Akkusativ), mit dem Mann (Dativ). Dann bilde die Form für dein Nomen.",
+        "beispiele": ["gemäß dem Text (wie: gemäß dem Vertrag)", "dem Autor zufolge (wie: dem Mann zufolge)", "ohne einen Beleg (wie: ohne den Mann)"],
+        "falle": "Zufolge steht hinter dem Nomen und verlangt den Dativ: dem Bericht zufolge, nicht des Berichts zufolge."
+      }
+    },
+    {
+      "id": "2.3",
+      "titel": "Genitivpräpositionen",
+      "regelkarte": {
+        "regel": "Nach wegen, während, trotz, statt, aufgrund, anhand, infolge, angesichts, innerhalb, außerhalb, mithilfe, hinsichtlich und bezüglich steht in der Schriftsprache der Genitiv.",
+        "probe": "Setze ein maskulines Nomen ein: wegen des Mannes. Hörst du des, steht der Genitiv richtig.",
+        "beispiele": ["wegen des Regens", "trotz der Warnung", "anhand eines Beispiels"],
+        "falle": "„Wegen dem Regen“ ist Umgangssprache. In der Klausur heißt es wegen des Regens."
+      }
+    },
+    {
+      "id": "2.4",
+      "titel": "Wechselpräpositionen",
+      "regelkarte": {
+        "regel": "Bei an, auf, hinter, in, neben, über, unter, vor und zwischen entscheidet die Frage: wohin führt zum Akkusativ, wo zum Dativ. Ohne räumliche Bedeutung legt das Verb den Fall fest: hinweisen auf mit Akkusativ, beruhen auf mit Dativ.",
+        "probe": "Setze ein maskulines Nomen ein und frage wo oder wohin: Sie legt das Buch auf den Tisch (wohin), es liegt auf dem Tisch (wo).",
+        "beispiele": ["Der Autor weist auf den Widerspruch hin.", "Die These beruht auf einem Irrtum.", "Sie hängt das Bild an die Wand. Das Bild hängt an der Wand."],
+        "falle": "Ohne Raumsinn hilft die Frage wo oder wohin nicht. Präge dir das Verb mit ein: hinweisen auf den, sich beziehen auf den, beruhen auf dem, bestehen auf dem."
+      }
+    },
+    {
+      "id": "2.5",
+      "titel": "Ausweichregel im Genitiv",
+      "regelkarte": {
+        "regel": "Ist der Genitiv nicht zu erkennen, weil ein Plural ohne Artikel und Adjektiv steht, weichst du aus: nach der Präposition auf den Dativ, beim Attribut auf von. Namen auf s, ß, x oder z bekommen statt des Genitiv-s einen Apostroph. In allen anderen Fällen bleibt der Genitiv.",
+        "probe": "Setze ein maskulines Nomen ein und prüfe, ob der Genitiv sichtbar ist: wegen des Mannes ja, wegen Männer nicht – dann wegen Männern.",
+        "beispiele": ["wegen Geschäften (nicht: wegen Geschäfte)", "die Lektüre von Romanen", "Marx’ Theorie"],
+        "falle": "Nicht ohne Grund ausweichen: die These des Autors, nicht die These von dem Autor."
+      }
+    },
+    {
+      "id": "2.6",
+      "titel": "n-Deklination",
+      "regelkarte": {
+        "regel": "Maskuline Nomen für Lebewesen auf -e, -ist, -ent, -ant, -oge, -soph und -at sowie Mensch, Held und Fürst enden in allen Formen außer dem Nominativ Singular auf -(e)n. Autor, Direktor und Professor gehören nicht dazu: dem Autor, des Autors.",
+        "probe": "Bilde die Reihe mit dem maskulinen Artikel: der Protagonist, des Protagonisten, dem Protagonisten, den Protagonisten. Nur im Nominativ Singular fehlt das -en.",
+        "beispiele": ["Der Leser bewundert den Protagonisten.", "Sie widerspricht dem Philosophen.", "Er dankt dem Autor."],
+        "falle": "Autor wird oft fälschlich mitgebeugt: dem Autor, nicht dem Autoren."
+      }
+    },
+    {
+      "id": "2.7",
+      "titel": "Beisatz, als, wie, Verben",
+      "regelkarte": {
+        "regel": "Ein Beisatz und ein Glied mit als oder wie stehen im selben Fall wie das Wort, auf das sie sich beziehen. Helfen, danken, folgen, begegnen, widersprechen und zustimmen verlangen den Dativ; sich bewusst sein, sich bedienen und bedürfen den Genitiv.",
+        "probe": "Ersetze das Bezugswort durch ein maskulines Nomen und bestimme dessen Fall: mit dem Mann, dem Leiter der Schule – also Dativ auch im Beisatz.",
+        "beispiele": ["mit Herrn Maier, dem Leiter der Schule", "Ich kenne ihn als einen ehrlichen Menschen.", "Sie ist sich der Gefahr bewusst."],
+        "falle": "Der Beisatz rutscht in den Nominativ: „mit Herrn Maier, der Leiter der Schule“ ist falsch."
+      }
+    },
+    {
+      "id": "2.8",
+      "titel": "Adjektiv und Relativpronomen",
+      "regelkarte": {
+        "regel": "Fehlt der Artikel, übernimmt das Adjektiv dessen Endung: mit großem Eifer wie mit dem Eifer. Nur im Genitiv maskulin und neutral endet es auf -en: trotz großen Interesses. Das Relativpronomen im Genitiv lautet dessen bei maskulinen und neutralen Nomen, deren bei femininen und im Plural.",
+        "probe": "Setze den maskulinen Artikel davor: mit dem Eifer, also mit großem Eifer. Im Genitiv aber: des Interesses, also großen Interesses.",
+        "beispiele": ["trotz großen Interesses", "mit großem Eifer", "der Autor, dessen Werk verboten wurde"],
+        "falle": "Im Genitiv maskulin und neutral steht -en, nicht -es: trotz großen Interesses, nicht trotz großes Interesses."
+      }
+    }
+  ],
+  "aufgaben": [
+    { "id": "2.1-01", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Ich danke ___ Lehrerin.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Probe: Ich danke dem Mann – Dativ. Also der Lehrerin." },
+    { "id": "2.1-02", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Der Text ___ Autors ist schwer verständlich.", "hinweis": "der", "loesungen": ["des"], "begruendung": "Probe: der Text des Mannes – Genitiv. Also des Autors." },
+    { "id": "2.1-03", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Die Lehrerin spricht mit den ___.", "hinweis": "Kind, Plural", "loesungen": ["Kindern"], "begruendung": "Probe: mit dem Mann – Dativ. Im Dativ Plural bekommt das Nomen ein -n: den Kindern." },
+    { "id": "2.1-04", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Er bleibt ___ guter Freund.", "hinweis": "ein", "loesungen": ["ein"], "begruendung": "Probe: Er bleibt der Mann – nach bleiben steht der Nominativ. Also ein guter Freund." },
+    { "id": "2.1-05", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Wir besuchen ___ Großvater.", "hinweis": "der", "loesungen": ["den"], "begruendung": "Probe: Wir besuchen den Mann – Akkusativ. Also den Großvater." },
+    { "id": "2.1-06", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Die Rede ___ Ministerin war kurz.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Probe: die Rede des Mannes – Genitiv. Feminin heißt der Genitiv der: der Ministerin." },
+    { "id": "2.1-07", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Das Ende des ___ überrascht.", "hinweis": "Roman", "loesungen": ["Romans"], "begruendung": "Probe: das Ende des Mannes – Genitiv. Maskuline Nomen bekommen das Genitiv-s: des Romans." },
+    { "id": "2.1-08", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Sie wird ___ bekannte Autorin.", "hinweis": "ein", "loesungen": ["eine"], "begruendung": "Probe: Er wird der Mann – nach werden steht der Nominativ. Also eine bekannte Autorin." },
+    { "id": "2.1-09", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Wir gratulieren den ___.", "hinweis": "Gewinner, Plural", "loesungen": ["Gewinnern"], "begruendung": "Probe: Wir gratulieren dem Mann – Dativ. Im Dativ Plural kommt ein -n dazu: den Gewinnern." },
+    { "id": "2.1-10", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Die Bedeutung des ___ ist umstritten.", "hinweis": "Satz", "loesungen": ["Satzes"], "begruendung": "Probe: die Bedeutung des Mannes – Genitiv. Nach z lautet die Endung -es: des Satzes." },
+    { "id": "2.1-11", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Er ist ___ beste Schüler der Klasse.", "hinweis": "der", "loesungen": ["der"], "begruendung": "Probe: Er ist der Mann – nach sein steht der Nominativ. Also der beste Schüler." },
+    { "id": "2.1-12", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Sie schenkt ___ Bruder ein Buch.", "hinweis": "ihr", "loesungen": ["ihrem"], "begruendung": "Probe: Sie schenkt dem Mann ein Buch – Dativ. Also ihrem Bruder." },
+    { "id": "2.1-13", "kurs": 2, "lektion": "2.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Das ist die Idee ___ Schülerin.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Probe: die Idee des Mannes – Genitiv. Feminin: der Schülerin." },
+    { "id": "2.1-14", "kurs": 2, "lektion": "2.1", "typ": "fehler", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Das ist die Meinung des [[Autor=>Autors|f-genitiv]].", "begruendung": "Probe: die Meinung des Mannes – Genitiv mit -s. Also des Autors." },
+    { "id": "2.1-15", "kurs": 2, "lektion": "2.1", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Wir sprechen mit den [[Schüler=>Schülern|f-praeposition]].", "begruendung": "Probe: mit dem Mann – Dativ. Im Dativ Plural fehlt das -n: den Schülern." },
+    { "id": "2.1-16", "kurs": 2, "lektion": "2.1", "typ": "fehler", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Er ist [[einen=>ein|f-beisatz]] guter Redner.", "begruendung": "Probe: Er ist der Mann – nach sein steht der Nominativ. Also ein guter Redner." },
+    { "id": "2.1-17", "kurs": 2, "lektion": "2.1", "typ": "fehler", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Die Schülerin dankt dem Lehrer für die Hilfe.", "begruendung": "Probe: danken dem Mann – Dativ, also dem Lehrer. Der Satz ist fehlerfrei." },
+
+    { "id": "2.2-01", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Die Figur kämpft gegen ___ Vater.", "hinweis": "ihr", "loesungen": ["ihren"], "begruendung": "Probe: gegen den Mann – gegen verlangt den Akkusativ. Also gegen ihren Vater." },
+    { "id": "2.2-02", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Gemäß ___ Vertrag muss die Firma zahlen.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Probe: gemäß dem Mann – gemäß verlangt den Dativ. Also gemäß dem Vertrag." },
+    { "id": "2.2-03", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "___ Autor zufolge ist die These überholt.", "hinweis": "der", "loesungen": ["Dem"], "begruendung": "Probe: dem Mann zufolge – zufolge verlangt den Dativ. Am Satzanfang groß: Dem Autor zufolge." },
+    { "id": "2.2-04", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Ohne ___ Beleg bleibt die Behauptung schwach.", "hinweis": "ein", "loesungen": ["einen"], "begruendung": "Probe: ohne den Mann – ohne verlangt den Akkusativ. Also ohne einen Beleg." },
+    { "id": "2.2-05", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Seit ___ Wahl hat sich viel verändert.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Probe: seit dem Mann – seit verlangt den Dativ. Feminin: seit der Wahl." },
+    { "id": "2.2-06", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Die Schüler arbeiten mit ___ Wörterbuch.", "hinweis": "ein", "loesungen": ["einem"], "begruendung": "Probe: mit dem Mann – mit verlangt den Dativ. Also mit einem Wörterbuch." },
+    { "id": "2.2-07", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Durch ___ Fenster fällt Licht.", "hinweis": "das", "loesungen": ["das"], "begruendung": "Probe: durch den Mann – durch verlangt den Akkusativ. Neutral bleibt es bei das Fenster." },
+    { "id": "2.2-08", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Entgegen ___ Rat ihrer Freunde reist sie ab.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Probe: entgegen dem Mann – entgegen verlangt den Dativ. Also entgegen dem Rat." },
+    { "id": "2.2-09", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Außer ___ Lehrer kennt niemand die Lösung.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Probe: außer dem Mann – außer verlangt den Dativ. Also außer dem Lehrer." },
+    { "id": "2.2-10", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Entsprechend ___ Vorschlag wird die Frist verlängert.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Probe: entsprechend dem Mann – entsprechend verlangt den Dativ. Also dem Vorschlag." },
+    { "id": "2.2-11", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Gegenüber ___ Bahnhof liegt die Bibliothek.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Probe: gegenüber dem Mann – gegenüber verlangt den Dativ. Also dem Bahnhof." },
+    { "id": "2.2-12", "kurs": 2, "lektion": "2.2", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Nach ___ Unterricht treffen sie sich.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Probe: nach dem Mann – nach verlangt den Dativ. Also nach dem Unterricht." },
+    { "id": "2.2-13", "kurs": 2, "lektion": "2.2", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Gemäß [[des=>dem|f-praeposition]] Text muss die Zeile gestrichen werden.", "begruendung": "Probe: gemäß dem Mann – gemäß verlangt den Dativ. Also gemäß dem Text." },
+    { "id": "2.2-14", "kurs": 2, "lektion": "2.2", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "[[Des Berichts=>Dem Bericht|f-praeposition]] zufolge ist die Lage ernst.", "begruendung": "Probe: dem Mann zufolge – nachgestelltes zufolge verlangt den Dativ. Also dem Bericht zufolge." },
+    { "id": "2.2-15", "kurs": 2, "lektion": "2.2", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Sie kämpft für [[ihrem=>ihren|f-praeposition]] Bruder.", "begruendung": "Probe: für den Mann – für verlangt den Akkusativ. Also für ihren Bruder." },
+    { "id": "2.2-16", "kurs": 2, "lektion": "2.2", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Entgegen [[des=>dem|f-praeposition]] Rat seiner Ärztin arbeitet er weiter.", "begruendung": "Probe: entgegen dem Mann – entgegen verlangt den Dativ. Also entgegen dem Rat." },
+    { "id": "2.2-17", "kurs": 2, "lektion": "2.2", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Mit [[seinen=>seinem|f-praeposition]] Roman wurde er berühmt.", "begruendung": "Probe: mit dem Mann – mit verlangt den Dativ. Also mit seinem Roman." },
+    { "id": "2.2-18", "kurs": 2, "lektion": "2.2", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Seit dem Ende des Krieges lebt sie in Berlin.", "begruendung": "Probe: seit dem Mann – seit verlangt den Dativ, also seit dem Ende. Der Satz ist fehlerfrei." },
+
+    { "id": "2.3-01", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Wegen ___ Regens fällt das Fest aus.", "hinweis": "der", "loesungen": ["des"], "begruendung": "Probe: wegen des Mannes – wegen verlangt den Genitiv. Also des Regens." },
+    { "id": "2.3-02", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Trotz ___ Warnung ging er weiter.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Probe: trotz des Mannes – trotz verlangt den Genitiv. Feminin: der Warnung." },
+    { "id": "2.3-03", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Während ___ Unterrichts ist das Handy aus.", "hinweis": "der", "loesungen": ["des"], "begruendung": "Probe: während des Mannes – während verlangt den Genitiv. Also des Unterrichts." },
+    { "id": "2.3-04", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Die These wird anhand ___ Beispiels erläutert.", "hinweis": "ein", "loesungen": ["eines"], "begruendung": "Probe: anhand des Mannes – anhand verlangt den Genitiv. Also eines Beispiels." },
+    { "id": "2.3-05", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Aufgrund ___ Streiks fallen viele Züge aus.", "hinweis": "der", "loesungen": ["des"], "begruendung": "Probe: aufgrund des Mannes – aufgrund verlangt den Genitiv. Also des Streiks." },
+    { "id": "2.3-06", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Innerhalb ___ Woche muss die Arbeit fertig sein.", "hinweis": "eine", "loesungen": ["einer"], "begruendung": "Probe: innerhalb des Mannes – innerhalb verlangt den Genitiv. Feminin: einer Woche." },
+    { "id": "2.3-07", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Angesichts ___ Lage handelt die Regierung schnell.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Probe: angesichts des Mannes – angesichts verlangt den Genitiv. Feminin: der Lage." },
+    { "id": "2.3-08", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Statt ___ Briefes schickte sie eine Nachricht.", "hinweis": "ein", "loesungen": ["eines"], "begruendung": "Probe: statt des Mannes – statt verlangt den Genitiv. Also eines Briefes." },
+    { "id": "2.3-09", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Infolge ___ Krieges verließen viele das Land.", "hinweis": "der", "loesungen": ["des"], "begruendung": "Probe: infolge des Mannes – infolge verlangt den Genitiv. Also des Krieges." },
+    { "id": "2.3-10", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Hinsichtlich ___ Fragestellung bleibt der Text vage.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Probe: hinsichtlich des Mannes – hinsichtlich verlangt den Genitiv. Feminin: der Fragestellung." },
+    { "id": "2.3-11", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Mithilfe ___ Wörterbuchs löst er die Aufgabe.", "hinweis": "ein", "loesungen": ["eines"], "begruendung": "Probe: mithilfe des Mannes – mithilfe verlangt den Genitiv. Also eines Wörterbuchs." },
+    { "id": "2.3-12", "kurs": 2, "lektion": "2.3", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Wegen des schlechten ___ fällt das Fest aus.", "hinweis": "Wetter", "loesungen": ["Wetters"], "begruendung": "Probe: wegen des Mannes – Genitiv. Neutrale Nomen bekommen das Genitiv-s: des Wetters." },
+    { "id": "2.3-13", "kurs": 2, "lektion": "2.3", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Wegen [[dem Regen=>des Regens|f-praeposition]] blieben sie zu Hause.", "begruendung": "Probe: wegen des Mannes – wegen verlangt den Genitiv. Also wegen des Regens." },
+    { "id": "2.3-14", "kurs": 2, "lektion": "2.3", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Trotz [[dem Verbot=>des Verbots|f-praeposition]] demonstrierten Tausende.", "begruendung": "Probe: trotz des Mannes – trotz verlangt den Genitiv. Also trotz des Verbots." },
+    { "id": "2.3-15", "kurs": 2, "lektion": "2.3", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Während [[dem Essen=>des Essens|f-praeposition]] schwieg die Familie.", "begruendung": "Probe: während des Mannes – während verlangt den Genitiv. Also während des Essens." },
+    { "id": "2.3-16", "kurs": 2, "lektion": "2.3", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Aufgrund der hohen Kosten wurde das Projekt gestoppt.", "begruendung": "Probe: aufgrund des Mannes – Genitiv, im Plural der hohen Kosten. Der Satz ist fehlerfrei." },
+    { "id": "2.3-17", "kurs": 2, "lektion": "2.3", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Anhand [[einem Beispiel=>eines Beispiels|f-praeposition]] zeigt die Autorin ihre These.", "begruendung": "Probe: anhand des Mannes – anhand verlangt den Genitiv. Also anhand eines Beispiels." },
+
+    { "id": "2.4-01", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Sie legt das Buch auf ___ Tisch.", "hinweis": "der", "loesungen": ["den"], "begruendung": "Wohin legt sie das Buch? Richtung, also Akkusativ: auf den Tisch." },
+    { "id": "2.4-02", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Das Buch liegt auf ___ Tisch.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Wo liegt das Buch? Ort, also Dativ: auf dem Tisch." },
+    { "id": "2.4-03", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Der Autor weist auf ___ Widerspruch hin.", "hinweis": "ein", "loesungen": ["einen"], "begruendung": "Ohne Raumsinn entscheidet das Verb: hinweisen auf den Mann – Akkusativ. Also auf einen Widerspruch." },
+    { "id": "2.4-04", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Die These beruht auf ___ Irrtum.", "hinweis": "ein", "loesungen": ["einem"], "begruendung": "Ohne Raumsinn entscheidet das Verb: beruhen auf dem Mann – Dativ. Also auf einem Irrtum." },
+    { "id": "2.4-05", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Der Erzähler bezieht sich auf ___ Vorgänger.", "hinweis": "sein", "loesungen": ["seinen"], "begruendung": "Ohne Raumsinn entscheidet das Verb: sich beziehen auf den Mann – Akkusativ. Also auf seinen Vorgänger." },
+    { "id": "2.4-06", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Die Figuren stehen vor ___ Haus.", "hinweis": "das", "loesungen": ["dem"], "begruendung": "Wo stehen sie? Ort, also Dativ: vor dem Haus." },
+    { "id": "2.4-07", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Der Text geht auf ___ alte Sage zurück.", "hinweis": "eine", "loesungen": ["eine"], "begruendung": "Ohne Raumsinn entscheidet das Verb: zurückgehen auf den Mann – Akkusativ. Feminin: auf eine alte Sage." },
+    { "id": "2.4-08", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Sie besteht auf ___ Recht.", "hinweis": "ihr", "loesungen": ["ihrem"], "begruendung": "Ohne Raumsinn entscheidet das Verb: bestehen auf dem Mann – Dativ. Also auf ihrem Recht." },
+    { "id": "2.4-09", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Er hängt das Plakat an ___ Wand.", "hinweis": "die", "loesungen": ["die"], "begruendung": "Wohin hängt er es? Richtung, also Akkusativ: an den Mann – feminin an die Wand." },
+    { "id": "2.4-10", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Zwischen ___ Zeilen steht mehr als im Text.", "hinweis": "die, Plural", "loesungen": ["den"], "begruendung": "Wo steht es? Ort, also Dativ: zwischen den Zeilen." },
+    { "id": "2.4-11", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Der Roman spielt in ___ kleinen Dorf.", "hinweis": "ein", "loesungen": ["einem"], "begruendung": "Wo spielt der Roman? Ort, also Dativ: in einem kleinen Dorf." },
+    { "id": "2.4-12", "kurs": 2, "lektion": "2.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Die Autorin verzichtet auf ___ Fazit.", "hinweis": "ein", "loesungen": ["ein"], "begruendung": "Ohne Raumsinn entscheidet das Verb: verzichten auf den Mann – Akkusativ. Neutral: auf ein Fazit." },
+    { "id": "2.4-13", "kurs": 2, "lektion": "2.4", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Der Redner weist auf [[dem=>den|f-praeposition]] Zusammenhang hin.", "begruendung": "Hinweisen auf den Mann – Akkusativ. Also auf den Zusammenhang." },
+    { "id": "2.4-14", "kurs": 2, "lektion": "2.4", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Die Erzählung beruht auf [[einen=>einem|f-praeposition]] wahren Fall.", "begruendung": "Beruhen auf dem Mann – Dativ. Also auf einem wahren Fall." },
+    { "id": "2.4-15", "kurs": 2, "lektion": "2.4", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Sie stellt die Vase auf [[dem=>den|f-praeposition]] Tisch.", "begruendung": "Wohin stellt sie die Vase? Richtung, also Akkusativ: auf den Tisch." },
+    { "id": "2.4-16", "kurs": 2, "lektion": "2.4", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Das Gedicht bezieht sich auf einen historischen Anlass.", "begruendung": "Sich beziehen auf den Mann – Akkusativ, also auf einen Anlass. Der Satz ist fehlerfrei." },
+    { "id": "2.4-17", "kurs": 2, "lektion": "2.4", "typ": "fehler", "stufe": 2, "fehlertyp": "f-praeposition", "text": "Er achtet auf [[seinem=>seinen|f-praeposition]] Ruf.", "begruendung": "Achten auf den Mann – Akkusativ. Also auf seinen Ruf." },
+    { "id": "2.4-18", "kurs": 2, "lektion": "2.4", "typ": "fehler", "stufe": 1, "fehlertyp": "f-praeposition", "text": "Die Szene spielt in [[den=>dem|f-praeposition]] Garten der Familie.", "begruendung": "Wo spielt die Szene? Ort, also Dativ: in dem Garten." },
+
+    { "id": "2.5-01", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Wegen ___ verschob sich der Termin.", "hinweis": "Probleme, ohne Artikel", "loesungen": ["Problemen"], "begruendung": "Plural ohne Artikel und Adjektiv: Der Genitiv wäre nicht sichtbar. Also Dativ nach der Präposition: wegen Problemen." },
+    { "id": "2.5-02", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Sie schätzt die Lektüre ___.", "hinweis": "Romane, ohne Artikel", "loesungen": ["von Romanen"], "begruendung": "Plural ohne Artikel und Adjektiv: Der Genitiv wäre nicht sichtbar. Beim Attribut weichst du auf von aus: die Lektüre von Romanen." },
+    { "id": "2.5-03", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-genitiv", "text": "___ Theorie prägte das 19. Jahrhundert.", "hinweis": "Marx", "loesungen": ["Marx’"], "begruendung": "Der Name endet auf x: Statt des Genitiv-s steht ein Apostroph, also Marx’ Theorie." },
+    { "id": "2.5-04", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Die These ___ ist umstritten.", "hinweis": "der Autor", "loesungen": ["des Autors"], "begruendung": "Mit Artikel ist der Genitiv sichtbar: die These des Mannes, also des Autors. Hier wird nicht ausgewichen." },
+    { "id": "2.5-05", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Trotz ___ hielt er an seinem Plan fest.", "hinweis": "Zweifel, Plural ohne Artikel", "loesungen": ["Zweifeln"], "begruendung": "Plural ohne Artikel und Adjektiv: Der Genitiv wäre nicht sichtbar. Also Dativ: trotz Zweifeln." },
+    { "id": "2.5-06", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-genitiv", "text": "___ Romane sind in viele Sprachen übersetzt.", "hinweis": "Grass", "loesungen": ["Grass’"], "begruendung": "Der Name endet auf s: Statt des Genitiv-s steht ein Apostroph, also Grass’ Romane." },
+    { "id": "2.5-07", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Wegen ___ wurde die Wahl wiederholt.", "hinweis": "Fehler, Plural ohne Artikel", "loesungen": ["Fehlern"], "begruendung": "Plural ohne Artikel und Adjektiv: Der Genitiv wäre nicht sichtbar. Also Dativ: wegen Fehlern." },
+    { "id": "2.5-08", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "___ Oden beeinflussten viele Dichter.", "hinweis": "Horaz", "loesungen": ["Horaz’"], "begruendung": "Der Name endet auf z: Statt des Genitiv-s steht ein Apostroph, also Horaz’ Oden." },
+    { "id": "2.5-09", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Der Preis ___ ist gestiegen.", "hinweis": "Bücher, Plural ohne Artikel", "loesungen": ["von Büchern"], "begruendung": "Plural ohne Artikel und Adjektiv: Beim Attribut weichst du auf von aus, also der Preis von Büchern." },
+    { "id": "2.5-10", "kurs": 2, "lektion": "2.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Die Rede ___ war kurz.", "hinweis": "der Präsident", "loesungen": ["des Präsidenten"], "begruendung": "Mit Artikel ist der Genitiv sichtbar, also kein Ausweichen: die Rede des Präsidenten." },
+    { "id": "2.5-11", "kurs": 2, "lektion": "2.5", "typ": "fehler", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Wegen [[Geschäfte=>Geschäften|f-genitiv]] im Ausland fehlte er.", "begruendung": "Plural ohne Artikel und Adjektiv: Der Genitiv ist nicht sichtbar. Also Dativ: wegen Geschäften." },
+    { "id": "2.5-12", "kurs": 2, "lektion": "2.5", "typ": "fehler", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Das ist die Meinung [[von dem Autor=>des Autors|f-genitiv]].", "begruendung": "Mit Artikel ist der Genitiv sichtbar: die Meinung des Mannes. Also kein Ausweichen: des Autors." },
+    { "id": "2.5-13", "kurs": 2, "lektion": "2.5", "typ": "fehler", "stufe": 2, "fehlertyp": "f-genitiv", "text": "[[Marx’s=>Marx’|f-genitiv]] Theorie wird bis heute diskutiert.", "begruendung": "Endet der Name auf x, ersetzt der Apostroph das Genitiv-s: Marx’ Theorie." },
+    { "id": "2.5-14", "kurs": 2, "lektion": "2.5", "typ": "fehler", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Die Lektüre guter Romane bildet.", "begruendung": "Mit Adjektiv ist der Genitiv sichtbar: guter Romane. Kein Ausweichen nötig; der Satz ist fehlerfrei." },
+    { "id": "2.5-15", "kurs": 2, "lektion": "2.5", "typ": "fehler", "stufe": 2, "fehlertyp": "f-genitiv", "text": "Das Haus [[von meinem Vater=>meines Vaters|f-genitiv]] ist alt.", "begruendung": "Mit Begleiter ist der Genitiv sichtbar: das Haus des Mannes. Also meines Vaters." },
+    { "id": "2.5-16", "kurs": 2, "lektion": "2.5", "typ": "fehler", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Trotz [[Zweifel=>Zweifeln|f-genitiv]] unterschrieb sie den Vertrag.", "begruendung": "Plural ohne Artikel und Adjektiv: Der Genitiv ist nicht sichtbar. Also Dativ: trotz Zweifeln." },
+    { "id": "2.5-17", "kurs": 2, "lektion": "2.5", "typ": "fehler", "stufe": 1, "fehlertyp": "f-genitiv", "text": "Wegen der hohen Preise kaufen viele weniger.", "begruendung": "Mit Artikel ist der Genitiv sichtbar: wegen der hohen Preise. Der Satz ist fehlerfrei." },
+
+    { "id": "2.6-01", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Der Leser bewundert den ___.", "hinweis": "Protagonist", "loesungen": ["Protagonisten"], "begruendung": "Protagonist endet auf -ist und gehört zur n-Deklination: außer im Nominativ Singular immer -en. Also den Protagonisten." },
+    { "id": "2.6-02", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Sie widerspricht dem ___.", "hinweis": "Philosoph", "loesungen": ["Philosophen"], "begruendung": "Philosoph endet auf -soph und gehört zur n-Deklination: dem Philosophen." },
+    { "id": "2.6-03", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Er dankt dem ___.", "hinweis": "Autor", "loesungen": ["Autor"], "begruendung": "Autor gehört nicht zur n-Deklination. Im Dativ bleibt es bei dem Autor." },
+    { "id": "2.6-04", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Die Rede des ___ war kurz.", "hinweis": "Präsident", "loesungen": ["Präsidenten"], "begruendung": "Präsident endet auf -ent und gehört zur n-Deklination: des Präsidenten." },
+    { "id": "2.6-05", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Wir fragen den ___.", "hinweis": "Experte", "loesungen": ["Experten"], "begruendung": "Experte endet auf -e und gehört zur n-Deklination: den Experten." },
+    { "id": "2.6-06", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Das Buch handelt von einem jungen ___.", "hinweis": "Mensch", "loesungen": ["Menschen"], "begruendung": "Mensch gehört zur n-Deklination: von einem jungen Menschen." },
+    { "id": "2.6-07", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-ndeklination", "text": "Die Schüler schreiben dem ___ einen Brief.", "hinweis": "Direktor", "loesungen": ["Direktor"], "begruendung": "Direktor gehört nicht zur n-Deklination. Im Dativ bleibt es bei dem Direktor." },
+    { "id": "2.6-08", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Man glaubt dem ___ nicht.", "hinweis": "Zeuge", "loesungen": ["Zeugen"], "begruendung": "Zeuge endet auf -e und gehört zur n-Deklination: dem Zeugen." },
+    { "id": "2.6-09", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-ndeklination", "text": "Der Roman zeigt den Untergang eines ___.", "hinweis": "Held", "loesungen": ["Helden"], "begruendung": "Held gehört zur n-Deklination: eines Helden." },
+    { "id": "2.6-10", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-ndeklination", "text": "Die Studentin befragt den ___.", "hinweis": "Psychologe", "loesungen": ["Psychologen"], "begruendung": "Psychologe endet auf -oge und gehört zur n-Deklination: den Psychologen." },
+    { "id": "2.6-11", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Der Text stammt von einem bekannten ___.", "hinweis": "Journalist", "loesungen": ["Journalisten"], "begruendung": "Journalist endet auf -ist und gehört zur n-Deklination: von einem bekannten Journalisten." },
+    { "id": "2.6-12", "kurs": 2, "lektion": "2.6", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Sie gratuliert dem ___.", "hinweis": "Kollege", "loesungen": ["Kollegen"], "begruendung": "Kollege endet auf -e und gehört zur n-Deklination: dem Kollegen." },
+    { "id": "2.6-13", "kurs": 2, "lektion": "2.6", "typ": "fehler", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Der Erzähler beobachtet den [[Protagonist=>Protagonisten|f-ndeklination]] genau.", "begruendung": "Protagonist gehört zur n-Deklination: außer im Nominativ Singular immer -en, also den Protagonisten." },
+    { "id": "2.6-14", "kurs": 2, "lektion": "2.6", "typ": "fehler", "stufe": 1, "fehlertyp": "f-ndeklination", "text": "Wir danken dem [[Autoren=>Autor|f-ndeklination]] für das Gespräch.", "begruendung": "Autor gehört nicht zur n-Deklination: dem Autor, nicht dem Autoren." },
+    { "id": "2.6-15", "kurs": 2, "lektion": "2.6", "typ": "fehler", "stufe": 2, "fehlertyp": "f-ndeklination", "text": "Die Klasse hört dem [[Professoren=>Professor|f-ndeklination]] zu.", "begruendung": "Professor gehört nicht zur n-Deklination: dem Professor." },
+    { "id": "2.6-16", "kurs": 2, "lektion": "2.6", "typ": "fehler", "stufe": 2, "fehlertyp": "f-ndeklination", "text": "Das Urteil des Richters überrascht den Angeklagten.", "begruendung": "Richter ist kein Wort der n-Deklination, also des Richters; Angeklagten ist richtig gebeugt. Der Satz ist fehlerfrei." },
+    { "id": "2.6-17", "kurs": 2, "lektion": "2.6", "typ": "fehler", "stufe": 2, "fehlertyp": "f-ndeklination", "text": "Der König empfängt den [[Diplomat=>Diplomaten|f-ndeklination]].", "begruendung": "Diplomat endet auf -at und gehört zur n-Deklination: den Diplomaten." },
+
+    { "id": "2.7-01", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Wir sprechen mit Herrn Maier, ___ Leiter der Schule.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Probe: mit dem Mann – Dativ. Der Beisatz steht im selben Fall: dem Leiter der Schule." },
+    { "id": "2.7-02", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Das Buch gehört Paul, ___ jüngeren Bruder.", "hinweis": "mein", "loesungen": ["meinem"], "begruendung": "Probe: Das Buch gehört dem Mann – Dativ. Der Beisatz folgt: meinem jüngeren Bruder." },
+    { "id": "2.7-03", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Sie widerspricht ___ Redner.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Widersprechen verlangt den Dativ: wie dem Mann, also dem Redner." },
+    { "id": "2.7-04", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Er bedient sich ___ Tricks.", "hinweis": "ein", "loesungen": ["eines"], "begruendung": "Sich bedienen verlangt den Genitiv: wie des Mannes, also eines Tricks." },
+    { "id": "2.7-05", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Sie ist sich ___ Gefahr bewusst.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Sich bewusst sein verlangt den Genitiv: wie des Mannes, feminin der Gefahr." },
+    { "id": "2.7-06", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Der Erzähler folgt ___ Spur.", "hinweis": "die", "loesungen": ["der"], "begruendung": "Folgen verlangt den Dativ: wie dem Mann, feminin der Spur." },
+    { "id": "2.7-07", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Ich kenne ihn als ___ ehrlichen Menschen.", "hinweis": "ein", "loesungen": ["einen"], "begruendung": "Das Glied mit als steht im Fall des Bezugsworts ihn, also Akkusativ: einen ehrlichen Menschen." },
+    { "id": "2.7-08", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Die Leser stimmen ___ Autor zu.", "hinweis": "der", "loesungen": ["dem"], "begruendung": "Zustimmen verlangt den Dativ: dem Mann, also dem Autor." },
+    { "id": "2.7-09", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Die Rede des Präsidenten, ___ Gastgebers, war kurz.", "hinweis": "der", "loesungen": ["des"], "begruendung": "Probe: die Rede des Mannes – Genitiv. Der Beisatz steht im selben Fall: des Gastgebers." },
+    { "id": "2.7-10", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Die Figur begegnet ___ alten Freund.", "hinweis": "ein", "loesungen": ["einem"], "begruendung": "Begegnen verlangt den Dativ: dem Mann, also einem alten Freund." },
+    { "id": "2.7-11", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Das Gedicht bedarf ___ Erläuterung.", "hinweis": "eine", "loesungen": ["einer"], "begruendung": "Bedürfen verlangt den Genitiv: wie des Mannes, feminin einer Erläuterung." },
+    { "id": "2.7-12", "kurs": 2, "lektion": "2.7", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Man behandelt den Fremden wie ___ Freund.", "hinweis": "ein", "loesungen": ["einen"], "begruendung": "Das Glied mit wie steht im Fall des Bezugsworts den Fremden, also Akkusativ: einen Freund." },
+    { "id": "2.7-13", "kurs": 2, "lektion": "2.7", "typ": "fehler", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Wir sprachen mit Herrn Maier, [[der=>dem|f-beisatz]] Leiter der Schule.", "begruendung": "Probe: mit dem Mann – Dativ. Der Beisatz steht im selben Fall: dem Leiter." },
+    { "id": "2.7-14", "kurs": 2, "lektion": "2.7", "typ": "fehler", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Sie hilft [[ihren=>ihrem|f-beisatz]] Bruder bei den Hausaufgaben.", "begruendung": "Helfen verlangt den Dativ: dem Mann, also ihrem Bruder." },
+    { "id": "2.7-15", "kurs": 2, "lektion": "2.7", "typ": "fehler", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Das Gedicht bedarf [[eine=>einer|f-beisatz]] genauen Deutung.", "begruendung": "Bedürfen verlangt den Genitiv: wie des Mannes, feminin einer genauen Deutung." },
+    { "id": "2.7-16", "kurs": 2, "lektion": "2.7", "typ": "fehler", "stufe": 2, "fehlertyp": "f-beisatz", "text": "Man begegnet ihm als einem Fremden.", "begruendung": "Begegnen verlangt den Dativ ihm; das Glied mit als folgt im Dativ. Der Satz ist fehlerfrei." },
+    { "id": "2.7-17", "kurs": 2, "lektion": "2.7", "typ": "fehler", "stufe": 1, "fehlertyp": "f-beisatz", "text": "Ich danke [[dich=>dir|f-beisatz]] für den Hinweis.", "begruendung": "Danken verlangt den Dativ: wie dem Mann, also dir." },
+
+    { "id": "2.8-01", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-adjektiv", "text": "Trotz ___ Interesses kamen nur wenige.", "hinweis": "groß", "loesungen": ["großen"], "begruendung": "Ohne Artikel trägt das Adjektiv die Endung, aber im Genitiv neutral steht -en: großen Interesses." },
+    { "id": "2.8-02", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-adjektiv", "text": "Sie arbeitet mit ___ Eifer.", "hinweis": "groß", "loesungen": ["großem"], "begruendung": "Probe: mit dem Eifer. Ohne Artikel übernimmt das Adjektiv die Endung -em: mit großem Eifer." },
+    { "id": "2.8-03", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 1, "fehlertyp": "w-relativ", "text": "Der Autor, ___ Werk verboten wurde, emigrierte.", "hinweis": "Relativpronomen", "loesungen": ["dessen"], "begruendung": "Probe: das Werk des Mannes – Genitiv, maskulin. Das Relativpronomen lautet dessen." },
+    { "id": "2.8-04", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 1, "fehlertyp": "w-relativ", "text": "Die Autorin, ___ Roman ich lese, lebt in Wien.", "hinweis": "Relativpronomen", "loesungen": ["deren"], "begruendung": "Genitiv zu einem femininen Bezugswort: deren Roman." },
+    { "id": "2.8-05", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-adjektiv", "text": "Bei ___ Wetter gehen wir spazieren.", "hinweis": "schön", "loesungen": ["schönem"], "begruendung": "Probe: bei dem Wetter. Ohne Artikel übernimmt das Adjektiv die Endung -em: bei schönem Wetter." },
+    { "id": "2.8-06", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-adjektiv", "text": "Er trinkt ___ Kaffee.", "hinweis": "schwarz", "loesungen": ["schwarzen"], "begruendung": "Probe: Er trinkt den Kaffee. Ohne Artikel übernimmt das Adjektiv die Endung -en: schwarzen Kaffee." },
+    { "id": "2.8-07", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-adjektiv", "text": "Wegen ___ Regens fällt das Fest aus.", "hinweis": "stark", "loesungen": ["starken"], "begruendung": "Genitiv maskulin ohne Artikel: Das Adjektiv endet auf -en, starken Regens." },
+    { "id": "2.8-08", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 2, "fehlertyp": "w-relativ", "text": "Die Schüler, ___ Eltern gekommen waren, warteten draußen.", "hinweis": "Relativpronomen", "loesungen": ["deren"], "begruendung": "Genitiv zu einem Bezugswort im Plural: deren Eltern." },
+    { "id": "2.8-09", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 1, "fehlertyp": "w-relativ", "text": "Das Gedicht, ___ Autor unbekannt ist, wird oft zitiert.", "hinweis": "Relativpronomen", "loesungen": ["dessen"], "begruendung": "Genitiv zu einem neutralen Bezugswort: dessen Autor." },
+    { "id": "2.8-10", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 1, "fehlertyp": "f-adjektiv", "text": "Sie spricht mit ___ Respekt von ihm.", "hinweis": "groß", "loesungen": ["großem"], "begruendung": "Probe: mit dem Respekt. Ohne Artikel übernimmt das Adjektiv die Endung -em: mit großem Respekt." },
+    { "id": "2.8-11", "kurs": 2, "lektion": "2.8", "typ": "eintippen", "stufe": 2, "fehlertyp": "f-adjektiv", "text": "Angesichts ___ Lärms schloss sie das Fenster.", "hinweis": "anhaltend", "loesungen": ["anhaltenden"], "begruendung": "Genitiv maskulin ohne Artikel: Das Adjektiv endet auf -en, anhaltenden Lärms." },
+    { "id": "2.8-12", "kurs": 2, "lektion": "2.8", "typ": "fehler", "stufe": 1, "fehlertyp": "f-adjektiv", "text": "Trotz [[großes=>großen|f-adjektiv]] Interesses blieb der Saal halb leer.", "begruendung": "Im Genitiv neutral ohne Artikel endet das Adjektiv auf -en: großen Interesses." },
+    { "id": "2.8-13", "kurs": 2, "lektion": "2.8", "typ": "fehler", "stufe": 1, "fehlertyp": "w-relativ", "text": "Der Dichter, [[deren=>dessen|w-relativ]] Gedichte wir lesen, starb jung.", "begruendung": "Das Bezugswort Dichter ist maskulin: Genitiv dessen, nicht deren." },
+    { "id": "2.8-14", "kurs": 2, "lektion": "2.8", "typ": "fehler", "stufe": 1, "fehlertyp": "f-adjektiv", "text": "Mit [[großen=>großem|f-adjektiv]] Aufwand wurde das Stück inszeniert.", "begruendung": "Probe: mit dem Aufwand. Ohne Artikel übernimmt das Adjektiv die Endung -em: mit großem Aufwand." },
+    { "id": "2.8-15", "kurs": 2, "lektion": "2.8", "typ": "fehler", "stufe": 1, "fehlertyp": "w-relativ", "text": "Die Stadt, deren Bürgermeister zurücktrat, wählt neu.", "begruendung": "Das Bezugswort Stadt ist feminin: Genitiv deren. Der Satz ist fehlerfrei." },
+    { "id": "2.8-16", "kurs": 2, "lektion": "2.8", "typ": "fehler", "stufe": 2, "fehlertyp": "f-adjektiv", "text": "Wegen [[schlechtes=>schlechten|f-adjektiv]] Wetters wurde das Spiel abgesagt.", "begruendung": "Im Genitiv neutral ohne Artikel endet das Adjektiv auf -en: schlechten Wetters." },
+    { "id": "2.8-17", "kurs": 2, "lektion": "2.8", "typ": "fehler", "stufe": 2, "fehlertyp": "w-relativ", "text": "Die Schüler, [[dessen=>deren|w-relativ]] Noten schlecht waren, mussten nachsitzen.", "begruendung": "Das Bezugswort Schüler steht im Plural: Genitiv deren, nicht dessen." }
+  ]
+}

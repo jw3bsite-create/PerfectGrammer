@@ -31,6 +31,12 @@
     ["existenziell", "existentiell"],
     ["substanziell", "substantiell"],
     ["Grafik", "Graphik"],
-    ["Orthografie", "Orthographie"]
+    ["Orthografie", "Orthographie"],
+    ["selbstständig", "selbständig"],
+    ["selbstständige", "selbständige"],
+    ["selbstständigen", "selbständigen"],
+    ["selbstständiger", "selbständiger"],
+    ["selbstständiges", "selbständiges"],
+    ["Selbstständigkeit", "Selbständigkeit"]
   ]
 }

@@ -1,7 +1,7 @@
 // Automatische Prüfung der Aufgabenbank. Läuft mit „npm run check:content“.
 
 import { describe, expect, it } from 'vitest';
-import { BANK } from '../src/lib/content';
+import { BANK, solutionText } from '../src/lib/content';
 import { FEHLERTYPEN, fehlertyp } from '../src/lib/fehlertypen';
 import { parseFehler, parseKomma } from '../src/lib/markup';
 import { evalTask, evalTextwiedergabe, evalTyped, prepareTask, evalKomma } from '../src/lib/evaluate';
@@ -25,10 +25,13 @@ function allTexts(t: Task): string[] {
   switch (t.typ) {
     case 'probe':
     case 'komma':
+      out.push(t.text);
+      break;
     case 'fehler':
     case 'fehlertyp':
     case 'korrektur':
-      out.push(t.text);
+      // Das Original enthält absichtlich Fehler; geprüft wird die korrigierte Fassung.
+      out.push(solutionText(t));
       break;
     case 'eintippen':
       out.push(t.text, ...t.loesungen, t.hinweis ?? '');

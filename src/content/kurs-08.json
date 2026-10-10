@@ -1,0 +1,150 @@
+{
+  "kurs": {
+    "id": 8,
+    "titel": "Zitieren und übrige Zeichen",
+    "kurztitel": "Zeichen",
+    "reihenfolge": 8,
+    "probe": "Die Stellung des Begleitsatzes bestimmt die Zeichen.",
+    "beschreibung": "Wörtliche Rede, Zitate, Doppelpunkt, Semikolon, Apostroph und Bindestrich: Wo der Begleitsatz steht und was folgt, entscheidet über die Zeichen."
+  },
+  "lektionen": [
+    {
+      "id": "8.1",
+      "titel": "Wörtliche Rede",
+      "regelkarte": {
+        "regel": "Steht der Begleitsatz vorn, folgt ein Doppelpunkt. Steht er hinten, setzt du nach dem schließenden Anführungszeichen ein Komma; der Punkt der Rede entfällt, Frage- und Ausrufezeichen bleiben. Unterbricht er die Rede, wird er von zwei Kommas eingeschlossen.",
+        "probe": "Prüfe, wo der Begleitsatz steht: vorn Doppelpunkt, hinten Komma nach dem Schlusszeichen, in der Mitte ein Komma davor und eines danach.",
+        "beispiele": ["Sie fragte: „Kommst du?“", "„Kommst du?“, fragte sie.", "„Ich komme“, sagte er, „aber erst morgen.“"],
+        "falle": "Der Punkt der Rede fällt weg, wenn der Begleitsatz folgt: „Ich komme“, sagte er – nicht „Ich komme.“, sagte er."
+      }
+    },
+    {
+      "id": "8.2",
+      "titel": "Zitate im Aufsatz",
+      "regelkarte": {
+        "regel": "Ein in den eigenen Satz eingebautes Zitat steht ohne Doppelpunkt; der Satzbau muss aufgehen, und der Satzpunkt folgt nach dem Beleg. Auslassungen und Anpassungen kennzeichnest du mit eckigen Klammern, ein Zitat im Zitat mit halben Anführungszeichen. Werktitel stehen in Anführungszeichen.",
+        "probe": "Prüfe die Stellung des Begleitsatzes: Ist das Zitat in deinen Satz eingebaut, steht kein Doppelpunkt. Steht ein vollständiger Begleitsatz davor, folgt ein Doppelpunkt.",
+        "beispiele": ["Der Erzähler nennt ihn einen „stillen Beobachter“ (Z. 12).", "Sie sei „müde […] und allein“ (V. 4).", "In Kafkas „Die Verwandlung“ erwacht Gregor als Käfer."],
+        "falle": "Der Satzpunkt steht nach der Klammer mit dem Beleg, nicht im Zitat davor."
+      }
+    },
+    {
+      "id": "8.3",
+      "titel": "Doppelpunkt und Semikolon",
+      "regelkarte": {
+        "regel": "Nach einem Doppelpunkt schreibst du groß, wenn ein vollständiger Satz folgt, sonst klein. Das Semikolon trennt gleichrangige Sätze stärker als ein Komma und schwächer als ein Punkt; danach schreibst du klein.",
+        "probe": "Prüfe, was dem Zeichen folgt: Ein ganzer Satz mit eigenem gebeugtem Verb nach dem Doppelpunkt heißt groß. Nach dem Semikolon geht es immer klein weiter.",
+        "beispiele": ["Der Autor warnt; die Leser schweigen.", "Das Ergebnis ist klar: Die Reform ist gescheitert.", "Seine Antwort war knapp: zu teuer."],
+        "falle": "Nach dem Semikolon wird nicht groß weitergeschrieben: „Der Autor warnt; Die Leser schweigen“ ist falsch."
+      }
+    },
+    {
+      "id": "8.4",
+      "titel": "Apostroph",
+      "regelkarte": {
+        "regel": "Der Apostroph steht beim Genitiv von Namen auf s, ß, x oder z: Grass’ Roman, Marx’ Theorie. Beim gewöhnlichen Genitiv-s, beim Plural-s und bei ins, aufs, fürs steht keiner: Goethes Gedichte, die Autos, ins Kino.",
+        "probe": "Prüfe, worauf der Name endet: auf s, ß, x oder z steht der Apostroph, sonst ein Genitiv-s ohne Apostroph.",
+        "beispiele": ["Grass’ Roman", "Goethes Gedichte", "Wir gehen ins Theater."],
+        "falle": "Kein Apostroph vor dem Genitiv-s: Goethes Werke, nicht Goethe’s Werke."
+      }
+    },
+    {
+      "id": "8.5",
+      "titel": "Bindestrich und Abkürzungen",
+      "regelkarte": {
+        "regel": "Einen Bindestrich setzt du bei Ziffern, Abkürzungen und Einzelbuchstaben: 18-jährig, der 18-Jährige, U-Bahn; mehrteilige Fügungen werden durchgekoppelt: Ja-Nein-Frage. Der Ergänzungsstrich ersetzt einen gemeinsamen Wortteil: Vor- und Nachteile. Abkürzungen wie z. B. und d. h. schreibst du mit Leerzeichen, Ordnungszahlen mit Punkt: der 3. Akt.",
+        "probe": "Prüfe, was zusammengesetzt wird: Ziffer, Abkürzung oder Einzelbuchstabe verlangen den Bindestrich, mehrteilige Fügungen werden ganz durchgekoppelt.",
+        "beispiele": ["der 18-Jährige, der Ich-Erzähler", "Vor- und Nachteile", "z. B., d. h., im 3. Akt"],
+        "falle": "Wird ein 18-Jähriger zum Nomen, schreibst du Jährige groß: der 18-Jährige."
+      }
+    }
+  ],
+  "aufgaben": [
+    { "id": "8.1-01", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 1, "fehlertyp": "z-rede", "text": "„Kommst du?“, fragte sie.", "begruendung": "Der Begleitsatz steht hinten: Komma nach dem schließenden Anführungszeichen; das Fragezeichen bleibt." },
+    { "id": "8.1-02", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 2, "fehlertyp": "z-rede", "text": "„Ich komme“, sagte er, „aber erst morgen.“", "begruendung": "Der Begleitsatz unterbricht die Rede: ein Komma davor und eines danach." },
+    { "id": "8.1-03", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 1, "fehlertyp": "z-rede", "text": "„Das ist ungerecht!“, rief der Schüler.", "begruendung": "Der Begleitsatz steht hinten: Komma nach dem Anführungszeichen; das Ausrufezeichen bleibt." },
+    { "id": "8.1-04", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 1, "fehlertyp": "z-rede", "text": "„Wir müssen reden“, sagte die Mutter.", "begruendung": "Der Begleitsatz steht hinten: Der Punkt der Rede entfällt, nach dem Anführungszeichen steht ein Komma." },
+    { "id": "8.1-05", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 2, "fehlertyp": "z-rede", "text": "„Wenn du willst“, sagte sie, „helfe ich dir.“", "begruendung": "Der Begleitsatz steht in der Mitte: ein Komma davor und eines danach." },
+    { "id": "8.1-06", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 1, "fehlertyp": "z-rede", "text": "„Wo warst du?“, fragte der Vater streng.", "begruendung": "Der Begleitsatz steht hinten: Komma nach dem Anführungszeichen; das Fragezeichen bleibt." },
+    { "id": "8.1-07", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 1, "fehlertyp": "z-rede", "text": "„Ruhe!“, rief die Lehrerin.", "begruendung": "Der Begleitsatz steht hinten: Komma nach dem Anführungszeichen; das Ausrufezeichen bleibt." },
+    { "id": "8.1-08", "kurs": 8, "lektion": "8.1", "typ": "komma", "stufe": 2, "fehlertyp": "z-rede", "text": "„Ich weiß es nicht“, gab sie zu, „vielleicht morgen.“", "begruendung": "Der Begleitsatz steht in der Mitte: ein Komma davor und eines danach." },
+    { "id": "8.1-09", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 1, "fehlertyp": "z-rede", "text": "Sie [[fragte=>fragte:|z-rede]] „Kommst du mit?“", "begruendung": "Der Begleitsatz steht vorn: Vor der wörtlichen Rede fehlt der Doppelpunkt." },
+    { "id": "8.1-10", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 1, "fehlertyp": "z-rede", "text": "„Ich bin [[müde.“,=>müde“,|z-rede]] sagte er.", "begruendung": "Der Begleitsatz steht hinten: Der Punkt der Rede entfällt." },
+    { "id": "8.1-11", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 1, "fehlertyp": "z-rede", "text": "„Wo bist [[du?“=>du?“,|z-rede]] fragte sie.", "begruendung": "Der Begleitsatz steht hinten: Nach dem Anführungszeichen fehlt das Komma; das Fragezeichen bleibt." },
+    { "id": "8.1-12", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 1, "fehlertyp": "z-rede", "text": "Er [[sagte,=>sagte:|z-rede]] „Das reicht.“", "begruendung": "Der Begleitsatz steht vorn: Vor der wörtlichen Rede steht ein Doppelpunkt, kein Komma." },
+    { "id": "8.1-13", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 1, "fehlertyp": "z-rede", "text": "„Komm bitte [[her“=>her“,|z-rede]] rief sie.", "begruendung": "Der Begleitsatz steht hinten: Nach dem Anführungszeichen fehlt das Komma." },
+    { "id": "8.1-14", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 2, "fehlertyp": "z-rede", "text": "„Vielleicht“, sagte sie, „irrst du dich.“", "begruendung": "Der Begleitsatz steht in der Mitte und ist von zwei Kommas eingeschlossen. Der Satz ist fehlerfrei." },
+    { "id": "8.1-15", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 2, "fehlertyp": "z-rede", "text": "Der Lehrer [[fragte;=>fragte:|z-rede]] „Wer kennt das Gedicht?“", "begruendung": "Der Begleitsatz steht vorn: Vor der wörtlichen Rede steht ein Doppelpunkt." },
+    { "id": "8.1-16", "kurs": 8, "lektion": "8.1", "typ": "fehler", "stufe": 2, "fehlertyp": "z-rede", "text": "„Ich habe keine Zeit“, sagte [[er=>er,|z-rede]] „aber morgen geht es.“", "begruendung": "Der Begleitsatz unterbricht die Rede: Auch nach ihm steht ein Komma." },
+
+    { "id": "8.2-01", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 2, "fehlertyp": "z-zitat", "text": "Der Erzähler nennt ihn einen „stillen [[Beobachter.“=>Beobachter“|z-zitat]] (Z. [[12)=>12).|z-zitat]]", "begruendung": "Das Zitat ist in den Satz eingebaut: Der Satzpunkt steht nach dem Beleg, nicht im Zitat." },
+    { "id": "8.2-02", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 1, "fehlertyp": "z-zitat", "text": "Die Autorin bezeichnet die Reform [[als:=>als|z-zitat]] „längst überfällig“ (Z. 8).", "begruendung": "Das Zitat ist in den Satz eingebaut: kein Doppelpunkt davor." },
+    { "id": "8.2-03", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 1, "fehlertyp": "z-zitat", "text": "Er erwähnt den Roman [[Die Blechtrommel=>„Die Blechtrommel“|z-zitat]] nur kurz.", "begruendung": "Werktitel stehen in Anführungszeichen." },
+    { "id": "8.2-04", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 1, "fehlertyp": "z-zitat", "text": "Die Erzählerin beschreibt den Ort als „kalt und fremd“ (Z. 5).", "begruendung": "Das Zitat ist ohne Doppelpunkt eingebaut, der Punkt folgt nach dem Beleg. Der Satz ist fehlerfrei." },
+    { "id": "8.2-05", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 3, "fehlertyp": "z-zitat", "text": "Im Text heißt es: „Er rief: [[„Hilfe!““=>‚Hilfe!‘“|z-zitat]] (Z. 3).", "begruendung": "Ein Zitat im Zitat steht in halben Anführungszeichen." },
+    { "id": "8.2-06", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 2, "fehlertyp": "z-zitat", "text": "Sie sei „müde [[(…)=>[…]|z-zitat]] und allein“ (V. 4).", "begruendung": "Auslassungen im Zitat kennzeichnest du mit eckigen Klammern." },
+    { "id": "8.2-07", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 1, "fehlertyp": "z-zitat", "text": "In „Die Verwandlung“ beschreibt Kafka eine Entfremdung.", "begruendung": "Der Werktitel steht in Anführungszeichen. Der Satz ist fehlerfrei." },
+    { "id": "8.2-08", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 2, "fehlertyp": "z-zitat", "text": "Die Autorin spricht von einer „gefährlichen [[Entwicklung.“=>Entwicklung“|z-zitat]] (Z. [[14)=>14).|z-zitat]]", "begruendung": "Der Satzpunkt steht nach dem Beleg, nicht im eingebauten Zitat." },
+    { "id": "8.2-09", "kurs": 8, "lektion": "8.2", "typ": "komma", "stufe": 1, "fehlertyp": "z-zitat", "text": "Die Autorin spricht von einer „stillen Revolution“, die längst begonnen habe.", "begruendung": "Nach dem eingebauten Zitat beginnt ein Relativsatz: Das Komma steht nach dem schließenden Anführungszeichen." },
+    { "id": "8.2-10", "kurs": 8, "lektion": "8.2", "typ": "komma", "stufe": 2, "fehlertyp": "z-zitat", "text": "Das Wort „Heimat“, das im Text oft fällt, bleibt unbestimmt.", "begruendung": "Der Relativsatz in der Mitte wird paarig abgetrennt; das erste Komma steht nach dem Anführungszeichen." },
+    { "id": "8.2-11", "kurs": 8, "lektion": "8.2", "typ": "komma", "stufe": 2, "fehlertyp": "z-zitat", "text": "Wenn der Erzähler von „Freiheit“ spricht, meint er Einsamkeit.", "begruendung": "Das Zitat steht mitten im Nebensatz; das Komma folgt erst am Ende des Nebensatzes nach spricht." },
+    { "id": "8.2-12", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 1, "fehlertyp": "z-zitat", "text": "Die Autorin hält die Lage für „ernst“ (Z. 3).", "begruendung": "Das Zitat ist korrekt eingebaut und belegt. Der Satz ist fehlerfrei." },
+    { "id": "8.2-13", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 2, "fehlertyp": "z-zitat", "text": "Die Figur nennt sich [[selbst:=>selbst|z-zitat]] „einen Feigling“ (Z. 9).", "begruendung": "Das Zitat ist in den Satz eingebaut: kein Doppelpunkt davor." },
+    { "id": "8.2-14", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 1, "fehlertyp": "z-zitat", "text": "Der Titel des Gedichts [[Abendlied=>„Abendlied“|z-zitat]] weckt Erwartungen.", "begruendung": "Werktitel stehen in Anführungszeichen." },
+    { "id": "8.2-15", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 2, "fehlertyp": "z-zitat", "text": "Der Sprecher klagt über die „Kälte der [[Stadt.“=>Stadt“|z-zitat]] (V. [[6)=>6).|z-zitat]]", "begruendung": "Der Satzpunkt steht nach dem Beleg, nicht im eingebauten Zitat." },
+    { "id": "8.2-16", "kurs": 8, "lektion": "8.2", "typ": "fehler", "stufe": 1, "fehlertyp": "z-zitat", "text": "Die Ministerin nennt den Plan „ehrgeizig“ (Z. 2).", "begruendung": "Das Zitat ist korrekt eingebaut und belegt. Der Satz ist fehlerfrei." },
+
+    { "id": "8.3-01", "kurs": 8, "lektion": "8.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Das Ergebnis ist eindeutig: ___ Reform ist gescheitert.", "optionen": ["Die", "die"], "loesungen": ["Die"], "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, ist. Also groß." },
+    { "id": "8.3-02", "kurs": 8, "lektion": "8.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Der Autor warnt; ___ Leser schweigen.", "optionen": ["die", "Die"], "loesungen": ["die"], "begruendung": "Nach dem Semikolon geht es immer klein weiter." },
+    { "id": "8.3-03", "kurs": 8, "lektion": "8.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Seine Antwort war knapp: ___ teuer.", "optionen": ["zu", "Zu"], "loesungen": ["zu"], "begruendung": "Nach dem Doppelpunkt folgt kein ganzer Satz, denn ein gebeugtes Verb fehlt. Also klein." },
+    { "id": "8.3-04", "kurs": 8, "lektion": "8.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Es gibt nur eine Lösung: ___ müssen verhandeln.", "optionen": ["Wir", "wir"], "loesungen": ["Wir"], "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, müssen. Also groß." },
+    { "id": "8.3-05", "kurs": 8, "lektion": "8.3", "typ": "entscheiden", "stufe": 2, "fehlertyp": "z-doppelpunkt", "text": "Die Szene ist kurz; ___ wirkt sie lange nach.", "optionen": ["trotzdem", "Trotzdem"], "loesungen": ["trotzdem"], "begruendung": "Nach dem Semikolon geht es immer klein weiter." },
+    { "id": "8.3-06", "kurs": 8, "lektion": "8.3", "typ": "entscheiden", "stufe": 2, "fehlertyp": "z-doppelpunkt", "text": "Der Stil ist zweierlei: ___ und präzise.", "optionen": ["knapp", "Knapp"], "loesungen": ["knapp"], "begruendung": "Nach dem Doppelpunkt folgen nur Adjektive, kein ganzer Satz. Also klein." },
+    { "id": "8.3-07", "kurs": 8, "lektion": "8.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Die Bilanz fällt nüchtern aus: ___ Ziel wurde erreicht.", "optionen": ["Kein", "kein"], "loesungen": ["Kein"], "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, wurde. Also groß." },
+    { "id": "8.3-08", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Die Lage ist ernst; [[Viele=>viele|z-doppelpunkt]] Familien verlieren ihr Zuhause.", "begruendung": "Nach dem Semikolon geht es immer klein weiter." },
+    { "id": "8.3-09", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Das Fazit lautet: [[das=>Das|z-doppelpunkt]] Experiment ist gescheitert.", "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, ist. Also groß." },
+    { "id": "8.3-10", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Die Kritik ist hart; [[Sie=>sie|z-doppelpunkt]] trifft aber nicht den Kern.", "begruendung": "Nach dem Semikolon geht es klein weiter; sie ist hier keine höfliche Anrede." },
+    { "id": "8.3-11", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Eines ist sicher: [[die=>Die|z-doppelpunkt]] Wahl wird knapp.", "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, wird. Also groß." },
+    { "id": "8.3-12", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 2, "fehlertyp": "z-doppelpunkt", "text": "Die Begründung ist schwach: zu wenig Belege, zu viel Meinung.", "begruendung": "Nach dem Doppelpunkt folgt kein ganzer Satz, also richtig klein. Der Satz ist fehlerfrei." },
+    { "id": "8.3-13", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Der Vater schweigt; die Mutter weint.", "begruendung": "Das Semikolon trennt zwei gleichrangige Sätze, danach geht es klein weiter. Der Satz ist fehlerfrei." },
+    { "id": "8.3-14", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Das Ziel ist klar: [[wir=>Wir|z-doppelpunkt]] wollen gewinnen.", "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, wollen. Also groß." },
+    { "id": "8.3-15", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 1, "fehlertyp": "z-doppelpunkt", "text": "Der Text hat zwei Teile; [[Der=>der|z-doppelpunkt]] erste ist erzählend.", "begruendung": "Nach dem Semikolon geht es immer klein weiter." },
+    { "id": "8.3-16", "kurs": 8, "lektion": "8.3", "typ": "fehler", "stufe": 2, "fehlertyp": "z-doppelpunkt", "text": "Die Bilanz: [[Mehr=>mehr|z-doppelpunkt]] Kosten, weniger Nutzen.", "begruendung": "Nach dem Doppelpunkt folgt kein ganzer Satz, denn ein gebeugtes Verb fehlt. Also klein." },
+
+    { "id": "8.4-01", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-apostroph", "text": "___ Roman spielt in Danzig.", "hinweis": "Grass, Genitiv", "loesungen": ["Grass’"], "begruendung": "Der Name endet auf s: Der Apostroph ersetzt das Genitiv-s." },
+    { "id": "8.4-02", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-apostroph", "text": "___ Gedichte sind weltberühmt.", "hinweis": "Goethe, Genitiv", "loesungen": ["Goethes"], "begruendung": "Der Name endet nicht auf s, ß, x oder z: Genitiv-s ohne Apostroph." },
+    { "id": "8.4-03", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Wir gehen heute ___ Theater.", "hinweis": "in + das", "loesungen": ["ins"], "begruendung": "Ins, aufs und fürs schreibst du ohne Apostroph." },
+    { "id": "8.4-04", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 2, "fehlertyp": "z-apostroph", "text": "___ Philosophie beeinflusste viele Denker.", "hinweis": "Sokrates, Genitiv", "loesungen": ["Sokrates’"], "begruendung": "Der Name endet auf s: Der Apostroph ersetzt das Genitiv-s." },
+    { "id": "8.4-05", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Die ___ stehen vor der Tür.", "hinweis": "Auto, Plural", "loesungen": ["Autos"], "begruendung": "Das Plural-s bekommt nie einen Apostroph." },
+    { "id": "8.4-06", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Er tut alles ___ Geld.", "hinweis": "für + das", "loesungen": ["fürs"], "begruendung": "Ins, aufs und fürs schreibst du ohne Apostroph." },
+    { "id": "8.4-07", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-apostroph", "text": "___ Ideen wirken bis heute.", "hinweis": "Marx, Genitiv", "loesungen": ["Marx’"], "begruendung": "Der Name endet auf x: Der Apostroph ersetzt das Genitiv-s." },
+    { "id": "8.4-08", "kurs": 8, "lektion": "8.4", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-apostroph", "text": "___ Briefe an ihre Schwester sind erhalten.", "hinweis": "Anna, Genitiv", "loesungen": ["Annas"], "begruendung": "Der Name endet nicht auf s, ß, x oder z: Genitiv-s ohne Apostroph." },
+    { "id": "8.4-09", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 1, "fehlertyp": "z-apostroph", "text": "[[Goethe’s=>Goethes|z-apostroph]] Werke umfassen viele Bände.", "begruendung": "Der Name endet nicht auf s, ß, x oder z: Genitiv-s ohne Apostroph." },
+    { "id": "8.4-10", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Die [[CD’s=>CDs|z-apostroph]] liegen im Regal.", "begruendung": "Das Plural-s bekommt nie einen Apostroph." },
+    { "id": "8.4-11", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Wir gehen [[in’s=>ins|z-apostroph]] Kino.", "begruendung": "Ins schreibst du ohne Apostroph." },
+    { "id": "8.4-12", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Brechts Stücke sind politisch.", "begruendung": "Brecht endet nicht auf s, ß, x oder z: Genitiv-s ohne Apostroph. Der Satz ist fehlerfrei." },
+    { "id": "8.4-13", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 2, "fehlertyp": "z-apostroph", "text": "[[Thomas’s=>Thomas’|z-apostroph]] Vortrag war gut.", "begruendung": "Der Name endet auf s: Der Apostroph ersetzt das Genitiv-s, ein weiteres s entfällt." },
+    { "id": "8.4-14", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Das Café gehört [[Maria’s=>Marias|z-apostroph]] Familie.", "begruendung": "Der Name endet nicht auf s, ß, x oder z: Genitiv-s ohne Apostroph." },
+    { "id": "8.4-15", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Er geht [[auf’s=>aufs|z-apostroph]] Ganze.", "begruendung": "Aufs schreibst du ohne Apostroph." },
+    { "id": "8.4-16", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 1, "fehlertyp": "z-apostroph", "text": "Die [[Hobby’s=>Hobbys|z-apostroph]] der Figuren bleiben unklar.", "begruendung": "Das Plural-s bekommt nie einen Apostroph." },
+    { "id": "8.4-17", "kurs": 8, "lektion": "8.4", "typ": "fehler", "stufe": 2, "fehlertyp": "z-apostroph", "text": "Max’ Schwester studiert Medizin.", "begruendung": "Max endet auf x: Der Apostroph ersetzt das Genitiv-s. Der Satz ist fehlerfrei." },
+
+    { "id": "8.5-01", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Der Protagonist ist ___.", "hinweis": "18 + jährig", "loesungen": ["18-jährig"], "begruendung": "Bei Ziffern steht ein Bindestrich: 18-jährig." },
+    { "id": "8.5-02", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "z-bindestrich", "text": "Der ___ verlässt das Elternhaus.", "hinweis": "18 + jährig, als Nomen", "loesungen": ["18-Jährige"], "begruendung": "Ziffer mit Bindestrich; als Nomen schreibst du Jährige groß: der 18-Jährige." },
+    { "id": "8.5-03", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Der ___ schildert seine Kindheit.", "hinweis": "Ich + Erzähler", "loesungen": ["Ich-Erzähler"], "begruendung": "Bei Zusammensetzungen mit Ich steht ein Bindestrich: der Ich-Erzähler." },
+    { "id": "8.5-04", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 2, "fehlertyp": "z-bindestrich", "text": "Die Autorin wägt die ___ ab.", "hinweis": "Vorteile und Nachteile, verkürzt", "loesungen": ["Vor- und Nachteile"], "begruendung": "Der Ergänzungsstrich ersetzt den gemeinsamen Wortteil: Vor- und Nachteile." },
+    { "id": "8.5-05", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Der Text enthält viele Stilmittel, ___ Metaphern.", "hinweis": "zum Beispiel, abgekürzt", "loesungen": ["z. B."], "begruendung": "Die Abkürzung z. B. schreibst du mit Punkten und einem Leerzeichen." },
+    { "id": "8.5-06", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Im ___ Akt kommt es zur Katastrophe.", "hinweis": "3, Ordnungszahl", "loesungen": ["3."], "begruendung": "Ordnungszahlen in Ziffern stehen mit Punkt: im 3. Akt." },
+    { "id": "8.5-07", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Sie fährt mit der ___ zur Schule.", "hinweis": "U + Bahn", "loesungen": ["U-Bahn"], "begruendung": "Bei Einzelbuchstaben steht ein Bindestrich: U-Bahn." },
+    { "id": "8.5-08", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Der Text entstand im ___ Jahrhundert.", "hinweis": "19, Ordnungszahl", "loesungen": ["19."], "begruendung": "Ordnungszahlen in Ziffern stehen mit Punkt: im 19. Jahrhundert." },
+    { "id": "8.5-09", "kurs": 8, "lektion": "8.5", "typ": "eintippen", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Die ___ tagt morgen.", "hinweis": "EU + Kommission", "loesungen": ["EU-Kommission"], "begruendung": "Bei Abkürzungen steht ein Bindestrich: EU-Kommission." },
+    { "id": "8.5-10", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Der [[18jährige=>18-Jährige|z-bindestrich]] verlässt die Schule.", "begruendung": "Ziffer mit Bindestrich, als Nomen groß: der 18-Jährige." },
+    { "id": "8.5-11", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Viele Gedichte, [[z.B.=>z. B.|z-bindestrich]] Sonette, sind streng gebaut.", "begruendung": "Die Abkürzung z. B. schreibst du mit Leerzeichen zwischen den Teilen." },
+    { "id": "8.5-12", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Die [[Vor=>Vor-|z-bindestrich]] und Nachteile werden abgewogen.", "begruendung": "Der Ergänzungsstrich zeigt, dass ein gemeinsamer Wortteil fehlt: Vor- und Nachteile." },
+    { "id": "8.5-13", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Der [[Ich Erzähler=>Ich-Erzähler|z-bindestrich]] bleibt namenlos.", "begruendung": "Bei Zusammensetzungen mit Ich steht ein Bindestrich: der Ich-Erzähler." },
+    { "id": "8.5-14", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Das passiert im [[3=>3.|z-bindestrich]] Akt.", "begruendung": "Ordnungszahlen in Ziffern stehen mit Punkt: im 3. Akt." },
+    { "id": "8.5-15", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Die Figur ist 18-jährig, d. h. volljährig.", "begruendung": "18-jährig mit Bindestrich und d. h. mit Leerzeichen sind richtig. Der Satz ist fehlerfrei." },
+    { "id": "8.5-16", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 1, "fehlertyp": "z-bindestrich", "text": "Die [[U Bahn=>U-Bahn|z-bindestrich]] fährt alle fünf Minuten.", "begruendung": "Bei Einzelbuchstaben steht ein Bindestrich: U-Bahn." },
+    { "id": "8.5-17", "kurs": 8, "lektion": "8.5", "typ": "fehler", "stufe": 2, "fehlertyp": "z-bindestrich", "text": "Er stellt eine [[Ja-Nein Frage=>Ja-Nein-Frage|z-bindestrich]].", "begruendung": "Mehrteilige Fügungen werden ganz durchgekoppelt: Ja-Nein-Frage." }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "kurs": {
+    "id": 4,
+    "titel": "das oder dass",
+    "kurztitel": "das/dass",
+    "reihenfolge": 4,
+    "probe": "Ersatz durch dieses, jenes, welches.",
+    "beschreibung": "Das und dass klingen gleich. Eine einzige Ersatzprobe entscheidet in jedem Satz."
+  },
+  "lektionen": [
+    {
+      "id": "4.1",
+      "titel": "Ersatzprobe",
+      "regelkarte": {
+        "regel": "Lässt sich das Wort durch dieses, jenes oder welches ersetzen, schreibst du das; sonst dass. Vor dass steht ein Komma, bei ohne dass, als dass und sodass vor der ganzen Fügung.",
+        "probe": "Ersetze das Wort durch dieses, jenes oder welches. Passt eines, schreibst du das. Passt keines, schreibst du dass.",
+        "beispiele": ["Ich glaube, dass das stimmt. (dieses stimmt)", "Das Buch, das ich lese, ist alt. (welches ich lese)", "Er arbeitet so viel, dass er krank wird."],
+        "falle": "Nach Verben des Sagens und Denkens steht nicht automatisch dass: In „Er sagt das immer“ passt dieses."
+      }
+    }
+  ],
+  "aufgaben": [
+    { "id": "4.1-01", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Ich glaube, ___ das stimmt.", "optionen": ["das", "dass"], "loesungen": ["dass"], "begruendung": "Ersatzprobe: „Ich glaube, dieses das stimmt“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-02", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Das Buch, ___ ich lese, ist alt.", "optionen": ["das", "dass"], "loesungen": ["das"], "begruendung": "Ersatzprobe: „Das Buch, welches ich lese“ passt. Also das." },
+    { "id": "4.1-03", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "___ der Autor schweigt, überrascht.", "optionen": ["Das", "Dass"], "loesungen": ["Dass"], "begruendung": "Ersatzprobe: „Dieses der Autor schweigt“ ergibt keinen Sinn. Also Dass." },
+    { "id": "4.1-04", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Er erklärt, ___ Gedicht sei misslungen.", "optionen": ["das", "dass"], "loesungen": ["das"], "begruendung": "Ersatzprobe: „Er erklärt, dieses Gedicht sei misslungen“ passt. Also das." },
+    { "id": "4.1-05", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Die Autorin betont, ___ Bildung ein Menschenrecht ist.", "optionen": ["das", "dass"], "loesungen": ["dass"], "begruendung": "Ersatzprobe: „dieses Bildung ein Menschenrecht ist“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-06", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Das Argument, ___ sie anführt, überzeugt nicht.", "optionen": ["das", "dass"], "loesungen": ["das"], "begruendung": "Ersatzprobe: „Das Argument, welches sie anführt“ passt. Also das." },
+    { "id": "4.1-07", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Es ist wichtig, ___ man die Quellen prüft.", "optionen": ["das", "dass"], "loesungen": ["dass"], "begruendung": "Ersatzprobe: „dieses man die Quellen prüft“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-08", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "___ ist eine kühne These.", "optionen": ["Das", "Dass"], "loesungen": ["Das"], "begruendung": "Ersatzprobe: „Dieses ist eine kühne These“ passt. Also Das." },
+    { "id": "4.1-09", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Er spricht so leise, ___ niemand ihn versteht.", "optionen": ["das", "dass"], "loesungen": ["dass"], "begruendung": "Ersatzprobe: „dieses niemand ihn versteht“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-10", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Sie verließ den Raum, ohne ___ es jemand bemerkte.", "optionen": ["das", "dass"], "loesungen": ["dass"], "begruendung": "Ersatzprobe: „ohne dieses es jemand bemerkte“ ergibt keinen Sinn. Also ohne dass, mit Komma vor der ganzen Fügung." },
+    { "id": "4.1-11", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Das Kind, ___ im Garten spielt, lacht.", "optionen": ["das", "dass"], "loesungen": ["das"], "begruendung": "Ersatzprobe: „Das Kind, welches im Garten spielt“ passt. Also das." },
+    { "id": "4.1-12", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Wir hoffen, ___ das Wetter hält.", "optionen": ["das", "dass"], "loesungen": ["dass"], "begruendung": "Ersatzprobe: „dieses das Wetter hält“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-13", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Ich weiß, ___ du das weißt.", "optionen": ["das", "dass"], "loesungen": ["dass"], "begruendung": "Ersatzprobe für die Lücke: „dieses du das weißt“ ergibt keinen Sinn. Also dass; beim zweiten das passt dieses." },
+    { "id": "4.1-14", "kurs": 4, "lektion": "4.1", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Er sagt ___ immer wieder.", "optionen": ["das", "dass"], "loesungen": ["das"], "begruendung": "Ersatzprobe: „Er sagt dieses immer wieder“ passt. Also das, obwohl ein Verb des Sagens davorsteht." },
+    { "id": "4.1-15", "kurs": 4, "lektion": "4.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Es ist unwahrscheinlich, ___ er kommt.", "hinweis": "das oder dass", "loesungen": ["dass"], "begruendung": "Ersatzprobe: „dieses er kommt“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-16", "kurs": 4, "lektion": "4.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Das Problem, ___ der Text aufwirft, bleibt ungelöst.", "hinweis": "das oder dass", "loesungen": ["das"], "begruendung": "Ersatzprobe: „Das Problem, welches der Text aufwirft“ passt. Also das." },
+    { "id": "4.1-17", "kurs": 4, "lektion": "4.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Der Autor bezweifelt, ___ das Experiment gelingt.", "hinweis": "das oder dass", "loesungen": ["dass"], "begruendung": "Ersatzprobe: „dieses das Experiment gelingt“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-18", "kurs": 4, "lektion": "4.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Er war so müde, ___ er einschlief.", "hinweis": "das oder dass", "loesungen": ["dass"], "begruendung": "Ersatzprobe: „dieses er einschlief“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-19", "kurs": 4, "lektion": "4.1", "typ": "eintippen", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Kennst du das Lied, ___ sie singt?", "hinweis": "das oder dass", "loesungen": ["das"], "begruendung": "Ersatzprobe: „das Lied, welches sie singt“ passt. Also das." },
+    { "id": "4.1-20", "kurs": 4, "lektion": "4.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Sie fürchtet, ___ Ende sei nah.", "hinweis": "das oder dass", "loesungen": ["das"], "begruendung": "Ersatzprobe: „Sie fürchtet, dieses Ende sei nah“ passt. Also das." },
+    { "id": "4.1-21", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Ich hoffe, [[das=>dass|r-dasdass]] du kommst.", "begruendung": "Ersatzprobe: „dieses du kommst“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-22", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Das Theaterstück, [[dass=>das|r-dasdass]] wir sahen, war lang.", "begruendung": "Ersatzprobe: „Das Theaterstück, welches wir sahen“ passt. Also das." },
+    { "id": "4.1-23", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Er [[behauptet=>behauptet,|k-nebensatz]] [[das=>dass|r-dasdass]] die Quelle gefälscht sei.", "begruendung": "Ersatzprobe: „dieses die Quelle gefälscht sei“ ergibt keinen Sinn, also dass. Vor dass steht ein Komma." },
+    { "id": "4.1-24", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Dass der Plan scheitert, ist klar.", "begruendung": "Ersatzprobe: „Dieses der Plan scheitert“ ergibt keinen Sinn, also richtig Dass. Der Satz ist fehlerfrei." },
+    { "id": "4.1-25", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Ich weiß, [[das=>dass|r-dasdass]] das schwierig ist.", "begruendung": "Ersatzprobe für das erste Wort: „dieses das schwierig ist“ ergibt keinen Sinn. Also dass; beim zweiten das passt dieses." },
+    { "id": "4.1-26", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Das Gedicht, das sie vorträgt, rührt alle.", "begruendung": "Ersatzprobe: „Das Gedicht, welches sie vorträgt“ passt, also das. Der Satz ist fehlerfrei." },
+    { "id": "4.1-27", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Er sagt, [[dass=>das|r-dasdass]] Ergebnis sei falsch.", "begruendung": "Ersatzprobe: „Er sagt, dieses Ergebnis sei falsch“ passt. Also das." },
+    { "id": "4.1-28", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-dasdass", "text": "Sie lief so schnell, [[das=>dass|r-dasdass]] sie den Zug erreichte.", "begruendung": "Ersatzprobe: „dieses sie den Zug erreichte“ ergibt keinen Sinn. Also dass." },
+    { "id": "4.1-29", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 2, "fehlertyp": "k-ueberfluessig", "text": "Er ging, [[ohne,=>ohne|k-ueberfluessig]] dass er sich verabschiedete.", "begruendung": "Ohne dass bildet eine Fügung: Das Komma steht vor der ganzen Fügung, nicht zwischen ohne und dass." },
+    { "id": "4.1-30", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 2, "fehlertyp": "k-ueberfluessig", "text": "Die Gefahr ist zu groß, [[als,=>als|k-ueberfluessig]] dass man sie ignorieren könnte.", "begruendung": "Als dass bildet eine Fügung: Das Komma steht vor als, nicht zwischen als und dass." },
+    { "id": "4.1-31", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-dasdass", "text": "[[Das=>Dass|r-dasdass]] die Reform scheitert, überrascht niemanden.", "begruendung": "Ersatzprobe: „Dieses die Reform scheitert“ ergibt keinen Sinn. Also Dass." },
+    { "id": "4.1-32", "kurs": 4, "lektion": "4.1", "typ": "fehler", "stufe": 2, "fehlertyp": "r-dasdass", "text": "Das ist das Problem, [[dass=>das|r-dasdass]] wir lösen müssen.", "begruendung": "Ersatzprobe: „das Problem, welches wir lösen müssen“ passt. Also das." }
+  ]
+}

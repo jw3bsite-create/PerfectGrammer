@@ -1,0 +1,178 @@
+{
+  "kurs": {
+    "id": 10,
+    "titel": "Korrekturlesen",
+    "kurztitel": "Korrektur",
+    "reihenfolge": 10,
+    "probe": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter.",
+    "beschreibung": "Abschlusskurs ohne neue Regeln: Texte im Stil einer Abiturklausur mit eingebauten Fehlern aus allen Kursen, korrigiert in drei festen Durchgängen."
+  },
+  "lektionen": [
+    {
+      "id": "10.1",
+      "titel": "Korrekturlesen in drei Durchgängen",
+      "ablauf": {
+        "gefuehrt": 1,
+        "frei": 2,
+        "test": 1,
+        "wertung": "teile"
+      },
+      "regelkarte": {
+        "regel": "Lies jeden Text dreimal und stelle dabei jedes Mal nur eine Frage: erst die Kommas, dann die Formen, dann die Wörter. Ändere nur, was du mit einer Probe begründen kannst; jede unnötige Änderung zählt als Fehler.",
+        "probe": "Kommadurchgang: gebeugte Verben unterstreichen, Teilsatzgrenzen, jedes dass, jede Infinitivgruppe, jeder Einschub. Formendurchgang: Fall nach Präpositionen, n-Deklination, Konjunktiv, Tempus. Wortdurchgang: das und dass, groß und klein, ss und ß, getrennt oder zusammen, wider und wieder.",
+        "beispiele": [
+          "Kommadurchgang: Er glaubt, dass sie kommt.",
+          "Formendurchgang: Die Autorin betont, die Lage sei ernst.",
+          "Wortdurchgang: Der Text spiegelt die Zeit wider."
+        ],
+        "falle": "Wer beim ersten Lesen alles zugleich sucht, übersieht die Hälfte. Halte dich an die Reihenfolge der Durchgänge."
+      }
+    }
+  ],
+  "aufgaben": [
+    {
+      "id": "10.1-01",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "k-nebensatz",
+      "titel": "Handyverbot an Schulen",
+      "aufgabe": "Auszug aus einer Erörterung. Korrigiere den Text in drei Durchgängen.",
+      "text": "[[Seid=>Seit|w-verwechslung|Gemeint ist ein Zeitpunkt, von dem an etwas gilt. Also seit.]] einigen Jahren wird darüber gestritten, ob Smartphones an Schulen verboten werden sollen. Befürworter eines Verbots [[argumentieren=>argumentieren,|k-nebensatz|Gebeugte Verben unterstreichen: Mit dass beginnt ein neuer Teilsatz, also steht davor ein Komma.]] dass die Geräte vom Unterricht [[ablenken,=>ablenken|k-ueberfluessig|Gebeugte Verben unterstreichen: Beide Verben gehören zu einem Subjekt und sind mit und verbunden, also kein Komma.]] und die Konzentration schwächen. Tatsächlich zeigen mehrere Studien, [[das=>dass|r-dasdass|Ersatzprobe: dieses, jenes oder welches passt nicht. Also dass.]] Schüler ohne Handy in der Pause häufiger miteinander sprechen. Dennoch greift ein generelles Verbot zu kurz. Wer Jugendlichen den Umgang mit digitalen Medien beibringen will, [[muß=>muss|r-s|Vokallänge hören: Das u in muss ist kurz, also ss.]] diese Medien auch im Unterricht nutzen. Ein Verbot verschiebt das Problem lediglich in die Freizeit, in der niemand die Nutzung begleitet. Hinzu kommt, dass viele Schulen ihre Lernplattformen inzwischen über das Smartphone anbieten. Ohne Handy könnten die Schüler ihre Aufgaben also gar nicht abrufen. Sinnvoller erscheint es [[daher=>daher,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] klare Regeln gemeinsam mit [[den Schüler=>den Schülern|f-praeposition|Maskulines Nomen einsetzen: mit dem Mann, also Dativ; im Plural mit den Schülern.]] festzulegen. So könnten Smartphones im Unterricht meist ausgeschaltet bleiben, während sie in bestimmten Phasen gezielt eingesetzt werden. Eine solche Regelung nimmt die Jugendlichen ernst und stärkt ihre Verantwortung. Letztlich hängt der Erfolg weniger von einem Verbot ab als von der Frage, wie Lehrer und Schüler miteinander umgehen. Eine Schule, die nur [[verbietet=>verbietet,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] verzichtet auf die Chance, Medienkompetenz zu vermitteln.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-02",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "r-dasdass",
+      "titel": "„Die Küche“",
+      "aufgabe": "Auszug aus der Interpretation einer Kurzgeschichte. Korrigiere den Text in drei Durchgängen.",
+      "text": "In der Kurzgeschichte „Die Küche“ schildert die Autorin einen Abend, an dem ein älteres Ehepaar schweigend am Tisch sitzt. Der Mann erinnert sich daran, [[das=>dass|r-dasdass|Ersatzprobe: dieses, jenes oder welches passt nicht. Also dass.]] er seiner Frau früher Briefe geschrieben hat. Heute fehlen ihm die Worte, obwohl er [[spürt=>spürt,|k-nebensatz|Gebeugte Verben unterstreichen: Mit dass beginnt ein neuer Teilsatz, also steht davor ein Komma.]] dass sie auf eine Geste wartet. Die Erzählerin beschreibt die Stille als „schwer wie [[Blei.“=>Blei“|z-zitat|Das Zitat ist in den Satz eingebaut: Der Punkt steht erst nach dem Beleg.]] (Z. [[14)=>14).|z-zitat|Der Satzpunkt folgt nach der Klammer mit dem Beleg.]] Dieser Vergleich macht deutlich, wie sehr das Paar unter seiner Sprachlosigkeit leidet. Auffällig ist, dass keine der Figuren einen [[Name=>Namen|f-ndeklination|Reihe bilden: der Name, des Namens, dem Namen, den Namen. Im Akkusativ also Namen.]] [[tragen=>trägt|w-kongruenz|Die Aussage handelt von keiner einzigen Figur. Also Singular: trägt.]]. Dadurch wirkt das Geschehen beispielhaft: [[es=>Es|z-doppelpunkt|Nach dem Doppelpunkt folgt ein ganzer Satz mit eigenem gebeugtem Verb, könnte. Also groß.]] könnte sich in jeder Küche abspielen. Am Ende steht die Frau [[auf=>auf,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] um das Geschirr abzuräumen. Bevor sie den Raum verlässt, legt sie dem Mann kurz die Hand auf die Schulter. Diese kleine Bewegung lässt sich als Zeichen der Versöhnung deuten. Der Mann bleibt jedoch sitzen und blickt zum Fenster, in dem sich die Lampe spiegelt. Der offene Schluss lässt den Leser im [[ungewissen=>Ungewissen|r-gross|Begleiterprobe: Vor Ungewissen steht im, also groß.]], ob Mann und Frau ihr Schweigen überwinden. Gerade diese Unsicherheit verleiht dem Text seine Wirkung, denn sie zwingt den Leser, die Lücke selbst zu füllen.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-03",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 3,
+      "fehlertyp": "kj-indikativ",
+      "titel": "„Langsam lesen“",
+      "aufgabe": "Textwiedergabe eines Kommentars. Korrigiere den Text in drei Durchgängen.",
+      "text": "In ihrem Kommentar „Langsam lesen“ setzt sich die Journalistin Clara Wendt mit der Frage auseinander, wie sich das Lesen im digitalen Zeitalter verändert. Dabei stützt sie sich vor allem auf Gespräche mit Lehrern und Schülern. Sie stellt zunächst fest, die junge Generation [[liest=>lese|kj-indikativ|Ausweichkette, Schritt 1: Der Konjunktiv I lese unterscheidet sich vom Indikativ liest. Also lese.]] heute mehr Texte als jede Generation vor ihr. Allerdings lese sie [[flüchtiger,=>flüchtiger|k-ueberfluessig|Gebeugte Verben unterstreichen: Beide Verben gehören zu einem Subjekt und sind mit und verbunden, also kein Komma.]] und springe von Nachricht zu Nachricht. Ein Roman verlange dagegen [[Geduld=>Geduld,|frei]] und diese Geduld fehle vielen Jugendlichen. Früher [[schrieb man mehr Briefe=>habe man mehr Briefe geschrieben|kj-zeit|Zeitstufe Vergangenheit: Ausweichkette auf das Hilfsverb anwenden, habe … geschrieben.]], erinnert die Autorin. Wendt räumt ein, dass digitale Medien auch Vorteile [[haben=>hätten|kj-ausweich|Ausweichkette: haben gleicht dem Indikativ, also Konjunktiv II hätten.]]. So [[kann=>könne|kj-indikativ|Ausweichkette, Schritt 1: Der Konjunktiv I könne unterscheidet sich vom Indikativ kann. Also könne.]] man Informationen schneller finden und Texte leichter teilen. Sie warnt jedoch [[davor=>davor,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] das konzentrierte Lesen aufzugeben. Wer nur noch kurze Texte [[lese=>lese,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] verliere die Fähigkeit, komplexe Gedankengänge nachzuvollziehen. Die Schule müsse deshalb Räume schaffen, in denen langsames [[lesen=>Lesen|r-gross|Begleiterprobe: Vor Lesen könnte das stehen, das langsame Lesen. Also groß.]] möglich sei. Abschließend fordert die Autorin, Eltern und Lehrer sollten selbst als Vorbilder lesen. Nur so werde das Buch auch für die nächste Generation [[einen selbstverständlichen=>ein selbstverständlicher|f-beisatz|Maskulines Nomen einsetzen: Nach bleiben steht der Nominativ, er bleibt ein Freund. Also ein selbstverständlicher Begleiter.]] Begleiter bleiben.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-04",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "k-nebensatz",
+      "titel": "Ein soziales Pflichtjahr?",
+      "aufgabe": "Auszug aus einer Erörterung. Korrigiere den Text in drei Durchgängen.",
+      "text": "Die Forderung nach einem sozialen Pflichtjahr für junge Menschen wird regelmäßig erhoben. Ihre Befürworter sind [[überzeugt=>überzeugt,|k-nebensatz|Gebeugte Verben unterstreichen: Mit dass beginnt ein neuer Teilsatz, also steht davor ein Komma.]] dass ein solcher Dienst den Zusammenhalt der Gesellschaft stärkt. Wer ein Jahr lang in einem Pflegeheim oder einem Kindergarten [[arbeitet=>arbeitet,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] lernt Menschen kennen, denen er sonst kaum begegnet wäre. Zudem fehlen in vielen sozialen Berufen Fachkräfte, sodass jede helfende Hand willkommen ist. Diese Argumente wiegen schwer. Dennoch überzeugt mich ein verpflichtender Dienst nicht. Erstens greift er tief in die Freiheit junger Erwachsener ein, die gerade erst die Schule verlassen [[hat=>haben|w-kongruenz|Die Aussage handelt von den jungen Erwachsenen, auf die sich die bezieht. Also Plural: haben.]]. Zweitens besteht die Gefahr, [[das=>dass|r-dasdass|Ersatzprobe: dieses, jenes oder welches passt nicht. Also dass.]] unmotivierte Helfer mehr schaden als nützen. Einem alten [[Mensch=>Menschen|f-ndeklination|Reihe bilden: der Mensch, des Menschen, dem Menschen. Im Dativ also Menschen.]], der gepflegt wird, hilft keine Hilfskraft, die nur ihre Zeit absitzt. Drittens würde ein Pflichtjahr den Fachkräftemangel lediglich [[verdecken=>verdecken,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] statt ihn zu beheben. Sinnvoller wäre es, freiwillige Dienste attraktiver zu machen, etwa durch eine angemessene Bezahlung und die Anerkennung im Studium. Auf diese Weise erreicht man diejenigen, die wirklich helfen wollen. Ein [[Engagment=>Engagement|r-fremdwort|Stammwort suchen: engagieren zeigt das e nach dem g. Also Engagement.]], [[was=>das|w-relativ|Gemeint ist ein bestimmtes Ding, das Engagement. Also das.]] aus Überzeugung entsteht, ist mehr wert als jeder Zwang.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-05",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "z-rede",
+      "titel": "Rede zur Eröffnung der Stadtbibliothek",
+      "aufgabe": "Auszug aus der Analyse einer Rede. Korrigiere den Text in drei Durchgängen.",
+      "text": "Die Rede, die die Bürgermeisterin zur Eröffnung der neuen Stadtbibliothek [[hält=>hält,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] richtet sich an die Bürger der Stadt. Ihr Ziel ist [[es=>es,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] die hohen Baukosten zu rechtfertigen und die Zuhörer für das Projekt zu gewinnen. Gleich zu Beginn spricht sie das Publikum direkt [[an,=>an:|z-rede|Der Begleitsatz steht vorn: Vor der wörtlichen Rede steht ein Doppelpunkt.]] „Liebe Mitbürgerinnen und Mitbürger, heute öffnen wir ein Haus für alle.“ Durch die Anrede schafft sie [[Nähe=>Nähe,|frei]] und das Pronomen wir bindet die Zuhörer in das Vorhaben ein. Im Hauptteil verwendet die Rednerin zahlreiche Metaphern. So bezeichnet sie die Bibliothek [[als:=>als|z-zitat|Das Zitat ist in den Satz eingebaut: kein Doppelpunkt davor.]] „Wohnzimmer der Stadt“ (Z. 12) und betont damit ihre soziale Funktion. Auffällig ist außerdem die Anapher in den Zeilen 15 bis 17, die den Wert der Bildung [[hervor hebt=>hervorhebt|r-getrennt|Betonungsprobe: hervorheben hat einen Hauptton vorn. Also zusammen.]]. Einwände gegen [[dem Projekt=>das Projekt|f-praeposition|Maskulines Nomen einsetzen: gegen den Mann, also Akkusativ. Also gegen das Projekt.]] greift die Bürgermeisterin nur kurz auf. Sie räumt ein, der Bau [[ist=>sei|kj-indikativ|Ausweichkette, Schritt 1: Der Konjunktiv I sei unterscheidet sich vom Indikativ ist. Also sei.]] teurer geworden als geplant. Anschließend lenkt sie den Blick jedoch sofort auf den Nutzen für Kinder und [[Ältere=>ältere|r-gross|Begleiterprobe: ältere ist hier kein Nomen, es beschreibt Menschen. Also klein.]] Menschen. Insgesamt wirkt die Rede gut durchdacht, weil sie [[verbindet Gefühl und Argument=>Gefühl und Argument verbindet|w-satzbau|Weil leitet einen Teilsatz ein: Das gebeugte Verb steht am Ende.]]. Kritische Zuhörer dürften allerdings konkrete Zahlen vermissen.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-06",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "r-gross",
+      "titel": "„Abendlied“",
+      "aufgabe": "Auszug aus einer Gedichtinterpretation. Korrigiere den Text in drei Durchgängen.",
+      "text": "Das Gedicht „Abendlied“ besteht aus drei Strophen mit jeweils vier Versen. Das lyrische Ich beschreibt einen Spaziergang am [[abend=>Abend|r-gross|Begleiterprobe: Vor Abend steht am, also groß.]], bei dem es zur Ruhe kommt. In der ersten Strophe dominieren Bilder der Bewegung: [[die=>Die|z-doppelpunkt|Nach dem Doppelpunkt folgt ein ganzer Satz mit eigenem gebeugtem Verb, ziehen. Also groß.]] Vögel ziehen heim, der Wind streicht über die Felder. Mit der zweiten Strophe ändert sich die Stimmung. Das lyrische Ich bleibt stehen und blickt auf das Dorf, [[deren=>dessen|w-relativ|Gemeint sind die Lichter des Dorfes, also ein Genitiv zu einem sächlichen Nomen. Also dessen.]] Lichter langsam angehen. Der Kreuzreim und der gleichmäßige [[Rythmus=>Rhythmus|r-fremdwort|Stammwort suchen: rhythmisch zeigt beide h. Also Rhythmus.]] [[unterstreicht=>unterstreichen|w-kongruenz|Die Aussage handelt von Kreuzreim und Rhythmus zusammen. Also Plural: unterstreichen.]] die friedliche Atmosphäre. Besonders auffällig ist die Personifikation in Vers 7, in der die Nacht „ihre Hände über das Land“ legt. Dieses Bild vermittelt [[Geborgenheit=>Geborgenheit,|k-reihe|Gebeugte Verben unterstreichen: Zwei Hauptsätze, verbunden mit denn, werden durch ein Komma getrennt.]] denn die Nacht erscheint als schützende Mutter. In der letzten Strophe wendet sich das lyrische Ich an ein Du, dessen Identität ungeklärt bleibt. Es bittet [[darum=>darum,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] den Abend gemeinsam zu genießen. Ob das Du [[antwortet=>antwortet,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] erfährt der Leser nicht. Das Gedicht endet daher mit einer offenen Frage, die zum Nachdenken anregt. Insgesamt gelingt es dem Dichter, mit einfachen Mitteln eine Stimmung der Ruhe zu erzeugen.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-07",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "k-infinitiv",
+      "titel": "Wählen ab 16?",
+      "aufgabe": "Auszug aus einer Erörterung. Korrigiere den Text in drei Durchgängen.",
+      "text": "Ob Jugendliche bereits mit 16 Jahren wählen dürfen [[sollten=>sollten,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] ist seit Langem umstritten. Kritiker wenden ein, vielen [[16jährigen=>16-Jährigen|z-bindestrich|Bei Ziffern steht ein Bindestrich; als Nomen schreibst du Jährigen groß.]] [[fehlt=>fehle|kj-indikativ|Ausweichkette, Schritt 1: Der Konjunktiv I fehle unterscheidet sich vom Indikativ fehlt. Also fehle.]] das nötige politische Wissen. Dieses Argument überzeugt jedoch nur auf den ersten Blick. Auch unter [[erwachsenen=>Erwachsenen|r-gross|Begleiterprobe: Vor Erwachsenen könnte den stehen. Also groß.]] gibt es zahlreiche Wähler, die sich kaum mit Politik beschäftigen. Niemand käme auf die [[Idee=>Idee,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] ihnen deshalb das Wahlrecht zu entziehen. Zudem zeigen Erfahrungen aus Österreich, wo seit 2007 ab 16 gewählt wird, [[das=>dass|r-dasdass|Ersatzprobe: dieses, jenes oder welches passt nicht. Also dass.]] junge Wähler ihre Entscheidung durchaus ernst nehmen. Ein weiteres Argument für die Senkung des [[Wahlalter=>Wahlalters|f-genitiv|Maskulines Nomen einsetzen: die Senkung des Mannes, also Genitiv mit s. Also des Wahlalters.]] ist die Generationengerechtigkeit. Viele Entscheidungen, die heute getroffen werden, [[betrifft=>betreffen|w-kongruenz|Die Aussage handelt von den Entscheidungen. Also Plural: betreffen.]] vor allem die Zukunft der jungen Menschen. Es erscheint daher nur gerecht, sie an diesen Entscheidungen zu beteiligen. Allerdings genügt es nicht, nur das Wahlalter zu senken. Die Schulen müssten politische Bildung früher und gründlicher vermitteln als bisher. Nur wenn Jugendliche [[lernen=>lernen,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] Informationen kritisch zu prüfen, können sie verantwortungsvoll entscheiden. Unter dieser Bedingung spricht aus meiner Sicht mehr für als gegen ein Wahlrecht ab 16.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-08",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 3,
+      "fehlertyp": "z-rede",
+      "titel": "„Die Prüfung“",
+      "aufgabe": "Auszug aus einer Szenenanalyse. Korrigiere den Text in drei Durchgängen.",
+      "text": "Die Szene spielt am Abend vor der Abschlussprüfung im Zimmer der [[18jährigen=>18-jährigen|z-bindestrich|Bei Ziffern steht ein Bindestrich: 18-jährig.]] Lena. Ihr Vater betritt den Raum, ohne [[anzuklopfen=>anzuklopfen,|k-infinitiv|Infinitivgruppe mit ohne: Sie zählt wie ein eigener Teilsatz und wird auch vor und abgeschlossen.]] und fragt sie, ob sie genug gelernt habe. Lena antwortet zunächst [[ausweichend,=>ausweichend:|z-rede|Der Begleitsatz steht vorn: Vor der wörtlichen Rede steht ein Doppelpunkt.]] „Ich weiß es nicht.“ Der Vater reagiert [[gereitzt=>gereizt|r-dehnung|Vokallänge hören: Nach dem Doppellaut ei steht nie tz. Also gereizt.]], denn er erwartet eine klare Antwort. Im weiteren Verlauf wird deutlich, dass der Konflikt tiefer reicht. Der Vater wirft seiner Tochter vor, sie [[nimmt=>nehme|kj-indikativ|Ausweichkette, Schritt 1: Der Konjunktiv I nehme unterscheidet sich vom Indikativ nimmt. Also nehme.]] die Schule nicht ernst. Lena hingegen fühlt sich von ihm kontrolliert und [[mißverstanden=>missverstanden|r-s|Vokallänge hören: Das i in miss ist kurz, also ss.]]. Auffällig ist, dass der Vater fast ausschließlich in langen Sätzen spricht, [[wärend=>während|r-dehnung|Vokallänge hören: Das ä ist lang; das Stammwort währen zeigt das Dehnungs-h.]] Lena kaum zu Wort kommt. Diese ungleiche Verteilung der Redeanteile spiegelt das Machtgefälle zwischen Vater und Tochter [[wieder=>wider|w-verwechslung|Widerspiegeln heißt zurückwerfen, nicht noch einmal spiegeln. Also wider.]]. Erst am Ende der Szene ergreift Lena die Initiative. „Ich bin nicht du“, sagt sie, „und ich will es auch nicht sein.“ Mit diesem Satz grenzt sie sich zum ersten Mal deutlich von ihrem Vater ab. Der Vater verlässt daraufhin wortlos das Zimmer. Die Szene macht so sichtbar, wie schwer es Eltern fallen kann, ihre Kinder [[los zu lassen=>loszulassen|r-getrennt|Betonungsprobe: loslassen hat einen Hauptton vorn, also zusammen, auch mit zu: loszulassen.]].",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-09",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 3,
+      "fehlertyp": "kj-ausweich",
+      "titel": "Brauchen wir Noten?",
+      "aufgabe": "Auszug aus einer Erörterung. Korrigiere den Text in drei Durchgängen.",
+      "text": "Noten gehören seit Generationen zum Schulalltag. Trotzdem wird immer wieder [[gefordert=>gefordert,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] sie durch schriftliche Rückmeldungen zu ersetzen. Die Befürworter dieser Idee argumentieren, eine Zahl [[sagt=>sage|kj-indikativ|Ausweichkette, Schritt 1: Der Konjunktiv I sage unterscheidet sich vom Indikativ sagt. Also sage.]] wenig über die tatsächlichen Fähigkeiten eines Schülers aus. Eine [[zwei=>Zwei|r-gross|Begleiterprobe: Vor Zwei steht eine, gemeint ist die Note. Also groß.]] in Mathematik verrate nicht, was ein Schüler gut [[beherrsche,=>beherrsche|k-ueberfluessig|Gebeugte Verben unterstreichen: Zwei Nebensätze, mit und verbunden, werden nicht durch ein Komma getrennt.]] und woran er noch arbeiten müsse. Ein ausführliches Gutachten könne dagegen gezielt Stärken und Schwächen benennen. Außerdem [[erzeugten Noten Druck=>würden Noten Druck erzeugen|kj-ausweich|Ausweichkette: erzeugen gleicht dem Indikativ, erzeugten dem Präteritum. Also würde mit Infinitiv.]], der vielen Jugendlichen die Freude am Lernen nehme. Diesen Argumenten lässt sich einiges entgegenhalten. Noten sind vergleichbar und für alle Beteiligten schnell verständlich. Gerade beim Übergang in [[dem Beruf=>den Beruf|f-praeposition|Maskulines Nomen einsetzen und fragen: wohin? In den Beruf, also Akkusativ.]] oder ins Studium [[braucht=>brauchen|w-kongruenz|Die Aussage handelt von Arbeitgebern und Hochschulen zusammen. Also Plural: brauchen.]] Arbeitgeber und Hochschulen ein einheitliches Maß. Zudem kann eine gute Note durchaus motivieren. Wer sich [[verbessert=>verbessert,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] sieht seinen Fortschritt schwarz auf weiß. Am sinnvollsten erscheint mir daher ein Mittelweg: Noten sollten erhalten bleiben, aber durch regelmäßige Gespräche ergänzt werden. So erfährt jeder Schüler, wo er steht und was er tun kann, um sich zu verbessern.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-10",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 3,
+      "fehlertyp": "kj-indikativ",
+      "titel": "„Zu gut für die Tonne“",
+      "aufgabe": "Textwiedergabe eines Kommentars. Korrigiere den Text in drei Durchgängen.",
+      "text": "In seinem Kommentar „Zu gut für die Tonne“, der im März in einer Tageszeitung erschienen [[ist=>ist,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] kritisiert der Journalist Markus Brandt den Umgang mit Lebensmitteln in Deutschland. Er weist darauf [[hin=>hin,|k-nebensatz|Gebeugte Verben unterstreichen: Mit dass beginnt ein neuer Teilsatz, also steht davor ein Komma.]] dass jedes Jahr Millionen Tonnen Lebensmittel weggeworfen [[werden=>würden|kj-ausweich|Ausweichkette: werden gleicht dem Indikativ, also Konjunktiv II würden.]]. Der größte Teil davon entfalle nicht auf [[Supermärkte=>Supermärkte,|k-reihe|Vor sondern, aber, doch, jedoch steht immer ein Komma.]] sondern auf private Haushalte. Häufig [[wird=>werde|kj-indikativ|Ausweichkette, Schritt 1: Der Konjunktiv I werde unterscheidet sich vom Indikativ wird. Also werde.]] das Mindesthaltbarkeitsdatum mit einem Verfallsdatum verwechselt. Viele Produkte seien aber noch Tage nach diesem Datum [[geniesbar=>genießbar|r-s|Vokallänge hören: genießen hat ein langes ie, also ß.]]. Brandt fordert deshalb, die Verbraucher besser [[auf zu klären=>aufzuklären|r-getrennt|Betonungsprobe: aufklären hat einen Hauptton vorn, also zusammen, auch mit zu: aufzuklären.]]. Zudem solle der Handel krumme Gurken und kleine Äpfel nicht länger aussortieren. Auch die Politik sieht der Autor in der Pflicht. Sie müsse Supermärkten erlauben, unverkaufte Waren an soziale Einrichtungen [[weiterzugeben=>weiterzugeben,|k-infinitiv|Infinitivgruppe: Sie zählt wie ein eigener Teilsatz, also steht an ihrer Grenze ein Komma.]] ohne dafür zu haften. Abschließend [[apelliert=>appelliert|r-fremdwort|Stammwort suchen: Appell zeigt das doppelte p.]] Brandt an seine Leser, beim Einkauf genauer zu planen. Wer nur kaufe, was er wirklich brauche, spare Geld und schone die Umwelt. Ein bewusster Einkauf sei der einfachste Beitrag gegen die Verschwendung. Gerade junge Menschen könnten hier mit gutem Beispiel vorangehen, meint der Autor.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-11",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "f-beisatz",
+      "titel": "„Der Sommer am See“",
+      "aufgabe": "Auszug aus der Interpretation eines Romananfangs. Korrigiere den Text in drei Durchgängen.",
+      "text": "Der Romananfang führt den Leser ohne Umschweife in die Handlung ein. Der [[Ich Erzähler=>Ich-Erzähler|z-bindestrich|Bei Zusammensetzungen mit Ich steht ein Bindestrich: Ich-Erzähler.]], [[einen 17-jährigen=>ein 17-jähriger|f-beisatz|Bezugswort durch ein maskulines Nomen ersetzen: Der Erzähler steht im Nominativ, also auch der Beisatz: ein 17-jähriger Schüler.]] Schüler, verbringt die Sommerferien bei seinem Großvater am See. Schon im ersten Satz deutet sich [[an=>an,|k-nebensatz|Gebeugte Verben unterstreichen: Mit dass beginnt ein neuer Teilsatz, also steht davor ein Komma.]] dass dieser Sommer anders verlaufen wird als alle Sommer zuvor. Der Erzähler berichtet rückblickend und weiß bereits, was geschehen ist. Dadurch entsteht Spannung, denn der Leser will [[erfahren=>erfahren,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] welches Ereignis gemeint ist. Der Großvater wird als wortkarger Mann beschrieben, der [[seid=>seit|w-verwechslung|Gemeint ist ein Zeitpunkt, von dem an etwas gilt. Also seit.]] dem Tod seiner Frau allein lebt. Seine Hände seien „rau wie Rinde“ (Z. 9), heißt es im Text. Dieser Vergleich verbindet die Figur mit der [[Natur,=>Natur|k-ueberfluessig|Gebeugte Verben unterstreichen: Beide Verben gehören zu einem Subjekt und sind mit und verbunden, also kein Komma.]] und deutet auf ein hartes Arbeitsleben hin. Der Großvater begegnet dem [[Junge=>Jungen|f-ndeklination|Reihe bilden: der Junge, des Jungen, dem Jungen. Im Dativ also Jungen.]] zunächst mit [[schweigen=>Schweigen|r-gross|Begleiterprobe: Vor Schweigen könnte dem stehen, mit dem Schweigen. Also groß.]]. Erst als ein Gewitter aufzieht, kommen Großvater und Enkel ins Gespräch. Das Unwetter lässt sich somit als Wendepunkt deuten, an dem die Distanz zwischen den Generationen zu schwinden beginnt. Insgesamt weckt der Anfang das Interesse des Lesers, indem er Fragen aufwirft, ohne sie zu beantworten.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    },
+    {
+      "id": "10.1-12",
+      "kurs": 10,
+      "lektion": "10.1",
+      "typ": "korrektur",
+      "stufe": 2,
+      "fehlertyp": "f-adjektiv",
+      "titel": "Künstliche Intelligenz im Unterricht",
+      "aufgabe": "Auszug aus einer Erörterung. Korrigiere den Text in drei Durchgängen.",
+      "text": "Seit textgenerierende Programme frei verfügbar [[sind=>sind,|k-nebensatz|Gebeugte Verben unterstreichen: Hier endet ein Teilsatz, also steht ein Komma.]] stellt sich die Frage, wie die Schule mit ihnen umgehen soll. Manche Lehrkräfte fordern ein striktes Verbot, weil sie [[befürchten=>befürchten,|k-nebensatz|Gebeugte Verben unterstreichen: Mit dass beginnt ein neuer Teilsatz, also steht davor ein Komma.]] dass Hausaufgaben nicht mehr selbstständig erledigt werden. Diese Sorge ist verständlich. Ein Verbot lässt sich jedoch kaum [[kontrolieren=>kontrollieren|r-fremdwort|Stammwort suchen: Kontrolle zeigt das doppelte l.]], denn die Programme sind auf jedem Smartphone verfügbar. Zudem verschließt die Schule damit die Augen vor [[eine Technik=>einer Technik|f-praeposition|Maskulines Nomen einsetzen: vor dem Mann, also Dativ. Also vor einer Technik.]], die den Alltag der Schüler längst prägt. Sinnvoller ist es, den [[kritische=>kritischen|f-adjektiv|Den maskulinen Artikel davorsetzen: den kritischen Umgang, nach den endet das Adjektiv auf -en.]] Umgang mit diesen Programmen zu üben. Schüler sollten lernen, die Antworten einer Maschine zu überprüfen und [[dessen=>deren|w-relativ|Gemeint sind die Quellen der Maschine, also ein Genitiv zu einem weiblichen Nomen. Also deren.]] Quellen zu hinterfragen. Gerade im Fach Deutsch bietet sich das an: [[man=>Man|z-doppelpunkt|Nach dem Doppelpunkt folgt ein ganzer Satz mit eigenem gebeugtem Verb, kann. Also groß.]] kann einen maschinell erzeugten Aufsatz gemeinsam analysieren und seine Schwächen herausarbeiten. Auf diese Weise erkennen die Schüler, [[das=>dass|r-dasdass|Ersatzprobe: dieses, jenes oder welches passt nicht. Also dass.]] ein flüssiger Text noch kein guter Text ist. Allerdings müssen sich auch die Prüfungsformen ändern. Mündliche Prüfungen und Arbeiten, die im Unterricht geschrieben werden, [[gewinnt=>gewinnen|w-kongruenz|Die Aussage handelt von Prüfungen und Arbeiten zusammen. Also Plural: gewinnen.]] an Bedeutung. Wer die Technik verantwortungsvoll einsetzen will, braucht vor allem eines: die Fähigkeit, selbstständig zu denken.",
+      "begruendung": "Drei Durchgänge: erst die Kommas, dann die Formen, dann die Wörter."
+    }
+  ]
+}

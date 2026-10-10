@@ -1,6 +1,6 @@
 // Auswertung aller Übungstypen. Reine Funktionen ohne Oberfläche.
 
-import { charDiff, closest, lcsAlign, type DiffOp } from './diff';
+import { charDiff, closest, editAlign, type DiffOp } from './diff';
 import { ERR_SRC, parseFehler, type GapExpect, type MarkupError, type ParsedKomma } from './markup';
 import { normalizeAnswer, tidyPunctuation } from './normalize';
 import { canonicalVariants } from './varianten';
@@ -77,7 +77,8 @@ export function missingForms(answer: string, forms: string[]): string[] {
 
 // ---------- Fehler finden und Korrekturlesen ----------
 
-const TOKEN_RE = /[\p{L}\p{N}]+(?:[-'][\p{L}\p{N}]+)*'?|[^\s\p{L}\p{N}]/gu;
+// Abkürzungen wie „z. B.“ bilden ein Zeichen, damit „z.B.“ als abweichend erkannt wird.
+const TOKEN_RE = /(?<![\p{L}\p{N}])\p{L}\.(?: ?\p{L}\.)+|[\p{L}\p{N}]+(?:[-'][\p{L}\p{N}]+)*'?|[^\s\p{L}\p{N}]/gu;
 
 export function evalTokens(s: string): string[] {
   return canonicalVariants(normalizeAnswer(s)).match(TOKEN_RE) ?? [];
@@ -208,29 +209,40 @@ export function prepareFehler(src: string): PreparedFehler {
 /** Prüft die vom Nutzer bearbeitete Fassung gegen die Lösung. */
 export function evalFehler(prep: PreparedFehler, final: string): StellenEval {
   const f = evalTokens(final);
-  const matchSF = lcsAlign(prep.s, f);
+  const matchSF = editAlign(prep.s, f);
   const stellen: StelleEval[] = prep.fehler.map((fehler, i) => {
     const sr = prep.sRanges[i];
-    const or = prep.oRanges[i];
-    // Nutzerfassung an der Stelle: alles zwischen den zugeordneten Nachbarn.
-    let left = -1;
+    // Bereich zwischen den nächsten unveränderten Nachbarn (in Lösungs- und Nutzerfassung).
+    let ls = -1;
     for (let k = sr.a - 1; k >= 0; k--) {
       if (matchSF[k] >= 0) {
-        left = matchSF[k];
+        ls = k;
         break;
       }
     }
-    let right = f.length;
+    let rs = prep.s.length;
     for (let k = sr.b; k < prep.s.length; k++) {
       if (matchSF[k] >= 0) {
-        right = matchSF[k];
+        rs = k;
         break;
       }
     }
+    const left = ls >= 0 ? matchSF[ls] : -1;
+    const right = rs < prep.s.length ? matchSF[rs] : f.length;
     const nutzer = right > left ? join(f.slice(left + 1, right)) : '';
+    // So sähe der Bereich aus, wenn keine der darin liegenden Stellen korrigiert worden wäre.
+    const unchanged: string[] = [];
+    for (let k = ls + 1; k <= rs; k++) {
+      prep.sRanges.forEach((r, j) => {
+        if (r.a === k && r.a >= ls + 1 && r.b <= rs) unchanged.push(...prep.o.slice(prep.oRanges[j].a, prep.oRanges[j].b));
+      });
+      if (k >= rs) break;
+      const inErr = prep.sRanges.some((r) => r.a < r.b && k >= r.a && k < r.b && r.a >= ls + 1 && r.b <= rs);
+      if (!inErr) unchanged.push(prep.s[k]);
+    }
     let ergebnis: StellenErgebnis;
     if (intact(sr, matchSF, prep.s.length, f.length)) ergebnis = 'gefunden';
-    else if (nutzer === join(prep.o.slice(or.a, or.b))) ergebnis = 'uebersehen';
+    else if (nutzer === join(unchanged)) ergebnis = 'uebersehen';
     else ergebnis = 'falsch';
     return { fehler, ergebnis, nutzer };
   });

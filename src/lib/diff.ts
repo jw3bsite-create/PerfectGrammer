@@ -32,6 +32,41 @@ export function lcsAlign<T>(a: T[], b: T[], eq: (x: T, y: T) => boolean = (x, y)
 }
 
 /**
+ * Zuordnung mit Ersetzungen (Levenshtein): Geänderte Wörter bleiben an ihrem Platz,
+ * auch wenn gleiche Wörter in der Nähe stehen. Liefert wie lcsAlign nur gleiche Paare.
+ */
+export function editAlign<T>(a: T[], b: T[], eq: (x: T, y: T) => boolean = (x, y) => x === y): number[] {
+  const n = a.length;
+  const m = b.length;
+  const dp: Uint32Array[] = [];
+  for (let i = 0; i <= n; i++) dp.push(new Uint32Array(m + 1));
+  for (let i = 0; i <= n; i++) dp[i][m] = n - i;
+  for (let j = 0; j <= m; j++) dp[n][j] = m - j;
+  for (let i = n - 1; i >= 0; i--) {
+    for (let j = m - 1; j >= 0; j--) {
+      const diag = dp[i + 1][j + 1] + (eq(a[i], b[j]) ? 0 : 1);
+      dp[i][j] = Math.min(diag, dp[i + 1][j] + 1, dp[i][j + 1] + 1);
+    }
+  }
+  const match = new Array<number>(n).fill(-1);
+  let i = 0;
+  let j = 0;
+  while (i < n && j < m) {
+    const same = eq(a[i], b[j]);
+    if (dp[i][j] === dp[i + 1][j + 1] + (same ? 0 : 1)) {
+      if (same) match[i] = j;
+      i++;
+      j++;
+    } else if (dp[i][j] === dp[i + 1][j] + 1) {
+      i++;
+    } else {
+      j++;
+    }
+  }
+  return match;
+}
+
+/**
  * Vergleicht eine Antwort mit der Lösung Zeichen für Zeichen.
  * „fehlt“: steht in der Lösung, nicht in der Antwort; „zuviel“: steht nur in der Antwort.
  */

@@ -1,0 +1,163 @@
+{
+  "kurs": {
+    "id": 5,
+    "titel": "Groß- und Kleinschreibung",
+    "kurztitel": "groß/klein",
+    "reihenfolge": 5,
+    "probe": "Die Begleiterprobe: Groß ist, wovor ein Artikel, eine verschmolzene Präposition (beim, zum, im, am, vom, ins), ein Pronomen oder ein Mengenwort (etwas, nichts, viel, wenig, alles, allerlei, genug) steht oder stehen könnte.",
+    "beschreibung": "Nicht die Wortart im Wörterbuch entscheidet, sondern die Verwendung im Satz. Die Begleiterprobe zeigt, ob ein Wort als Nomen gebraucht wird."
+  },
+  "lektionen": [
+    {
+      "id": "5.1",
+      "titel": "Verben als Nomen",
+      "regelkarte": {
+        "regel": "Ein Verb wird zum Nomen, wenn ein Begleiter davorsteht oder davorstehen könnte. Dann schreibst du es groß: beim Schreiben, das Zögern, durch Lesen. Der Infinitiv mit zu bleibt klein.",
+        "probe": "Begleiterprobe: Steht ein Artikel, beim, zum, im, ein Pronomen oder ein Mengenwort davor – oder könnte einer davorstehen? Dann groß.",
+        "beispiele": ["beim Schreiben", "Das ist zum Lachen.", "Sie hat Lust zu lesen."],
+        "falle": "Zu mit Infinitiv ist kein Begleiter: Lust zu lesen, aber zum Lesen (zu dem Lesen)."
+      }
+    },
+    {
+      "id": "5.2",
+      "titel": "Adjektive als Nomen",
+      "regelkarte": {
+        "regel": "Auch Adjektive werden mit Begleiter zu Nomen und groß geschrieben: etwas Neues, das Gute, im Allgemeinen, des Weiteren, im Folgenden, als Erstes. Der Superlativ mit am bleibt klein: am besten, am schönsten.",
+        "probe": "Begleiterprobe: Steht etwas, nichts, viel, wenig, alles, ein Artikel oder eine verschmolzene Präposition davor, schreibst du groß. Am mit Superlativ zählt nicht als Begleiter.",
+        "beispiele": ["etwas Neues", "im Folgenden, des Weiteren", "Sie liest am liebsten Romane."],
+        "falle": "Am mit Superlativ ist kein Begleiter: am besten, am wichtigsten – klein."
+      }
+    },
+    {
+      "id": "5.3",
+      "titel": "Zahlwörter, Tageszeiten, Sprachen, Farben",
+      "regelkarte": {
+        "regel": "Zahlwörter wie viel, wenig, beide, die meisten, ein paar und ein bisschen bleiben klein, auch mit Artikel; nur bei die anderen und die vielen ist Großschreibung ebenfalls erlaubt. Tageszeiten nach heute, gestern und morgen sind Nomen und groß, mit -s sind sie Adverbien und klein: heute Abend, abends. Sprachen und Farben mit Begleiter schreibst du groß: auf Deutsch, bei Rot.",
+        "probe": "Begleiterprobe: Heute, gestern und morgen wirken bei Tageszeiten wie Begleiter, also groß. Ein Wort mit -s ohne Begleiter bleibt klein.",
+        "beispiele": ["die meisten, die beiden", "heute Abend, aber abends", "auf Deutsch, bei Rot"],
+        "falle": "Ein paar heißt einige und bleibt klein; ein Paar sind zwei Zusammengehörige."
+      }
+    },
+    {
+      "id": "5.4",
+      "titel": "Anrede, Doppelpunkt, Namen",
+      "regelkarte": {
+        "regel": "Die höfliche Anrede Sie, Ihnen und Ihr schreibst du groß. Nach einem Doppelpunkt schreibst du groß, wenn ein vollständiger Satz folgt. Ableitungen von Orts- und Ländernamen auf -er schreibst du groß, auf -isch klein, außer sie sind Teil eines Namens.",
+        "probe": "Begleiterprobe gilt hier nicht allein: Prüfe bei Sie, ob die höfliche Anrede gemeint ist, und nach dem Doppelpunkt, ob ein ganzer Satz mit eigenem gebeugtem Verb folgt.",
+        "beispiele": ["Darf ich Ihnen eine Frage stellen?", "Heidelberger Schloss, kantische Ethik", "Das Ergebnis ist klar: Die Reform ist gescheitert."],
+        "falle": "Teil eines Namens wird groß: die Französische Revolution, aber die französische Küche."
+      }
+    },
+    {
+      "id": "5.5",
+      "titel": "Wendungen und Fachbegriffe",
+      "regelkarte": {
+        "regel": "Groß schreibst du in Bezug auf, im Voraus, im Nachhinein, im Übrigen, im Grunde, im Klaren sein, im Großen und Ganzen, nicht im Geringsten, des Öfteren, aufs Neue und außer Acht lassen. Klein schreibst du vor allem, unter anderem, schuld sein und leidtun. Doppelschreibungen wie seit Langem und seit langem, aufgrund und auf Grund, mithilfe und mit Hilfe, infrage und in Frage sind beide richtig.",
+        "probe": "Begleiterprobe: In den großen Wendungen steckt ein Begleiter (im, des, aufs). In vor allem und unter anderem ist allem und anderem kein Nomen.",
+        "beispiele": ["im Folgenden, im Übrigen, des Öfteren", "das lyrische Ich, der Ich-Erzähler", "Es tut mir leid."],
+        "falle": "Es tut mir leid – leid bleibt klein, auch wenn es wie ein Nomen klingt."
+      }
+    }
+  ],
+  "aufgaben": [
+    { "id": "5.1-01", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Beim ___ des Briefes zitterte sie.", "optionen": ["Schreiben", "schreiben"], "loesungen": ["Schreiben"], "begruendung": "Begleiterprobe: Vor dem Wort steht beim. Also groß." },
+    { "id": "5.1-02", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Das ist zum ___.", "optionen": ["Lachen", "lachen"], "loesungen": ["Lachen"], "begruendung": "Begleiterprobe: Vor dem Wort steht zum (zu dem). Also groß." },
+    { "id": "5.1-03", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie hat keine Lust zu ___.", "optionen": ["lesen", "Lesen"], "loesungen": ["lesen"], "begruendung": "Begleiterprobe: Zu mit Infinitiv ist kein Begleiter, und keiner kann davorstehen. Also klein." },
+    { "id": "5.1-04", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Das ___ fällt ihr schwer.", "optionen": ["Verzeihen", "verzeihen"], "loesungen": ["Verzeihen"], "begruendung": "Begleiterprobe: Vor dem Wort steht der Artikel das. Also groß." },
+    { "id": "5.1-05", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir müssen das Gedicht noch ___.", "optionen": ["lernen", "Lernen"], "loesungen": ["lernen"], "begruendung": "Begleiterprobe: Das Wort ist hier Verb des Satzes, kein Begleiter gehört dazu. Also klein." },
+    { "id": "5.1-06", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Ihr lautes ___ störte die Lesung.", "optionen": ["Lachen", "lachen"], "loesungen": ["Lachen"], "begruendung": "Begleiterprobe: Vor dem Wort steht das Pronomen ihr. Also groß." },
+    { "id": "5.1-07", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Er hat das ___ verlernt.", "optionen": ["Staunen", "staunen"], "loesungen": ["Staunen"], "begruendung": "Begleiterprobe: Vor dem Wort steht der Artikel das. Also groß." },
+    { "id": "5.1-08", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Im ___ liegt die Kraft.", "optionen": ["Schweigen", "schweigen"], "loesungen": ["Schweigen"], "begruendung": "Begleiterprobe: Vor dem Wort steht im (in dem). Also groß." },
+    { "id": "5.1-09", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie beginnt zu ___.", "optionen": ["schreiben", "Schreiben"], "loesungen": ["schreiben"], "begruendung": "Begleiterprobe: Zu mit Infinitiv ist kein Begleiter. Also klein." },
+    { "id": "5.1-10", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Durch ___ lernt man.", "optionen": ["Lesen", "lesen"], "loesungen": ["Lesen"], "begruendung": "Begleiterprobe: Ein Begleiter könnte davorstehen, „durch das Lesen“. Also groß." },
+    { "id": "5.1-11", "kurs": 5, "lektion": "5.1", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Das Kind hört nicht auf zu ___.", "optionen": ["weinen", "Weinen"], "loesungen": ["weinen"], "begruendung": "Begleiterprobe: Zu mit Infinitiv ist kein Begleiter. Also klein." },
+    { "id": "5.1-12", "kurs": 5, "lektion": "5.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "r-gross", "text": "Vom vielen ___ war sie müde.", "hinweis": "arbeiten", "loesungen": ["Arbeiten"], "begruendung": "Begleiterprobe: Vor dem Wort steht vom (von dem). Also groß." },
+    { "id": "5.1-13", "kurs": 5, "lektion": "5.1", "typ": "eintippen", "stufe": 2, "fehlertyp": "r-gross", "text": "Sie kam ins ___.", "hinweis": "grübeln", "loesungen": ["Grübeln"], "begruendung": "Begleiterprobe: Vor dem Wort steht ins (in das). Also groß." },
+    { "id": "5.1-14", "kurs": 5, "lektion": "5.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Beim [[lesen=>Lesen|r-gross]] fiel ihr ein Fehler auf.", "begruendung": "Begleiterprobe: Vor dem Wort steht beim. Also groß: beim Lesen." },
+    { "id": "5.1-15", "kurs": 5, "lektion": "5.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Er hat das [[rauchen=>Rauchen|r-gross]] aufgegeben.", "begruendung": "Begleiterprobe: Vor dem Wort steht der Artikel das. Also groß." },
+    { "id": "5.1-16", "kurs": 5, "lektion": "5.1", "typ": "fehler", "stufe": 2, "fehlertyp": "r-gross", "text": "Sie versucht, früher [[Aufzustehen=>aufzustehen|r-gross]].", "begruendung": "Begleiterprobe: Der Infinitiv mit zu hat keinen Begleiter. Also klein." },
+    { "id": "5.1-17", "kurs": 5, "lektion": "5.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Zum Nachdenken blieb keine Zeit.", "begruendung": "Begleiterprobe: Vor Nachdenken steht zum, also groß. Der Satz ist fehlerfrei." },
+    { "id": "5.1-18", "kurs": 5, "lektion": "5.1", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Ihr [[zögern=>Zögern|r-gross]] kostete sie die Chance.", "begruendung": "Begleiterprobe: Vor dem Wort steht das Pronomen ihr. Also groß." },
+
+    { "id": "5.2-01", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Der Text bietet nichts ___.", "optionen": ["Neues", "neues"], "loesungen": ["Neues"], "begruendung": "Begleiterprobe: Vor dem Wort steht das Mengenwort nichts. Also groß." },
+    { "id": "5.2-02", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Im ___ ist die Lage stabil.", "optionen": ["Allgemeinen", "allgemeinen"], "loesungen": ["Allgemeinen"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß." },
+    { "id": "5.2-03", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie liest am ___ Romane.", "optionen": ["liebsten", "Liebsten"], "loesungen": ["liebsten"], "begruendung": "Am mit Superlativ ist kein Begleiter. Also klein: am liebsten." },
+    { "id": "5.2-04", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Im ___ werden drei Thesen erläutert.", "optionen": ["Folgenden", "folgenden"], "loesungen": ["Folgenden"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß." },
+    { "id": "5.2-05", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Des ___ kritisiert die Autorin den Stil.", "optionen": ["Weiteren", "weiteren"], "loesungen": ["Weiteren"], "begruendung": "Begleiterprobe: Vor dem Wort steht der Artikel des. Also groß." },
+    { "id": "5.2-06", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Als ___ fällt der ungewöhnliche Titel auf.", "optionen": ["Erstes", "erstes"], "loesungen": ["Erstes"], "begruendung": "Begleiterprobe: Ein Begleiter könnte davorstehen, „als das Erste“. Also groß: als Erstes." },
+    { "id": "5.2-07", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Dieser Absatz ist am ___.", "optionen": ["wichtigsten", "Wichtigsten"], "loesungen": ["wichtigsten"], "begruendung": "Am mit Superlativ ist kein Begleiter. Also klein: am wichtigsten." },
+    { "id": "5.2-08", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir wünschen dir alles ___.", "optionen": ["Gute", "gute"], "loesungen": ["Gute"], "begruendung": "Begleiterprobe: Vor dem Wort steht das Mengenwort alles. Also groß." },
+    { "id": "5.2-09", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Das ___ an dem Roman ist sein Schluss.", "optionen": ["Beste", "beste"], "loesungen": ["Beste"], "begruendung": "Begleiterprobe: Vor dem Wort steht der Artikel das. Also groß." },
+    { "id": "5.2-10", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie hat viel ___ erlebt.", "optionen": ["Schönes", "schönes"], "loesungen": ["Schönes"], "begruendung": "Begleiterprobe: Vor dem Wort steht das Mengenwort viel. Also groß." },
+    { "id": "5.2-11", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Die Rede enthielt wenig ___.", "optionen": ["Konkretes", "konkretes"], "loesungen": ["Konkretes"], "begruendung": "Begleiterprobe: Vor dem Wort steht das Mengenwort wenig. Also groß." },
+    { "id": "5.2-12", "kurs": 5, "lektion": "5.2", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Der Kritiker urteilt im ___ milde.", "optionen": ["Wesentlichen", "wesentlichen"], "loesungen": ["Wesentlichen"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß." },
+    { "id": "5.2-13", "kurs": 5, "lektion": "5.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "r-gross", "text": "Er erzählte etwas ___.", "hinweis": "spannend", "loesungen": ["Spannendes"], "begruendung": "Begleiterprobe: Vor dem Wort steht das Mengenwort etwas. Also groß: etwas Spannendes." },
+    { "id": "5.2-14", "kurs": 5, "lektion": "5.2", "typ": "eintippen", "stufe": 2, "fehlertyp": "r-gross", "text": "Das dritte Gedicht ist am ___ gelungen.", "hinweis": "schlecht, Superlativ", "loesungen": ["schlechtesten"], "begruendung": "Am mit Superlativ ist kein Begleiter. Also klein: am schlechtesten." },
+    { "id": "5.2-15", "kurs": 5, "lektion": "5.2", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Im [[folgenden=>Folgenden|r-gross]] wird der Aufbau untersucht.", "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Folgenden." },
+    { "id": "5.2-16", "kurs": 5, "lektion": "5.2", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Der Text sagt nichts [[neues=>Neues|r-gross]] über das Thema.", "begruendung": "Begleiterprobe: Vor dem Wort steht das Mengenwort nichts. Also groß." },
+    { "id": "5.2-17", "kurs": 5, "lektion": "5.2", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie schreibt am [[Besten=>besten|r-gross]] nachts.", "begruendung": "Am mit Superlativ ist kein Begleiter. Also klein: am besten." },
+    { "id": "5.2-18", "kurs": 5, "lektion": "5.2", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Des Weiteren fehlt ein Fazit.", "begruendung": "Begleiterprobe: Vor Weiteren steht des, also groß. Der Satz ist fehlerfrei." },
+    { "id": "5.2-19", "kurs": 5, "lektion": "5.2", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Im [[allgemeinen=>Allgemeinen|r-gross]] wird die These akzeptiert.", "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Allgemeinen." },
+
+    { "id": "5.3-01", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir treffen uns heute ___.", "optionen": ["Abend", "abend"], "loesungen": ["Abend"], "begruendung": "Nach heute ist die Tageszeit ein Nomen. Also groß: heute Abend." },
+    { "id": "5.3-02", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie liest ___ im Bett.", "optionen": ["abends", "Abends"], "loesungen": ["abends"], "begruendung": "Mit -s und ohne Begleiter ist die Tageszeit ein Adverb. Also klein: abends." },
+    { "id": "5.3-03", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Die ___ haben den Text nicht gelesen.", "optionen": ["meisten", "Meisten"], "loesungen": ["meisten"], "begruendung": "Die meisten ist ein Zahlwort und bleibt auch mit Artikel klein." },
+    { "id": "5.3-04", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Der Brief ist auf ___ geschrieben.", "optionen": ["Deutsch", "deutsch"], "loesungen": ["Deutsch"], "begruendung": "Die Sprachbezeichnung steht nach auf als Nomen, wie in „auf gutem Deutsch“. Also groß." },
+    { "id": "5.3-05", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Bei ___ muss man halten.", "optionen": ["Rot", "rot"], "loesungen": ["Rot"], "begruendung": "Begleiterprobe: Ein Begleiter könnte stehen, „bei dem Rot“. Die Farbe ist Nomen, also groß." },
+    { "id": "5.3-06", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir lesen noch ein ___ Kapitel.", "optionen": ["paar", "Paar"], "loesungen": ["paar"], "begruendung": "Ein paar heißt einige und ist ein Zahlwort. Also klein." },
+    { "id": "5.3-07", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Gestern ___ kam der Brief.", "optionen": ["Morgen", "morgen"], "loesungen": ["Morgen"], "begruendung": "Nach gestern ist die Tageszeit ein Nomen. Also groß: gestern Morgen." },
+    { "id": "5.3-08", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Die ___ Freunde trafen sich wieder.", "optionen": ["beiden", "Beiden"], "loesungen": ["beiden"], "begruendung": "Beide ist ein Zahlwort und bleibt auch mit Artikel klein." },
+    { "id": "5.3-09", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie spricht fließend ___.", "optionen": ["Englisch", "englisch"], "loesungen": ["Englisch"], "begruendung": "Die Sprache ist Nomen: Ein Begleiter könnte stehen, „das Englische“. Also groß." },
+    { "id": "5.3-10", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Er hat nur ein ___ Zeit.", "optionen": ["bisschen", "Bisschen"], "loesungen": ["bisschen"], "begruendung": "Ein bisschen heißt etwas und ist ein Zahlwort. Also klein." },
+    { "id": "5.3-11", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Am ___ schreibt sie am besten.", "optionen": ["Morgen", "morgen"], "loesungen": ["Morgen"], "begruendung": "Begleiterprobe: Vor dem Wort steht am (an dem). Also groß." },
+    { "id": "5.3-12", "kurs": 5, "lektion": "5.3", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Die ___ Übersetzung ist besser.", "optionen": ["englische", "Englische"], "loesungen": ["englische"], "begruendung": "Englische ist hier Adjektiv zu Übersetzung, kein Nomen. Also klein." },
+    { "id": "5.3-13", "kurs": 5, "lektion": "5.3", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir treffen uns heute [[abend=>Abend|r-gross]] im Theater.", "begruendung": "Nach heute ist die Tageszeit ein Nomen. Also groß: heute Abend." },
+    { "id": "5.3-14", "kurs": 5, "lektion": "5.3", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Die [[Meisten=>meisten|r-gross]] Schüler kennen das Gedicht.", "begruendung": "Die meisten ist ein Zahlwort und bleibt klein." },
+    { "id": "5.3-15", "kurs": 5, "lektion": "5.3", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Das Gedicht ist auf [[englisch=>Englisch|r-gross]] verfasst.", "begruendung": "Die Sprache ist hier Nomen: auf Englisch. Also groß." },
+    { "id": "5.3-16", "kurs": 5, "lektion": "5.3", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Sie trainiert [[Morgens=>morgens|r-gross]] vor der Schule.", "begruendung": "Mit -s und ohne Begleiter ist die Tageszeit ein Adverb. Also klein." },
+    { "id": "5.3-17", "kurs": 5, "lektion": "5.3", "typ": "fehler", "stufe": 2, "fehlertyp": "r-gross", "text": "Die beiden Figuren begegnen sich nie.", "begruendung": "Beide bleibt als Zahlwort klein. Der Satz ist fehlerfrei." },
+    { "id": "5.3-18", "kurs": 5, "lektion": "5.3", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Der Fahrer hielt bei [[rot=>Rot|r-gross]].", "begruendung": "Die Farbe ist hier Nomen: bei Rot. Also groß." },
+    { "id": "5.3-19", "kurs": 5, "lektion": "5.3", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Er braucht ein [[Bisschen=>bisschen|r-gross]] Ruhe.", "begruendung": "Ein bisschen ist ein Zahlwort und bleibt klein." },
+
+    { "id": "5.4-01", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Ich danke ___ für Ihren Brief, Frau Berger.", "optionen": ["Ihnen", "ihnen"], "loesungen": ["Ihnen"], "begruendung": "Höfliche Anrede an Frau Berger: Ihnen wird groß geschrieben." },
+    { "id": "5.4-02", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Haben ___ den Text schon gelesen, Herr Weber?", "optionen": ["Sie", "sie"], "loesungen": ["Sie"], "begruendung": "Höfliche Anrede an Herrn Weber: Sie wird groß geschrieben." },
+    { "id": "5.4-03", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Die Schüler fragen, ob ___ den Text lesen dürfen.", "optionen": ["sie", "Sie"], "loesungen": ["sie"], "begruendung": "Sie meint hier die Schüler, keine höfliche Anrede. Also klein." },
+    { "id": "5.4-04", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir besuchten das ___ Schloss.", "optionen": ["Heidelberger", "heidelberger"], "loesungen": ["Heidelberger"], "begruendung": "Ableitungen von Ortsnamen auf -er werden groß geschrieben." },
+    { "id": "5.4-05", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Die ___ Ethik fragt nach der Pflicht.", "optionen": ["kantische", "Kantische"], "loesungen": ["kantische"], "begruendung": "Ableitungen von Namen auf -isch werden klein geschrieben: kantische Ethik." },
+    { "id": "5.4-06", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Das Ergebnis war eindeutig: ___ stimmten zu.", "optionen": ["Alle", "alle"], "loesungen": ["Alle"], "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit eigenem gebeugtem Verb, stimmten. Also groß." },
+    { "id": "5.4-07", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Seine Antwort fiel knapp aus: ___ und unmissverständlich.", "optionen": ["kurz", "Kurz"], "loesungen": ["kurz"], "begruendung": "Nach dem Doppelpunkt folgt kein ganzer Satz, nur zwei Adjektive. Also klein." },
+    { "id": "5.4-08", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Der ___ Kongress ordnete Europa neu.", "optionen": ["Wiener", "wiener"], "loesungen": ["Wiener"], "begruendung": "Ableitungen von Ortsnamen auf -er werden groß geschrieben." },
+    { "id": "5.4-09", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Er liebt die ___ Küche.", "optionen": ["italienische", "Italienische"], "loesungen": ["italienische"], "begruendung": "Ableitungen auf -isch werden klein geschrieben, wenn sie nicht Teil eines Namens sind." },
+    { "id": "5.4-10", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir bedanken uns für ___ Hilfe, Frau Doktor.", "optionen": ["Ihre", "ihre"], "loesungen": ["Ihre"], "begruendung": "Höfliche Anrede: Ihre wird groß geschrieben." },
+    { "id": "5.4-11", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Die Regel ist einfach: ___ zählt nur das Ergebnis.", "optionen": ["Es", "es"], "loesungen": ["Es"], "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, zählt. Also groß." },
+    { "id": "5.4-12", "kurs": 5, "lektion": "5.4", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Das ___ Tor ist ein Wahrzeichen.", "optionen": ["Brandenburger", "brandenburger"], "loesungen": ["Brandenburger"], "begruendung": "Ableitungen von Ortsnamen auf -er werden groß geschrieben." },
+    { "id": "5.4-13", "kurs": 5, "lektion": "5.4", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Vielen Dank für [[ihre=>Ihre|r-gross]] Nachricht, Herr Weber.", "begruendung": "Höfliche Anrede an Herrn Weber: Ihre wird groß geschrieben." },
+    { "id": "5.4-14", "kurs": 5, "lektion": "5.4", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir besuchten die [[berliner=>Berliner|r-gross]] Museumsinsel.", "begruendung": "Ableitungen von Ortsnamen auf -er werden groß geschrieben." },
+    { "id": "5.4-15", "kurs": 5, "lektion": "5.4", "typ": "fehler", "stufe": 2, "fehlertyp": "r-gross", "text": "Er trinkt gern [[schweizer=>Schweizer|r-gross]] Kakao.", "begruendung": "Ableitungen von Ländernamen auf -er werden groß geschrieben." },
+    { "id": "5.4-16", "kurs": 5, "lektion": "5.4", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Die Bilanz war klar: [[der=>Der|r-gross]] Plan war gescheitert.", "begruendung": "Nach dem Doppelpunkt folgt ein ganzer Satz mit gebeugtem Verb, war. Also groß." },
+    { "id": "5.4-17", "kurs": 5, "lektion": "5.4", "typ": "fehler", "stufe": 2, "fehlertyp": "r-gross", "text": "Er nannte zwei Gründe: [[Erstens=>erstens|r-gross]] die Kosten, zweitens die Zeit.", "begruendung": "Nach dem Doppelpunkt folgt kein ganzer Satz, denn es fehlt ein gebeugtes Verb. Also klein." },
+    { "id": "5.4-18", "kurs": 5, "lektion": "5.4", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Darf ich Ihnen eine Frage stellen?", "begruendung": "Höfliche Anrede: Ihnen steht richtig groß. Der Satz ist fehlerfrei." },
+    { "id": "5.4-19", "kurs": 5, "lektion": "5.4", "typ": "fehler", "stufe": 3, "fehlertyp": "r-gross", "text": "Die Französische Revolution veränderte Europa.", "begruendung": "Französische ist Teil des Namens Französische Revolution und wird deshalb groß geschrieben. Der Satz ist fehlerfrei." },
+
+    { "id": "5.5-01", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "In ___ auf die Frage bleibt der Text vage.", "optionen": ["Bezug", "bezug"], "loesungen": ["Bezug"], "begruendung": "Bezug ist in der Wendung in Bezug auf ein Nomen. Also groß." },
+    { "id": "5.5-02", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Wir danken Ihnen im ___.", "optionen": ["Voraus", "voraus"], "loesungen": ["Voraus"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Voraus." },
+    { "id": "5.5-03", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Im ___ erscheint die Entscheidung falsch.", "optionen": ["Nachhinein", "nachhinein"], "loesungen": ["Nachhinein"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Nachhinein." },
+    { "id": "5.5-04", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Der Text behandelt vor ___ die Schuldfrage.", "optionen": ["allem", "Allem"], "loesungen": ["allem"], "begruendung": "In vor allem ist allem kein Nomen. Die feste Wendung bleibt klein." },
+    { "id": "5.5-05", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Das ___ Ich klagt über die Einsamkeit.", "optionen": ["lyrische", "Lyrische"], "loesungen": ["lyrische"], "begruendung": "Lyrische ist Adjektiv zu Ich; nur das Ich wird als Nomen groß geschrieben." },
+    { "id": "5.5-06", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Sie ist sich über ihre Lage im ___.", "optionen": ["Klaren", "klaren"], "loesungen": ["Klaren"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Klaren." },
+    { "id": "5.5-07", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Das tut mir ___.", "optionen": ["leid", "Leid"], "loesungen": ["leid"], "begruendung": "In leidtun ist leid kein Nomen. Also klein: Es tut mir leid." },
+    { "id": "5.5-08", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Er ist an dem Streit ___.", "optionen": ["schuld", "Schuld"], "loesungen": ["schuld"], "begruendung": "Schuld sein ist eine feste Verbindung mit sein; schuld ist hier kein Nomen. Also klein." },
+    { "id": "5.5-09", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Im ___ und Ganzen überzeugt die Analyse.", "optionen": ["Großen", "großen"], "loesungen": ["Großen"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Großen und Ganzen." },
+    { "id": "5.5-10", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Das hat ihn nicht im ___ interessiert.", "optionen": ["Geringsten", "geringsten"], "loesungen": ["Geringsten"], "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: nicht im Geringsten." },
+    { "id": "5.5-11", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 2, "fehlertyp": "r-gross", "text": "Er besucht sie des ___.", "optionen": ["Öfteren", "öfteren"], "loesungen": ["Öfteren"], "begruendung": "Begleiterprobe: Vor dem Wort steht der Artikel des. Also groß: des Öfteren." },
+    { "id": "5.5-12", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Die Autorin nennt unter ___ drei Beispiele.", "optionen": ["anderem", "Anderem"], "loesungen": ["anderem"], "begruendung": "In unter anderem ist anderem kein Nomen. Die feste Wendung bleibt klein." },
+    { "id": "5.5-13", "kurs": 5, "lektion": "5.5", "typ": "entscheiden", "stufe": 1, "fehlertyp": "r-gross", "text": "Der ___ schildert seine Kindheit.", "optionen": ["Ich-Erzähler", "ich-Erzähler"], "loesungen": ["Ich-Erzähler"], "begruendung": "Das Ich ist hier Teil eines Nomens und steht am Anfang. Also groß: der Ich-Erzähler." },
+    { "id": "5.5-14", "kurs": 5, "lektion": "5.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Die Kritik lässt den historischen Kontext außer [[acht=>Acht|r-gross]].", "begruendung": "Acht ist in außer Acht lassen ein Nomen. Also groß." },
+    { "id": "5.5-15", "kurs": 5, "lektion": "5.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Im [[übrigen=>Übrigen|r-gross]] fehlt eine klare These.", "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Übrigen." },
+    { "id": "5.5-16", "kurs": 5, "lektion": "5.5", "typ": "fehler", "stufe": 2, "fehlertyp": "r-gross", "text": "Die Autorin stellt die These seit langem infrage.", "begruendung": "Seit langem und seit Langem sind beide richtig, ebenso infrage und in Frage. Der Satz ist fehlerfrei." },
+    { "id": "5.5-17", "kurs": 5, "lektion": "5.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Es tut mir [[Leid=>leid|r-gross]], dass ich zu spät bin.", "begruendung": "In leidtun ist leid kein Nomen. Also klein: Es tut mir leid." },
+    { "id": "5.5-18", "kurs": 5, "lektion": "5.5", "typ": "fehler", "stufe": 2, "fehlertyp": "r-gross", "text": "Der Streit beginnt aufs [[neue=>Neue|r-gross]].", "begruendung": "Begleiterprobe: Vor dem Wort steht aufs (auf das). Also groß: aufs Neue." },
+    { "id": "5.5-19", "kurs": 5, "lektion": "5.5", "typ": "fehler", "stufe": 1, "fehlertyp": "r-gross", "text": "Im [[grunde=>Grunde|r-gross]] stimmt die These.", "begruendung": "Begleiterprobe: Vor dem Wort steht im. Also groß: im Grunde." },
+    { "id": "5.5-20", "kurs": 5, "lektion": "5.5", "typ": "fehler", "stufe": 2, "fehlertyp": "r-gross", "text": "Mithilfe einer Grafik erläutert er den Befund.", "begruendung": "Mithilfe und mit Hilfe sind beide richtig. Der Satz ist fehlerfrei." }
+  ]
+}
