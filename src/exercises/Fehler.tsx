@@ -255,6 +255,8 @@ export function FehlerExercise({ task, modus, guided, locked, register, onResult
   const optionen = useMemo(() => (typMode ? fehlertypOptionen(task) : []), [task, typMode]);
   const richtigerTyp = typMode ? singleErrorType(task) : task.fehlertyp;
   const ed = useChunkEditor(prep.base.original, !locked && stage === 'korrektur');
+  const absatz = prep.base.original.length > 140;
+  const einheit = absatz ? 'Absatz' : 'Satz';
   useChunkKeys(ed, !locked && stage === 'korrektur');
 
   const chooseType = (t: string) => {
@@ -290,7 +292,7 @@ export function FehlerExercise({ task, modus, guided, locked, register, onResult
     const hinweise: string[] = [];
     if (typMode && !typOk) hinweise.push(`Fehlertyp: richtig wäre „${fehlertypLabel(richtigerTyp)}“, nicht „${fehlertypLabel(typWahl ?? '')}“.`);
     for (const fr of prep.frei) hinweise.push(`Freigestellt: „${fr.falsch.trim()}“ oder „${fr.richtig.trim()}“ – beide Fassungen sind richtig.`);
-    if (prep.fehler.length === 0) hinweise.push(r.richtig ? 'Der Satz war fehlerfrei. Gut, dass du nichts geändert hast.' : 'Der Satz war fehlerfrei.');
+    if (prep.fehler.length === 0) hinweise.push(r.richtig ? `Der ${einheit} war fehlerfrei. Gut, dass du nichts geändert hast.` : `Der ${einheit} war fehlerfrei.`);
     onResult({
       richtig,
       antwort: typMode && !typOk ? `${final} (Fehlertyp: ${fehlertypLabel(typWahl ?? '')})` : final,
@@ -318,7 +320,7 @@ export function FehlerExercise({ task, modus, guided, locked, register, onResult
   if (stage === 'typ' || stage === 'typGeprueft') {
     return (
       <div>
-        <p className="task-instruction">Schritt 1 von 2: Welcher Fehlertyp steckt in diesem Satz?</p>
+        <p className="task-instruction">Schritt 1 von 2: Welcher Fehlertyp steckt in diesem {einheit}?</p>
         <p className="sentence">{typo(prep.base.original)}</p>
         <div className="options" role="group" aria-label="Fehlertypen">
           {optionen.map((o, i) => {
@@ -354,7 +356,7 @@ export function FehlerExercise({ task, modus, guided, locked, register, onResult
         {stage === 'typGeprueft' ? (
           <div className="actions">
             <button className="btn primary" onClick={() => setStage('korrektur')} autoFocus>
-              Weiter: Satz korrigieren <span className="kbd">↵</span>
+              Weiter: {einheit} korrigieren <span className="kbd">↵</span>
             </button>
           </div>
         ) : null}
@@ -365,24 +367,24 @@ export function FehlerExercise({ task, modus, guided, locked, register, onResult
   return (
     <div>
       <p className="task-instruction">
-        {typMode ? 'Schritt 2 von 2: ' : ''}Tippe die fehlerhafte Stelle an und korrigiere sie. Der Satz kann auch fehlerfrei sein.
+        {typMode ? 'Schritt 2 von 2: ' : ''}Tippe die fehlerhafte Stelle an und korrigiere sie. Der {einheit} kann auch fehlerfrei sein.
       </p>
       {guided && !locked ? (
         <div className="guide">
           <Icon name="info" />
           <span>
             {prep.fehler.length === 0
-              ? 'Prüfe jede Stelle mit der Probe. Nicht jeder Satz enthält einen Fehler.'
-              : `In diesem Satz ${prep.fehler.length === 1 ? 'steckt ein Fehler' : `stecken ${numberWord(prep.fehler.length)} Fehler`}.`}
+              ? `Prüfe jede Stelle mit der Probe. Nicht jeder ${einheit} enthält einen Fehler.`
+              : `In diesem ${einheit} ${prep.fehler.length === 1 ? 'steckt ein Fehler' : `stecken ${numberWord(prep.fehler.length)} Fehler`}.`}
           </span>
         </div>
       ) : null}
-      <ChunkText ed={ed} active={!locked} />
+      <ChunkText ed={ed} active={!locked} paragraph={absatz} />
       {!locked ? <EditBar ed={ed} /> : null}
       {!locked && !ed.edit ? (
         <div className="actions">
           <button className="btn primary" onClick={submit}>
-            {ed.changedCount === 0 ? 'Satz ist fehlerfrei' : 'Prüfen'} <span className="kbd">↵</span>
+            {ed.changedCount === 0 ? `${einheit} ist fehlerfrei` : 'Prüfen'} <span className="kbd">↵</span>
           </button>
         </div>
       ) : null}

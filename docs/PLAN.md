@@ -33,7 +33,7 @@ Die Datenversion steht in `meta`; Migrationen laufen beim Öffnen und beim Impor
 5. Inhaltsprüfung (automatische Prüfung der Bank und Liste der Zweifelsfälle)
 6. Prüfung im Browser (`npm run e2e`) und Feinschliff nach den Bildschirmfotos
 
-Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 50 Lektionen, 1058 Aufgaben.
+Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 51 Lektionen, 1083 Aufgaben.
 
 ## Offene Annahmen
 

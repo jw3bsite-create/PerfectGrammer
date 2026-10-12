@@ -308,6 +308,7 @@ describe('Sprachrichtigkeit im Browser', () => {
       ['7.5', 'gefuehrt'],
       ['9.4', 'frei'],
       ['3.7', 'gefuehrt'],
+      ['3.8', 'gefuehrt'],
       ['10.1', 'gefuehrt'],
     ];
     for (const [lektion, phase] of phases) {
