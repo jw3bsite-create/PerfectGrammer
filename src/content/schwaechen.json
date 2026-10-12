@@ -1,0 +1,6351 @@
+{
+  "beschreibung": "Modul „Meine Schwächen“: zwölf Fehlerkategorien mit je einer Methode, Regeln zur Begründung und Aufgaben; dazu Transfer-Absätze mit Fehlern aus mehreren Kategorien.",
+  "kategorien": [
+    {
+      "id": "S1",
+      "titel": "Konjunktiv in indirekter Rede",
+      "kurz": "Konjunktiv",
+      "methode": "Entscheidungskette: Konjunktiv I bilden. Sieht er aus wie der Indikativ, Konjunktiv II. Sieht der aus wie das Präteritum, würde + Infinitiv. Der Rahmen (betont Mayer) bleibt im Indikativ; nach dass und in indirekten Fragen ist der Indikativ erlaubt.",
+      "regeln": [
+        {
+          "id": "S1.k1",
+          "text": "Konjunktiv I, weil er sich vom Indikativ unterscheidet."
+        },
+        {
+          "id": "S1.k2",
+          "text": "Konjunktiv II, weil der Konjunktiv I aussieht wie der Indikativ."
+        },
+        {
+          "id": "S1.k3",
+          "text": "würde + Infinitiv, weil der Konjunktiv II aussieht wie das Präteritum."
+        },
+        {
+          "id": "S1.k4",
+          "text": "Indikativ im Rahmen: Der Begleitsatz gibt nichts wieder."
+        },
+        {
+          "id": "S1.k5",
+          "text": "Indikativ erlaubt: nach dass und in indirekten Fragen."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S1.m1",
+          "text": "Konjunktiv II, weil er vornehmer klingt."
+        },
+        {
+          "id": "S1.m2",
+          "text": "würde + Infinitiv passt immer."
+        },
+        {
+          "id": "S1.m3",
+          "text": "Auch der Rahmen steht im Konjunktiv."
+        }
+      ],
+      "kurse": [
+        "3.3",
+        "3.4",
+        "3.7",
+        "3.8"
+      ],
+      "checkfrage": "Jede wiedergegebene Aussage mit der Entscheidungskette geprüft, den Rahmen im Indikativ gelassen?",
+      "beispiele": [
+        {
+          "falsch": "dass es an der Faulheit läge",
+          "richtig": "dass es an der Faulheit liege"
+        },
+        {
+          "falsch": "Die Reformen bleiben aus, betont Mayer.",
+          "richtig": "Die Reformen würden ausbleiben, betont Mayer."
+        },
+        {
+          "falsch": "zustande kommen würde, wenn … wäre",
+          "richtig": "zustande komme, wenn … sei"
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "titel": "Großschreibung",
+      "kurz": "Groß/klein",
+      "methode": "Begleiterprobe: Steht vor dem Adjektiv ein Begleiter (das, etwas, nichts, viel, als, für) und folgt kein Nomen, ist es selbst ein Nomen: groß. Folgt ein Nomen, bleibt das Adjektiv klein. Herkunftswörter auf -er schreibst du groß, auf -isch klein.",
+      "regeln": [
+        {
+          "id": "S2.g1",
+          "text": "Groß: substantiviertes Adjektiv nach einem Begleiter, es folgt kein Nomen."
+        },
+        {
+          "id": "S2.g2",
+          "text": "Klein: Adjektiv, das vor einem Nomen steht."
+        },
+        {
+          "id": "S2.g3",
+          "text": "Groß: Herkunftswort auf -er."
+        },
+        {
+          "id": "S2.g4",
+          "text": "Klein: Herkunftswort auf -isch."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S2.m1",
+          "text": "Groß, weil das Wort im Satz wichtig ist."
+        },
+        {
+          "id": "S2.m2",
+          "text": "Klein, weil Adjektive immer klein sind."
+        },
+        {
+          "id": "S2.m3",
+          "text": "Groß, weil ein Artikel davorsteht, egal was folgt."
+        }
+      ],
+      "kurse": [
+        "5.2",
+        "5.4"
+      ],
+      "checkfrage": "Jedes Adjektiv nach das, etwas, nichts, als oder für geprüft: Folgt ein Nomen?",
+      "beispiele": [
+        {
+          "falsch": "das alte",
+          "richtig": "das Alte"
+        },
+        {
+          "falsch": "etwas neues",
+          "richtig": "etwas Neues"
+        },
+        {
+          "falsch": "als ganzes",
+          "richtig": "als Ganzes"
+        },
+        {
+          "falsch": "schweizer Zeitung",
+          "richtig": "Schweizer Zeitung"
+        },
+        {
+          "falsch": "die Alte Ordnung",
+          "richtig": "die alte Ordnung"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "titel": "derselbe, dieselbe, dasselbe",
+      "kurz": "derselbe",
+      "methode": "Ein-Wort-Regel: derselbe, dieselbe, dasselbe, denselben, demselben, derselben schreibst du immer in einem Wort, ohne Bindestrich, auch nach einer Präposition (von derselben). Nur nach einer verschmolzenen Präposition (im, am, zum, zur, vom, beim) steht selben allein: im selben Jahr.",
+      "regeln": [
+        {
+          "id": "S3.s1",
+          "text": "Zusammen: Artikel und selb- bilden ein Wort."
+        },
+        {
+          "id": "S3.s2",
+          "text": "Getrennt: Nach im, am, zum, zur, vom, beim steht selben allein."
+        },
+        {
+          "id": "S3.s3",
+          "text": "Kein Bindestrich: derselbe ist ein einziges Wort."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S3.m1",
+          "text": "Getrennt, weil der Artikel ein eigenes Wort ist."
+        },
+        {
+          "id": "S3.m2",
+          "text": "Mit Bindestrich, damit man die Teile erkennt."
+        },
+        {
+          "id": "S3.m3",
+          "text": "Nach einer Präposition wird getrennt geschrieben."
+        }
+      ],
+      "kurse": [
+        "6.5",
+        "9.2"
+      ],
+      "checkfrage": "Jedes der selbe, den selben, von der selben in ein Wort zusammengezogen?",
+      "beispiele": [
+        {
+          "falsch": "der selben",
+          "richtig": "derselben"
+        },
+        {
+          "falsch": "den-selben",
+          "richtig": "denselben"
+        },
+        {
+          "falsch": "von der selben",
+          "richtig": "von derselben"
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "titel": "dass, das, damit",
+      "kurz": "dass/das/damit",
+      "methode": "Ersatzprobe: Passt dieses, jenes oder welches, schreibst du das. Passt keines, schreibst du dass. Nennt der Teilsatz einen Zweck (Wozu?), schreibst du damit.",
+      "regeln": [
+        {
+          "id": "S4.d1",
+          "text": "das: Ersatz durch dieses, jenes oder welches möglich."
+        },
+        {
+          "id": "S4.d2",
+          "text": "dass: Kein Ersatz möglich, der Teilsatz gibt einen Inhalt an."
+        },
+        {
+          "id": "S4.d3",
+          "text": "damit: Der Teilsatz nennt einen Zweck (Wozu?)."
+        },
+        {
+          "id": "S4.d4",
+          "text": "dass nach so …: Der Teilsatz nennt eine Folge."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S4.m1",
+          "text": "dass steht nach jedem Komma."
+        },
+        {
+          "id": "S4.m2",
+          "text": "das steht nur am Satzanfang."
+        },
+        {
+          "id": "S4.m3",
+          "text": "dass passt auch für einen Zweck."
+        }
+      ],
+      "kurse": [
+        "4.1"
+      ],
+      "checkfrage": "Jedes das und dass mit der Ersatzprobe geprüft, jeden Zweck mit damit angeschlossen?",
+      "beispiele": [
+        {
+          "falsch": "das Fehler gemacht wurden",
+          "richtig": "dass Fehler gemacht wurden"
+        },
+        {
+          "falsch": "zerfallen muss, dass etwas entsteht",
+          "richtig": "zerfallen muss, damit etwas entsteht"
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "titel": "Konnektoren nach Logik",
+      "kurz": "Konnektoren",
+      "methode": "Logikprobe: Bestimme zuerst die Beziehung zwischen den Sätzen und wähle dann den Konnektor, der genau sie ausdrückt. Grund: denn, weil. Folge: deshalb, daher. Gegensatz: aber, jedoch, während. Zusatz: und, außerdem. Mittel oder Ursache: dadurch, indem. Einräumung: obwohl, trotzdem.",
+      "regeln": [
+        {
+          "id": "S5.c1",
+          "text": "Grund: denn oder weil."
+        },
+        {
+          "id": "S5.c2",
+          "text": "Folge: deshalb oder daher."
+        },
+        {
+          "id": "S5.c3",
+          "text": "Gegensatz: aber, jedoch oder während."
+        },
+        {
+          "id": "S5.c4",
+          "text": "Zusatz ohne Ursache: und oder außerdem."
+        },
+        {
+          "id": "S5.c5",
+          "text": "Mittel oder Ursache: dadurch oder indem."
+        },
+        {
+          "id": "S5.c6",
+          "text": "Einräumung: obwohl oder trotzdem."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S5.m1",
+          "text": "dadurch passt immer, wenn zwei Sätze zusammenhängen."
+        },
+        {
+          "id": "S5.m2",
+          "text": "dazu leitet einen Grund ein."
+        },
+        {
+          "id": "S5.m3",
+          "text": "Der Konnektor ist Geschmackssache."
+        }
+      ],
+      "kurse": [
+        "1.3"
+      ],
+      "checkfrage": "Bei jedem Konnektor die Beziehung benannt: Grund, Folge, Gegensatz, Zusatz, Mittel?",
+      "beispiele": [
+        {
+          "falsch": "Dazu gebe es keine Mehrheiten.",
+          "richtig": "Denn es gebe keine Mehrheiten."
+        },
+        {
+          "falsch": "dadurch (ohne Ursache)",
+          "richtig": "und"
+        }
+      ]
+    },
+    {
+      "id": "S6",
+      "titel": "Tempus in der Textwiedergabe",
+      "kurz": "Tempus",
+      "methode": "Zeitprobe: Die Textwiedergabe steht im Präsens, auch wenn der Text von Historischem handelt. Was vor dem Präsens-Geschehen liegt, steht im Perfekt; nach nachdem steht das Perfekt, wenn der Hauptsatz im Präsens steht.",
+      "regeln": [
+        {
+          "id": "S6.t1",
+          "text": "Präsens als Grundzeit, auch für Historisches."
+        },
+        {
+          "id": "S6.t2",
+          "text": "Perfekt für Vorzeitiges zum Präsens."
+        },
+        {
+          "id": "S6.t3",
+          "text": "Nach nachdem Perfekt, weil der Hauptsatz im Präsens steht."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S6.m1",
+          "text": "Was in der Vergangenheit geschah, steht im Präteritum."
+        },
+        {
+          "id": "S6.m2",
+          "text": "Nach nachdem steht immer das Präteritum."
+        },
+        {
+          "id": "S6.m3",
+          "text": "Die Zeitform richtet sich nach dem Originaltext."
+        }
+      ],
+      "kurse": [
+        "9.4"
+      ],
+      "checkfrage": "Jede Verbform der Wiedergabe im Präsens, Vorzeitiges im Perfekt, kein Präteritum?",
+      "beispiele": [
+        {
+          "falsch": "wurden … sichtbar",
+          "richtig": "werden … sichtbar"
+        },
+        {
+          "falsch": "benutzten",
+          "richtig": "benutzen"
+        },
+        {
+          "falsch": "blieben aus",
+          "richtig": "bleiben aus"
+        }
+      ]
+    },
+    {
+      "id": "S7",
+      "titel": "Kommasetzung",
+      "kurz": "Komma",
+      "methode": "Verbprobe: Unterstreiche die gebeugten Verben. Jeder Nebensatz (dass, warum, nachdem, Relativpronomen) wird abgetrennt, ein Einschub vorne und hinten, um … zu immer. Kein Komma nach dem Vorfeld, zwischen Adjektiv und Nomen oder um ein einzelnes Satzglied.",
+      "regeln": [
+        {
+          "id": "S7.z1",
+          "text": "Komma vor dem Nebensatz (Einleitewort, gebeugtes Verb am Ende)."
+        },
+        {
+          "id": "S7.z2",
+          "text": "Einschub oder eingeschobener Nebensatz: Komma vorne und hinten."
+        },
+        {
+          "id": "S7.z3",
+          "text": "Komma vor um … zu, ohne … zu, statt … zu."
+        },
+        {
+          "id": "S7.z4",
+          "text": "Kein Komma nach dem Vorfeld vor dem gebeugten Verb."
+        },
+        {
+          "id": "S7.z5",
+          "text": "Kein Komma zwischen Adjektiv und Nomen oder um ein Satzglied."
+        },
+        {
+          "id": "S7.z6",
+          "text": "ohne dass, als dass: Komma vor der ganzen Fügung."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S7.m1",
+          "text": "Komma, wo man beim Sprechen eine Pause macht."
+        },
+        {
+          "id": "S7.m2",
+          "text": "Komma nach einem langen Satzanfang."
+        },
+        {
+          "id": "S7.m3",
+          "text": "Komma zwischen ohne und dass."
+        }
+      ],
+      "kurse": [
+        "1.2",
+        "1.5",
+        "1.6",
+        "1.8"
+      ],
+      "checkfrage": "Alle gebeugten Verben unterstrichen, jeden Nebensatz und Einschub abgetrennt, kein Komma nach dem Vorfeld?",
+      "beispiele": [
+        {
+          "falsch": "ohne, dass",
+          "richtig": ", ohne dass"
+        },
+        {
+          "falsch": "Zu Beginn des Textes, macht",
+          "richtig": "Zu Beginn des Textes macht"
+        },
+        {
+          "falsch": "welche, den … Pflasterwegen, überlegen",
+          "richtig": "welche den … Pflasterwegen überlegen"
+        }
+      ]
+    },
+    {
+      "id": "S8",
+      "titel": "Adjektivendung nach der, die, das",
+      "kurz": "Adjektivendung",
+      "methode": "Wörterbuch-Test: Steht vor dem Adjektiv der Artikel, den das Nomen im Wörterbuch hat (der Staat, die Reform, das Gesetz), und ist es Singular, endet das Adjektiv auf -e. Sonst endet es auf -en.",
+      "regeln": [
+        {
+          "id": "S8.a1",
+          "text": "-e: Artikel wie im Wörterbuch und Singular."
+        },
+        {
+          "id": "S8.a2",
+          "text": "-en: Der Artikel weicht vom Wörterbuch ab (des, dem, den, der bei femininen Nomen)."
+        },
+        {
+          "id": "S8.a3",
+          "text": "-en: Das Nomen steht im Plural."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S8.m1",
+          "text": "-e steht nach jedem bestimmten Artikel."
+        },
+        {
+          "id": "S8.m2",
+          "text": "-en steht nur im Plural."
+        },
+        {
+          "id": "S8.m3",
+          "text": "Die Endung richtet sich nach dem Klang."
+        }
+      ],
+      "kurse": [
+        "2.8"
+      ],
+      "checkfrage": "Jedes Adjektiv nach der, die, das mit dem Wörterbuch-Test geprüft?",
+      "beispiele": [
+        {
+          "falsch": "der dahinter liegende Motivation",
+          "richtig": "der dahinterliegenden Motivation"
+        },
+        {
+          "falsch": "die verkrustete Sedimente",
+          "richtig": "die verkrusteten Sedimente"
+        }
+      ]
+    },
+    {
+      "id": "S9",
+      "titel": "Relativpronomen und Bezug",
+      "kurz": "Bezug",
+      "methode": "Bezugsprobe: Zeig auf das Wort, auf das sich das Pronomen bezieht. Nach einem Nomen richtet sich das Relativpronomen nach dessen Geschlecht (das Beispiel, das …); nach alles, nichts, etwas, vieles und nach einem ganzen Satz steht was. Kommen zwei Personen in Frage, nennst du den Namen statt er oder sie.",
+      "regeln": [
+        {
+          "id": "S9.r1",
+          "text": "das nach einem sächlichen Nomen."
+        },
+        {
+          "id": "S9.r2",
+          "text": "was nach alles, nichts, vieles oder einem substantivierten Superlativ."
+        },
+        {
+          "id": "S9.r3",
+          "text": "was nach einem ganzen Satz."
+        },
+        {
+          "id": "S9.r4",
+          "text": "der, die, dessen, deren nach Geschlecht und Zahl des Nomens."
+        },
+        {
+          "id": "S9.r5",
+          "text": "Name statt Pronomen, wenn zwei Personen in Frage kommen."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S9.m1",
+          "text": "was klingt gehobener und passt immer."
+        },
+        {
+          "id": "S9.m2",
+          "text": "Das Pronomen bezieht sich auf das Subjekt des Satzes."
+        },
+        {
+          "id": "S9.m3",
+          "text": "dessen und deren sind austauschbar."
+        }
+      ],
+      "kurse": [
+        "9.3",
+        "2.8"
+      ],
+      "checkfrage": "Bei jedem Pronomen auf das Bezugswort gezeigt: passt Geschlecht, ist der Bezug eindeutig?",
+      "beispiele": [
+        {
+          "falsch": "Beispiel, was als falsch gilt",
+          "richtig": "Beispiel, das als falsch gilt"
+        },
+        {
+          "falsch": "Er (falsche Person)",
+          "richtig": "den Namen nennen"
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "titel": "Feste Wendungen",
+      "kurz": "Wendungen",
+      "methode": "Wendungsprobe: Feste Wendungen haben eine feste Präposition und ein festes Verb. Lerne sie als Paar: aufmerksam machen auf, ringen um, in sich tragen, den Boden bereiten, referieren über, auskommen mit.",
+      "regeln": [
+        {
+          "id": "S10.w1",
+          "text": "Feste Präposition der Wendung."
+        },
+        {
+          "id": "S10.w2",
+          "text": "Festes Verb oder Nomen der Wendung."
+        },
+        {
+          "id": "S10.w3",
+          "text": "Das Verb braucht seine feste Ergänzung (auskommen mit)."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S10.m1",
+          "text": "Die Präposition ist frei wählbar, wenn der Sinn klar ist."
+        },
+        {
+          "id": "S10.m2",
+          "text": "Ähnliche Wendungen lassen sich mischen."
+        },
+        {
+          "id": "S10.m3",
+          "text": "Das Verb können reicht ohne Ergänzung."
+        }
+      ],
+      "kurse": [
+        "2.2",
+        "2.4"
+      ],
+      "checkfrage": "Jede Wendung mit ihrer festen Präposition geschrieben (aufmerksam machen auf, ringen um)?",
+      "beispiele": [
+        {
+          "falsch": "aufmerksam machen über",
+          "richtig": "aufmerksam machen auf"
+        },
+        {
+          "falsch": "ringen damit",
+          "richtig": "ringen darum"
+        },
+        {
+          "falsch": "mit sich tragen",
+          "richtig": "in sich tragen"
+        },
+        {
+          "falsch": "Boden legen",
+          "richtig": "den Boden bereiten"
+        },
+        {
+          "falsch": "referiert zu",
+          "richtig": "referiert über"
+        },
+        {
+          "falsch": "nicht mehr könne",
+          "richtig": "nicht mehr auskommen könne"
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "titel": "Umgangssprache",
+      "kurz": "Sperrliste",
+      "methode": "Sperrlisten-Probe: Steht ein Wort auf der Sperrliste, ersetzt du es durch die Schriftsprache. erstmal → zunächst, schlussendlich → schließlich, enden tut → endet, rein → hinein, via → über, das Ganze → dies, BRD → Bundesrepublik Deutschland, bspw. → beispielsweise, 3. → drittens, € → Euro, % → Prozent.",
+      "regeln": [
+        {
+          "id": "S11.u1",
+          "text": "Umgangssprachliches Wort durch die Schriftsprache ersetzen."
+        },
+        {
+          "id": "S11.u2",
+          "text": "Abkürzung im Fließtext ausschreiben."
+        },
+        {
+          "id": "S11.u3",
+          "text": "Ziffer oder Zeichen im Fließtext ausschreiben."
+        },
+        {
+          "id": "S11.u4",
+          "text": "tun-Umschreibung auflösen."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S11.m1",
+          "text": "Kurze Wörter wirken sachlicher."
+        },
+        {
+          "id": "S11.m2",
+          "text": "Abkürzungen sparen Platz und sind deshalb erlaubt."
+        },
+        {
+          "id": "S11.m3",
+          "text": "Zeichen sind genauer als Wörter."
+        }
+      ],
+      "kurse": [
+        "8.5"
+      ],
+      "checkfrage": "Text auf die Sperrliste geprüft: erstmal, schlussendlich, rein, via, das Ganze, BRD, bspw., Ziffern, Zeichen?",
+      "beispiele": [
+        {
+          "falsch": "erstmal",
+          "richtig": "zunächst"
+        },
+        {
+          "falsch": "schlussendlich",
+          "richtig": "schließlich"
+        },
+        {
+          "falsch": "Enden tut",
+          "richtig": "endet"
+        },
+        {
+          "falsch": "rein",
+          "richtig": "hinein"
+        },
+        {
+          "falsch": "via",
+          "richtig": "über"
+        },
+        {
+          "falsch": "das Ganze",
+          "richtig": "dies"
+        },
+        {
+          "falsch": "BRD",
+          "richtig": "Bundesrepublik Deutschland"
+        },
+        {
+          "falsch": "bspw.",
+          "richtig": "beispielsweise"
+        },
+        {
+          "falsch": "3. / €",
+          "richtig": "drittens / Euro"
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "titel": "Parallele Aufzählungen",
+      "kurz": "Aufzählung",
+      "methode": "Rahmentest: Setze den Rahmen (zum Beispiel „Drei Gründe sind entscheidend:“) vor jedes einzelne Glied. Jedes Glied muss allein dahinter passen, und alle Glieder haben dieselbe Form: alle Nomen, alle Infinitive oder alle Teilsätze.",
+      "regeln": [
+        {
+          "id": "S12.p1",
+          "text": "Jedes Glied passt einzeln hinter den Rahmen."
+        },
+        {
+          "id": "S12.p2",
+          "text": "Alle Glieder haben dieselbe Form."
+        },
+        {
+          "id": "S12.p3",
+          "text": "Keine Zählwörter oder Satzreste mitten in der Aufzählung."
+        }
+      ],
+      "mythen": [
+        {
+          "id": "S12.m1",
+          "text": "Abwechslung in der Form wirkt eleganter."
+        },
+        {
+          "id": "S12.m2",
+          "text": "Das letzte Glied darf ein ganzer Satz sein."
+        },
+        {
+          "id": "S12.m3",
+          "text": "Zählwörter machen jede Aufzählung klarer."
+        }
+      ],
+      "kurse": [],
+      "checkfrage": "Jede Aufzählung mit dem Rahmentest geprüft: passt jedes Glied einzeln, alle in derselben Form?",
+      "beispiele": [
+        {
+          "falsch": "drei Gründe: der Leidensdruck, der Staat und drittens, seien die Wahlbürger",
+          "richtig": "drei Gründe: der Leidensdruck, der Staat und die Wahlbürger"
+        }
+      ]
+    }
+  ],
+  "aufgaben": [
+    {
+      "id": "S1-01",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Mayer kritisiert, es ___ an der mangelnden Bereitschaft zur Reform.",
+      "optionen": [
+        "liege",
+        "läge"
+      ],
+      "loesungen": [
+        "liege"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I liege unterscheidet sich vom Indikativ liegt. Also liege; läge ist hier unnötig."
+    },
+    {
+      "id": "S1-02",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Reformen ___, betont Mayer.",
+      "optionen": [
+        "blieben aus",
+        "würden ausbleiben"
+      ],
+      "loesungen": [
+        "würden ausbleiben"
+      ],
+      "begruendung": "Kette: bleiben aus gleicht dem Indikativ, blieben aus dem Präteritum. Also würde + Infinitiv."
+    },
+    {
+      "id": "S1-03",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Schulz betont, der Sozialstaat ___ an seine Grenzen.",
+      "optionen": [
+        "stoße",
+        "stieße"
+      ],
+      "loesungen": [
+        "stoße"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I stoße unterscheidet sich vom Indikativ stößt. Also stoße."
+    },
+    {
+      "id": "S1-04",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Autorin ___, die Sprache verändere sich ständig.",
+      "optionen": [
+        "betone",
+        "betont"
+      ],
+      "loesungen": [
+        "betont"
+      ],
+      "begruendung": "Betont ist der Rahmen: Er gibt nichts wieder und bleibt im Indikativ."
+    },
+    {
+      "id": "S1-05",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Viele Bürger, so Weber, ___ kein Vertrauen mehr in die Politik.",
+      "optionen": [
+        "hätten",
+        "haben"
+      ],
+      "loesungen": [
+        "hätten"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I haben gleicht dem Indikativ. Also Konjunktiv II hätten."
+    },
+    {
+      "id": "S1-06",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k5",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Ökonom fragt, ob die Schuldenbremse noch ___.",
+      "optionen": [
+        "zeitgemäß wäre",
+        "zeitgemäß ist"
+      ],
+      "loesungen": [
+        "zeitgemäß ist"
+      ],
+      "begruendung": "In der indirekten Frage ist der Indikativ ist erlaubt. Wäre ist falsch, weil der Konjunktiv I sei sich vom Indikativ unterscheidet."
+    },
+    {
+      "id": "S1-07",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Brandt meint, dass Jugendliche heute anders als ihre Eltern ___.",
+      "optionen": [
+        "reden würden",
+        "redeten"
+      ],
+      "loesungen": [
+        "reden würden"
+      ],
+      "begruendung": "Kette: reden gleicht dem Indikativ, redeten dem Präteritum. Also würde + Infinitiv."
+    },
+    {
+      "id": "S1-08",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Keller warnt, die Inflation ___ die Ersparnisse der Mittelschicht.",
+      "optionen": [
+        "gefährdete",
+        "gefährde"
+      ],
+      "loesungen": [
+        "gefährde"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I gefährde unterscheidet sich vom Indikativ gefährdet. Also gefährde."
+    },
+    {
+      "id": "S1-09",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Gewerkschaften fordern, die Löhne ___ deutlich steigen.",
+      "optionen": [
+        "müssten",
+        "müssen"
+      ],
+      "loesungen": [
+        "müssten"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I müssen gleicht dem Indikativ. Also Konjunktiv II müssten."
+    },
+    {
+      "id": "S1-10",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Wenn die Reform scheitere, ___ der Sozialstaat nicht mehr finanzierbar, schreibt Roth.",
+      "optionen": [
+        "wäre",
+        "sei"
+      ],
+      "loesungen": [
+        "sei"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I sei unterscheidet sich vom Indikativ ist. Also sei, auch im wenn-Satz der Wiedergabe."
+    },
+    {
+      "id": "S1-11",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Minister ___ in seiner Rede, die Lage sei ernst.",
+      "optionen": [
+        "erklärt",
+        "erkläre"
+      ],
+      "loesungen": [
+        "erklärt"
+      ],
+      "begruendung": "Erklärt ist der Rahmen: Er gibt nichts wieder und bleibt im Indikativ."
+    },
+    {
+      "id": "S1-12",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Mayer schreibt, die Opposition ___ keine eigenen Vorschläge.",
+      "optionen": [
+        "machte",
+        "mache"
+      ],
+      "loesungen": [
+        "mache"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I mache unterscheidet sich vom Indikativ macht. Also mache."
+    },
+    {
+      "id": "S1-13",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Mayer schreibt, die Reform ___ nur zustande, wenn jede Partei zustimme.",
+      "hinweis": "kommen",
+      "loesungen": [
+        "komme"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I komme unterscheidet sich vom Indikativ kommt. Also komme, nicht käme."
+    },
+    {
+      "id": "S1-14",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Ministerin erklärt, der Haushalt ___ ausgeglichen.",
+      "hinweis": "sein",
+      "loesungen": [
+        "sei"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I sei unterscheidet sich vom Indikativ ist. Also sei."
+    },
+    {
+      "id": "S1-15",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Autoren betonen, dass viele Wörter aus dem Englischen ___.",
+      "hinweis": "stammen, Konjunktiv",
+      "loesungen": [
+        "stammen würden"
+      ],
+      "begruendung": "Kette: stammen gleicht dem Indikativ, stammten dem Präteritum. Also würde + Infinitiv."
+    },
+    {
+      "id": "S1-16",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Kritiker bemängeln, die Rentner ___ zu wenig Geld.",
+      "hinweis": "haben",
+      "loesungen": [
+        "hätten"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I haben gleicht dem Indikativ. Also Konjunktiv II hätten."
+    },
+    {
+      "id": "S1-17",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k4",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Verband ___, die Steuern seien zu hoch.",
+      "hinweis": "klagen, Rahmen",
+      "loesungen": [
+        "klagt"
+      ],
+      "begruendung": "Klagt ist der Rahmen: Er gibt nichts wieder und bleibt im Indikativ."
+    },
+    {
+      "id": "S1-18",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Weber vermutet, die Mehrheit ___ die Reform ab.",
+      "hinweis": "lehnen",
+      "loesungen": [
+        "lehne"
+      ],
+      "begruendung": "Kette: Der Konjunktiv I lehne unterscheidet sich vom Indikativ lehnt. Also lehne."
+    },
+    {
+      "id": "S1-19",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Experten erwarten, dass die Preise weiter ___.",
+      "hinweis": "steigen, Konjunktiv",
+      "loesungen": [
+        "steigen würden"
+      ],
+      "begruendung": "Kette: steigen gleicht dem Indikativ, stiegen dem Präteritum. Also würde + Infinitiv."
+    },
+    {
+      "id": "S1-20",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Mayer sagt: „Die Reformen bleiben aus.“",
+      "loesungen": [
+        "Mayer sagt, die Reformen würden ausbleiben.",
+        "Mayer sagt, dass die Reformen ausbleiben würden.",
+        "Mayer sagt, dass die Reformen ausbleiben."
+      ],
+      "anweisung": "Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.",
+      "eingabehilfe": "Ohne „dass“: Konjunktiv nach der Entscheidungskette. Geprüft wird der ganze Satz.",
+      "begruendung": "Kette: bleiben aus gleicht dem Indikativ, blieben aus dem Präteritum. Also würden ausbleiben; nach dass ist auch der Indikativ erlaubt."
+    },
+    {
+      "id": "S1-21",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Die Ökonomin erklärt: „Der Staat gibt zu viel Geld aus.“",
+      "loesungen": [
+        "Die Ökonomin erklärt, der Staat gebe zu viel Geld aus.",
+        "Die Ökonomin erklärt, dass der Staat zu viel Geld ausgebe.",
+        "Die Ökonomin erklärt, dass der Staat zu viel Geld ausgibt."
+      ],
+      "anweisung": "Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.",
+      "eingabehilfe": "Ohne „dass“: Konjunktiv nach der Entscheidungskette. Geprüft wird der ganze Satz.",
+      "begruendung": "Kette: Der Konjunktiv I gebe unterscheidet sich vom Indikativ gibt. Also gebe … aus."
+    },
+    {
+      "id": "S1-22",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Der Sprachforscher betont: „Jugendsprache ist kein Verfall.“",
+      "loesungen": [
+        "Der Sprachforscher betont, Jugendsprache sei kein Verfall.",
+        "Der Sprachforscher betont, dass Jugendsprache kein Verfall sei.",
+        "Der Sprachforscher betont, dass Jugendsprache kein Verfall ist."
+      ],
+      "anweisung": "Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.",
+      "eingabehilfe": "Ohne „dass“: Konjunktiv nach der Entscheidungskette. Geprüft wird der ganze Satz.",
+      "begruendung": "Kette: Der Konjunktiv I sei unterscheidet sich vom Indikativ ist. Also sei."
+    },
+    {
+      "id": "S1-23",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k2",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Die Abgeordneten sagen: „Wir haben keine Mehrheit.“",
+      "loesungen": [
+        "Die Abgeordneten sagen, sie hätten keine Mehrheit.",
+        "Die Abgeordneten sagen, dass sie keine Mehrheit hätten.",
+        "Die Abgeordneten sagen, dass sie keine Mehrheit haben."
+      ],
+      "anweisung": "Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.",
+      "eingabehilfe": "Ohne „dass“: Konjunktiv nach der Entscheidungskette. Geprüft wird der ganze Satz.",
+      "begruendung": "Kette: Der Konjunktiv I haben gleicht dem Indikativ. Also hätten; aus wir wird sie."
+    },
+    {
+      "id": "S1-24",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Der Minister sagt: „Die Wirtschaft wächst wieder.“",
+      "loesungen": [
+        "Der Minister sagt, die Wirtschaft wachse wieder.",
+        "Der Minister sagt, dass die Wirtschaft wieder wachse.",
+        "Der Minister sagt, dass die Wirtschaft wieder wächst."
+      ],
+      "anweisung": "Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.",
+      "eingabehilfe": "Ohne „dass“: Konjunktiv nach der Entscheidungskette. Geprüft wird der ganze Satz.",
+      "begruendung": "Kette: Der Konjunktiv I wachse unterscheidet sich vom Indikativ wächst. Also wachse."
+    },
+    {
+      "id": "S1-25",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Die Wähler sagen: „Die Parteien hören uns nicht zu.“",
+      "loesungen": [
+        "Die Wähler sagen, die Parteien würden ihnen nicht zuhören.",
+        "Die Wähler sagen, dass die Parteien ihnen nicht zuhören würden.",
+        "Die Wähler sagen, dass die Parteien ihnen nicht zuhören."
+      ],
+      "anweisung": "Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.",
+      "eingabehilfe": "Ohne „dass“: Konjunktiv nach der Entscheidungskette. Geprüft wird der ganze Satz.",
+      "begruendung": "Kette: hören zu gleicht dem Indikativ, hörten zu dem Präteritum. Also würden zuhören; aus uns wird ihnen."
+    },
+    {
+      "id": "S1-26",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Mayer argumentiert, es [[läge=>liege|S1.k1]] an der Faulheit der Politik.",
+      "begruendung": "Kette: Der Konjunktiv I liege unterscheidet sich vom Indikativ liegt. Also liege; läge ist hier unnötig."
+    },
+    {
+      "id": "S1-27",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Reformen [[bleiben aus=>würden ausbleiben|S1.k3]], betont Mayer.",
+      "begruendung": "Kette: bleiben aus gleicht dem Indikativ, blieben aus dem Präteritum. Also würden ausbleiben."
+    },
+    {
+      "id": "S1-28",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Schulz schreibt, ein Kompromiss [[käme=>komme|S1.k1]] nur zustande, wenn die Opposition einlenke.",
+      "begruendung": "Kette: Der Konjunktiv I komme unterscheidet sich vom Indikativ kommt. Also komme."
+    },
+    {
+      "id": "S1-29",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Autorin [[betone=>betont|S1.k4]], die Sprache sei lebendig.",
+      "begruendung": "Betont ist der Rahmen: Er gibt nichts wieder und bleibt im Indikativ."
+    },
+    {
+      "id": "S1-30",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Ökonomen warnen, viele Unternehmen [[haben=>hätten|S1.k2]] zu wenig Fachkräfte.",
+      "begruendung": "Kette: Der Konjunktiv I haben gleicht dem Indikativ. Also hätten."
+    },
+    {
+      "id": "S1-31",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Brandt meint, die Rente [[wäre=>sei|S1.k1]] nicht mehr sicher.",
+      "begruendung": "Kette: Der Konjunktiv I sei unterscheidet sich vom Indikativ ist. Also sei."
+    },
+    {
+      "id": "S1-32",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Kanzler [[erkläre=>erklärt|S1.k4]], die Lage sei ernst.",
+      "begruendung": "Erklärt ist der Rahmen: Er gibt nichts wieder und bleibt im Indikativ."
+    },
+    {
+      "id": "S1-33",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Weber stellt fest, die Sprache [[verarmt=>verarme|S1.k1]] durch Anglizismen.",
+      "begruendung": "Ohne dass ist der Konjunktiv Pflicht. Kette: verarme unterscheidet sich vom Indikativ verarmt."
+    },
+    {
+      "id": "S1-34",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Linguisten betonen, die Schüler [[schreiben weniger als früher=>würden weniger schreiben als früher|S1.k3]].",
+      "begruendung": "Kette: schreiben gleicht dem Indikativ, schrieben dem Präteritum. Also würden schreiben."
+    },
+    {
+      "id": "S1-35",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Bericht kommt zu dem Schluss, die Armut [[nimmt=>nehme|S1.k1]] zu.",
+      "begruendung": "Ohne dass ist der Konjunktiv Pflicht. Kette: nehme unterscheidet sich vom Indikativ nimmt."
+    },
+    {
+      "id": "S1-36",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Gib in einem eigenen Satz zum Sozialstaat wieder, was eine Autorin fordert. Rahmen mit „fordern“, im Inhalt „der Staat“ und eine Form von „müssen“.",
+      "beispiel": "Die Autorin fordert, der Staat müsse die Renten sichern.",
+      "gegenbeispiel": "Die Autorin fordert, der Staat muss die Renten sichern.",
+      "pruefungen": [
+        {
+          "label": "Rahmen im Indikativ: fordert",
+          "muss": [
+            "\\bfordert\\b"
+          ],
+          "nicht": [
+            "\\bforder(e|te)\\b"
+          ]
+        },
+        {
+          "label": "Inhalt im Konjunktiv I: müsse",
+          "muss": [
+            "\\bmüsse\\b"
+          ],
+          "nicht": [
+            "\\bmuss\\b",
+            "\\bmüsste\\b"
+          ]
+        }
+      ],
+      "begruendung": "Kette: Der Konjunktiv I müsse unterscheidet sich vom Indikativ muss. Der Rahmen fordert bleibt im Indikativ."
+    },
+    {
+      "id": "S1-37",
+      "kurs": 0,
+      "lektion": "S1",
+      "fehlertyp": "S1",
+      "kat": "S1",
+      "regel": "S1.k3",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Gib die Aussage ohne „dass“ in indirekter Rede wieder: Ökonomen warnen: „Die Preise steigen weiter.“",
+      "beispiel": "Die Ökonomen warnen, die Preise würden weiter steigen.",
+      "gegenbeispiel": "Die Ökonomen warnen, die Preise stiegen weiter.",
+      "pruefungen": [
+        {
+          "label": "Rahmen im Indikativ: warnen",
+          "muss": [
+            "\\bwarnen\\b"
+          ],
+          "nicht": []
+        },
+        {
+          "label": "Inhalt mit würde + Infinitiv",
+          "muss": [
+            "\\bwürden\\b.*\\bsteigen\\b"
+          ],
+          "nicht": [
+            "\\bstiegen\\b",
+            "\\bdass\\b"
+          ]
+        }
+      ],
+      "begruendung": "Kette: steigen gleicht dem Indikativ, stiegen dem Präteritum. Also würden steigen."
+    },
+    {
+      "id": "S2-01",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Autor verteidigt das ___ gegen jede Reform.",
+      "optionen": [
+        "Alte",
+        "alte"
+      ],
+      "loesungen": [
+        "Alte"
+      ],
+      "begruendung": "Begleiterprobe: Vor alte steht das, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-02",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Revolution beseitigt die ___ Ordnung.",
+      "optionen": [
+        "Alte",
+        "alte"
+      ],
+      "loesungen": [
+        "alte"
+      ],
+      "begruendung": "Begleiterprobe: Auf alte folgt das Nomen Ordnung. Also klein."
+    },
+    {
+      "id": "S2-03",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Studie bringt kaum etwas ___.",
+      "optionen": [
+        "Neues",
+        "neues"
+      ],
+      "loesungen": [
+        "Neues"
+      ],
+      "begruendung": "Begleiterprobe: Vor neues steht etwas, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-04",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Partei muss sich als ___ verstehen.",
+      "optionen": [
+        "ganzes",
+        "Ganzes"
+      ],
+      "loesungen": [
+        "Ganzes"
+      ],
+      "begruendung": "Begleiterprobe: Vor ganzes steht als, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-05",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Sie liest jeden Morgen die ___ Zeitung „Der Bund“.",
+      "optionen": [
+        "Schweizer",
+        "schweizer"
+      ],
+      "loesungen": [
+        "Schweizer"
+      ],
+      "begruendung": "Herkunftswort auf -er: Schweizer schreibst du groß."
+    },
+    {
+      "id": "S2-06",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Ein ___ Journalist berichtet über die Wahl.",
+      "optionen": [
+        "Albanischer",
+        "albanischer"
+      ],
+      "loesungen": [
+        "albanischer"
+      ],
+      "begruendung": "Herkunftswort auf -isch: albanisch schreibst du klein."
+    },
+    {
+      "id": "S2-07",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Viele Menschen sind offen für ___.",
+      "optionen": [
+        "Neues",
+        "neues"
+      ],
+      "loesungen": [
+        "Neues"
+      ],
+      "begruendung": "Begleiterprobe: Vor neues steht für, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-08",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die ___ Wirtschaft leidet unter der Inflation.",
+      "optionen": [
+        "Deutsche",
+        "deutsche"
+      ],
+      "loesungen": [
+        "deutsche"
+      ],
+      "begruendung": "Herkunftswort auf -isch vor einem Nomen: deutsche Wirtschaft, klein."
+    },
+    {
+      "id": "S2-09",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die ___ Banken gelten als verschwiegen.",
+      "optionen": [
+        "Schweizer",
+        "schweizer"
+      ],
+      "loesungen": [
+        "Schweizer"
+      ],
+      "begruendung": "Herkunftswort auf -er: Schweizer schreibst du groß."
+    },
+    {
+      "id": "S2-10",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Im ___ bleibt der Text sachlich.",
+      "optionen": [
+        "allgemeinen",
+        "Allgemeinen"
+      ],
+      "loesungen": [
+        "Allgemeinen"
+      ],
+      "begruendung": "Begleiterprobe: Vor allgemeinen steht im, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-11",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Redner warnt vor dem ___ Denken.",
+      "optionen": [
+        "alten",
+        "Alten"
+      ],
+      "loesungen": [
+        "alten"
+      ],
+      "begruendung": "Begleiterprobe: Auf alten folgt das Nomen Denken. Also klein."
+    },
+    {
+      "id": "S2-12",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Opposition hat nichts ___ zu sagen.",
+      "optionen": [
+        "wesentliches",
+        "Wesentliches"
+      ],
+      "loesungen": [
+        "Wesentliches"
+      ],
+      "begruendung": "Begleiterprobe: Vor wesentliches steht nichts, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-13",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Debatte bringt wenig ___.",
+      "hinweis": "neu",
+      "loesungen": [
+        "Neues"
+      ],
+      "begruendung": "Begleiterprobe: Vor dem Wort steht wenig, und es folgt kein Nomen. Also groß: Neues."
+    },
+    {
+      "id": "S2-14",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die ___ Regierung stellt ihr Programm vor.",
+      "hinweis": "neu",
+      "loesungen": [
+        "neue"
+      ],
+      "begruendung": "Begleiterprobe: Auf das Wort folgt das Nomen Regierung. Also klein: neue."
+    },
+    {
+      "id": "S2-15",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Das Gesetz muss als ___ betrachtet werden.",
+      "hinweis": "ganz",
+      "loesungen": [
+        "Ganzes"
+      ],
+      "begruendung": "Begleiterprobe: Vor dem Wort steht als, und es folgt kein Nomen. Also groß: Ganzes."
+    },
+    {
+      "id": "S2-16",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Ein Artikel in der ___ Zeitung „Die Presse“ kritisiert den Plan.",
+      "hinweis": "Wien, Herkunftswort",
+      "loesungen": [
+        "Wiener"
+      ],
+      "begruendung": "Herkunftswort auf -er: Wiener schreibst du groß."
+    },
+    {
+      "id": "S2-17",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g4",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der ___ Ministerpräsident trifft seinen Amtskollegen.",
+      "hinweis": "Italien, Herkunftswort",
+      "loesungen": [
+        "italienische"
+      ],
+      "begruendung": "Herkunftswort auf -isch: italienische schreibst du klein."
+    },
+    {
+      "id": "S2-18",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Autor sehnt sich nach dem ___ zurück.",
+      "hinweis": "alt",
+      "loesungen": [
+        "Alten"
+      ],
+      "begruendung": "Begleiterprobe: Vor dem Wort steht dem, und es folgt kein Nomen. Also groß: Alten."
+    },
+    {
+      "id": "S2-19",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Bürger wünschen sich etwas ___.",
+      "hinweis": "beständig",
+      "loesungen": [
+        "Beständiges"
+      ],
+      "begruendung": "Begleiterprobe: Vor dem Wort steht etwas, und es folgt kein Nomen. Also groß: Beständiges."
+    },
+    {
+      "id": "S2-20",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Text stellt das [[alte=>Alte|S2.g1]] dem Neuen gegenüber.",
+      "begruendung": "Begleiterprobe: Vor alte steht das, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-21",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Reform bringt etwas [[neues=>Neues|S2.g1]] in die Debatte.",
+      "begruendung": "Begleiterprobe: Vor neues steht etwas, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-22",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Man muss die Gesellschaft als [[ganzes=>Ganzes|S2.g1]] betrachten.",
+      "begruendung": "Begleiterprobe: Vor ganzes steht als, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-23",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die [[schweizer=>Schweizer|S2.g3]] Regierung lehnt den Vorschlag ab.",
+      "begruendung": "Herkunftswort auf -er: Schweizer schreibst du groß."
+    },
+    {
+      "id": "S2-24",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Revolution zerstört die [[Alte=>alte|S2.g2]] Ordnung.",
+      "begruendung": "Begleiterprobe: Auf alte folgt das Nomen Ordnung. Also klein."
+    },
+    {
+      "id": "S2-25",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Eine [[Albanische=>albanische|S2.g4]] Zeitung berichtet über die Wahl.",
+      "begruendung": "Herkunftswort auf -isch: albanische schreibst du klein."
+    },
+    {
+      "id": "S2-26",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Viele Wähler sind nicht offen für [[neues=>Neues|S2.g1]].",
+      "begruendung": "Begleiterprobe: Vor neues steht für, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-27",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die [[Soziale=>soziale|S2.g2]] Frage prägt die Politik seit Langem.",
+      "begruendung": "Begleiterprobe: Auf soziale folgt das Nomen Frage. Also klein."
+    },
+    {
+      "id": "S2-28",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Bericht enthält nichts [[überraschendes=>Überraschendes|S2.g1]].",
+      "begruendung": "Begleiterprobe: Vor überraschendes steht nichts, und es folgt kein Nomen. Also groß."
+    },
+    {
+      "id": "S2-29",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die [[berliner=>Berliner|S2.g3]] Politik reagiert gelassen.",
+      "begruendung": "Herkunftswort auf -er: Berliner schreibst du groß."
+    },
+    {
+      "id": "S2-30",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Sprachwandel mit „etwas“ oder „nichts“ und einem Adjektiv als Nomen.",
+      "beispiel": "Die Jugendsprache bringt etwas Neues in die Alltagssprache.",
+      "gegenbeispiel": "Die Jugendsprache bringt etwas neues in die Alltagssprache.",
+      "pruefungen": [
+        {
+          "label": "etwas oder nichts + großgeschriebenes Adjektiv",
+          "muss": [
+            "\\b(etwas|nichts|Etwas|Nichts)\\s+[A-ZÄÖÜ][a-zäöüß]+es\\b"
+          ],
+          "nicht": [
+            "\\b(etwas|nichts|Etwas|Nichts)\\s+[a-zäöüß]+es\\b(?!\\s+[A-ZÄÖÜ])"
+          ]
+        }
+      ],
+      "begruendung": "Begleiterprobe: Nach etwas oder nichts folgt kein Nomen, also schreibst du das Adjektiv groß."
+    },
+    {
+      "id": "S2-31",
+      "kurs": 0,
+      "lektion": "S2",
+      "fehlertyp": "S2",
+      "kat": "S2",
+      "regel": "S2.g3",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz zur Wirtschaft mit einem Herkunftswort auf -er vor einem Nomen (abgeleitet von einer Stadt).",
+      "beispiel": "Die Frankfurter Börse reagiert nervös auf die Zinspolitik.",
+      "gegenbeispiel": "Die frankfurter Börse reagiert nervös auf die Zinspolitik.",
+      "pruefungen": [
+        {
+          "label": "Herkunftswort auf -er groß",
+          "muss": [
+            "\\b(Hamburger|Berliner|Münchner|Frankfurter|Wiener|Schweizer|Kölner|Leipziger|Dresdner|Stuttgarter|Zürcher|Pariser|Londoner|Brüsseler|Bremer|Hannoveraner|Düsseldorfer|Nürnberger)\\s+[A-ZÄÖÜ]"
+          ],
+          "nicht": [
+            "\\b(hamburger|berliner|münchner|frankfurter|wiener|schweizer|kölner|leipziger|dresdner|stuttgarter|zürcher|pariser|londoner|brüsseler|bremer|düsseldorfer|nürnberger)\\s+[A-ZÄÖÜ]"
+          ]
+        }
+      ],
+      "begruendung": "Herkunftswörter auf -er schreibst du groß: Frankfurter Börse."
+    },
+    {
+      "id": "S3-01",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Beide Parteien verfolgen ___ Ziel.",
+      "optionen": [
+        "dasselbe",
+        "das selbe"
+      ],
+      "loesungen": [
+        "dasselbe"
+      ],
+      "begruendung": "Ein-Wort-Regel: dasselbe ist ein Wort."
+    },
+    {
+      "id": "S3-02",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Minister stammen aus ___ Partei.",
+      "optionen": [
+        "der selben",
+        "derselben"
+      ],
+      "loesungen": [
+        "derselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: derselben ist ein Wort, auch nach aus."
+    },
+    {
+      "id": "S3-03",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Beide Gesetze traten ___ Tag in Kraft.",
+      "optionen": [
+        "am selben",
+        "am denselben"
+      ],
+      "loesungen": [
+        "am selben"
+      ],
+      "begruendung": "Nach der verschmolzenen Präposition am steht selben allein."
+    },
+    {
+      "id": "S3-04",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Sprache verändert sich, doch die Grammatik bleibt ___.",
+      "optionen": [
+        "die selbe",
+        "dieselbe"
+      ],
+      "loesungen": [
+        "dieselbe"
+      ],
+      "begruendung": "Ein-Wort-Regel: dieselbe ist ein Wort."
+    },
+    {
+      "id": "S3-05",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Autor kritisiert ___ Fehler wie sein Vorgänger.",
+      "optionen": [
+        "denselben",
+        "den-selben"
+      ],
+      "loesungen": [
+        "denselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: denselben ist ein Wort, ohne Bindestrich."
+    },
+    {
+      "id": "S3-06",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Viele Ökonomen kommen zu ___ Ergebnis.",
+      "optionen": [
+        "dem selben",
+        "demselben"
+      ],
+      "loesungen": [
+        "demselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: demselben ist ein Wort, auch nach zu."
+    },
+    {
+      "id": "S3-07",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Opposition stellt immer wieder ___ Fragen.",
+      "optionen": [
+        "dieselben",
+        "die selben"
+      ],
+      "loesungen": [
+        "dieselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: dieselben ist ein Wort."
+    },
+    {
+      "id": "S3-08",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Minister wiederholt ___ Argument.",
+      "optionen": [
+        "das-selbe",
+        "dasselbe"
+      ],
+      "loesungen": [
+        "dasselbe"
+      ],
+      "begruendung": "Ein-Wort-Regel: dasselbe ist ein Wort, ohne Bindestrich."
+    },
+    {
+      "id": "S3-09",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Beide Reformen scheitern an ___ Problem.",
+      "hinweis": "das + selb-, Dativ",
+      "loesungen": [
+        "demselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: an demselben, in einem Wort."
+    },
+    {
+      "id": "S3-10",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Abgeordneten gehören ___ Fraktion an.",
+      "hinweis": "die + selb-, Dativ",
+      "loesungen": [
+        "derselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: derselben ist ein Wort."
+    },
+    {
+      "id": "S3-11",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Kritik richtet sich gegen ___ Minister.",
+      "hinweis": "der + selb-, Akkusativ",
+      "loesungen": [
+        "denselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: gegen denselben, in einem Wort."
+    },
+    {
+      "id": "S3-12",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Wähler stellen ___ Forderungen wie vor vier Jahren.",
+      "hinweis": "die + selb-, Plural",
+      "loesungen": [
+        "dieselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: dieselben ist ein Wort."
+    },
+    {
+      "id": "S3-13",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Beide Studien erschienen ___ Verlag.",
+      "hinweis": "in + dem + selb-, verschmolzen",
+      "loesungen": [
+        "im selben"
+      ],
+      "begruendung": "Nach der verschmolzenen Präposition im steht selben allein."
+    },
+    {
+      "id": "S3-14",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Interessen ___ Bevölkerungsgruppe sind gespalten.",
+      "hinweis": "die + selb-, Genitiv",
+      "loesungen": [
+        "derselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: derselben ist ein Wort."
+    },
+    {
+      "id": "S3-15",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Er spricht von ___ Krise wie im Vorjahr.",
+      "hinweis": "die + selb-, Dativ",
+      "loesungen": [
+        "derselben"
+      ],
+      "begruendung": "Ein-Wort-Regel: von derselben, in einem Wort."
+    },
+    {
+      "id": "S3-16",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die beiden Politiker gehören [[der selben=>derselben|S3.s1]] Partei an.",
+      "begruendung": "Ein-Wort-Regel: derselben ist ein Wort."
+    },
+    {
+      "id": "S3-17",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Bericht nennt [[den-selben=>denselben|S3.s3]] Grund wie im Vorjahr.",
+      "begruendung": "Ein-Wort-Regel: denselben ist ein Wort, ohne Bindestrich."
+    },
+    {
+      "id": "S3-18",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Kritik kommt von [[der selben=>derselben|S3.s1]] Seite.",
+      "begruendung": "Ein-Wort-Regel: von derselben, in einem Wort, auch nach einer Präposition."
+    },
+    {
+      "id": "S3-19",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Beide Länder verfolgen [[das selbe=>dasselbe|S3.s1]] Ziel.",
+      "begruendung": "Ein-Wort-Regel: dasselbe ist ein Wort."
+    },
+    {
+      "id": "S3-20",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Reform scheitert an [[den selben=>denselben|S3.s1]] Widerständen.",
+      "begruendung": "Ein-Wort-Regel: denselben ist ein Wort."
+    },
+    {
+      "id": "S3-21",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Wörter haben nicht mehr [[die selbe=>dieselbe|S3.s1]] Bedeutung.",
+      "begruendung": "Ein-Wort-Regel: dieselbe ist ein Wort."
+    },
+    {
+      "id": "S3-22",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Beide Gesetze traten [[imselben=>im selben|S3.s2]] Jahr in Kraft.",
+      "begruendung": "Nach der verschmolzenen Präposition im steht selben allein."
+    },
+    {
+      "id": "S3-23",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Debatte dreht sich immer um [[das-selbe=>dasselbe|S3.s3]] Thema.",
+      "begruendung": "Ein-Wort-Regel: dasselbe ist ein Wort, ohne Bindestrich."
+    },
+    {
+      "id": "S3-24",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Parteien vertreten [[die selben=>dieselben|S3.s1]] Interessen.",
+      "begruendung": "Ein-Wort-Regel: dieselben ist ein Wort."
+    },
+    {
+      "id": "S3-25",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Mit [[dem selben=>demselben|S3.s1]] Argument lehnt die Regierung jede Reform ab.",
+      "begruendung": "Ein-Wort-Regel: demselben ist ein Wort, auch nach mit."
+    },
+    {
+      "id": "S3-26",
+      "kurs": 0,
+      "lektion": "S3",
+      "fehlertyp": "S3",
+      "kat": "S3",
+      "regel": "S3.s1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Politik mit einer Form von „derselbe“ nach einer Präposition (zum Beispiel „aus“, „von“, „mit“).",
+      "beispiel": "Beide Ministerinnen stammen aus derselben Partei.",
+      "gegenbeispiel": "Beide Ministerinnen stammen aus der selben Partei.",
+      "pruefungen": [
+        {
+          "label": "Präposition + derselbe in einem Wort",
+          "muss": [
+            "\\b(aus|von|mit|an|in|bei|zu|nach|gegen|für|um|über|unter|vor|seit)\\s+(derselben|demselben|denselben|dieselbe|dieselben|dasselbe)\\b"
+          ],
+          "nicht": [
+            "\\b(der|dem|den|die|das)[\\s-]+selbe"
+          ]
+        }
+      ],
+      "begruendung": "Ein-Wort-Regel: Auch nach einer Präposition bilden Artikel und selb- ein Wort."
+    },
+    {
+      "id": "S4-01",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Opposition kritisiert, ___ Fehler gemacht wurden.",
+      "optionen": [
+        "dass",
+        "das"
+      ],
+      "loesungen": [
+        "dass"
+      ],
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-02",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Alte Strukturen müssen zerfallen, ___ etwas Neues entsteht.",
+      "optionen": [
+        "dass",
+        "damit"
+      ],
+      "loesungen": [
+        "damit"
+      ],
+      "begruendung": "Der Teilsatz nennt einen Zweck: Wozu zerfallen sie? Also damit."
+    },
+    {
+      "id": "S4-03",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Das Gesetz, ___ der Bundestag beschlossen hat, tritt im Mai in Kraft.",
+      "optionen": [
+        "das",
+        "dass"
+      ],
+      "loesungen": [
+        "das"
+      ],
+      "begruendung": "Ersatzprobe: welches passt (das Gesetz, welches …). Also das."
+    },
+    {
+      "id": "S4-04",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Regierung senkt die Steuern, ___ die Wirtschaft wieder wächst.",
+      "optionen": [
+        "dass",
+        "damit"
+      ],
+      "loesungen": [
+        "damit"
+      ],
+      "begruendung": "Der Teilsatz nennt einen Zweck: Wozu senkt sie die Steuern? Also damit."
+    },
+    {
+      "id": "S4-05",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Inflation steigt so stark, ___ viele Familien sparen müssen.",
+      "optionen": [
+        "dass",
+        "damit"
+      ],
+      "loesungen": [
+        "dass"
+      ],
+      "begruendung": "Nach so … nennt der Teilsatz eine Folge. Also dass."
+    },
+    {
+      "id": "S4-06",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Viele bezweifeln, ___ die Reform gelingt.",
+      "optionen": [
+        "das",
+        "dass"
+      ],
+      "loesungen": [
+        "dass"
+      ],
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-07",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "___ Wort „Fake News“ steht inzwischen im Duden.",
+      "optionen": [
+        "Das",
+        "Dass"
+      ],
+      "loesungen": [
+        "Das"
+      ],
+      "begruendung": "Ersatzprobe: dieses passt (Dieses Wort …). Also das."
+    },
+    {
+      "id": "S4-08",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Ein Argument, ___ oft genannt wird, ist die Gerechtigkeit.",
+      "optionen": [
+        "dass",
+        "das"
+      ],
+      "loesungen": [
+        "das"
+      ],
+      "begruendung": "Ersatzprobe: welches passt (ein Argument, welches …). Also das."
+    },
+    {
+      "id": "S4-09",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Ministerin betont, ___ der Haushalt solide ist.",
+      "optionen": [
+        "dass",
+        "das"
+      ],
+      "loesungen": [
+        "dass"
+      ],
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-10",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Autor schreibt bewusst einfach, ___ ihn alle verstehen.",
+      "optionen": [
+        "das",
+        "damit"
+      ],
+      "loesungen": [
+        "damit"
+      ],
+      "begruendung": "Der Teilsatz nennt einen Zweck: Wozu schreibt er einfach? Also damit."
+    },
+    {
+      "id": "S4-11",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Wir müssen Rücklagen bilden, ___ die Renten sicher bleiben.",
+      "hinweis": "das, dass oder damit",
+      "loesungen": [
+        "damit"
+      ],
+      "begruendung": "Der Teilsatz nennt einen Zweck: Wozu Rücklagen? Also damit."
+    },
+    {
+      "id": "S4-12",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Es ist kein Zufall, ___ die Wahlbeteiligung sinkt.",
+      "hinweis": "das, dass oder damit",
+      "loesungen": [
+        "dass"
+      ],
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-13",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Das Programm, ___ die Partei vorlegt, ist umstritten.",
+      "hinweis": "das, dass oder damit",
+      "loesungen": [
+        "das"
+      ],
+      "begruendung": "Ersatzprobe: welches passt (das Programm, welches …). Also das."
+    },
+    {
+      "id": "S4-14",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Autor zeigt, ___ Sprache Macht ausübt.",
+      "hinweis": "das, dass oder damit",
+      "loesungen": [
+        "dass"
+      ],
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-15",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Bank erhöht den Zins, ___ die Inflation sinkt.",
+      "hinweis": "das, dass oder damit",
+      "loesungen": [
+        "damit"
+      ],
+      "begruendung": "Der Teilsatz nennt einen Zweck: Wozu erhöht sie den Zins? Also damit."
+    },
+    {
+      "id": "S4-16",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Ein Schlagwort, ___ früher abwertend war, gilt heute als neutral.",
+      "hinweis": "das, dass oder damit",
+      "loesungen": [
+        "das"
+      ],
+      "begruendung": "Ersatzprobe: welches passt (ein Schlagwort, welches …). Also das."
+    },
+    {
+      "id": "S4-17",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d4",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Krise ist so tief, ___ der Staat eingreifen muss.",
+      "hinweis": "das, dass oder damit",
+      "loesungen": [
+        "dass"
+      ],
+      "begruendung": "Nach so … nennt der Teilsatz eine Folge. Also dass."
+    },
+    {
+      "id": "S4-18",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Kritiker betonen, [[das=>dass|S4.d2]] Fehler gemacht wurden.",
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-19",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Alte Strukturen müssen zerfallen, [[dass=>damit|S4.d3]] etwas Neues entstehen kann.",
+      "begruendung": "Der Teilsatz nennt einen Zweck: Wozu zerfallen sie? Also damit."
+    },
+    {
+      "id": "S4-20",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Das Problem, [[dass=>das|S4.d1]] die Studie beschreibt, ist alt.",
+      "begruendung": "Ersatzprobe: welches passt (das Problem, welches …). Also das."
+    },
+    {
+      "id": "S4-21",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Staat investiert in Bildung, [[dass=>damit|S4.d3]] alle Kinder gleiche Chancen haben.",
+      "begruendung": "Der Teilsatz nennt einen Zweck: Wozu investiert der Staat? Also damit."
+    },
+    {
+      "id": "S4-22",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Es ist bekannt, [[das=>dass|S4.d2]] die Löhne stagnieren.",
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-23",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Wirtschaft wächst so langsam, [[damit=>dass|S4.d4]] die Arbeitslosigkeit steigt.",
+      "begruendung": "Nach so … nennt der Teilsatz eine Folge, keinen Zweck. Also dass."
+    },
+    {
+      "id": "S4-24",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Ein Wort, [[dass=>das|S4.d1]] heute jeder kennt, stammt aus dem Englischen.",
+      "begruendung": "Ersatzprobe: welches passt (ein Wort, welches …). Also das."
+    },
+    {
+      "id": "S4-25",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Partei verspricht, [[das=>dass|S4.d2]] sie die Steuern senkt.",
+      "begruendung": "Ersatzprobe: dieses oder welches passt nicht. Also dass."
+    },
+    {
+      "id": "S4-26",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d3",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über den Sozialstaat, in dem ein Teilsatz mit „damit“ einen Zweck nennt.",
+      "beispiel": "Der Staat zahlt Wohngeld, damit sich auch Geringverdiener eine Wohnung leisten können.",
+      "gegenbeispiel": "Der Staat zahlt Wohngeld, dass sich auch Geringverdiener eine Wohnung leisten können.",
+      "pruefungen": [
+        {
+          "label": "Zweck mit damit",
+          "muss": [
+            ",\\s*damit\\b"
+          ],
+          "nicht": []
+        }
+      ],
+      "begruendung": "Ein Teilsatz, der die Frage nach dem Wozu beantwortet, nennt einen Zweck. Also damit."
+    },
+    {
+      "id": "S4-27",
+      "kurs": 0,
+      "lektion": "S4",
+      "fehlertyp": "S4",
+      "kat": "S4",
+      "regel": "S4.d1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Sprachwandel mit einem Relativsatz, der mit „das“ beginnt.",
+      "beispiel": "Das Wort, das am häufigsten vorkommt, ist meist kurz.",
+      "gegenbeispiel": "Das Wort, dass am häufigsten vorkommt, ist meist kurz.",
+      "pruefungen": [
+        {
+          "label": "Relativsatz mit das",
+          "muss": [
+            "\\b[A-ZÄÖÜ][a-zäöüß]+,\\s+das\\b"
+          ],
+          "nicht": [
+            ",\\s+dass\\b"
+          ]
+        }
+      ],
+      "begruendung": "Ersatzprobe: welches passt (das Wort, welches …). Also das."
+    },
+    {
+      "id": "S5-01",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Eine Reform der Rente ist schwierig, ___ es gibt im Parlament keine Mehrheit.",
+      "optionen": [
+        "denn",
+        "dazu"
+      ],
+      "loesungen": [
+        "denn"
+      ],
+      "begruendung": "Logikprobe: Der zweite Satz nennt den Grund. Also denn; dazu fügt nur etwas hinzu."
+    },
+    {
+      "id": "S5-02",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Steuern steigen, ___ sinkt die Kaufkraft.",
+      "optionen": [
+        "außerdem",
+        "dadurch"
+      ],
+      "loesungen": [
+        "dadurch"
+      ],
+      "begruendung": "Logikprobe: Die steigenden Steuern verursachen das Sinken. Also dadurch."
+    },
+    {
+      "id": "S5-03",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Partei gewinnt Stimmen, ___ sie verliert an Glaubwürdigkeit.",
+      "optionen": [
+        "aber",
+        "denn"
+      ],
+      "loesungen": [
+        "aber"
+      ],
+      "begruendung": "Logikprobe: Die Sätze stehen im Gegensatz. Also aber."
+    },
+    {
+      "id": "S5-04",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Viele Wörter kommen aus dem Englischen, ___ einige stammen aus dem Französischen.",
+      "optionen": [
+        "dadurch",
+        "und"
+      ],
+      "loesungen": [
+        "und"
+      ],
+      "begruendung": "Logikprobe: Der zweite Satz fügt nur etwas hinzu, er ist keine Folge. Also und."
+    },
+    {
+      "id": "S5-05",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Inflation ist hoch, ___ erhöht die Zentralbank den Leitzins.",
+      "optionen": [
+        "deshalb",
+        "trotzdem"
+      ],
+      "loesungen": [
+        "deshalb"
+      ],
+      "begruendung": "Logikprobe: Die Zinserhöhung ist die Folge der hohen Inflation. Also deshalb."
+    },
+    {
+      "id": "S5-06",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c6",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "___ die Wirtschaft wächst, steigt die Armut.",
+      "optionen": [
+        "Weil",
+        "Obwohl"
+      ],
+      "loesungen": [
+        "Obwohl"
+      ],
+      "begruendung": "Logikprobe: Wachstum lässt eher weniger Armut erwarten. Das Gegenteil geschieht trotzdem: Einräumung, also obwohl."
+    },
+    {
+      "id": "S5-07",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Regierung spart, ___ sie Subventionen streicht.",
+      "optionen": [
+        "indem",
+        "obwohl"
+      ],
+      "loesungen": [
+        "indem"
+      ],
+      "begruendung": "Logikprobe: Das Streichen ist das Mittel des Sparens. Also indem."
+    },
+    {
+      "id": "S5-08",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Sozialstaat ist teuer, ___ er sichert den sozialen Frieden.",
+      "optionen": [
+        "deshalb",
+        "aber"
+      ],
+      "loesungen": [
+        "aber"
+      ],
+      "begruendung": "Logikprobe: Die Kosten stehen im Gegensatz zum Nutzen. Also aber."
+    },
+    {
+      "id": "S5-09",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Jugendsprache prägt die Alltagssprache, ___ viele ihrer Ausdrücke übernommen werden.",
+      "optionen": [
+        "indem",
+        "obwohl"
+      ],
+      "loesungen": [
+        "indem"
+      ],
+      "begruendung": "Logikprobe: Das Übernehmen ist das Mittel, durch das sie prägt. Also indem."
+    },
+    {
+      "id": "S5-10",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Löhne steigen. ___ wächst die Nachfrage.",
+      "optionen": [
+        "Dennoch",
+        "Dadurch"
+      ],
+      "loesungen": [
+        "Dadurch"
+      ],
+      "begruendung": "Logikprobe: Die steigenden Löhne verursachen die höhere Nachfrage. Also dadurch."
+    },
+    {
+      "id": "S5-11",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Reform scheitert, ___ die Opposition sie blockiert.",
+      "hinweis": "Grund, gebeugtes Verb am Ende",
+      "loesungen": [
+        "weil",
+        "da"
+      ],
+      "begruendung": "Logikprobe: Der Teilsatz nennt den Grund. Mit Verb am Ende: weil oder da."
+    },
+    {
+      "id": "S5-12",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Exporte brechen ein, ___ steigt die Arbeitslosigkeit.",
+      "hinweis": "Folge, gebeugtes Verb direkt danach",
+      "loesungen": [
+        "deshalb",
+        "daher",
+        "darum",
+        "deswegen",
+        "folglich"
+      ],
+      "begruendung": "Logikprobe: Der zweite Satz nennt die Folge. Also deshalb oder daher."
+    },
+    {
+      "id": "S5-13",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Text ist kurz, ___ er ist anspruchsvoll.",
+      "hinweis": "Gegensatz",
+      "loesungen": [
+        "aber",
+        "doch",
+        "jedoch"
+      ],
+      "begruendung": "Logikprobe: Die Sätze stehen im Gegensatz. Also aber."
+    },
+    {
+      "id": "S5-14",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Preise steigen, ___ die Löhne stagnieren.",
+      "hinweis": "Gegensatz, gebeugtes Verb am Ende",
+      "loesungen": [
+        "während",
+        "wohingegen"
+      ],
+      "begruendung": "Logikprobe: Die Sätze stehen im Gegensatz, das Verb steht am Ende. Also während."
+    },
+    {
+      "id": "S5-15",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c6",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "___ die Steuern sinken, wächst das Defizit.",
+      "hinweis": "Einräumung, gebeugtes Verb am Ende",
+      "loesungen": [
+        "Obwohl",
+        "Obgleich",
+        "Obschon"
+      ],
+      "begruendung": "Logikprobe: Sinkende Steuern und wachsendes Defizit passen nicht zur Erwartung. Also obwohl."
+    },
+    {
+      "id": "S5-16",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Partei gewinnt Wähler, ___ sie soziale Themen aufgreift.",
+      "hinweis": "Mittel, gebeugtes Verb am Ende",
+      "loesungen": [
+        "indem"
+      ],
+      "begruendung": "Logikprobe: Das Aufgreifen ist das Mittel. Also indem."
+    },
+    {
+      "id": "S5-17",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Mayer hält eine Reform für unwahrscheinlich. [[Dazu gebe es=>Denn es gebe|S5.c1]] im Bundestag keine Mehrheiten.",
+      "begruendung": "Logikprobe: Der zweite Satz nennt den Grund. Also denn; dazu fügt nur etwas hinzu."
+    },
+    {
+      "id": "S5-18",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Viele Wörter stammen aus dem Englischen, [[dadurch=>und|S5.c4]] einige kommen aus dem Französischen.",
+      "begruendung": "Logikprobe: Keine Ursache, nur ein Zusatz. Also und."
+    },
+    {
+      "id": "S5-19",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Zinsen steigen, [[obwohl=>weil|S5.c1]] die Inflation hoch ist.",
+      "begruendung": "Logikprobe: Die hohe Inflation ist der Grund für steigende Zinsen. Also weil."
+    },
+    {
+      "id": "S5-20",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Wirtschaft wächst, [[denn=>aber|S5.c3]] die Armut nimmt zu.",
+      "begruendung": "Logikprobe: Die Armut ist kein Grund für das Wachstum, sondern ein Gegensatz. Also aber."
+    },
+    {
+      "id": "S5-21",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Staat senkt die Steuern. [[Trotzdem=>Dadurch|S5.c5]] steigt die Kaufkraft.",
+      "begruendung": "Logikprobe: Die Steuersenkung verursacht die höhere Kaufkraft. Also dadurch."
+    },
+    {
+      "id": "S5-22",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c6",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "[[Weil=>Obwohl|S5.c6]] die Partei die Wahl verloren hat, bleibt sie an der Regierung.",
+      "begruendung": "Logikprobe: Wer verliert, bleibt normalerweise nicht an der Regierung. Einräumung, also obwohl."
+    },
+    {
+      "id": "S5-23",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Inflation ist hoch, [[trotzdem=>deshalb|S5.c2]] erhöht die Zentralbank die Zinsen.",
+      "begruendung": "Logikprobe: Die Zinserhöhung ist die Folge der hohen Inflation. Also deshalb."
+    },
+    {
+      "id": "S5-24",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Jugend prägt die Sprache, [[obwohl=>indem|S5.c5]] sie neue Wörter erfindet.",
+      "begruendung": "Logikprobe: Das Erfinden neuer Wörter ist das Mittel. Also indem."
+    },
+    {
+      "id": "S5-25",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Sozialstaat schützt vor Armut, [[denn=>aber|S5.c3]] er ist teuer.",
+      "begruendung": "Logikprobe: Die Kosten sind kein Grund für den Schutz, sondern ein Gegensatz. Also aber."
+    },
+    {
+      "id": "S5-26",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Politik aus zwei Hauptsätzen: Der zweite nennt mit „denn“ den Grund für den ersten.",
+      "beispiel": "Die Regierung verliert an Zustimmung, denn sie hält ihre Versprechen nicht.",
+      "gegenbeispiel": "Die Regierung verliert an Zustimmung, dazu hält sie ihre Versprechen nicht.",
+      "pruefungen": [
+        {
+          "label": "Grund mit denn",
+          "muss": [
+            "\\b[Dd]enn\\b"
+          ],
+          "nicht": [
+            "\\b[Dd]azu\\b",
+            "\\b[Dd]adurch\\b"
+          ]
+        }
+      ],
+      "begruendung": "Logikprobe: Ein Grund wird mit denn oder weil angeschlossen, nicht mit dazu oder dadurch."
+    },
+    {
+      "id": "S5-27",
+      "kurs": 0,
+      "lektion": "S5",
+      "fehlertyp": "S5",
+      "kat": "S5",
+      "regel": "S5.c5",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz zur Wirtschaft, in dem ein Teilsatz mit „indem“ das Mittel nennt.",
+      "beispiel": "Die Firma senkt ihre Kosten, indem sie Energie spart.",
+      "gegenbeispiel": "Die Firma senkt ihre Kosten, obwohl sie Energie spart.",
+      "pruefungen": [
+        {
+          "label": "Mittel mit indem",
+          "muss": [
+            ",\\s*indem\\b"
+          ],
+          "nicht": []
+        }
+      ],
+      "begruendung": "Logikprobe: Das Mittel schließt du mit indem an."
+    },
+    {
+      "id": "S6-01",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Autor beschreibt, wie während der Industrialisierung soziale Probleme sichtbar ___.",
+      "optionen": [
+        "werden",
+        "wurden"
+      ],
+      "loesungen": [
+        "werden"
+      ],
+      "begruendung": "Zeitprobe: Die Wiedergabe steht im Präsens, auch für Historisches. Also werden."
+    },
+    {
+      "id": "S6-02",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Text zeigt, wie Bismarck die Sozialversicherung ___.",
+      "optionen": [
+        "einführte",
+        "einführt"
+      ],
+      "loesungen": [
+        "einführt"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also einführt."
+    },
+    {
+      "id": "S6-03",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Nachdem die Regierung die Steuern erhöht ___, protestieren die Bürger.",
+      "optionen": [
+        "hat",
+        "hatte"
+      ],
+      "loesungen": [
+        "hat"
+      ],
+      "begruendung": "Zeitprobe: Der Hauptsatz steht im Präsens, also nach nachdem das Perfekt: erhöht hat."
+    },
+    {
+      "id": "S6-04",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Autorin erklärt, warum die Menschen im Mittelalter Latein ___.",
+      "optionen": [
+        "benutzten",
+        "benutzen"
+      ],
+      "loesungen": [
+        "benutzen"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also benutzen."
+    },
+    {
+      "id": "S6-05",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Verfasser schildert, wie die erhofften Reformen ___.",
+      "optionen": [
+        "ausbleiben",
+        "ausblieben"
+      ],
+      "loesungen": [
+        "ausbleiben"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit. Also ausbleiben."
+    },
+    {
+      "id": "S6-06",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Zu Beginn stellt der Autor fest, dass die Partei bereits zweimal ___.",
+      "optionen": [
+        "scheiterte",
+        "gescheitert ist"
+      ],
+      "loesungen": [
+        "gescheitert ist"
+      ],
+      "begruendung": "Zeitprobe: Das Scheitern liegt vor dem Präsens der Wiedergabe. Also Perfekt: gescheitert ist."
+    },
+    {
+      "id": "S6-07",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Nachdem die Mauer ___, wächst Deutschland zusammen.",
+      "optionen": [
+        "gefallen ist",
+        "fiel"
+      ],
+      "loesungen": [
+        "gefallen ist"
+      ],
+      "begruendung": "Zeitprobe: Der Hauptsatz steht im Präsens, also nach nachdem das Perfekt: gefallen ist."
+    },
+    {
+      "id": "S6-08",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Autor beschreibt, wie sich die Sprache im Mittelalter ___.",
+      "optionen": [
+        "veränderte",
+        "verändert"
+      ],
+      "loesungen": [
+        "verändert"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also verändert."
+    },
+    {
+      "id": "S6-09",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Text erläutert, wie die Arbeiter zur Zeit der Industrialisierung ___.",
+      "hinweis": "leben",
+      "loesungen": [
+        "leben"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also leben."
+    },
+    {
+      "id": "S6-10",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Nachdem die Koalition ___, gibt es Neuwahlen.",
+      "hinweis": "zerbrechen",
+      "loesungen": [
+        "zerbrochen ist"
+      ],
+      "begruendung": "Zeitprobe: Der Hauptsatz steht im Präsens, also nach nachdem das Perfekt: zerbrochen ist."
+    },
+    {
+      "id": "S6-11",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Autorin berichtet, wie Luther die Bibel ins Deutsche ___.",
+      "hinweis": "übersetzen",
+      "loesungen": [
+        "übersetzt"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also übersetzt."
+    },
+    {
+      "id": "S6-12",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Verfasser stellt dar, wie die Weimarer Republik ___.",
+      "hinweis": "scheitern",
+      "loesungen": [
+        "scheitert"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also scheitert."
+    },
+    {
+      "id": "S6-13",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Nachdem die Bank die Zinsen ___, sinkt die Inflation.",
+      "hinweis": "erhöhen",
+      "loesungen": [
+        "erhöht hat"
+      ],
+      "begruendung": "Zeitprobe: Der Hauptsatz steht im Präsens, also nach nachdem das Perfekt: erhöht hat."
+    },
+    {
+      "id": "S6-14",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Autor zeigt, wie das Englische die deutsche Sprache seit Jahrzehnten ___.",
+      "hinweis": "prägen",
+      "loesungen": [
+        "prägt"
+      ],
+      "begruendung": "Zeitprobe: Präsens als Grundzeit. Also prägt."
+    },
+    {
+      "id": "S6-15",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Autor beschreibt, wie soziale Probleme sichtbar [[wurden=>werden|S6.t1]].",
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also werden."
+    },
+    {
+      "id": "S6-16",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Autorin erklärt, dass die Römer Latein [[benutzten=>benutzen|S6.t1]].",
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also benutzen."
+    },
+    {
+      "id": "S6-17",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Text schildert, wie die erhofften Reformen [[ausblieben=>ausbleiben|S6.t1]].",
+      "begruendung": "Zeitprobe: Präsens als Grundzeit. Also ausbleiben."
+    },
+    {
+      "id": "S6-18",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Nachdem die Regierung zurückgetreten [[war=>ist|S6.t3]], beginnt der Wahlkampf.",
+      "begruendung": "Zeitprobe: Der Hauptsatz steht im Präsens, also nach nachdem das Perfekt: zurückgetreten ist."
+    },
+    {
+      "id": "S6-19",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Verfasser zeigt, wie Bismarck die Rentenversicherung [[schuf=>schafft|S6.t1]].",
+      "begruendung": "Zeitprobe: Präsens als Grundzeit, auch für Historisches. Also schafft."
+    },
+    {
+      "id": "S6-20",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Zu Beginn [[stellte=>stellt|S6.t1]] die Autorin ihre These vor.",
+      "begruendung": "Zeitprobe: Die Wiedergabe steht im Präsens. Also stellt … vor."
+    },
+    {
+      "id": "S6-21",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Nachdem die Preise [[stiegen=>gestiegen sind|S6.t3]], sinkt der Konsum.",
+      "begruendung": "Zeitprobe: Der Hauptsatz steht im Präsens, also nach nachdem das Perfekt: gestiegen sind."
+    },
+    {
+      "id": "S6-22",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Autor erläutert, warum die Partei die Wahl [[verlor=>verliert|S6.t1]].",
+      "begruendung": "Zeitprobe: Präsens als Grundzeit. Also verliert."
+    },
+    {
+      "id": "S6-23",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Im zweiten Abschnitt [[erklärte=>erklärt|S6.t1]] der Autor die Ursachen der Krise.",
+      "begruendung": "Zeitprobe: Die Wiedergabe steht im Präsens. Also erklärt."
+    },
+    {
+      "id": "S6-24",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Autorin berichtet, dass sie früher selbst in der Politik gearbeitet [[hatte=>hat|S6.t2]].",
+      "begruendung": "Zeitprobe: Die frühere Arbeit liegt vor dem Präsens der Wiedergabe. Also Perfekt: gearbeitet hat."
+    },
+    {
+      "id": "S6-25",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Der Autor beschrieb, wie die Arbeiter streikten.",
+      "loesungen": [
+        "Der Autor beschreibt, wie die Arbeiter streiken."
+      ],
+      "anweisung": "Schreib den Satz in der Zeitform einer Inhaltsangabe. Tippe den ganzen Satz.",
+      "eingabehilfe": "Inhalt und Wortstellung bleiben gleich; nur die Verbformen ändern sich.",
+      "begruendung": "Zeitprobe: Rahmen und Inhalt stehen im Präsens, auch für Historisches."
+    },
+    {
+      "id": "S6-26",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t3",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Nachdem die Regierung die Reform beschloss, protestierten die Gewerkschaften.",
+      "loesungen": [
+        "Nachdem die Regierung die Reform beschlossen hat, protestieren die Gewerkschaften."
+      ],
+      "anweisung": "Schreib den Satz in der Zeitform einer Inhaltsangabe. Tippe den ganzen Satz.",
+      "eingabehilfe": "Inhalt und Wortstellung bleiben gleich; nur die Verbformen ändern sich.",
+      "begruendung": "Zeitprobe: Hauptsatz im Präsens, also nach nachdem das Perfekt."
+    },
+    {
+      "id": "S6-27",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Die Autorin zeigte, wie sich die Sprache wandelte.",
+      "loesungen": [
+        "Die Autorin zeigt, wie sich die Sprache wandelt."
+      ],
+      "anweisung": "Schreib den Satz in der Zeitform einer Inhaltsangabe. Tippe den ganzen Satz.",
+      "eingabehilfe": "Inhalt und Wortstellung bleiben gleich; nur die Verbformen ändern sich.",
+      "begruendung": "Zeitprobe: Rahmen und Inhalt stehen im Präsens."
+    },
+    {
+      "id": "S6-28",
+      "kurs": 0,
+      "lektion": "S6",
+      "fehlertyp": "S6",
+      "kat": "S6",
+      "regel": "S6.t1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz, der wiedergibt, wie ein Autor ein historisches Ereignis darstellt, zum Beispiel die Einführung der Rente. Verwende nur das Präsens.",
+      "beispiel": "Der Autor beschreibt, wie Bismarck die Rentenversicherung einführt.",
+      "gegenbeispiel": "Der Autor beschreibt, wie Bismarck die Rentenversicherung einführte.",
+      "pruefungen": [
+        {
+          "label": "Rahmen im Präsens",
+          "muss": [
+            "\\b(beschreibt|zeigt|erläutert|schildert|stellt|erklärt|berichtet|legt)\\b"
+          ],
+          "nicht": []
+        },
+        {
+          "label": "kein Präteritum",
+          "muss": [],
+          "nicht": [
+            "\\b(wurde|wurden|war|waren|hatte|hatten|führte|einführte|schuf|beschrieb|zeigte|schilderte|erklärte|berichtete|gab|kam|begann|entstand)\\b"
+          ]
+        }
+      ],
+      "begruendung": "Zeitprobe: Die Textwiedergabe steht im Präsens, auch für Historisches."
+    },
+    {
+      "id": "S7-01",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z1",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Die Autorin {fragt}, warum die Wahlbeteiligung {sinkt}.",
+      "begruendung": "Verbprobe: fragt und sinkt, zwei Teilsätze. Vor warum beginnt der Nebensatz."
+    },
+    {
+      "id": "S7-02",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z4",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Zu Beginn des Textes {macht} der Autor seine Position deutlich.",
+      "begruendung": "Verbprobe: Ein gebeugtes Verb, macht. Alles davor ist Vorfeld, also kein Komma."
+    },
+    {
+      "id": "S7-03",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z3",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Die Regierung {spart}, um die Schulden zu senken.",
+      "begruendung": "Vor um … zu steht immer ein Komma."
+    },
+    {
+      "id": "S7-04",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z2",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Der Sozialstaat, den viele für zu teuer {halten}, {sichert} den Frieden.",
+      "begruendung": "Verbprobe: halten und sichert. Der Relativsatz ist eingeschoben: Komma vorne und hinten."
+    },
+    {
+      "id": "S7-05",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z2",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Die Ministerin, eine erfahrene Juristin, {legt} den Entwurf vor.",
+      "begruendung": "Der Beisatz ist eingeschoben: Komma vorne und hinten."
+    },
+    {
+      "id": "S7-06",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z5",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Die steigenden Mieten {belasten} viele Familien.",
+      "begruendung": "Verbprobe: Ein gebeugtes Verb. Zwischen Adjektiv und Nomen steht kein Komma."
+    },
+    {
+      "id": "S7-07",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z6",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Die Reform {scheitert}, ohne dass jemand die Gründe {nennt}.",
+      "begruendung": "Bei ohne dass steht das Komma vor der ganzen Fügung, nicht zwischen ohne und dass."
+    },
+    {
+      "id": "S7-08",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z1",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Nachdem die Partei die Wahl verloren {hat}, {sucht} sie einen neuen Kurs.",
+      "begruendung": "Verbprobe: hat und sucht. Der Nebensatz mit nachdem endet vor sucht."
+    },
+    {
+      "id": "S7-09",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z4",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Im Mittelpunkt des zweiten Abschnitts {steht} die Frage nach Gerechtigkeit.",
+      "begruendung": "Verbprobe: Ein gebeugtes Verb, steht. Alles davor ist Vorfeld, also kein Komma."
+    },
+    {
+      "id": "S7-10",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z1",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Der Autor {kritisiert} Politiker, die nur an die nächste Wahl {denken}.",
+      "begruendung": "Verbprobe: kritisiert und denken. Vor dem Relativpronomen die beginnt der Nebensatz."
+    },
+    {
+      "id": "S7-11",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z3",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Die Partei {wirbt} um Wähler, statt ihr Programm zu erklären.",
+      "begruendung": "Vor statt … zu steht immer ein Komma."
+    },
+    {
+      "id": "S7-12",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z1",
+      "stufe": 2,
+      "typ": "komma",
+      "text": "Der Autor {stellt} fest, dass sich die Sprache {wandelt}.",
+      "begruendung": "Verbprobe: stellt und wandelt. Vor dass beginnt der Nebensatz."
+    },
+    {
+      "id": "S7-13",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z6",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Reform scheitert, [[ohne,=>ohne|S7.z6]] dass jemand widerspricht.",
+      "begruendung": "Bei ohne dass steht das Komma vor der ganzen Fügung, nicht zwischen ohne und dass."
+    },
+    {
+      "id": "S7-14",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Zu Beginn des [[Textes,=>Textes|S7.z4]] macht der Autor seine These deutlich.",
+      "begruendung": "Verbprobe: Ein gebeugtes Verb, macht. Alles davor ist Vorfeld, also kein Komma."
+    },
+    {
+      "id": "S7-15",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z5",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Steinbrücken, [[welche,=>welche|S7.z5]] den modernen Pflasterwegen überlegen sind, stammen aus dem Mittelalter.",
+      "begruendung": "Verbprobe: sind und stammen. Innerhalb des Relativsatzes steht kein Komma um das Satzglied."
+    },
+    {
+      "id": "S7-16",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Partei [[verliert=>verliert,|S7.z1]] weil sie ihre Wähler enttäuscht.",
+      "begruendung": "Verbprobe: verliert und enttäuscht. Vor weil beginnt der Nebensatz."
+    },
+    {
+      "id": "S7-17",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Minister, der die Reform [[plante=>plante,|S7.z2]] tritt zurück.",
+      "begruendung": "Verbprobe: plante und tritt. Der Relativsatz ist eingeschoben: Komma auch hinten."
+    },
+    {
+      "id": "S7-18",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Regierung erhöht die [[Steuern=>Steuern,|S7.z3]] um den Haushalt zu sanieren.",
+      "begruendung": "Vor um … zu steht immer ein Komma."
+    },
+    {
+      "id": "S7-19",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z5",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die [[steigenden,=>steigenden|S7.z5]] Preise belasten die Haushalte.",
+      "begruendung": "Zwischen Adjektiv und Nomen steht kein Komma."
+    },
+    {
+      "id": "S7-20",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Autorin [[betont=>betont,|S7.z1]] dass die Sprache sich wandelt.",
+      "begruendung": "Verbprobe: betont und wandelt. Vor dass beginnt der Nebensatz."
+    },
+    {
+      "id": "S7-21",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Mit großer Sorge um die [[Zukunft,=>Zukunft|S7.z4]] wendet sich der Autor an seine Leser.",
+      "begruendung": "Verbprobe: Ein gebeugtes Verb, wendet. Alles davor ist Vorfeld, also kein Komma."
+    },
+    {
+      "id": "S7-22",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Kanzler, ein erfahrener [[Politiker=>Politiker,|S7.z2]] verteidigt den Plan.",
+      "begruendung": "Der Beisatz ist eingeschoben: Komma vorne und hinten."
+    },
+    {
+      "id": "S7-23",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Bericht [[zeigt=>zeigt,|S7.z1]] warum die Inflation steigt.",
+      "begruendung": "Verbprobe: zeigt und steigt. Vor warum beginnt der Nebensatz."
+    },
+    {
+      "id": "S7-24",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z3",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz zur Wirtschaft mit „um … zu“.",
+      "beispiel": "Die Firma spart Energie, um ihre Kosten zu senken.",
+      "gegenbeispiel": "Die Firma spart Energie um ihre Kosten zu senken.",
+      "pruefungen": [
+        {
+          "label": "Komma vor um … zu",
+          "muss": [
+            ",\\s*um\\b[^,]*\\bzu\\b"
+          ],
+          "nicht": [
+            "[^,]\\s+um\\s+[^,]*\\bzu\\s+[a-zäöüß]+en\\b"
+          ]
+        }
+      ],
+      "begruendung": "Vor um … zu steht immer ein Komma."
+    },
+    {
+      "id": "S7-25",
+      "kurs": 0,
+      "lektion": "S7",
+      "fehlertyp": "S7",
+      "kat": "S7",
+      "regel": "S7.z4",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz, der mit „Zu Beginn des Textes“ beginnt, und setze kein Komma nach dem Vorfeld.",
+      "beispiel": "Zu Beginn des Textes stellt die Autorin ihre These vor.",
+      "gegenbeispiel": "Zu Beginn des Textes, stellt die Autorin ihre These vor.",
+      "pruefungen": [
+        {
+          "label": "Kein Komma nach dem Vorfeld",
+          "muss": [
+            "^Zu Beginn des Textes\\s+[a-zäöüß]+"
+          ],
+          "nicht": [
+            "^Zu Beginn des Textes,"
+          ]
+        }
+      ],
+      "begruendung": "Verbprobe: Alles vor dem gebeugten Verb ist Vorfeld, danach steht kein Komma."
+    },
+    {
+      "id": "S8-01",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Autorin kritisiert die ___ Motivation der Regierung.",
+      "optionen": [
+        "eigentliche",
+        "eigentlichen"
+      ],
+      "loesungen": [
+        "eigentliche"
+      ],
+      "begruendung": "Wörterbuch-Test: die Motivation, Singular. Also -e."
+    },
+    {
+      "id": "S8-02",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Autorin fragt nach der ___ Motivation der Regierung.",
+      "optionen": [
+        "eigentliche",
+        "eigentlichen"
+      ],
+      "loesungen": [
+        "eigentlichen"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht die Motivation, nicht der. Also -en."
+    },
+    {
+      "id": "S8-03",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die ___ Sedimente lagern sich am Grund ab.",
+      "optionen": [
+        "verkrusteten",
+        "verkrustete"
+      ],
+      "loesungen": [
+        "verkrusteten"
+      ],
+      "begruendung": "Wörterbuch-Test: Sedimente ist Plural. Also -en."
+    },
+    {
+      "id": "S8-04",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der ___ Staat soll Freiheit sichern.",
+      "optionen": [
+        "modernen",
+        "moderne"
+      ],
+      "loesungen": [
+        "moderne"
+      ],
+      "begruendung": "Wörterbuch-Test: der Staat, Singular. Also -e."
+    },
+    {
+      "id": "S8-05",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Rolle des ___ Staates ist umstritten.",
+      "optionen": [
+        "modernen",
+        "moderne"
+      ],
+      "loesungen": [
+        "modernen"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht der Staat, nicht des. Also -en."
+    },
+    {
+      "id": "S8-06",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Das ___ Gesetz tritt im Mai in Kraft.",
+      "optionen": [
+        "neuen",
+        "neue"
+      ],
+      "loesungen": [
+        "neue"
+      ],
+      "begruendung": "Wörterbuch-Test: das Gesetz, Singular. Also -e."
+    },
+    {
+      "id": "S8-07",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Partei lehnt das ___ Gesetz ab.",
+      "optionen": [
+        "neue",
+        "neuen"
+      ],
+      "loesungen": [
+        "neue"
+      ],
+      "begruendung": "Wörterbuch-Test: das Gesetz, Singular, auch hier als Objekt. Also -e."
+    },
+    {
+      "id": "S8-08",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Ministerin stimmt dem ___ Gesetz zu.",
+      "optionen": [
+        "neue",
+        "neuen"
+      ],
+      "loesungen": [
+        "neuen"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht das Gesetz, nicht dem. Also -en."
+    },
+    {
+      "id": "S8-09",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die ___ Reformen stoßen auf Widerstand.",
+      "optionen": [
+        "geplanten",
+        "geplante"
+      ],
+      "loesungen": [
+        "geplanten"
+      ],
+      "begruendung": "Wörterbuch-Test: Reformen ist Plural. Also -en."
+    },
+    {
+      "id": "S8-10",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Minister unterstützt den ___ Vorschlag.",
+      "optionen": [
+        "neue",
+        "neuen"
+      ],
+      "loesungen": [
+        "neuen"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht der Vorschlag, nicht den. Also -en."
+    },
+    {
+      "id": "S8-11",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die ___ Frage bleibt offen.",
+      "optionen": [
+        "soziale",
+        "sozialen"
+      ],
+      "loesungen": [
+        "soziale"
+      ],
+      "begruendung": "Wörterbuch-Test: die Frage, Singular. Also -e."
+    },
+    {
+      "id": "S8-12",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Wegen der ___ Inflation sparen viele Haushalte.",
+      "optionen": [
+        "hohe",
+        "hohen"
+      ],
+      "loesungen": [
+        "hohen"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht die Inflation, nicht der. Also -en."
+    },
+    {
+      "id": "S8-13",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die ___ Entwicklung der Sprache überrascht viele.",
+      "hinweis": "rasant",
+      "loesungen": [
+        "rasante"
+      ],
+      "begruendung": "Wörterbuch-Test: die Entwicklung, Singular. Also -e."
+    },
+    {
+      "id": "S8-14",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Folgen der ___ Entwicklung sind kaum absehbar.",
+      "hinweis": "rasant",
+      "loesungen": [
+        "rasanten"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht die Entwicklung, nicht der. Also -en."
+    },
+    {
+      "id": "S8-15",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der ___ Haushalt wird im Herbst beraten.",
+      "hinweis": "neu",
+      "loesungen": [
+        "neue"
+      ],
+      "begruendung": "Wörterbuch-Test: der Haushalt, Singular. Also -e."
+    },
+    {
+      "id": "S8-16",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Abgeordneten diskutieren über den ___ Haushalt.",
+      "hinweis": "neu",
+      "loesungen": [
+        "neuen"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht der Haushalt, nicht den. Also -en."
+    },
+    {
+      "id": "S8-17",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die ___ Arbeitnehmer fordern höhere Löhne.",
+      "hinweis": "jung",
+      "loesungen": [
+        "jungen"
+      ],
+      "begruendung": "Wörterbuch-Test: Arbeitnehmer steht hier im Plural (fordern). Also -en."
+    },
+    {
+      "id": "S8-18",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Das ___ Wort stammt aus dem Englischen.",
+      "hinweis": "neu",
+      "loesungen": [
+        "neue"
+      ],
+      "begruendung": "Wörterbuch-Test: das Wort, Singular. Also -e."
+    },
+    {
+      "id": "S8-19",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Bedeutung des ___ Wortes ist unklar.",
+      "hinweis": "neu",
+      "loesungen": [
+        "neuen"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht das Wort, nicht des. Also -en."
+    },
+    {
+      "id": "S8-20",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Mit der ___ Reform ist niemand zufrieden.",
+      "hinweis": "geplant",
+      "loesungen": [
+        "geplanten"
+      ],
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht die Reform, nicht der. Also -en."
+    },
+    {
+      "id": "S8-21",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Autorin fragt nach der [[eigentliche=>eigentlichen|S8.a2]] Motivation.",
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht die Motivation, nicht der. Also -en."
+    },
+    {
+      "id": "S8-22",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die [[verkrustete=>verkrusteten|S8.a3]] Strukturen behindern den Fortschritt.",
+      "begruendung": "Wörterbuch-Test: Strukturen ist Plural. Also -en."
+    },
+    {
+      "id": "S8-23",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der [[neuen=>neue|S8.a1]] Vorschlag stößt auf Kritik.",
+      "begruendung": "Wörterbuch-Test: der Vorschlag, Singular. Also -e."
+    },
+    {
+      "id": "S8-24",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Kritik an dem [[neue=>neuen|S8.a2]] Gesetz wächst.",
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht das Gesetz, nicht dem. Also -en."
+    },
+    {
+      "id": "S8-25",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Das [[sozialen=>soziale|S8.a1]] Netz hat Lücken.",
+      "begruendung": "Wörterbuch-Test: das Netz, Singular. Also -e."
+    },
+    {
+      "id": "S8-26",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die [[steigende=>steigenden|S8.a3]] Preise belasten die Familien.",
+      "begruendung": "Wörterbuch-Test: Preise ist Plural. Also -en."
+    },
+    {
+      "id": "S8-27",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Folgen der [[hohe=>hohen|S8.a2]] Inflation sind spürbar.",
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht die Inflation, nicht der. Also -en."
+    },
+    {
+      "id": "S8-28",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Regierung lehnt die [[geplanten=>geplante|S8.a1]] Reform ab.",
+      "begruendung": "Wörterbuch-Test: die Reform, Singular. Also -e."
+    },
+    {
+      "id": "S8-29",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Autor widerspricht dem [[herrschende=>herrschenden|S8.a2]] Zeitgeist.",
+      "begruendung": "Wörterbuch-Test: Im Wörterbuch steht der Zeitgeist, nicht dem. Also -en."
+    },
+    {
+      "id": "S8-30",
+      "kurs": 0,
+      "lektion": "S8",
+      "fehlertyp": "S8",
+      "kat": "S8",
+      "regel": "S8.a1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Politik, der mit „Die“, einem Adjektiv und einem weiblichen Nomen im Singular beginnt (zum Beispiel „die neue Regierung“).",
+      "beispiel": "Die neue Regierung senkt die Steuern.",
+      "gegenbeispiel": "Die neuen Regierung senkt die Steuern.",
+      "pruefungen": [
+        {
+          "label": "Adjektiv auf -e nach die",
+          "muss": [
+            "^Die\\s+[a-zäöüß]+e\\s+[A-ZÄÖÜ][a-zäöüß]*(ung|heit|keit|ion|tät|schaft|ik)\\b"
+          ],
+          "nicht": [
+            "^Die\\s+[a-zäöüß]+en\\s+[A-ZÄÖÜ][a-zäöüß]*(ung|heit|keit|ion|tät|schaft|ik)\\b"
+          ]
+        }
+      ],
+      "begruendung": "Wörterbuch-Test: die Regierung steht so im Wörterbuch und im Singular. Also -e."
+    },
+    {
+      "id": "S9-01",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Das ist ein Beispiel, ___ oft falsch verstanden wird.",
+      "optionen": [
+        "das",
+        "was"
+      ],
+      "loesungen": [
+        "das"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist das Beispiel, ein sächliches Nomen. Also das."
+    },
+    {
+      "id": "S9-02",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Alles, ___ die Regierung verspricht, kostet Geld.",
+      "optionen": [
+        "das",
+        "was"
+      ],
+      "loesungen": [
+        "was"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist alles. Also was."
+    },
+    {
+      "id": "S9-03",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Inflation steigt, ___ viele Sparer beunruhigt.",
+      "optionen": [
+        "was",
+        "das"
+      ],
+      "loesungen": [
+        "was"
+      ],
+      "begruendung": "Bezugsprobe: Beunruhigend ist, dass die Inflation steigt – der ganze Satz. Also was."
+    },
+    {
+      "id": "S9-04",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Das Gesetz, ___ der Bundestag beschließt, ist umstritten.",
+      "optionen": [
+        "was",
+        "das"
+      ],
+      "loesungen": [
+        "das"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist das Gesetz, ein sächliches Nomen. Also das."
+    },
+    {
+      "id": "S9-05",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Nichts, ___ die Opposition vorschlägt, findet eine Mehrheit.",
+      "optionen": [
+        "was",
+        "das"
+      ],
+      "loesungen": [
+        "was"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist nichts. Also was."
+    },
+    {
+      "id": "S9-06",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Partei, ___ Vorsitzende zurücktritt, sucht einen Nachfolger.",
+      "optionen": [
+        "dessen",
+        "deren"
+      ],
+      "loesungen": [
+        "deren"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist die Partei, feminin. Also deren."
+    },
+    {
+      "id": "S9-07",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Minister, ___ Plan scheitert, tritt zurück.",
+      "optionen": [
+        "dessen",
+        "deren"
+      ],
+      "loesungen": [
+        "dessen"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist der Minister, maskulin. Also dessen."
+    },
+    {
+      "id": "S9-08",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Das Wichtigste, ___ der Text vermittelt, ist Skepsis.",
+      "optionen": [
+        "das",
+        "was"
+      ],
+      "loesungen": [
+        "was"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist der substantivierte Superlativ das Wichtigste. Also was."
+    },
+    {
+      "id": "S9-09",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Wörter, ___ aus dem Englischen stammen, nehmen zu.",
+      "optionen": [
+        "die",
+        "was"
+      ],
+      "loesungen": [
+        "die"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist die Wörter, Plural. Also die."
+    },
+    {
+      "id": "S9-10",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r5",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Ministerin trifft den Bankchef. ___ kritisiert seine hohen Boni.",
+      "optionen": [
+        "Er",
+        "Sie"
+      ],
+      "loesungen": [
+        "Sie"
+      ],
+      "begruendung": "Bezugsprobe: Gemeint ist die Ministerin, die die Boni des Bankchefs kritisiert. Also sie."
+    },
+    {
+      "id": "S9-11",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r5",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Kant und Hume streiten über die Erkenntnis. ___ hält die Erfahrung für die einzige Quelle.",
+      "optionen": [
+        "Hume",
+        "Er"
+      ],
+      "loesungen": [
+        "Hume"
+      ],
+      "begruendung": "Bezugsprobe: Er könnte Kant oder Hume meinen. Bei zwei möglichen Personen nennst du den Namen."
+    },
+    {
+      "id": "S9-12",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Das Argument, ___ die Autorin anführt, überzeugt.",
+      "hinweis": "Relativpronomen",
+      "loesungen": [
+        "das"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist das Argument, ein sächliches Nomen. Also das."
+    },
+    {
+      "id": "S9-13",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Vieles, ___ in der Debatte gesagt wird, ist falsch.",
+      "hinweis": "Relativpronomen",
+      "loesungen": [
+        "was"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist vieles. Also was."
+    },
+    {
+      "id": "S9-14",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Reform scheitert, ___ niemanden überrascht.",
+      "hinweis": "Relativpronomen",
+      "loesungen": [
+        "was"
+      ],
+      "begruendung": "Bezugsprobe: Überraschend wäre, dass die Reform scheitert – der ganze Satz. Also was."
+    },
+    {
+      "id": "S9-15",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r4",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Autorin, ___ Buch viel gelesen wird, lehrt in Berlin.",
+      "hinweis": "Relativpronomen, Genitiv",
+      "loesungen": [
+        "deren"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist die Autorin, feminin. Also deren."
+    },
+    {
+      "id": "S9-16",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r4",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Begriff, ___ Bedeutung sich gewandelt hat, ist alt.",
+      "hinweis": "Relativpronomen, Genitiv",
+      "loesungen": [
+        "dessen"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist der Begriff, maskulin. Also dessen."
+    },
+    {
+      "id": "S9-17",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Das ist das Beste, ___ die Regierung tun kann.",
+      "hinweis": "Relativpronomen",
+      "loesungen": [
+        "was"
+      ],
+      "begruendung": "Bezugsprobe: Bezugswort ist der substantivierte Superlativ das Beste. Also was."
+    },
+    {
+      "id": "S9-18",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Ein Beispiel, [[was=>das|S9.r1]] als falsch gilt, ist das Wort „Handy“.",
+      "begruendung": "Bezugsprobe: Bezugswort ist das Beispiel, ein sächliches Nomen. Also das."
+    },
+    {
+      "id": "S9-19",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Das Wort, [[was=>das|S9.r1]] am häufigsten vorkommt, ist kurz.",
+      "begruendung": "Bezugsprobe: Bezugswort ist das Wort, ein sächliches Nomen. Also das."
+    },
+    {
+      "id": "S9-20",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Alles, [[das=>was|S9.r2]] der Minister ankündigt, bleibt vage.",
+      "begruendung": "Bezugsprobe: Bezugswort ist alles. Also was."
+    },
+    {
+      "id": "S9-21",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Löhne stagnieren, [[das=>was|S9.r3]] die Gewerkschaften kritisieren.",
+      "begruendung": "Bezugsprobe: Kritisiert wird, dass die Löhne stagnieren – der ganze Satz. Also was."
+    },
+    {
+      "id": "S9-22",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Staat, [[deren=>dessen|S9.r4]] Aufgaben wachsen, braucht mehr Geld.",
+      "begruendung": "Bezugsprobe: Bezugswort ist der Staat, maskulin. Also dessen."
+    },
+    {
+      "id": "S9-23",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Partei, [[dessen=>deren|S9.r4]] Programm unklar ist, verliert Wähler.",
+      "begruendung": "Bezugsprobe: Bezugswort ist die Partei, feminin. Also deren."
+    },
+    {
+      "id": "S9-24",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Nichts, [[das=>was|S9.r2]] die Regierung tut, findet Zustimmung.",
+      "begruendung": "Bezugsprobe: Bezugswort ist nichts. Also was."
+    },
+    {
+      "id": "S9-25",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r5",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Autor zitiert den Philosophen Kant. [[Er=>Kant|S9.r5]] hält die Vernunft für entscheidend.",
+      "begruendung": "Bezugsprobe: Er könnte den Autor oder Kant meinen. Gemeint ist Kant, also nennst du den Namen."
+    },
+    {
+      "id": "S9-26",
+      "kurs": 0,
+      "lektion": "S9",
+      "fehlertyp": "S9",
+      "kat": "S9",
+      "regel": "S9.r2",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Sprachwandel mit „alles“ oder „nichts“ und einem Relativsatz.",
+      "beispiel": "Nichts, was die Jugend sagt, bleibt lange unverändert.",
+      "gegenbeispiel": "Nichts, das die Jugend sagt, bleibt lange unverändert.",
+      "pruefungen": [
+        {
+          "label": "alles oder nichts + was",
+          "muss": [
+            "\\b(Alles|alles|Nichts|nichts),\\s+was\\b"
+          ],
+          "nicht": [
+            "\\b(Alles|alles|Nichts|nichts),\\s+das\\b"
+          ]
+        }
+      ],
+      "begruendung": "Bezugsprobe: Nach alles und nichts steht was."
+    },
+    {
+      "id": "S10-01",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Autorin macht ___ die Gefahren aufmerksam.",
+      "optionen": [
+        "auf",
+        "über"
+      ],
+      "loesungen": [
+        "auf"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt aufmerksam machen auf."
+    },
+    {
+      "id": "S10-02",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Parteien ringen ___ einen Kompromiss.",
+      "optionen": [
+        "über",
+        "um"
+      ],
+      "loesungen": [
+        "um"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt ringen um."
+    },
+    {
+      "id": "S10-03",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Jede Reform trägt die Gefahr des Scheiterns ___.",
+      "optionen": [
+        "in sich",
+        "mit sich"
+      ],
+      "loesungen": [
+        "in sich"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt etwas in sich tragen; mit sich bringen ist eine andere Wendung."
+    },
+    {
+      "id": "S10-04",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Reform soll den Boden für Wachstum ___.",
+      "optionen": [
+        "legen",
+        "bereiten"
+      ],
+      "loesungen": [
+        "bereiten"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt den Boden bereiten."
+    },
+    {
+      "id": "S10-05",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Professorin referiert ___ den Sprachwandel.",
+      "optionen": [
+        "über",
+        "zu"
+      ],
+      "loesungen": [
+        "über"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt referieren über."
+    },
+    {
+      "id": "S10-06",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Text nimmt ___ die aktuelle Debatte Bezug.",
+      "optionen": [
+        "zu",
+        "auf"
+      ],
+      "loesungen": [
+        "auf"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt Bezug nehmen auf."
+    },
+    {
+      "id": "S10-07",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Opposition übt scharfe Kritik ___ dem Gesetz.",
+      "optionen": [
+        "an",
+        "über"
+      ],
+      "loesungen": [
+        "an"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt Kritik üben an."
+    },
+    {
+      "id": "S10-08",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Regierung legt großen Wert ___ Sparsamkeit.",
+      "optionen": [
+        "für",
+        "auf"
+      ],
+      "loesungen": [
+        "auf"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt Wert legen auf."
+    },
+    {
+      "id": "S10-09",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Minister nimmt ___ den Vorwürfen Stellung.",
+      "optionen": [
+        "zu",
+        "über"
+      ],
+      "loesungen": [
+        "zu"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt Stellung nehmen zu."
+    },
+    {
+      "id": "S10-10",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Krise hat steigende Preise zur ___.",
+      "optionen": [
+        "Konsequenz",
+        "Folge"
+      ],
+      "loesungen": [
+        "Folge"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt etwas zur Folge haben."
+    },
+    {
+      "id": "S10-11",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Autorin setzt sich ___ der Frage auseinander.",
+      "optionen": [
+        "mit",
+        "über"
+      ],
+      "loesungen": [
+        "mit"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt sich auseinandersetzen mit."
+    },
+    {
+      "id": "S10-12",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Studie macht ___ ein großes Problem aufmerksam.",
+      "hinweis": "Präposition",
+      "loesungen": [
+        "auf"
+      ],
+      "begruendung": "Wendungsprobe: aufmerksam machen auf."
+    },
+    {
+      "id": "S10-13",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Gewerkschaft ringt ___ höhere Löhne.",
+      "hinweis": "Präposition",
+      "loesungen": [
+        "um"
+      ],
+      "begruendung": "Wendungsprobe: ringen um."
+    },
+    {
+      "id": "S10-14",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Viele Familien müssen mit weniger Geld ___.",
+      "hinweis": "Verb: mit etwas zurechtkommen",
+      "loesungen": [
+        "auskommen"
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt mit etwas auskommen."
+    },
+    {
+      "id": "S10-15",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Politiker warnt ___ einer Spaltung der Gesellschaft.",
+      "hinweis": "Präposition",
+      "loesungen": [
+        "vor"
+      ],
+      "begruendung": "Wendungsprobe: warnen vor."
+    },
+    {
+      "id": "S10-16",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Wirtschaft ist stark ___ Exporten abhängig.",
+      "hinweis": "Präposition",
+      "loesungen": [
+        "von"
+      ],
+      "begruendung": "Wendungsprobe: abhängig sein von."
+    },
+    {
+      "id": "S10-17",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Autorin bezieht sich ___ eine aktuelle Studie.",
+      "hinweis": "Präposition",
+      "loesungen": [
+        "auf"
+      ],
+      "begruendung": "Wendungsprobe: sich beziehen auf."
+    },
+    {
+      "id": "S10-18",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Viele zweifeln ___ der Wirksamkeit der Reform.",
+      "hinweis": "Präposition",
+      "loesungen": [
+        "an"
+      ],
+      "begruendung": "Wendungsprobe: zweifeln an."
+    },
+    {
+      "id": "S10-19",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Autor will [[über=>auf|S10.w1]] Missstände aufmerksam machen.",
+      "begruendung": "Wendungsprobe: Die Wendung heißt aufmerksam machen auf."
+    },
+    {
+      "id": "S10-20",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Parteien ringen [[damit=>darum|S10.w1]], eine Mehrheit zu finden.",
+      "begruendung": "Wendungsprobe: Die Wendung heißt ringen um, also darum."
+    },
+    {
+      "id": "S10-21",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Jede Veränderung trägt Risiken [[mit sich=>in sich|S10.w1]].",
+      "begruendung": "Wendungsprobe: Die Wendung heißt etwas in sich tragen."
+    },
+    {
+      "id": "S10-22",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Reform soll den Boden für mehr Gerechtigkeit [[legen=>bereiten|S10.w2]].",
+      "begruendung": "Wendungsprobe: Die Wendung heißt den Boden bereiten."
+    },
+    {
+      "id": "S10-23",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Expertin referiert [[zu=>über|S10.w1]] die Folgen der Inflation.",
+      "begruendung": "Wendungsprobe: Die Wendung heißt referieren über."
+    },
+    {
+      "id": "S10-24",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Viele Rentner sagen, dass sie mit ihrer Rente nicht mehr [[können=>auskommen können|S10.w3]].",
+      "begruendung": "Wendungsprobe: Die Wendung heißt mit etwas auskommen; können allein reicht nicht."
+    },
+    {
+      "id": "S10-25",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Opposition übt Kritik [[über=>an|S10.w1]] dem Haushalt.",
+      "begruendung": "Wendungsprobe: Die Wendung heißt Kritik üben an."
+    },
+    {
+      "id": "S10-26",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Text nimmt Bezug [[zu=>auf|S10.w1]] die Rede des Kanzlers.",
+      "begruendung": "Wendungsprobe: Die Wendung heißt Bezug nehmen auf."
+    },
+    {
+      "id": "S10-27",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Regierung legt Wert [[für=>auf|S10.w1]] solide Finanzen.",
+      "begruendung": "Wendungsprobe: Die Wendung heißt Wert legen auf."
+    },
+    {
+      "id": "S10-28",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Minister nimmt [[über=>zu|S10.w1]] den Vorwürfen Stellung.",
+      "begruendung": "Wendungsprobe: Die Wendung heißt Stellung nehmen zu."
+    },
+    {
+      "id": "S10-29",
+      "kurs": 0,
+      "lektion": "S10",
+      "fehlertyp": "S10",
+      "kat": "S10",
+      "regel": "S10.w1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Sozialpolitik mit der Wendung „aufmerksam machen“.",
+      "beispiel": "Die Sozialverbände machen auf die wachsende Altersarmut aufmerksam.",
+      "gegenbeispiel": "Die Sozialverbände machen über die wachsende Altersarmut aufmerksam.",
+      "pruefungen": [
+        {
+          "label": "aufmerksam machen auf",
+          "muss": [
+            "\\bauf\\b.*\\baufmerksam\\b|\\baufmerksam\\b.*\\bauf\\b"
+          ],
+          "nicht": [
+            "\\büber\\b.*\\baufmerksam\\b|\\baufmerksam\\b.*\\büber\\b"
+          ]
+        }
+      ],
+      "begruendung": "Wendungsprobe: Die Wendung heißt aufmerksam machen auf."
+    },
+    {
+      "id": "S11-01",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Regierung muss ___ die Schulden abbauen.",
+      "optionen": [
+        "zunächst",
+        "erstmal"
+      ],
+      "loesungen": [
+        "zunächst"
+      ],
+      "begruendung": "Sperrlisten-Probe: erstmal steht auf der Liste. Schriftsprachlich: zunächst."
+    },
+    {
+      "id": "S11-02",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "___ setzt sich der Kompromiss durch.",
+      "optionen": [
+        "Schlussendlich",
+        "Schließlich"
+      ],
+      "loesungen": [
+        "Schließlich"
+      ],
+      "begruendung": "Sperrlisten-Probe: schlussendlich steht auf der Liste. Schriftsprachlich: schließlich."
+    },
+    {
+      "id": "S11-03",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u4",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Text ___ mit einem Appell an die Leser.",
+      "optionen": [
+        "endet",
+        "enden tut"
+      ],
+      "loesungen": [
+        "endet"
+      ],
+      "begruendung": "Sperrlisten-Probe: enden tut ist eine tun-Umschreibung. Schriftsprachlich: endet."
+    },
+    {
+      "id": "S11-04",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Partei wirbt ___ soziale Medien um junge Wähler.",
+      "optionen": [
+        "via",
+        "über"
+      ],
+      "loesungen": [
+        "über"
+      ],
+      "begruendung": "Sperrlisten-Probe: via steht auf der Liste. Schriftsprachlich: über."
+    },
+    {
+      "id": "S11-05",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die ___ hat ein föderales System.",
+      "optionen": [
+        "Bundesrepublik Deutschland",
+        "BRD"
+      ],
+      "loesungen": [
+        "Bundesrepublik Deutschland"
+      ],
+      "begruendung": "Sperrlisten-Probe: BRD steht auf der Liste. Ausgeschrieben: Bundesrepublik Deutschland."
+    },
+    {
+      "id": "S11-06",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Viele Länder, ___ Frankreich, erhöhen das Rentenalter.",
+      "optionen": [
+        "bspw.",
+        "beispielsweise"
+      ],
+      "loesungen": [
+        "beispielsweise"
+      ],
+      "begruendung": "Sperrlisten-Probe: bspw. steht auf der Liste. Ausgeschrieben: beispielsweise."
+    },
+    {
+      "id": "S11-07",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Mieten steigen um zwanzig ___.",
+      "optionen": [
+        "Prozent",
+        "%"
+      ],
+      "loesungen": [
+        "Prozent"
+      ],
+      "begruendung": "Sperrlisten-Probe: Zeichen wie % schreibst du im Fließtext aus."
+    },
+    {
+      "id": "S11-08",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Das Gesetz kostet drei Milliarden ___.",
+      "optionen": [
+        "€",
+        "Euro"
+      ],
+      "loesungen": [
+        "Euro"
+      ],
+      "begruendung": "Sperrlisten-Probe: Zeichen wie € schreibst du im Fließtext aus."
+    },
+    {
+      "id": "S11-09",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Autor nennt ___ einen weiteren Grund.",
+      "optionen": [
+        "drittens",
+        "3."
+      ],
+      "loesungen": [
+        "drittens"
+      ],
+      "begruendung": "Sperrlisten-Probe: Ziffern wie 3. schreibst du im Fließtext aus: drittens."
+    },
+    {
+      "id": "S11-10",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Reform betrifft ___ zwei Millionen Menschen.",
+      "optionen": [
+        "so um die",
+        "rund"
+      ],
+      "loesungen": [
+        "rund"
+      ],
+      "begruendung": "Sperrlisten-Probe: so um die ist umgangssprachlich. Schriftsprachlich: rund."
+    },
+    {
+      "id": "S11-11",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "___ zeigt, wie zerstritten die Koalition ist.",
+      "optionen": [
+        "Dies",
+        "Das Ganze"
+      ],
+      "loesungen": [
+        "Dies"
+      ],
+      "begruendung": "Sperrlisten-Probe: das Ganze steht auf der Liste. Schriftsprachlich: dies."
+    },
+    {
+      "id": "S11-12",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "___ müssen die Ursachen geklärt werden.",
+      "hinweis": "statt: Erstmal",
+      "loesungen": [
+        "Zunächst"
+      ],
+      "begruendung": "Sperrlisten-Probe: erstmal wird zu zunächst."
+    },
+    {
+      "id": "S11-13",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u4",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die Debatte ___ in einem Streit.",
+      "hinweis": "statt: enden tut",
+      "loesungen": [
+        "endet"
+      ],
+      "begruendung": "Sperrlisten-Probe: Die tun-Umschreibung wird aufgelöst: endet."
+    },
+    {
+      "id": "S11-14",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Viele Wörter kommen über das Internet in die Sprache ___.",
+      "hinweis": "statt: rein",
+      "loesungen": [
+        "hinein"
+      ],
+      "begruendung": "Sperrlisten-Probe: rein wird zu hinein."
+    },
+    {
+      "id": "S11-15",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Der Staat gibt jährlich fünfzig Milliarden ___ für Renten aus.",
+      "hinweis": "statt: €",
+      "loesungen": [
+        "Euro"
+      ],
+      "begruendung": "Sperrlisten-Probe: Das Zeichen € wird zu Euro."
+    },
+    {
+      "id": "S11-16",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u2",
+      "stufe": 2,
+      "typ": "eintippen",
+      "text": "Die ___ wurde 1949 gegründet.",
+      "hinweis": "statt: BRD",
+      "loesungen": [
+        "Bundesrepublik Deutschland"
+      ],
+      "begruendung": "Sperrlisten-Probe: BRD wird ausgeschrieben."
+    },
+    {
+      "id": "S11-17",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Regierung will [[erstmal=>zunächst|S11.u1]] abwarten.",
+      "begruendung": "Sperrlisten-Probe: erstmal steht auf der Liste. Schriftsprachlich: zunächst."
+    },
+    {
+      "id": "S11-18",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "[[Schlussendlich=>Schließlich|S11.u1]] einigen sich die Parteien auf einen Kompromiss.",
+      "begruendung": "Sperrlisten-Probe: schlussendlich steht auf der Liste. Schriftsprachlich: schließlich."
+    },
+    {
+      "id": "S11-19",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u4",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Text [[enden tut=>endet|S11.u4]] mit einer Warnung.",
+      "begruendung": "Sperrlisten-Probe: Die tun-Umschreibung wird aufgelöst: endet."
+    },
+    {
+      "id": "S11-20",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Neue Wörter kommen vor allem über das Internet in die Sprache [[rein=>hinein|S11.u1]].",
+      "begruendung": "Sperrlisten-Probe: rein steht auf der Liste. Schriftsprachlich: hinein."
+    },
+    {
+      "id": "S11-21",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Partei erreicht junge Wähler [[via=>über|S11.u1]] soziale Medien.",
+      "begruendung": "Sperrlisten-Probe: via steht auf der Liste. Schriftsprachlich: über."
+    },
+    {
+      "id": "S11-22",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Verfassung der [[BRD=>Bundesrepublik Deutschland|S11.u2]] schützt die Menschenwürde.",
+      "begruendung": "Sperrlisten-Probe: BRD wird ausgeschrieben."
+    },
+    {
+      "id": "S11-23",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Viele Staaten, [[bspw.=>beispielsweise|S11.u2]] Schweden, haben hohe Steuern.",
+      "begruendung": "Sperrlisten-Probe: bspw. wird ausgeschrieben."
+    },
+    {
+      "id": "S11-24",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Inflation liegt bei sechs [[%=>Prozent|S11.u3]].",
+      "begruendung": "Sperrlisten-Probe: Das Zeichen % wird im Fließtext ausgeschrieben."
+    },
+    {
+      "id": "S11-25",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Autor nennt [[3.=>drittens|S11.u3]] die hohen Kosten.",
+      "begruendung": "Sperrlisten-Probe: Die Ziffer 3. wird im Fließtext ausgeschrieben: drittens."
+    },
+    {
+      "id": "S11-26",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Reform kostet zwei Milliarden [[€=>Euro|S11.u3]].",
+      "begruendung": "Sperrlisten-Probe: Das Zeichen € wird im Fließtext ausgeschrieben."
+    },
+    {
+      "id": "S11-27",
+      "kurs": 0,
+      "lektion": "S11",
+      "fehlertyp": "S11",
+      "kat": "S11",
+      "regel": "S11.u3",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz zur Wirtschaft mit einem Geldbetrag und einer Prozentangabe, ganz ohne Zeichen.",
+      "beispiel": "Die Löhne steigen um drei Prozent, die Mieten um fünfzig Euro im Monat.",
+      "gegenbeispiel": "Die Löhne steigen um 3 %, die Mieten um 50 € im Monat.",
+      "pruefungen": [
+        {
+          "label": "Euro ausgeschrieben",
+          "muss": [
+            "\\bEuro\\b"
+          ],
+          "nicht": [
+            "€"
+          ]
+        },
+        {
+          "label": "Prozent ausgeschrieben",
+          "muss": [
+            "\\bProzent\\b"
+          ],
+          "nicht": [
+            "%"
+          ]
+        }
+      ],
+      "begruendung": "Sperrlisten-Probe: Zeichen wie € und % schreibst du im Fließtext aus."
+    },
+    {
+      "id": "S12-01",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p3",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Drei Gründe sind entscheidend: ___.",
+      "optionen": [
+        "der Leidensdruck, der Staat und die Wahlbürger",
+        "der Leidensdruck, der Staat und drittens seien die Wahlbürger"
+      ],
+      "loesungen": [
+        "der Leidensdruck, der Staat und die Wahlbürger"
+      ],
+      "begruendung": "Rahmentest: „Drei Gründe sind entscheidend: drittens seien die Wahlbürger“ passt nicht. Kein Zählwort und kein Satzrest in der Aufzählung."
+    },
+    {
+      "id": "S12-02",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Reform soll ___.",
+      "optionen": [
+        "Kosten senken, Abbau der Bürokratie und Familien entlasten",
+        "Kosten senken, Bürokratie abbauen und Familien entlasten"
+      ],
+      "loesungen": [
+        "Kosten senken, Bürokratie abbauen und Familien entlasten"
+      ],
+      "begruendung": "Rahmentest: „Die Reform soll Abbau der Bürokratie“ passt nicht. Alle Glieder sind Infinitive."
+    },
+    {
+      "id": "S12-03",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Partei fordert ___.",
+      "optionen": [
+        "höhere Löhne, kürzere Arbeitszeiten und bessere Renten",
+        "höhere Löhne, dass die Arbeitszeit sinkt, und bessere Renten"
+      ],
+      "loesungen": [
+        "höhere Löhne, kürzere Arbeitszeiten und bessere Renten"
+      ],
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen mit Adjektiv; ein dass-Satz passt nicht in die Reihe."
+    },
+    {
+      "id": "S12-04",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Autorin kritisiert ___.",
+      "optionen": [
+        "die Bürokratie, die hohen Steuern und dass Fachkräfte fehlen",
+        "die Bürokratie, die hohen Steuern und den Fachkräftemangel"
+      ],
+      "loesungen": [
+        "die Bürokratie, die hohen Steuern und den Fachkräftemangel"
+      ],
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen; der dass-Satz bricht die Form."
+    },
+    {
+      "id": "S12-05",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Ziele des Sozialstaats sind ___.",
+      "optionen": [
+        "Sicherheit, Gerechtigkeit und Teilhabe",
+        "Sicherheit, gerecht sein und Teilhabe"
+      ],
+      "loesungen": [
+        "Sicherheit, Gerechtigkeit und Teilhabe"
+      ],
+      "begruendung": "Rahmentest: „Ziele sind gerecht sein“ passt nicht. Alle Glieder sind Nomen."
+    },
+    {
+      "id": "S12-06",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Der Sprachwandel zeigt sich ___.",
+      "optionen": [
+        "im Wortschatz, die Grammatik und in der Aussprache",
+        "im Wortschatz, in der Grammatik und in der Aussprache"
+      ],
+      "loesungen": [
+        "im Wortschatz, in der Grammatik und in der Aussprache"
+      ],
+      "begruendung": "Rahmentest: „Der Sprachwandel zeigt sich die Grammatik“ passt nicht. Jedes Glied braucht in."
+    },
+    {
+      "id": "S12-07",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Bürger erwarten von der Regierung ___.",
+      "optionen": [
+        "Ehrlichkeit, Verlässlichkeit und Mut",
+        "Ehrlichkeit, verlässlich zu sein und Mut"
+      ],
+      "loesungen": [
+        "Ehrlichkeit, Verlässlichkeit und Mut"
+      ],
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen; der Infinitiv bricht die Form."
+    },
+    {
+      "id": "S12-08",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p1",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Krise trifft ___.",
+      "optionen": [
+        "Familien, Rentner und auch die Studierenden sind betroffen",
+        "Familien, Rentner und Studierende"
+      ],
+      "loesungen": [
+        "Familien, Rentner und Studierende"
+      ],
+      "begruendung": "Rahmentest: „Die Krise trifft auch die Studierenden sind betroffen“ passt nicht."
+    },
+    {
+      "id": "S12-09",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Studie untersucht ___.",
+      "optionen": [
+        "Einkommen, Bildung und Gesundheit",
+        "Einkommen, Bildung und wie gesund die Menschen sind"
+      ],
+      "loesungen": [
+        "Einkommen, Bildung und Gesundheit"
+      ],
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen; der Nebensatz bricht die Form."
+    },
+    {
+      "id": "S12-10",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "entscheiden",
+      "text": "Die Gewerkschaft verlangt ___.",
+      "optionen": [
+        "mehr Lohn, weniger Arbeit und dass die Renten sicher sind",
+        "mehr Lohn, weniger Arbeit und sichere Renten"
+      ],
+      "loesungen": [
+        "mehr Lohn, weniger Arbeit und sichere Renten"
+      ],
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen; der dass-Satz bricht die Form."
+    },
+    {
+      "id": "S12-11",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p3",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Drei Gründe sind entscheidend: der Leidensdruck, der Staat und drittens seien es die Wahlbürger.",
+      "loesungen": [
+        "Drei Gründe sind entscheidend: der Leidensdruck, der Staat und die Wahlbürger."
+      ],
+      "anweisung": "Bring die Aufzählung in eine gleiche Form. Tippe den ganzen Satz.",
+      "eingabehilfe": "Der Satzanfang bleibt; jedes Glied muss in denselben Rahmen passen.",
+      "begruendung": "Rahmentest: Jedes Glied passt einzeln hinter „Drei Gründe sind entscheidend:“, ohne Zählwort und ohne Satzrest."
+    },
+    {
+      "id": "S12-12",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Die Regierung will Steuern senken, die Bürokratie abbauen und mehr Investitionen.",
+      "loesungen": [
+        "Die Regierung will Steuern senken, die Bürokratie abbauen und mehr investieren."
+      ],
+      "anweisung": "Bring die Aufzählung in eine gleiche Form. Tippe den ganzen Satz.",
+      "eingabehilfe": "Der Satzanfang bleibt; jedes Glied muss in denselben Rahmen passen.",
+      "begruendung": "Rahmentest: „Die Regierung will mehr Investitionen“ bricht die Reihe der Infinitive. Also mehr investieren."
+    },
+    {
+      "id": "S12-13",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Die Partei setzt auf Bildung, Klimaschutz und dass Familien entlastet werden.",
+      "loesungen": [
+        "Die Partei setzt auf Bildung, Klimaschutz und die Entlastung der Familien.",
+        "Die Partei setzt auf Bildung, Klimaschutz und die Entlastung von Familien."
+      ],
+      "anweisung": "Bring die Aufzählung in eine gleiche Form. Tippe den ganzen Satz.",
+      "eingabehilfe": "Der Satzanfang bleibt; jedes Glied muss in denselben Rahmen passen.",
+      "begruendung": "Rahmentest: „Die Partei setzt auf dass Familien entlastet werden“ passt nicht. Alle Glieder werden Nomen."
+    },
+    {
+      "id": "S12-14",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "umformen",
+      "vorlage": "Der Text behandelt den Wortschatz, die Grammatik und wie sich die Aussprache verändert.",
+      "loesungen": [
+        "Der Text behandelt den Wortschatz, die Grammatik und die Aussprache.",
+        "Der Text behandelt den Wortschatz, die Grammatik und die Veränderung der Aussprache."
+      ],
+      "anweisung": "Bring die Aufzählung in eine gleiche Form. Tippe den ganzen Satz.",
+      "eingabehilfe": "Der Satzanfang bleibt; jedes Glied muss in denselben Rahmen passen.",
+      "begruendung": "Rahmentest: Alle Glieder werden Nomen im Akkusativ."
+    },
+    {
+      "id": "S12-15",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Drei Gründe sind entscheidend: der Leidensdruck, der Staat und [[drittens seien es die Wahlbürger=>die Wahlbürger|S12.p3]].",
+      "begruendung": "Rahmentest: Kein Zählwort und kein Satzrest in der Aufzählung. Jedes Glied passt einzeln hinter den Rahmen."
+    },
+    {
+      "id": "S12-16",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Reform soll Kosten senken, Bürokratie abbauen und [[die Entlastung von Familien=>Familien entlasten|S12.p2]].",
+      "begruendung": "Rahmentest: „Die Reform soll die Entlastung von Familien“ passt nicht. Alle Glieder sind Infinitive."
+    },
+    {
+      "id": "S12-17",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Autorin fordert höhere Löhne, bessere Renten und [[dass die Mieten sinken=>niedrigere Mieten|S12.p2]].",
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen mit Adjektiv; der dass-Satz bricht die Form."
+    },
+    {
+      "id": "S12-18",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Sprachwandel zeigt sich im Wortschatz, [[die Grammatik=>in der Grammatik|S12.p1]] und in der Aussprache.",
+      "begruendung": "Rahmentest: „Der Sprachwandel zeigt sich die Grammatik“ passt nicht. Jedes Glied braucht in."
+    },
+    {
+      "id": "S12-19",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Bürger erwarten Ehrlichkeit, Mut und [[verlässlich zu sein=>Verlässlichkeit|S12.p2]].",
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen; der Infinitiv bricht die Form."
+    },
+    {
+      "id": "S12-20",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Ziele der Partei sind Wachstum, Gerechtigkeit und [[die Umwelt schützen=>Umweltschutz|S12.p2]].",
+      "begruendung": "Rahmentest: „Ziele sind die Umwelt schützen“ passt nicht. Alle Glieder sind Nomen."
+    },
+    {
+      "id": "S12-21",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p1",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Krise belastet Familien, Rentner und [[auch die Jugend ist betroffen=>junge Menschen|S12.p1]].",
+      "begruendung": "Rahmentest: „Die Krise belastet auch die Jugend ist betroffen“ passt nicht."
+    },
+    {
+      "id": "S12-22",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Autor kritisiert die Bürokratie, die Steuern und [[dass Fachkräfte fehlen=>den Fachkräftemangel|S12.p2]].",
+      "begruendung": "Rahmentest: Alle Glieder sind Nomen; der dass-Satz bricht die Form."
+    },
+    {
+      "id": "S12-23",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p3",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Der Text nennt zwei Folgen: höhere Preise und [[zweitens sinkt die Kaufkraft=>eine sinkende Kaufkraft|S12.p3]].",
+      "begruendung": "Rahmentest: Kein Zählwort und kein ganzer Satz in der Aufzählung; jedes Glied ist ein Nomen."
+    },
+    {
+      "id": "S12-24",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p2",
+      "stufe": 2,
+      "typ": "fehler",
+      "text": "Die Debatte dreht sich um Freiheit, Sicherheit und [[wie gerecht es zugeht=>Gerechtigkeit|S12.p2]].",
+      "begruendung": "Rahmentest: „Die Debatte dreht sich um wie gerecht es zugeht“ passt nicht. Alle Glieder sind Nomen."
+    },
+    {
+      "id": "S12-25",
+      "kurs": 0,
+      "lektion": "S12",
+      "fehlertyp": "S12",
+      "kat": "S12",
+      "regel": "S12.p1",
+      "stufe": 2,
+      "typ": "schreiben",
+      "aufgabe": "Schreibe einen eigenen Satz über Politik mit einer Aufzählung aus drei Nomen nach einem Doppelpunkt.",
+      "beispiel": "Die Partei setzt drei Schwerpunkte: Bildung, Gesundheit und Klimaschutz.",
+      "gegenbeispiel": "Die Partei setzt drei Schwerpunkte: Bildung, Gesundheit und drittens will sie das Klima schützen.",
+      "pruefungen": [
+        {
+          "label": "Aufzählung mit drei Gliedern",
+          "muss": [
+            ":\\s*[^,:]+,\\s*[^,]+\\s+und\\s+\\S+"
+          ],
+          "nicht": []
+        },
+        {
+          "label": "keine Zählwörter, keine dass-Sätze",
+          "muss": [],
+          "nicht": [
+            "\\b(erstens|zweitens|drittens|viertens)\\b",
+            "\\bdass\\b",
+            "\\b\\d+\\."
+          ]
+        }
+      ],
+      "begruendung": "Rahmentest: Jedes Glied passt einzeln hinter den Rahmen, alle in derselben Form."
+    },
+    {
+      "id": "T-01",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Mayer kritisiert in seinem Kommentar die Rentenpolitik. Er betont, [[das=>dass|S4.d2]] die Regierung [[erstmal=>zunächst|S11.u1]] die Ursachen prüfen müsse. Die Reformen [[bleiben aus=>würden ausbleiben|S1.k3]], weil keine Mehrheit zustande komme.",
+      "begruendung": "Drei Fehler: dass nach der Ersatzprobe, zunächst statt erstmal, würden ausbleiben nach der Entscheidungskette."
+    },
+    {
+      "id": "T-02",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Zu Beginn des [[Textes,=>Textes|S7.z4]] stellt die Linguistin Roth fest, dass das [[neue=>Neue|S2.g1]] oft zunächst abgelehnt werde. Anschließend beschreibt sie, wie sich die Sprache seit dem Mittelalter [[veränderte=>verändert|S6.t1]].",
+      "begruendung": "Drei Fehler: kein Komma nach dem Vorfeld, das Neue groß, Präsens auch für Historisches."
+    },
+    {
+      "id": "T-03",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Der Ökonom Weber setzt sich in seinem Beitrag [[über=>mit|S10.w1]] der Inflation auseinander. Er nennt drei Ursachen: die Energiepreise, die Löhne und [[drittens die Zinspolitik=>die Zinspolitik|S12.p3]]. Die [[steigende=>steigenden|S8.a3]] Preise träfen vor allem Geringverdiener.",
+      "begruendung": "Drei Fehler: sich auseinandersetzen mit, kein Zählwort in der Aufzählung, -en im Plural."
+    },
+    {
+      "id": "T-04",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Die Politikwissenschaftlerin Keller untersucht, warum die Wahlbeteiligung sinkt. Viele Bürger [[haben=>hätten|S1.k2]] das Vertrauen in die Parteien verloren. Ein Beispiel, [[was=>das|S9.r1]] sie anführt, ist die Kommunalwahl in ihrer Heimatstadt.",
+      "begruendung": "Zwei Fehler: hätten nach der Entscheidungskette, das nach dem sächlichen Nomen Beispiel."
+    },
+    {
+      "id": "T-05",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Schulz plädiert für einen starken Sozialstaat, [[dadurch=>denn|S5.c1]] nur er schütze vor Armut. Die [[schweizer=>Schweizer|S2.g3]] Regierung zeige, wie man Renten sichern könne.",
+      "begruendung": "Zwei Fehler: denn für den Grund, Schweizer als Herkunftswort auf -er groß."
+    },
+    {
+      "id": "T-06",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Der Journalist Brandt beschreibt, wie Bismarck die Sozialversicherung [[einführte=>einführt|S6.t1]]. Damit [[legt=>bereitet|S10.w2]] er den Boden für den modernen Sozialstaat.",
+      "begruendung": "Zwei Fehler: Präsens auch für Historisches, den Boden bereiten."
+    },
+    {
+      "id": "T-07",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Die Autorin Lang beobachtet, dass Jugendliche in sozialen Medien [[die selben=>dieselben|S3.s1]] Ausdrücke verwenden. Jeder neue Ausdruck gelange [[via=>über|S11.u1]] Videos in die Alltagssprache.",
+      "begruendung": "Zwei Fehler: dieselben in einem Wort, über statt via."
+    },
+    {
+      "id": "T-08",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Der Bericht, [[das=>den|S9.r4]] die Ministerin vorlegt, zeigt die Armut im Land. Die Ministerin [[erläutere=>erläutert|S1.k4]] darin, dass besonders Kinder betroffen seien. Sie fordert, die Regierung müsse handeln, [[dass=>damit|S4.d3]] sich die Lage bessere.",
+      "begruendung": "Drei Fehler: den nach dem maskulinen Bericht, Rahmen im Indikativ, damit für den Zweck."
+    },
+    {
+      "id": "T-09",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Die Ökonomin Vogt beschreibt, wie die Löhne zur Zeit der Industrialisierung [[stagnierten=>stagnieren|S6.t1]]. Die [[Soziale=>soziale|S2.g2]] Frage werde damit zum zentralen Thema der Politik.",
+      "begruendung": "Zwei Fehler: Präsens auch für Historisches, soziale vor dem Nomen Frage klein."
+    },
+    {
+      "id": "T-10",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "In seinem Essay ringt der Philosoph Hartmann [[damit=>darum|S10.w1]], den Begriff der Gerechtigkeit zu klären. Er betont, Gerechtigkeit [[bedeutet=>bedeute|S1.k1]] vor allem Chancengleichheit.",
+      "begruendung": "Zwei Fehler: ringen um, also darum; bedeute nach der Entscheidungskette."
+    },
+    {
+      "id": "T-11",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Die Soziologin Brenner zeigt, [[das=>dass|S4.d2]] die Mittelschicht schrumpft. Sie nennt drei Folgen: weniger Konsum, mehr Unsicherheit und [[dass das Vertrauen sinkt=>sinkendes Vertrauen|S12.p2]].",
+      "begruendung": "Zwei Fehler: dass nach der Ersatzprobe, alle Glieder der Aufzählung als Nomen."
+    },
+    {
+      "id": "T-12",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Der Kommentator Graf kritisiert die Haushaltspolitik der [[BRD=>Bundesrepublik Deutschland|S11.u2]]. Der Staat, [[deren=>dessen|S9.r4]] Schulden wachsen, verliere seinen Handlungsspielraum.",
+      "begruendung": "Zwei Fehler: Bundesrepublik Deutschland ausschreiben, dessen nach dem maskulinen Staat."
+    },
+    {
+      "id": "T-13",
+      "kurs": 0,
+      "lektion": "T",
+      "fehlertyp": "T",
+      "kat": "T",
+      "regel": "",
+      "stufe": 3,
+      "typ": "fehler",
+      "transfer": true,
+      "text": "Die Autorin Meier zeigt, wie sich die Jugendsprache [[entwickelte=>entwickelt|S6.t1]]. Sie erklärt, die Jugend [[erfindet=>erfinde|S1.k1]] ständig neue Ausdrücke.",
+      "begruendung": "Zwei Fehler: Präsens auch für Historisches; erfinde nach der Entscheidungskette, weil ohne dass der Konjunktiv Pflicht ist."
+    }
+  ]
+}

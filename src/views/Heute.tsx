@@ -221,6 +221,15 @@ export function Heute() {
               </div>
             </div>
           </a>
+          <a className="card" href="#/schwaechen" target="sr-schwaechen" style={{ color: 'inherit' }} data-link="schwaechen">
+            <div className="row">
+              <Icon name="target" />
+              <div className="grow">
+                <div className="title-line">Meine Schwächen ↗</div>
+                <div className="sub-line">Eigene Fehler trainieren, bis sie sitzen · eigenes Fenster</div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>

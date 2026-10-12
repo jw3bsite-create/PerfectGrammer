@@ -1,5 +1,7 @@
 // Zentrale Typen für Inhalte und gespeicherte Daten.
 
+import type { SchwState } from '../schwaechen/typen';
+
 export type TaskType =
   | 'probe'
   | 'komma'
@@ -56,6 +58,9 @@ export interface UmformenTask extends TaskBase {
   loesungen: string[];
   /** Verbformen, die in jeder Lösung vorkommen; dienen der Rückmeldung. */
   kern?: string[];
+  /** Eigene Arbeitsanweisung und Eingabehilfe (sonst: indirekte Rede). */
+  anweisung?: string;
+  eingabehilfe?: string;
 }
 
 /** Fehler-Notation: [[falsch=>richtig|fehlertyp|Begründung]]; Fehlertyp und Begründung sind optional. */
@@ -320,6 +325,8 @@ export interface AppData {
   lastSession?: { art: SessionArt; lektion?: string; kurs?: number; zeit: number; titel: string; phase?: string };
   notices: Notice[];
   placementDone?: number;
+  /** Modul „Meine Schwächen“ (seit Datenversion 2). */
+  schwaechen: SchwState;
 }
 
 export const DEFAULT_SETTINGS: Settings = {

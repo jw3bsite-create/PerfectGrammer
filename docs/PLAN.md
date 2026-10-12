@@ -9,7 +9,7 @@ Stand: 10. Oktober 2026
 - **Navigation:** Hash-Routen. Seitenleiste ab 768 px Breite, darunter Tableiste unten. Die Übungsansicht blendet die Navigation aus.
 - **Inhalte:** je Kurs eine JSON-Datei in `src/content/` mit Kurs, Lektionen, Regelkarten und Aufgaben. Neue Dateien und neue Aufgaben werden ohne Codeänderung erkannt.
 
-## Datenmodell (Version 1)
+## Datenmodell (Version 2)
 
 | Objekt | Ort |
 | --- | --- |
@@ -21,6 +21,7 @@ Stand: 10. Oktober 2026
 | Lektionsstand (Beherrschungsgrad, Rückstufung) | IndexedDB `lektionen` |
 | Kursstand (Kurstest, Einstufung) | IndexedDB `kurse` |
 | Einstellungen, laufende Sitzung, Datenversion | IndexedDB `meta` |
+| Meine Schwächen: Stufen je Kategorie, Antworten mit Regelwahl, erfasste Fehler, eigene Aufgaben, laufendes Training, Checklisten | IndexedDB `meta`, Schlüssel `schwaechen` |
 
 Die Datenversion steht in `meta`; Migrationen laufen beim Öffnen und beim Import.
 
@@ -33,7 +34,7 @@ Die Datenversion steht in `meta`; Migrationen laufen beim Öffnen und beim Impor
 5. Inhaltsprüfung (automatische Prüfung der Bank und Liste der Zweifelsfälle)
 6. Prüfung im Browser (`npm run e2e`) und Feinschliff nach den Bildschirmfotos
 
-Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 51 Lektionen, 1083 Aufgaben.
+Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 51 Lektionen, 1083 Aufgaben; dazu „Meine Schwächen“ mit 12 Kategorien und 351 Aufgaben.
 
 ## Offene Annahmen
 
@@ -50,3 +51,8 @@ Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 51 Lektionen, 1083 Aufga
 11. Der Kurstest von Kurs 10 besteht aus zwei Korrekturtexten, die am längsten nicht bearbeitet wurden; bestanden ab 90 Prozent der Stellen.
 12. Die CSV-Datei nutzt Semikolon und UTF-8 mit BOM, damit Excel sie mit Umlauten öffnet.
 13. Safari auf dem iPad konnte hier nicht getestet werden; geprüft wurde mit Chromium in Tablet-Größe mit Touch-Emulation.
+12. „Meine Schwächen“ läuft in einem eigenen Fenster (Fenstername `sr-schwaechen`); das Hauptfenster heißt `sr-haupt`, damit Kursverweise dort öffnen. Beide Fenster lesen beim Wechsel den Speicher neu.
+13. Prüfung einer Kategorie: Ein vollständiges Training an einem Tag, an dem die Prüfung fällig ist. Gezählt werden alle Antworten des Trainings, auch Kontrollaufgaben; richtig heißt Antwort und Regel richtig. Ein Training vor dem Fälligkeitstag zählt als Übung und ändert die Stufe nicht.
+14. Rückstufung bei Fehlern: Ein Fehler stuft nur eine gemeisterte Kategorie zurück (auf Stufe 3, Prüfung am nächsten Tag). In Stufe 1 bis 3 entscheidet allein die nächste Prüfung.
+15. Kontrollaufgabe: höchstens zwei in Folge, damit ein Training nicht endlos wächst; sie stammt aus derselben Kategorie und möglichst zur selben Regel.
+16. Transfer-Absätze gehören zu keiner Kategorie und ändern keine Stufe; Fehler darin zählen aber für Gewichtung, Wiederholungstäter und Checkliste und stufen eine gemeisterte Kategorie zurück.

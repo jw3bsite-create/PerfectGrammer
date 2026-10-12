@@ -247,7 +247,7 @@ function fehlerDrafts(ev: StellenEval, task: FehlerTask | KorrekturTask): EntryD
 
 // ---------- Fehler finden (und Fehlertyp bestimmen) ----------
 
-export function FehlerExercise({ task, modus, guided, locked, register, onResult }: ExerciseProps & { task: FehlerTask }) {
+export function FehlerExercise({ task, modus, guided, locked, anweisung, register, onResult }: ExerciseProps & { task: FehlerTask }) {
   const prep = useMemo(() => prepareTask(task.text), [task.text]);
   const typMode = modus === 'fehlertyp' || task.typ === 'fehlertyp';
   const [stage, setStage] = useState<'typ' | 'typGeprueft' | 'korrektur'>(typMode ? 'typ' : 'korrektur');
@@ -367,7 +367,8 @@ export function FehlerExercise({ task, modus, guided, locked, register, onResult
   return (
     <div>
       <p className="task-instruction">
-        {typMode ? 'Schritt 2 von 2: ' : ''}Tippe die fehlerhafte Stelle an und korrigiere sie. Der {einheit} kann auch fehlerfrei sein.
+        {typMode ? 'Schritt 2 von 2: ' : ''}
+        {anweisung ?? `Tippe die fehlerhafte Stelle an und korrigiere sie. Der ${einheit} kann auch fehlerfrei sein.`}
       </p>
       {guided && !locked ? (
         <div className="guide">

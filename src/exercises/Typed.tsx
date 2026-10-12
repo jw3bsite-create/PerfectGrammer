@@ -123,7 +123,7 @@ export function EntscheidenExercise({ task, locked, register, onResult }: Exerci
   const cols = task.optionen.length === 3 ? 'three' : 'two';
   return (
     <div>
-      <p className="task-instruction">Wähle die richtige Schreibung.</p>
+      <p className="task-instruction">Wähle, was in die Lücke gehört.</p>
       <p className="sentence">
         {typo(before)}
         {filled ? <span className="gap-filled ok">{filled}</span> : <span className="gap-blank" aria-label="Lücke" />}
@@ -203,7 +203,7 @@ export function UmformenExercise({ task, locked, register, onResult }: ExerciseP
   useEffect(() => register(locked ? null : submit));
   return (
     <div>
-      <p className="task-instruction">Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.</p>
+      <p className="task-instruction">{task.anweisung ?? 'Gib die Aussage in indirekter Rede wieder. Tippe den ganzen Satz.'}</p>
       <div className="source-box">{typo(task.vorlage)}</div>
       <div className="answer-area">
         <textarea
@@ -217,13 +217,13 @@ export function UmformenExercise({ task, locked, register, onResult }: ExerciseP
             }
           }}
           readOnly={locked}
-          aria-label="Indirekte Rede"
-          placeholder="Der ganze Satz in indirekter Rede"
+          aria-label={task.anweisung ? 'Umgeformter Satz' : 'Indirekte Rede'}
+          placeholder={task.anweisung ? 'Der ganze Satz' : 'Der ganze Satz in indirekter Rede'}
           autoFocus
           rows={3}
           {...NO_AUTOCORRECT}
         />
-        {!locked ? <p className="input-hint">Mit oder ohne dass – beides ist richtig. Geprüft werden Verbform, Pronomen und Komma.</p> : null}
+        {!locked ? <p className="input-hint">{task.eingabehilfe ?? 'Mit oder ohne dass – beides ist richtig. Geprüft werden Verbform, Pronomen und Komma.'}</p> : null}
       </div>
     </div>
   );

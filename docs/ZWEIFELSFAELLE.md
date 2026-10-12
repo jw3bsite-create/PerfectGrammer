@@ -81,6 +81,15 @@ Diese Liste nennt jede Stelle, an der das Regelwerk mehrere Fassungen zulässt o
 | Präteritum in der Textanalyse | Präsens ist die Grundzeit | Ein Präteritum für das Geschehen im Text gilt als Tempusfehler. |
 | *ein paar Mal – ein paarmal, dreimal – drei Mal* | beides zulässig | Kommen als Prüfstellen nicht vor. |
 
+## Meine Schwächen
+
+| Fall | Regelstand | Wertung im Bereich |
+| --- | --- | --- |
+| Indikativ nach *dass* und in indirekten Fragen | standardsprachlich möglich | Im Bereich „Meine Schwächen“ erlaubt (Regel „Indikativ erlaubt“), wie in der Vorgabe. In Kurs 3 verlangt die App dort weiter den Konjunktiv, weil die Textwiedergabe im Abitur ihn erwartet. Umformen-Aufgaben des Bereichs verlangen deshalb die Wiedergabe ohne *dass*. |
+| Ziffern und Zeichen im Fließtext (*3.*, *€*, *%*) | Ziffern sind in Sachtexten zulässig | Auf der Sperrliste: Im Aufsatz werden *drittens*, *Euro* und *Prozent* ausgeschrieben. Kurs 8 übt Ordnungszahlen mit Punkt (*3. Akt*) weiter als Schreibung. |
+| *würde* + Infinitiv | siehe Kurs 3 | Nur am Ende der Entscheidungskette, wenn der Konjunktiv II dem Präteritum gleicht. |
+| Selbst geschriebene Sätze | frei formuliert | Geprüft werden nur die Merkmale der Vorgabe; für gleichwertige andere Fassungen gibt es „Meine Fassung ist auch richtig“, sofern die Regel richtig gewählt war. |
+
 ## Getippte Antworten
 
 - Ausgeglichen werden nur doppelte, geschützte und Randleerzeichen sowie die Form der Anführungszeichen und Apostrophe.

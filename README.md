@@ -5,6 +5,7 @@ Lern-App für Rechtschreibung, Zeichensetzung und Grammatik auf Abiturniveau (Ba
 - **Zehn Kurse, 51 Lektionen, 1083 geprüfte Aufgaben**, darunter 12 Korrekturtexte und 12 Sachtextabsätze zur Textwiedergabe
 - **Tägliche Wiederholung** in wachsenden Abständen (1, 3, 7, 16, 35 Tage), gemischt aus allen Kursen
 - **Fehlerbuch** mit Fehlern aus der App und aus korrigierten Klausuren, Fehlerprofil, Verlauf, Export als CSV und PDF
+- **Meine Schwächen**: eigener Bereich in einem eigenen Fenster für die persönlichen Fehler – zwölf Kategorien mit je einer Methode und 25 bis 37 Aufgaben, dazu Transfer-Absätze. Jede Antwort wird mit einer Regel begründet; gemeistert ist eine Kategorie nach drei bestandenen Prüfungen (90 Prozent) nach 1, 3 und 7 Tagen
 - **Vollständig auf dem Gerät:** kein Konto, kein Server, kein Tracking, offline nutzbar, als App installierbar
 
 ## Starten
@@ -34,7 +35,7 @@ npm run check:content  # nur die Aufgabenbank
 npm run e2e            # Browser-Prüfung mit Chromium (baut vorher die App)
 ```
 
-`npm run e2e` braucht ein Chromium. Standard ist `/opt/pw-browsers/chromium`; ein anderer Pfad wird über `CHROMIUM_PATH` gesetzt. Die Prüfung löst Aufgaben aller zehn Typen nur mit der Tastatur, erfasst Klausurfehler, spielt eine Sicherung ein, schreibt den Einstufungstest, startet die App ohne Netz und prüft Handy, Tablet und Desktop in hellem und dunklem Design. Die Bildschirmfotos liegen danach in `e2e/screenshots/`.
+`npm run e2e` braucht ein Chromium. Standard ist `/opt/pw-browsers/chromium`; ein anderer Pfad wird über `CHROMIUM_PATH` gesetzt. Die Prüfung löst Aufgaben aller zehn Typen nur mit der Tastatur, erfasst Klausurfehler, spielt eine Sicherung ein, schreibt den Einstufungstest, startet die App ohne Netz, trainiert in „Meine Schwächen“ mit Regelwahl, Kontrollaufgabe und Checkliste und prüft Handy, Tablet und Desktop in hellem und dunklem Design. Die Bildschirmfotos liegen danach in `e2e/screenshots/`.
 
 ## Bedienung mit der Tastatur
 
@@ -49,13 +50,26 @@ npm run e2e            # Browser-Prüfung mit Chromium (baut vorher die App)
 | Strg + . | spielt das Wort in „Wort tippen“ noch einmal vor |
 | Esc | schließt Regelkarte, Dialog oder Korrekturfeld |
 
-Alles ist ebenso per Antippen bedienbar.
+Alles ist ebenso per Antippen bedienbar. In „Meine Schwächen“ wählen die Ziffern nach jeder Antwort die Regel, die sie begründet.
+
+## Meine Schwächen
+
+Der Bereich öffnet aus der Seitenleiste (oder unter „Heute → Schnellstart“) in einem eigenen Fenster, `#/schwaechen`. Kurse und Üben bleiben im Hauptfenster; Verweise wie „3.4 Zeitstufen“ öffnen die Lektion dort. Beide Fenster teilen den Speicher und gleichen sich beim Wechsel ab.
+
+- **Übersicht:** Ampel je Kategorie (Rot: übt noch, Gelb: in Prüfung, Grün: gemeistert), nächste fällige Prüfung, Wiederholungstäter (Regeln mit mindestens zwei Fehlern), Anteil richtiger Antworten je Woche.
+- **Training:** zehn Aufgaben einer Kategorie in allen Übungsformen (Entscheiden, Lückentext, Umformen, Fehlerjagd mit genau einem Fehler, Komma setzen, Selbst schreiben). Nach jeder Antwort wird die Regel gewählt; richtig ist eine Aufgabe nur mit richtiger Antwort und richtiger Begründung. Die Rückmeldung erklärt immer mit der Methode der Kategorie. Nach einem Fehler folgt sofort eine ähnliche Kontrollaufgabe.
+- **Stufen:** Ein Training mit mindestens 90 Prozent führt auf Stufe 1. Prüfungen folgen nach 1, 3 und 7 Tagen; jede bestandene hebt eine Stufe, eine nicht bestandene senkt eine. Nach der dritten ist die Kategorie gemeistert. Ein Fehler in einer gemeisterten Kategorie stuft sie eine Stufe zurück.
+- **Gemischt und Transfer:** fünfzehn Aufgaben aus allen Kategorien, gewichtet nach den Fehlern der letzten 14 Tage, dazu Absätze mit zwei bis drei Fehlern aus verschiedenen Kategorien. Dort werden die Kategorien der Fehler gewählt.
+- **Fehler erfassen:** falsch, richtig, Kategorie und Regel eintragen; daraus entstehen eine Fehlerjagd und, wo möglich, eine Entscheiden-Aufgabe.
+- **Vor der Abgabe:** Checkliste mit den drei häufigsten Fehlerkategorien und je einer Prüffrage, nach jedem Text abzuhaken.
+
+Inhalte: `src/content/schwaechen.json` (Kategorien mit Methode, Regeln, Fehlregeln als Ablenker, Kursverweisen, Prüffrage, Beispielen; Aufgaben mit `kat` und `regel`). Selbst geschriebene Sätze prüft `src/schwaechen/pruefen.ts` mit Mustern (`pruefungen`: `muss` und `nicht`), jedes mit Beispiel und Gegenbeispiel in den Tests.
 
 ## Aufbau
 
 ```
 src/
-  content/        Aufgabenbank: kurs-01.json … kurs-10.json, varianten.json
+  content/        Aufgabenbank: kurs-01.json … kurs-10.json, varianten.json, schwaechen.json
   lib/            Logik ohne Oberfläche
     evaluate.ts   Auswertung aller Übungstypen
     markup.ts     Notationen der Aufgabentexte
@@ -65,6 +79,7 @@ src/
     sessions.ts   Zusammenstellung aller Sitzungen (Lektion, Wiederholung 60/30/10, Einstufung …)
     store.ts      Zustand, Speichern, Sicherung
     db.ts         IndexedDB, Datenversion und Migration
+  schwaechen/     Bereich „Meine Schwächen“: Daten, Stufenlogik, Aktionen, Oberfläche
   exercises/      eine Komponente je Übungstyp
   views/          Seiten: Heute, Kurse, Üben, Fehlerbuch, Statistik, Einstellungen
   styles/app.css  Gestaltung: Farben, Schriften, helles und dunkles Design
@@ -110,10 +125,10 @@ Ein Sprachmodell ist in einer reinen Offline-App nicht verfügbar; deshalb gibt 
 Alle Daten liegen in der IndexedDB des Browsers (Datenbank `sprachrichtigkeit`). Unter „Einstellungen → Sicherung“ wird der vollständige Stand als JSON-Datei gespeichert und wieder eingespielt:
 
 ```json
-{ "app": "sprachrichtigkeit", "datenversion": 1, "exportiert": "…", "daten": { "settings": {}, "attempts": [], "reviews": {}, "errors": [], "lessons": {}, "courses": {}, "customTasks": [] } }
+{ "app": "sprachrichtigkeit", "datenversion": 2, "exportiert": "…", "daten": { "settings": {}, "attempts": [], "reviews": {}, "errors": [], "lessons": {}, "courses": {}, "customTasks": [], "schwaechen": {} } }
 ```
 
-Das Datenmodell ist versioniert (`DATA_VERSION` in `src/lib/db.ts`). Ändert sich das Modell, wird die Version erhöht und in `MIGRATIONS` ein Schritt von der alten zur neuen Fassung ergänzt. Er läuft beim Öffnen der App und beim Einspielen älterer Sicherungen.
+Das Datenmodell ist versioniert (`DATA_VERSION` in `src/lib/db.ts`). Ändert sich das Modell, wird die Version erhöht und in `MIGRATIONS` ein Schritt von der alten zur neuen Fassung ergänzt. Er läuft beim Öffnen der App und beim Einspielen älterer Sicherungen. Version 2 ergänzt den Stand von „Meine Schwächen“ (`meta.schwaechen`); ältere Sicherungen erhalten einen leeren Stand.
 
 ## Annahmen und Zweifelsfälle
 

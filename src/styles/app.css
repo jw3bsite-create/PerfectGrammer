@@ -2586,3 +2586,354 @@ html:not(.kbd-nav) .gap.cursor,
 html:not(.kbd-nav) .chunk.cursor {
   box-shadow: none;
 }
+
+/* ---------- Meine Schwächen (eigener Bereich) ---------- */
+
+.sw-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.sw-top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding-top: env(safe-area-inset-top);
+}
+
+.sw-top-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px 20px;
+  flex-wrap: wrap;
+}
+
+.brand.sw-brand {
+  padding: 0;
+  text-decoration: none;
+}
+
+.sw-nav {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.sw-nav a {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text-2);
+  text-decoration: none;
+  font-weight: 560;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.sw-nav a:hover {
+  background: var(--surface-2);
+}
+
+.sw-nav a[aria-current='page'] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.sw-zurapp {
+  margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .sw-top-inner {
+    padding: 8px 16px;
+  }
+  .sw-nav {
+    order: 3;
+    flex-basis: 100%;
+    margin: 0 -6px;
+  }
+}
+
+.sw-main {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 28px 20px calc(48px + env(safe-area-inset-bottom));
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .sw-main {
+    padding: 20px 16px calc(40px + env(safe-area-inset-bottom));
+  }
+}
+
+.ampel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 620;
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.ampel::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.ampel.rot {
+  color: var(--bad);
+  background: var(--bad-soft);
+}
+
+.ampel.gelb {
+  color: var(--frei);
+  background: var(--frei-soft);
+}
+
+.ampel.gruen {
+  color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.ampel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.ampel-grid > .card + .card {
+  margin-top: 0;
+}
+
+.ampel-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  color: inherit;
+  text-decoration: none;
+  border-left: 4px solid var(--border-strong);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ampel-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.ampel-card.a-rot {
+  border-left-color: var(--bad);
+}
+
+.ampel-card.a-gelb {
+  border-left-color: var(--frei);
+}
+
+.ampel-card.a-gruen {
+  border-left-color: var(--ok);
+}
+
+.ampel-card h3 {
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+.sw-stand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 560;
+}
+
+.sw-stand svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sw-taeter {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sw-taeter li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.sw-zahl {
+  flex: none;
+  min-width: 34px;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--bad);
+  background: var(--bad-soft);
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+
+.sw-regeltext {
+  display: block;
+  color: var(--text-2);
+  margin-top: 2px;
+}
+
+.sw-checkteaser {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sw-checkteaser > svg:first-child {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  flex: none;
+}
+
+.sw-checkteaser .chev {
+  color: var(--text-3);
+}
+
+.sw-zurueck {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.sw-zurueck svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sw-methode {
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.sw-wahl {
+  margin-top: 24px;
+}
+
+.sw-wahl h3 {
+  margin-bottom: 4px;
+}
+
+.sw-wahl .options,
+.sw-wahl .chips {
+  margin-top: 14px;
+}
+
+.sw-wahl .option {
+  text-align: left;
+  line-height: 1.45;
+}
+
+.sw-regel {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.sw-regel + .sw-regel {
+  margin-top: 6px;
+}
+
+.sw-regel svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin-top: 2px;
+}
+
+.sw-regel.ok svg {
+  color: var(--ok);
+}
+
+.sw-regel.bad svg {
+  color: var(--bad);
+}
+
+.sw-kurslink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 560;
+}
+
+.sw-kurslink svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sw-checkliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sw-checkliste li + li {
+  border-top: 1px solid var(--border);
+  padding-top: 4px;
+}
+
+.sw-checkliste .check {
+  align-items: flex-start;
+  padding: 10px 0;
+}
+
+.sw-checkliste .check input {
+  margin-top: 3px;
+}
+
+.sw-checkliste .check > span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sw-frage {
+  font-family: var(--font-read);
+  font-size: 16px;
+}
+
+.nav a.nav-extern .nav-pfeil {
+  margin-left: auto;
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.sw-beispiel {
+  color: var(--text-2);
+  line-height: 1.45;
+}

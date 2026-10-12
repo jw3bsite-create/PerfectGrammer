@@ -45,6 +45,26 @@ function set(next: AppData) {
   emit();
 }
 
+/** Modul „Meine Schwächen“: Zustand ändern und sofort speichern. */
+export async function updateSchwaechen(fn: (s: AppData['schwaechen']) => AppData['schwaechen']) {
+  const next = fn(state.schwaechen);
+  set({ ...state, schwaechen: next });
+  await DB.putMeta('schwaechen', next);
+}
+
+/**
+ * Stand neu aus der Datenbank lesen. Hauptfenster und Schwächen-Fenster teilen sich die Datenbank;
+ * beim Wechsel ins andere Fenster wird dessen Stand übernommen.
+ */
+export async function reloadFromDb() {
+  if (!ready || loadError) return;
+  try {
+    set(await DB.loadAll());
+  } catch {
+    /* bleibt beim bisherigen Stand */
+  }
+}
+
 export function getState(): AppData {
   return state;
 }

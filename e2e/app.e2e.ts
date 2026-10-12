@@ -11,6 +11,8 @@ import { parseKomma, parseFehler } from '../src/lib/markup';
 import { fehlertypLabel } from '../src/lib/fehlertypen';
 import { singleErrorType } from '../src/lib/sessions';
 import type { Task } from '../src/lib/types';
+import { aufgabe as swAufgabe, KATEGORIEN, regelOptionen, transferKats } from '../src/schwaechen/daten';
+import type { SAufgabe } from '../src/schwaechen/typen';
 
 const PORT = 4179;
 const BASE = `http://localhost:${PORT}/`;
@@ -144,7 +146,30 @@ async function applyChunkEdits(page: Page, text: string) {
 /** Beantwortet die angezeigte Aufgabe richtig oder bewusst falsch, nur mit der Tastatur. */
 async function answer(page: Page, correct = true): Promise<Task> {
   const { task, modus } = await currentTask(page);
+  await solveExercise(page, task, modus, correct);
+  await expectFeedback(page, task.id, task.typ, correct);
+  return task;
+}
+
+async function expectFeedback(page: Page, id: string, typ: string, correct: boolean) {
+  const fb = page.getByRole('region', { name: 'Rückmeldung' });
+  await fb.waitFor();
+  const cls = (await fb.getAttribute('class')) ?? '';
+  if (correct !== /\bok\b/.test(cls)) await page.screenshot({ path: path.join(SHOTS, `fehlschlag-${id}.png`), fullPage: true });
+  if (correct) expect(cls, `${id} (${typ}) sollte richtig sein: ${await fb.innerText()}`).toContain('ok');
+  else expect(cls, `${id} sollte falsch sein`).not.toContain(' ok');
+}
+
+/** Bearbeitet die Übung selbst (ohne auf die Rückmeldung zu warten). */
+async function solveExercise(page: Page, task: Task | SAufgabe, modus: string, correct: boolean) {
   await page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
+  if (task.typ === 'schreiben') {
+    const ta = page.locator('.practice-body textarea').first();
+    await ta.waitFor();
+    await ta.fill(correct ? task.beispiel : (task.gegenbeispiel ?? 'Das ist falsch'));
+    await ta.press('Enter');
+    return;
+  }
   switch (task.typ) {
     case 'probe':
     case 'komma': {
@@ -229,13 +254,6 @@ async function answer(page: Page, correct = true): Promise<Task> {
       break;
     }
   }
-  const fb = page.getByRole('region', { name: 'Rückmeldung' });
-  await fb.waitFor();
-  const cls = (await fb.getAttribute('class')) ?? '';
-  if (correct !== /\bok\b/.test(cls)) await page.screenshot({ path: path.join(SHOTS, `fehlschlag-${task.id}.png`), fullPage: true });
-  if (correct) expect(cls, `${task.id} (${task.typ}) sollte richtig sein: ${await fb.innerText()}`).toContain('ok');
-  else expect(cls, `${task.id} sollte falsch sein`).not.toContain(' ok');
-  return task;
 }
 
 async function nextTask(page: Page) {
@@ -254,6 +272,75 @@ async function solveSession(page: Page, wrong: number[] = []): Promise<Task[]> {
     await nextTask(page);
   }
   throw new Error('Sitzung endet nicht');
+}
+
+// ---------- Meine Schwächen ----------
+
+async function swCurrent(page: Page): Promise<SAufgabe> {
+  const el = page.locator('[data-task]');
+  await el.waitFor();
+  const id = (await el.getAttribute('data-task'))!;
+  const a =
+    swAufgabe(id, []) ??
+    ((await page.evaluate(
+      (key) =>
+        new Promise((resolve, reject) => {
+          const req = indexedDB.open('sprachrichtigkeit');
+          req.onerror = () => reject(req.error);
+          req.onsuccess = () => {
+            const get = req.result.transaction('meta').objectStore('meta').get('schwaechen');
+            get.onsuccess = () => resolve((get.result?.eigene ?? []).find((x: { id: string }) => x.id === key));
+            get.onerror = () => reject(get.error);
+          };
+        }),
+      id,
+    )) as SAufgabe | undefined);
+  if (!a) throw new Error(`Aufgabe ${id} nicht gefunden`);
+  return a;
+}
+
+/** Löst eine Aufgabe im Modul: Übung, dann Regel (oder Kategorien beim Transfer) wählen. */
+async function swAnswer(page: Page, antwortOk = true, regelOk = true): Promise<SAufgabe> {
+  const a = await swCurrent(page);
+  try {
+    await solveExercise(page, a, '', antwortOk);
+  } catch (e) {
+    await page.screenshot({ path: path.join(SHOTS, `fehlschlag-${a.id}.png`), fullPage: true });
+    throw new Error(`${a.id}: ${String(e)}`);
+  }
+  if (a.kat === 'T') {
+    await page.locator('[data-phase="kategorien"]').waitFor();
+    const soll = transferKats(a);
+    const wahl = regelOk ? soll : soll.slice(1);
+    for (const k of wahl.length ? wahl : [KATEGORIEN.find((x) => !soll.includes(x.id))!.id]) await page.locator(`[data-phase="kategorien"] [data-kat="${k}"]`).click();
+    await page.locator('[data-phase="kategorien"]').getByRole('button', { name: 'Prüfen' }).click();
+  } else {
+    await page.locator('[data-phase="regel"]').waitFor();
+    const opts = regelOptionen(a);
+    const wahl = regelOk ? a.regel : opts.find((o) => o.id !== a.regel)!.id;
+    // Regel per Ziffer wählen, wie mit der Tastatur
+    await page.keyboard.press(String(opts.findIndex((o) => o.id === wahl) + 1));
+  }
+  await expectFeedback(page, a.id, a.typ, antwortOk && regelOk);
+  return a;
+}
+
+async function swWeiter(page: Page) {
+  await page.keyboard.press('Enter');
+  await page.getByRole('region', { name: 'Rückmeldung' }).waitFor({ state: 'detached' });
+}
+
+async function swSolve(page: Page, falsch: number[] = []): Promise<SAufgabe[]> {
+  const done: SAufgabe[] = [];
+  for (let i = 0; i < 60; i++) {
+    const summary = page.locator('.summary');
+    const task = page.locator('[data-task]');
+    await Promise.race([summary.waitFor(), task.waitFor()]);
+    if (await summary.isVisible()) return done;
+    done.push(await swAnswer(page, true, !falsch.includes(i)));
+    await swWeiter(page);
+  }
+  throw new Error('Training endet nicht');
 }
 
 // ---------- Tests ----------
@@ -652,6 +739,139 @@ describe('Sprachrichtigkeit im Browser', () => {
     await page.locator('.summary').waitFor();
     await ctx.close();
   }, 180_000);
+
+  it('Meine Schwächen: eigenes Fenster, Kursverweis, Training mit Regelwahl und Kontrollaufgabe, Erfassen, Checkliste', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    const [sw] = await Promise.all([ctx.waitForEvent('page'), page.getByRole('link', { name: /Meine Schwächen/ }).first().click()]);
+    watchErrors(sw);
+    await sw.getByRole('heading', { name: 'Meine Schwächen', level: 1 }).waitFor();
+    expect(sw.url()).toContain('#/schwaechen');
+    expect(await sw.evaluate(() => window.name)).toBe('sr-schwaechen');
+    expect(await sw.locator('.ampel-card').count()).toBe(12);
+    expect(await sw.locator('.ampel-card [data-ampel="rot"]').count()).toBe(12);
+    await shot(sw, 'schwaechen-uebersicht');
+
+    // Kategorie mit Verweis in den Kurs: öffnet im Hauptfenster, nicht hier
+    await sw.locator('.ampel-card[data-kat="S1"]').click();
+    await sw.getByRole('heading', { name: 'Konjunktiv', level: 1 }).waitFor();
+    await shot(sw, 'schwaechen-kategorie');
+    const link = sw.locator('[data-lektion="3.8"]').first();
+    expect(await link.getAttribute('target')).toBe('sr-haupt');
+    await link.click();
+    await page.waitForURL(/#\/lektion\/3\.8/);
+    expect(sw.url()).toContain('#/schwaechen/kat/S1');
+    expect(ctx.pages().length).toBe(2);
+
+    // Training: erste Antwort richtig, Regel falsch → Kontrollaufgabe folgt sofort
+    await sw.locator('[data-start="S1"]').click();
+    await sw.locator('[data-task]').waitFor();
+    const erste = await swCurrent(sw);
+    await solveExercise(sw, erste, '', true);
+    await sw.locator('[data-phase="regel"]').waitFor();
+    await shot(sw, 'schwaechen-regelwahl');
+    const falscheRegel = regelOptionen(erste).find((o) => o.id !== erste.regel)!;
+    await sw.locator(`[data-regel="${falscheRegel.id}"]`).click();
+    await expectFeedback(sw, erste.id, erste.typ, false);
+    const fb = sw.getByRole('region', { name: 'Rückmeldung' });
+    expect(await fb.innerText()).toContain('Antwort richtig, Begründung falsch');
+    expect(await fb.innerText()).toContain('Kontrollaufgabe');
+    expect(await fb.innerText()).toContain('Entscheidungskette');
+    await shot(sw, 'schwaechen-rueckmeldung');
+    await sw.keyboard.press('Enter');
+    await sw.getByText('Kontrollaufgabe', { exact: true }).waitFor();
+    const kontrolle = await swCurrent(sw);
+    expect(kontrolle.kat).toBe('S1');
+    expect(kontrolle.id).not.toBe(erste.id);
+    const rest = await swSolve(sw);
+    expect(rest.length).toBe(10);
+    await sw.locator('[data-meldung]').waitFor();
+    expect(await sw.locator('[data-meldung]').innerText()).toMatch(/Stufe 1|morgen/);
+    await shot(sw, 'schwaechen-ergebnis');
+    await sw.getByRole('link', { name: 'Zur Übersicht' }).click();
+    await sw.locator('.ampel-card[data-kat="S1"] [data-ampel="gelb"]').waitFor();
+
+    // Fehler erfassen: daraus entstehen neue Aufgaben
+    await sw.getByRole('link', { name: 'Fehler erfassen' }).click();
+    await sw.getByLabel('So stand es da').fill('Die Autorin meint, die Lage wäre ernst.');
+    await sw.getByLabel('So ist es richtig').fill('Die Autorin meint, die Lage sei ernst.');
+    await sw.getByLabel('Kategorie').selectOption('S1');
+    await sw.getByLabel('Quelle (freiwillig)').fill('Klausur Sozialstaat');
+    await sw.getByRole('button', { name: 'Speichern' }).click();
+    await sw.getByText(/2 neue Aufgaben/).waitFor();
+    await sw.locator('[data-eintraege="1"]').waitFor();
+    expect(await sw.getByLabel('So stand es da').inputValue()).toBe('');
+
+    // Gemischtes Training mit Transfer-Absätzen; ein Fehler in der Begründung
+    await sw.getByRole('link', { name: 'Übersicht' }).first().click();
+    await sw.locator('[data-start="misch"]').click();
+    const misch = await swSolve(sw, [3]);
+    expect(misch.length).toBeGreaterThanOrEqual(15);
+    expect(misch.filter((a) => a.kat === 'T').length).toBeGreaterThanOrEqual(2);
+    expect(new Set(misch.map((a) => a.kat)).size).toBeGreaterThanOrEqual(5);
+    await sw.getByRole('link', { name: 'Zur Übersicht' }).click();
+    await sw.getByRole('heading', { name: 'Wiederholungstäter' }).waitFor();
+
+    // Checkliste „Vor der Abgabe“
+    await sw.getByRole('link', { name: 'Vor der Abgabe' }).first().click();
+    const haken = sw.locator('[data-haken]');
+    await haken.first().waitFor();
+    expect(await haken.count()).toBe(3);
+    for (let i = 0; i < 3; i++) await haken.nth(i).check();
+    await shot(sw, 'schwaechen-checkliste');
+    await sw.getByRole('button', { name: 'Text geprüft' }).click();
+    await sw.getByText('Bisher 1 Text mit der Checkliste geprüft.', { exact: false }).waitFor();
+    expect(await haken.nth(0).isChecked()).toBe(false);
+
+    // Stand bleibt nach dem Neuladen; das Hauptfenster übernimmt ihn beim Zurückkehren
+    await sw.reload();
+    await sw.locator('[data-haken]').first().waitFor();
+    await sw.goto(`${BASE}#/schwaechen`);
+    await sw.locator('.ampel-card[data-kat="S1"] [data-ampel="gelb"]').waitFor();
+    await ctx.close();
+  });
+
+  it('Meine Schwächen: Selbst schreiben, eigene Fassung übersteuern; Handy und dunkles Design', async () => {
+    for (const v of [
+      { width: 390, height: 844, dark: false, name: 'handy' },
+      { width: 820, height: 1180, dark: true, name: 'tablet-dunkel' },
+    ]) {
+      const ctx = await newContext({ width: v.width, height: v.height, dark: v.dark, touch: v.width < 500 });
+      const page = await ctx.newPage();
+      watchErrors(page);
+      await onboard(page);
+      await page.goto(`${BASE}#/schwaechen`);
+      await page.locator('.ampel-card').first().waitFor();
+      await noOverflow(page, v.width, `Übersicht ${v.name}`);
+      await shot(page, `schwaechen-${v.name}`);
+      await page.goto(`${BASE}#/schwaechen/kat/S12`);
+      await page.getByRole('heading', { name: /Aufzählungen/, level: 1 }).waitFor();
+      await noOverflow(page, v.width, `Kategorie ${v.name}`);
+      await page.locator('[data-start="S12"]').click();
+      await page.locator('[data-task]').waitFor();
+      // Bis zur ersten Schreibaufgabe richtig lösen, die dann bewusst mit dem Gegenbeispiel
+      for (let i = 0; i < 12; i++) {
+        const a = await swCurrent(page);
+        if (a.typ === 'schreiben') {
+          await solveExercise(page, a, '', false);
+          await page.locator('[data-phase="regel"]').waitFor();
+          await noOverflow(page, v.width, `Regelwahl ${v.name}`);
+          await page.locator(`[data-regel="${a.regel}"]`).click();
+          await expectFeedback(page, a.id, a.typ, false);
+          await shot(page, `schwaechen-schreiben-${v.name}`);
+          await page.getByRole('button', { name: 'Meine Fassung ist auch richtig' }).click();
+          await page.getByRole('button', { name: 'Meine Fassung ist auch richtig' }).waitFor({ state: 'detached' });
+          expect(await page.getByText('Gleich folgt eine ähnliche Kontrollaufgabe').count()).toBe(0);
+          break;
+        }
+        await swAnswer(page);
+        await swWeiter(page);
+      }
+      await ctx.close();
+    }
+  });
 
   it('keine Fehler in der Konsole', () => {
     const relevant = pageErrors.filter((e) => !/net::ERR_INTERNET_DISCONNECTED|Failed to load resource/.test(e));

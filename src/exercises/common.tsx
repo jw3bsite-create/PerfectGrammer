@@ -27,6 +27,8 @@ export interface ExerciseProps {
   modus?: 'fehlertyp';
   guided: boolean;
   locked: boolean;
+  /** Eigene Arbeitsanweisung (etwa für die Fehlerjagd im Modul „Meine Schwächen“). */
+  anweisung?: string;
   /** Registriert die Hauptaktion (Enter, Zeitablauf). */
   register: (fn: (() => void) | null) => void;
   onResult: (r: ExerciseResult) => void;

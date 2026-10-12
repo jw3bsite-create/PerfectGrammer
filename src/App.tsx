@@ -2,7 +2,9 @@ import { useEffect, type ReactNode } from 'react';
 import { Icon } from './components/Icon';
 import { ToastHost } from './components/ui';
 import { useRoute, type Route } from './lib/router';
-import { useApp, useReady } from './lib/store';
+import { reloadFromDb, useApp, useReady } from './lib/store';
+import { SchwaechenBereich } from './schwaechen/Bereich';
+import { HAUPTFENSTER, SCHWAECHENFENSTER } from './schwaechen/Teile';
 import type { Settings } from './lib/types';
 import { Heute } from './views/Heute';
 import { Kurse, KursSeite } from './views/Kurse';
@@ -66,6 +68,14 @@ function Shell({ route, children }: { route: Route; children: ReactNode }) {
               {n.label}
             </a>
           ))}
+          <a className="nav-extern" href="#/schwaechen" target={SCHWAECHENFENSTER} title="Öffnet in einem eigenen Fenster">
+            <Icon name="target" />
+            Meine Schwächen
+            <span className="nav-pfeil" aria-hidden="true">
+              ↗
+            </span>
+            <span className="sr-only"> (eigenes Fenster)</span>
+          </a>
         </nav>
         <div className="nav-spacer" />
         <div className="nav-foot">Alle Daten bleiben auf diesem Gerät.</div>
@@ -119,6 +129,25 @@ export function App() {
     window.scrollTo(0, 0);
   }, [path]);
 
+  // Hauptfenster benennen: Verweise aus „Meine Schwächen“ in die Kurse öffnen dann hier.
+  const bereich = route.parts[0] === 'schwaechen';
+  useEffect(() => {
+    if (!bereich && !window.name) window.name = HAUPTFENSTER;
+  }, [bereich]);
+
+  // Zwei Fenster teilen einen Speicher: Beim Zurückkehren in ein Fenster den Stand neu laden.
+  useEffect(() => {
+    const neu = () => {
+      if (document.visibilityState === 'visible') void reloadFromDb();
+    };
+    window.addEventListener('focus', neu);
+    document.addEventListener('visibilitychange', neu);
+    return () => {
+      window.removeEventListener('focus', neu);
+      document.removeEventListener('visibilitychange', neu);
+    };
+  }, []);
+
   if (!ready) {
     return (
       <div className="loading" role="status">
@@ -145,6 +174,7 @@ export function App() {
     );
   }
   if (route.parts[0] === 'sitzung') return <SessionView />;
+  if (bereich) return <SchwaechenBereich route={route} />;
   if (!data.settings.onboardingErledigt) return <Willkommen />;
   if (route.parts[0] === 'fehlerbuch' && route.parts[1] === 'druck') return <FehlerDruck query={route.query} />;
   return (
