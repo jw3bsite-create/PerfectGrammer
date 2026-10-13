@@ -381,6 +381,45 @@ describe('Sprachrichtigkeit im Browser', () => {
     await ctx.close();
   }, 120_000);
 
+  it('Probe: Verben falsch markiert, Komma richtig – die Aufgabe zählt als richtig', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/lektion/1.1`);
+    await page.getByRole('button', { name: 'Verstanden, zur geführten Übung' }).click();
+    for (let n = 0; n < 5; n++) {
+      const { task } = await currentTask(page);
+      if (task.typ !== 'probe') {
+        await answer(page, true);
+        await nextTask(page);
+        continue;
+      }
+      const p = parseKomma(task.text);
+      await page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
+      // Schritt 1: kein Verb markiert (falsch), Schritt 2: Kommas richtig
+      await page.keyboard.press('Enter');
+      await page.locator('.word[disabled], .word.res-fehlt').first().waitFor();
+      await page.keyboard.press('Enter');
+      await page.getByText('Schritt 2 von 2').waitFor();
+      let cursor = 0;
+      for (let i = 0; i < p.gaps.length; i++) {
+        if (p.gaps[i] !== 'ja') continue;
+        await moveCursor(page, cursor, i);
+        cursor = i;
+        await page.keyboard.press(' ');
+      }
+      await page.keyboard.press('Enter');
+      const fb = page.getByRole('region', { name: 'Rückmeldung' });
+      await fb.waitFor();
+      expect(await fb.getAttribute('class'), task.id).toContain('ok');
+      expect(await fb.innerText()).toContain('gewertet wird das Komma');
+      await ctx.close();
+      return;
+    }
+    throw new Error('keine Probe-Aufgabe in Lektion 1.1');
+  }, 120_000);
+
   it('alle Übungstypen: richtig gelöst werden sie als richtig gewertet', async () => {
     const ctx = await newContext();
     const page = await ctx.newPage();

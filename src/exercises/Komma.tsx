@@ -38,17 +38,22 @@ export function KommaExercise({ task, guided, locked, register, onResult }: Exer
   const checkCommas = () => {
     const ev = evalKomma(p, commas);
     setKommaEval(ev);
-    const verbsOk = verbEval ? verbEval.richtig : true;
-    const richtig = ev.richtig && verbsOk;
+    // Gewertet wird das Komma; die Verbmarkierung ist das Werkzeug dafür und hat schon in Schritt 1 eine eigene Rückmeldung.
+    const richtig = ev.richtig;
     const antwort = kommaSentence(p.tokens, commas);
     const loesung = kommaSolution(p);
     const freiCount = ev.gaps.filter((g) => g.status === 'frei').length;
     const hinweise: string[] = [];
     if (freiCount) hinweise.push(freiCount === 1 ? 'Ein Komma ist freigestellt; es zählt in keiner Richtung als Fehler.' : `${freiCount} Kommas sind freigestellt; sie zählen in keiner Richtung als Fehler.`);
-    if (verbEval && !verbEval.richtig) hinweise.push('Die gebeugten Verben waren nicht vollständig richtig markiert.');
+    if (verbEval && !verbEval.richtig)
+      hinweise.push(
+        ev.richtig
+          ? 'Die gebeugten Verben waren nicht vollständig richtig markiert. Das zählt nicht als Fehler, gewertet wird das Komma; die Verben in der Lösung zeigen, wo die Probe ansetzt.'
+          : 'Die gebeugten Verben waren nicht vollständig richtig markiert.',
+      );
     onResult({
       richtig,
-      antwort: verbEval && !verbEval.richtig ? `${antwort} (markiert: ${p.tokens.filter((_, i) => marked[i]).map((t) => t.text).join(', ') || 'kein Verb'})` : antwort,
+      antwort: verbEval && !verbEval.richtig && !ev.richtig ? `${antwort} (markiert: ${p.tokens.filter((_, i) => marked[i]).map((t) => t.text).join(', ') || 'kein Verb'})` : antwort,
       loesung,
       hinweise,
       detail: (

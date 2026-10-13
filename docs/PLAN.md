@@ -56,3 +56,4 @@ Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 51 Lektionen, 1083 Aufga
 14. Rückstufung bei Fehlern: Ein Fehler stuft nur eine gemeisterte Kategorie zurück (auf Stufe 3, Prüfung am nächsten Tag). In Stufe 1 bis 3 entscheidet allein die nächste Prüfung.
 15. Kontrollaufgabe: höchstens zwei in Folge, damit ein Training nicht endlos wächst; sie stammt aus derselben Kategorie und möglichst zur selben Regel.
 16. Transfer-Absätze gehören zu keiner Kategorie und ändern keine Stufe; Fehler darin zählen aber für Gewichtung, Wiederholungstäter und Checkliste und stufen eine gemeisterte Kategorie zurück.
+17. Probe-Aufgaben (erst gebeugte Verben markieren, dann Kommas setzen) werden nach dem Komma gewertet. Die Verbmarkierung ist das Werkzeug; ein Fehler dort wird in Schritt 1 und in der Rückmeldung gezeigt, macht die Aufgabe aber nicht falsch.
