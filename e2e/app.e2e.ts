@@ -433,6 +433,8 @@ describe('Sprachrichtigkeit im Browser', () => {
       ['4.1', 'frei'],
       ['7.5', 'gefuehrt'],
       ['9.4', 'frei'],
+      ['9.5', 'frei'],
+      ['9.6', 'frei'],
       ['3.7', 'gefuehrt'],
       ['3.8', 'gefuehrt'],
       ['10.1', 'gefuehrt'],

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { addDays } from '../src/lib/dates';
 import { afterAttempt, afterTest, emptyLessonState, kurstestBestanden, meetsGemeistert, testBestanden, units } from '../src/lib/mastery';
 import { INTERVALLE, nextState, scheduleNow } from '../src/lib/srs';
-import { entryStatus, typeEvents } from '../src/lib/errorbook';
+import { entryStatus, suggestType, typeEvents } from '../src/lib/errorbook';
 import type { Attempt, ErrorEntry, Kontext, LessonState } from '../src/lib/types';
 
 const DAY0 = '2026-10-01';
@@ -164,5 +164,15 @@ describe('Fehlerbuch: Status', () => {
 
   it('ohne Übung bleibt der Eintrag offen', () => {
     expect(entryStatus(entry, typeEvents([], [entry])).status).toBe('offen');
+  });
+});
+
+describe('Fehlerbuch: Typvorschlag', () => {
+  it('erkennt Umgangssprache und Partizip-Fehler', () => {
+    expect(suggestType('Erstmal beschreibt die Autorin die Lage.', 'Zunächst beschreibt die Autorin die Lage.')).toBe('w-umgangssprache');
+    expect(suggestType('Die Figur kriegt einen Brief.', 'Die Figur bekommt einen Brief.')).toBe('w-umgangssprache');
+    expect(suggestType('Die Kosten stiegen um 5 %.', 'Die Kosten stiegen um fünf Prozent.')).toBe('w-umgangssprache');
+    expect(suggestType('Der Vorschlag wurde gediskutiert.', 'Der Vorschlag wurde diskutiert.')).toBe('w-partizip');
+    expect(suggestType('Er behauptet das die Lage ernst ist.', 'Er behauptet, dass die Lage ernst ist.')).not.toBe('w-umgangssprache');
   });
 });

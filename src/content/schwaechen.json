@@ -447,7 +447,8 @@
         }
       ],
       "kurse": [
-        "2.8"
+        "2.8",
+        "9.5"
       ],
       "checkfrage": "Jedes Adjektiv nach der, die, das mit dem Wörterbuch-Test geprüft?",
       "beispiele": [
@@ -621,6 +622,7 @@
         }
       ],
       "kurse": [
+        "9.6",
         "8.5"
       ],
       "checkfrage": "Text auf die Sperrliste geprüft: erstmal, schlussendlich, rein, via, das Ganze, BRD, bspw., Ziffern, Zeichen?",

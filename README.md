@@ -2,7 +2,7 @@
 
 Lern-App für Rechtschreibung, Zeichensetzung und Grammatik auf Abiturniveau (Baden-Württemberg, Abitur 2027). Für jeden Fehlertyp gibt es genau eine Probe; die App lehrt nur diese Probe und übt sie, bis sie sitzt.
 
-- **Zehn Kurse, 51 Lektionen, 1083 geprüfte Aufgaben**, darunter 12 Korrekturtexte und 12 Sachtextabsätze zur Textwiedergabe
+- **Zehn Kurse, 53 Lektionen, 1128 geprüfte Aufgaben**, darunter 12 Korrekturtexte und 12 Sachtextabsätze zur Textwiedergabe
 - **Tägliche Wiederholung** in wachsenden Abständen (1, 3, 7, 16, 35 Tage), gemischt aus allen Kursen
 - **Fehlerbuch** mit Fehlern aus der App und aus korrigierten Klausuren, Fehlerprofil, Verlauf, Export als CSV und PDF
 - **Meine Schwächen**: eigener Bereich in einem eigenen Fenster für die persönlichen Fehler – zwölf Kategorien mit je einer Methode und 25 bis 37 Aufgaben, dazu Transfer-Absätze. Jede Antwort wird mit einer Regel begründet; gemeistert ist eine Kategorie nach drei bestandenen Prüfungen (90 Prozent) nach 1, 3 und 7 Tagen

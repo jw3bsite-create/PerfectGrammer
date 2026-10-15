@@ -60,6 +60,8 @@ export const FEHLERTYPEN: Fehlertyp[] = [
   { id: 'w-relativ', bereich: 'wortsatz', label: 'Relativpronomen', lektion: '9.3', durchgang: 2, hinweis: 'das, was, dessen oder deren falsch gewählt.' },
   { id: 'w-tempus', bereich: 'wortsatz', label: 'Tempus', lektion: '9.4', durchgang: 2, hinweis: 'Falsche Zeitform oder Zeitenfolge.' },
   { id: 'w-satzbau', bereich: 'wortsatz', label: 'Satzbau', lektion: '9.4', durchgang: 2, hinweis: 'Wortstellung oder Form im Satz falsch.' },
+  { id: 'w-partizip', bereich: 'wortsatz', label: 'Partizip', lektion: '9.5', durchgang: 2, hinweis: 'Partizip I oder II falsch gebildet, gewählt oder geschrieben.' },
+  { id: 'w-umgangssprache', bereich: 'wortsatz', label: 'Umgangssprache', lektion: '9.6', durchgang: 3, hinweis: 'Umgangssprachliches Wort, Zeichen oder Abkürzung im Fließtext.' },
 ];
 
 const BY_ID = new Map(FEHLERTYPEN.map((t) => [t.id, t]));

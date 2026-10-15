@@ -208,6 +208,9 @@ function isPunct(t: string) {
 }
 
 /** Schlägt anhand der Abweichung zwischen falscher und richtiger Fassung einen Fehlertyp vor. */
+/** Wörter und Zeichen, die im Aufsatz als umgangssprachlich gelten (Lektion 9.6). */
+const UMGANGSSPRACHE = new Set(['erstmal', 'schlussendlich', 'kriegt', 'kriegen', 'kriegte', 'gekriegt', 'guckt', 'gucken', 'guckte', 'checkt', 'checken', 'gecheckt', 'krass', 'total', 'halt', 'irgendwie', 'rein', 'raus', 'via', 'bspw.', 'brd', 'tut', 'tun', 'tat', '%', '€', 'okay', 'ok']);
+
 export function suggestType(original: string, korrektur: string): string | undefined {
   const a = toks(original);
   const b = toks(korrektur);
@@ -257,6 +260,7 @@ export function suggestType(original: string, korrektur: string): string | undef
   for (const [x, y] of PAARE) {
     if ((remText === x && addText === y) || (remText === y && addText === x)) return 'w-verwechslung';
   }
+  if (removed.some((x) => UMGANGSSPRACHE.has(x.t.toLowerCase()))) return 'w-umgangssprache';
   if ((remText === 'das' && addText === 'dass') || (remText === 'dass' && addText === 'das')) return 'r-dasdass';
   if ((remText === 'das' && addText === 'was') || (remText === 'was' && addText === 'das') || /^(dessen|deren|denen)$/.test(addText)) return 'w-relativ';
   if (remText && remText.toLowerCase() === addText.toLowerCase()) return 'r-gross';
@@ -272,6 +276,7 @@ export function suggestType(original: string, korrektur: string): string | undef
     const y = two[0];
     if (ARTIKEL.has(x.toLowerCase()) && ARTIKEL.has(y.toLowerCase())) return 'f-praeposition';
     if (/^\p{Lu}/u.test(x) && (y === `${x}en` || y === `${x}n` || x === `${y}en` || x === `${y}n`)) return 'f-ndeklination';
+    if (/^ge/.test(x) && x.slice(2) === y && /(t|en)$/.test(y)) return 'w-partizip';
     if (x === 'ist' && y === 'sei') return 'kj-indikativ';
     if (/^(würde|würden|würdest|würdet)$/.test(y)) return 'kj-ausweich';
     if (x.length > 3 && y.length > 3 && x.slice(0, -2) === y.slice(0, -2) && /(e|en|er|es|em)$/.test(x) && /(e|en|er|es|em)$/.test(y) && /^\p{Ll}/u.test(x)) {
