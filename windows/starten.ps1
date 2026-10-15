@@ -11,6 +11,8 @@ $Port = 5173
 $Base = if ($env:SPRACHRICHTIGKEIT_HOME) { $env:SPRACHRICHTIGKEIT_HOME } else { Join-Path ([Environment]::GetFolderPath('UserProfile')) 'Sprachrichtigkeit' }
 $App = Join-Path $Base 'app'
 $VersionFile = Join-Path $Base 'version.txt'
+# Zeitstempel: Wurde die App für ein Update beendet, schließt sich ihr altes Fenster ohne Fehlermeldung.
+$RestartFile = Join-Path $Base 'neustart.txt'
 $Npm = if ($env:OS -eq 'Windows_NT') { 'npm.cmd' } else { 'npm' }
 
 try { $Host.UI.RawUI.WindowTitle = 'Sprachrichtigkeit' } catch { }
@@ -36,23 +38,49 @@ function Test-PortInUse {
   return $false
 }
 
+# Beendet die laufende App: den Node-Prozess am Port und darüber npm und das alte Fenster,
+# damit nichts mehr den App-Ordner sperrt.
+function Stop-RunningApp {
+  $ids = @()
+  try { $ids = @(Get-NetTCPConnection -LocalPort $Port -State Listen -ErrorAction Stop | Select-Object -ExpandProperty OwningProcess -Unique) } catch { }
+  if (-not $ids.Count) {
+    try {
+      foreach ($line in (netstat -ano | Select-String -Pattern ":$Port\s+\S+\s+LISTENING")) {
+        $ids += [int](($line.ToString().Trim() -split '\s+')[-1])
+      }
+    } catch { }
+  }
+  foreach ($start in ($ids | Select-Object -Unique)) {
+    $proc = Get-Process -Id $start -ErrorAction SilentlyContinue
+    if (-not $proc -or $proc.ProcessName -ne 'node') { continue }
+    # Kette nach oben: node ← cmd ← node (npm) ← cmd (npm.cmd) ← powershell (altes Fenster)
+    $kette = @()
+    $id = [int]$start
+    for ($n = 0; $n -lt 8 -and $id -and $id -ne $PID; $n++) {
+      $w = Get-CimInstance Win32_Process -Filter "ProcessId=$id" -ErrorAction SilentlyContinue
+      if (-not $w) { break }
+      $name = [IO.Path]::GetFileNameWithoutExtension([string]$w.Name).ToLower()
+      if (@('node', 'cmd', 'powershell', 'pwsh') -notcontains $name) { break }
+      $kette += $id
+      if ($name -eq 'powershell' -or $name -eq 'pwsh') { break }
+      $id = [int]$w.ParentProcessId
+    }
+    if (-not $kette.Count) { $kette = @([int]$start) }
+    foreach ($k in $kette) { Stop-Process -Id $k -Force -ErrorAction SilentlyContinue }
+  }
+}
+
+# Verschiebt einen Ordner; ist er kurz gesperrt (eben beendete App), mehrmals neu versuchen.
+function Move-WithRetry([string]$From, [string]$To) {
+  for ($n = 1; ; $n++) {
+    try { Move-Item -Path $From -Destination $To -ErrorAction Stop; return }
+    catch { if ($n -ge 10) { throw }; Start-Sleep -Seconds 1 }
+  }
+}
+
 Write-Host ''
 Write-Host '  Sprachrichtigkeit' -ForegroundColor Cyan
 Write-Host ''
-
-# Läuft die App schon (zweites Fenster), nur den Browser öffnen.
-if (Test-PortInUse) {
-  Write-Host 'Die App läuft bereits. Der Browser wird geöffnet.'
-  try { Start-Process "http://localhost:$Port/" } catch { Write-Host "Bitte im Browser http://localhost:$Port öffnen." }
-  Start-Sleep -Seconds 2
-  exit 0
-}
-
-if (-not (Get-Command $Npm -ErrorAction SilentlyContinue)) {
-  Stop-WithMessage 'Node.js wurde nicht gefunden. Bitte von https://nodejs.org die Version „LTS“ installieren und danach erneut starten.'
-}
-
-New-Item -ItemType Directory -Force -Path $Base | Out-Null
 
 # Neueste Version auf GitHub abfragen
 $latest = $null
@@ -66,6 +94,32 @@ try {
 
 $current = ''
 if (Test-Path $VersionFile) { $current = (Get-Content $VersionFile -Raw).Trim() }
+
+# Läuft die App schon (zweites Fenster): ohne Update nur den Browser öffnen.
+if (Test-PortInUse) {
+  if (-not $latest -or $latest -eq $current) {
+    Write-Host 'Die App läuft bereits und ist auf dem neuesten Stand. Der Browser wird geöffnet.'
+    try { Start-Process "http://localhost:$Port/" } catch { Write-Host "Bitte im Browser http://localhost:$Port öffnen." }
+    Start-Sleep -Seconds 2
+    exit 0
+  }
+  # Neue Version, aber die alte läuft noch: alte beenden, dann wie gewohnt aktualisieren und neu starten.
+  Write-Host 'Neue Version gefunden. Die laufende App wird dafür beendet …' -ForegroundColor Green
+  Set-Content -Path $RestartFile -Value ([DateTime]::UtcNow.ToString('o'))
+  Stop-RunningApp
+  for ($i = 0; $i -lt 20 -and (Test-PortInUse); $i++) { Start-Sleep -Milliseconds 500 }
+  if (Test-PortInUse) {
+    Stop-WithMessage 'Die laufende App ließ sich nicht beenden. Bitte das andere schwarze Fenster „Sprachrichtigkeit“ schließen und die Verknüpfung erneut starten.'
+  }
+  Start-Sleep -Seconds 1
+}
+
+if (-not (Get-Command $Npm -ErrorAction SilentlyContinue)) {
+  Stop-WithMessage 'Node.js wurde nicht gefunden. Bitte von https://nodejs.org die Version „LTS“ installieren und danach erneut starten.'
+}
+
+New-Item -ItemType Directory -Force -Path $Base | Out-Null
+
 $installed = Test-Path (Join-Path $App 'package.json')
 
 if ($latest -and ($latest -ne $current -or -not $installed)) {
@@ -84,7 +138,7 @@ if ($latest -and ($latest -ne $current -or -not $installed)) {
     # Alte Version erst beiseitelegen: Ist sie gesperrt, scheitert schon dieser Schritt und nichts ist verändert.
     $alt = "$App.alt"
     if (Test-Path $alt) { Remove-Item -Path $alt -Recurse -Force }
-    if (Test-Path $App) { Move-Item -Path $App -Destination $alt }
+    if (Test-Path $App) { Move-WithRetry $App $alt }
     try {
       # Installierte Pakete mitnehmen, damit „npm install“ schnell bleibt.
       if (Test-Path (Join-Path $alt 'node_modules')) { Move-Item -Path (Join-Path $alt 'node_modules') -Destination (Join-Path $src.FullName 'node_modules') }
@@ -146,4 +200,11 @@ Write-Host 'Dieses Fenster offen lassen, solange du lernst. Zum Beenden einfach 
 Write-Host ''
 Set-Location $App
 & $Npm run dev -- --open --port $Port --strictPort
-if ($LASTEXITCODE -ne 0) { Stop-WithMessage 'Die App wurde mit einem Fehler beendet. Die Meldung steht oben.' }
+if ($LASTEXITCODE -ne 0) {
+  $fuerUpdate = $false
+  if (Test-Path $RestartFile) {
+    try { $fuerUpdate = ([DateTime]::UtcNow - [DateTime]::Parse((Get-Content $RestartFile -Raw).Trim()).ToUniversalTime()).TotalMinutes -lt 3 } catch { }
+  }
+  if ($fuerUpdate) { exit 0 }
+  Stop-WithMessage 'Die App wurde mit einem Fehler beendet. Die Meldung steht oben.'
+}
