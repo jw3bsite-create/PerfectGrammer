@@ -25,6 +25,12 @@ npm run preview    # gebaute App lokal ansehen
 2. Den Branch als ZIP herunterladen, entpacken und im Ordner mit `package.json` die Datei **`Windows einrichten.bat`** doppelklicken.
 3. Auf dem Desktop liegt danach die Verknüpfung **„Sprachrichtigkeit“**. Sie prüft bei jedem Start, ob es auf GitHub eine neue Version gibt, lädt sie bei Bedarf und öffnet die App unter `http://localhost:5173`.
 
+Verknüpfung neu anlegen (ohne ZIP): PowerShell öffnen und diese Zeile einfügen. Sie erzwingt beim nächsten Start auch die neueste Version.
+
+```powershell
+irm https://raw.githubusercontent.com/jw3bsite-create/PerfectGrammer/claude/sprachrichtigkeit-app-xzd9cl/windows/einrichten-online.ps1 | iex
+```
+
 Läuft die App beim Klick schon und gibt es eine neue Version, beendet die Verknüpfung die laufende App, aktualisiert sie und startet sie neu. Die App liegt danach in `%USERPROFILE%\Sprachrichtigkeit`; der entpackte Download-Ordner kann gelöscht werden. Die Lerndaten liegen im Browser und bleiben bei Updates erhalten. Ohne Internet startet die zuletzt geladene Version.
 
 ## Prüfen

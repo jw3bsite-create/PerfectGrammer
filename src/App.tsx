@@ -3,6 +3,7 @@ import { Icon } from './components/Icon';
 import { ToastHost } from './components/ui';
 import { useRoute, type Route } from './lib/router';
 import { reloadFromDb, useApp, useReady } from './lib/store';
+import { APP_VERSION_TEXT } from './lib/version';
 import { SchwaechenBereich } from './schwaechen/Bereich';
 import { HAUPTFENSTER, SCHWAECHENFENSTER } from './schwaechen/Teile';
 import type { Settings } from './lib/types';
@@ -78,7 +79,11 @@ function Shell({ route, children }: { route: Route; children: ReactNode }) {
           </a>
         </nav>
         <div className="nav-spacer" />
-        <div className="nav-foot">Alle Daten bleiben auf diesem Gerät.</div>
+        <div className="nav-foot">
+          Alle Daten bleiben auf diesem Gerät.
+          <br />
+          <span data-version>{APP_VERSION_TEXT}</span>
+        </div>
       </aside>
       <main className="main" id="inhalt">
         {children}

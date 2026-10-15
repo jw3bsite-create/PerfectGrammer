@@ -1,9 +1,26 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { execSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+
+// Kurzkennung der Version: aus Git, sonst aus version.txt des Windows-Starts (liegt neben dem App-Ordner).
+function commit(): string {
+  try {
+    return execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
+  } catch {
+    /* kein Git */
+  }
+  try {
+    return readFileSync(new URL('../version.txt', import.meta.url), 'utf8').trim().slice(0, 7);
+  } catch {
+    return '';
+  }
+}
 
 export default defineConfig({
   base: './',
+  define: { __APP_COMMIT__: JSON.stringify(commit()) },
   plugins: [
     react(),
     VitePWA({

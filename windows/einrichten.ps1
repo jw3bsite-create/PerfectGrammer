@@ -9,6 +9,10 @@ New-Item -ItemType Directory -Force -Path $Base | Out-Null
 Copy-Item -Path (Join-Path $PSScriptRoot 'starten.ps1') -Destination $Base -Force
 Copy-Item -Path (Join-Path $PSScriptRoot 'sprachrichtigkeit.ico') -Destination $Base -Force
 
+# Gespeicherte Versionsnummer löschen: Der Start lädt dann sicher die neueste Version.
+$VersionFile = Join-Path $Base 'version.txt'
+if (Test-Path $VersionFile) { Remove-Item -Path $VersionFile -Force }
+
 $desktop = [Environment]::GetFolderPath('Desktop')
 $shell = New-Object -ComObject WScript.Shell
 $link = $shell.CreateShortcut((Join-Path $desktop 'Sprachrichtigkeit.lnk'))

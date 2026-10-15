@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { APP_VERSION_TEXT } from '../lib/version';
 import { Icon } from '../components/Icon';
 import { Confirm, toast } from '../components/ui';
 import { BANK, allTasks } from '../lib/content';
@@ -158,7 +159,9 @@ export function Einstellungen() {
           </li>
           <li>Läuft vollständig auf dem Gerät: kein Konto, kein Server, kein Tracking. Offline nutzbar.</li>
           <li>Installation auf dem iPad: in Safari „Teilen“ → „Zum Home-Bildschirm“.</li>
-          <li>Datenversion {DATA_VERSION}.</li>
+          <li>
+            Datenversion {DATA_VERSION}. {APP_VERSION_TEXT}.
+          </li>
         </ul>
       </div>
 
