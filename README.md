@@ -33,6 +33,16 @@ irm https://raw.githubusercontent.com/jw3bsite-create/PerfectGrammer/claude/spra
 
 Läuft die App beim Klick schon und gibt es eine neue Version, beendet die Verknüpfung die laufende App, aktualisiert sie und startet sie neu. Die App liegt danach in `%USERPROFILE%\Sprachrichtigkeit`; der entpackte Download-Ordner kann gelöscht werden. Die Lerndaten liegen im Browser und bleiben bei Updates erhalten. Ohne Internet startet die zuletzt geladene Version.
 
+## Zusatz: Verknüpfung für die Wegwerf-ID
+
+Die [Wegwerf-ID](https://claude.ai/artifact/CgwgZteHFJGnZvkZJy8Uof) erzeugt ausgedachte Angaben für Anmeldeformulare. Sie gehört nicht zur Lern-App. Diese Zeile in PowerShell legt auf dem Desktop die Verknüpfung **„Wegwerf-ID“** an:
+
+```powershell
+irm https://raw.githubusercontent.com/jw3bsite-create/PerfectGrammer/claude/elegant-hypatia-dgbvon/windows/wegwerf-id-verknuepfung.ps1 | iex
+```
+
+Ist Chrome oder Edge der Standardbrowser, öffnet die Verknüpfung das Tool als eigenes Fenster ohne Browserleisten, sonst im Standardbrowser. Das Symbol liegt in `%USERPROFILE%\Wegwerf-ID`.
+
 ## Prüfen
 
 ```bash
