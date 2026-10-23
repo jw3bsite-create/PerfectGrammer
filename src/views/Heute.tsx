@@ -221,6 +221,15 @@ export function Heute() {
               </div>
             </div>
           </a>
+          <a className="card" href="#/zusammenfassen" style={{ color: 'inherit' }} data-link="zusammenfassen">
+            <div className="row">
+              <Icon name="text" />
+              <div className="grow">
+                <div className="title-line">Zusammenfassen</div>
+                <div className="sub-line">Strukturierte Textwiedergabe an vielen kurzen Texten</div>
+              </div>
+            </div>
+          </a>
           <a className="card" href="#/schwaechen" target="sr-schwaechen" style={{ color: 'inherit' }} data-link="schwaechen">
             <div className="row">
               <Icon name="target" />

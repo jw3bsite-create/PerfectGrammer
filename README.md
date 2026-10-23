@@ -5,6 +5,7 @@ Lern-App für Rechtschreibung, Zeichensetzung und Grammatik auf Abiturniveau (Ba
 - **Zehn Kurse, 53 Lektionen, 1128 geprüfte Aufgaben**, darunter 12 Korrekturtexte und 12 Sachtextabsätze zur Textwiedergabe
 - **Tägliche Wiederholung** in wachsenden Abständen (1, 3, 7, 16, 35 Tage), gemischt aus allen Kursen
 - **Fehlerbuch** mit Fehlern aus der App und aus korrigierten Klausuren, Fehlerprofil, Verlauf, Export als CSV und PDF
+- **Zusammenfassen**: strukturierte Textwiedergabe von Sachtexten an über 60 kurzen Übungstexten (Literaturepochen, Philosophie, Geschichte, Sprache, Politik, Technik, Schule). Teilübungen zu Einleitung, Hauptteil und Schluss im Wechsel, ganze Zusammenfassungen mit Schreibplan, Timer, Checkliste, Musterlösung und einer Überarbeitung; eigene Texte aus dem Unterricht; optional Rückmeldung einer lokalen KI
 - **Meine Schwächen**: eigener Bereich in einem eigenen Fenster für die persönlichen Fehler – zwölf Kategorien mit je einer Methode und 25 bis 37 Aufgaben, dazu Transfer-Absätze. Jede Antwort wird mit einer Regel begründet; gemeistert ist eine Kategorie nach drei bestandenen Prüfungen (90 Prozent) nach 1, 3 und 7 Tagen
 - **Vollständig auf dem Gerät:** kein Konto, kein Server, kein Tracking, offline nutzbar, als App installierbar
 
@@ -58,6 +59,19 @@ npm run e2e            # Browser-Prüfung mit Chromium (baut vorher die App)
 
 Alles ist ebenso per Antippen bedienbar. In „Meine Schwächen“ wählen die Ziffern nach jeder Antwort die Regel, die sie begründet.
 
+## Zusammenfassen
+
+Der Bereich `#/zusammenfassen` trainiert die strukturierte Textwiedergabe nach den Erwartungen der Lehrkraft: Einleitung mit Verfasser, Titel, Textsorte, Erscheinungsort und -datum, Thema und Kernaussage in höchstens zwei Sätzen; im Hauptteil etwa ein Satz pro Sinnabschnitt mit Funktionsverb, Präsens und Konjunktiv für Behauptungen (Singular Konjunktiv I, Plural würden + Infinitiv außer seien/hätten, nach „dass“ auch Indikativ); Schluss mit der Gesamtaussage; insgesamt etwa zehn Sätze, ohne Zeilenangaben.
+
+- **Teilübungen** (je ein bis drei Minuten, jede zu einem anderen Text): Textsorte bestimmen, Einleitung prüfen, Einleitung schreiben, Struktur erkennen (Sinnabschnitte und ihre Funktion), These finden, Kern oder Beispiel, Funktionsverb, Fingertest (dazugedichtetes Wort markieren), Bedeutungsgleich, Konjunktiv im Rahmen (mit Begründung), Verdichten (höchstens 30 Wörter), Gesamtaussage wählen, Schluss schreiben. Übungsarten zu den häufigsten Fehlerkategorien kommen öfter.
+- **Ganzer Text:** Schreibplan (Funktion, Funktionsverb, höchstens fünf Schlüsselwörter je Abschnitt, These am Rand), Text mit Timer und Wortzähler, Selbstprüfung mit zwölf Ja/Nein-Fragen und automatischen Hinweisen (Umgangssprache, Zeilenangaben, mögliche Präteritumformen, Abschwächung, Abdrift-Fallen, Länge), Musterlösung Abschnitt für Abschnitt neben der eigenen Fassung, eine Überarbeitung, dann der nächste Text.
+- **Fehlerkategorien:** Einleitung unvollständig, Struktur nicht erkennbar, These fehlt, Dazugedichtet, Beispiel statt Kern, Rahmen fehlt, Konjunktiv Singular/Plural, Modusmischung, Präteritum, Abschwächung, Umgangssprache, zu lang. Jedes „Nein“ der Checkliste und jeder Fehler in einer Teilübung zählt; die Übersicht zeigt eine Ampel je Kategorie und den Verlauf.
+- **Stufen:** zuerst kurze, klar gegliederte Texte; nach vier ganzen Zusammenfassungen (oder sicheren Teilübungen) mittellange, nach zehn längere mit versteckter These. Die Stufe lässt sich auch selbst wählen.
+- **Eigene Texte:** Texte aus dem Unterricht einfügen, auf Wunsch mit der Musterlösung der Lehrkraft.
+- **KI (optional):** Rückmeldung eines lokalen Modells über [Ollama](https://ollama.com) (`ollama pull qwen2.5:7b`, Adresse `http://localhost:11434`). Die KI nennt Stelle, Kategorie und Fehlerart, aber keine Lösung; ohne KI bleibt es bei Checkliste und Musterlösung. Es werden keine Daten ins Internet geschickt.
+
+Inhalte: `src/content/zusammenfassen.json`. Jeder Text hat Absätze (als Einzelsätze), Sinnabschnitte mit Funktion, Funktionsverb, Falschverben samt Begründung und Musterlösung, den These-Satz, Einleitung und Schluss, Schlüsselbegriffe, Abdrift-Fallen sowie die Daten für Fingertest, Kern/Beispiel, Bedeutungsgleich, Konjunktiv und Schluss-Auswahl. Alle Texte sind selbst geschrieben, mit erfundenen Verfassern und Medien; die Sachinformationen sind echt. `tests/zusammenfassen.test.ts` prüft jeden Text: Längen je Stufe, lückenlose Abschnitte, These im These-Abschnitt, Musterlösung ohne Präteritum, Umgangssprache und Fallen, Einleitung besteht die automatische Prüfung.
+
 ## Meine Schwächen
 
 Der Bereich öffnet aus der Seitenleiste (oder unter „Heute → Schnellstart“) in einem eigenen Fenster, `#/schwaechen`. Kurse und Üben bleiben im Hauptfenster; Verweise wie „3.4 Zeitstufen“ öffnen die Lektion dort. Beide Fenster teilen den Speicher und gleichen sich beim Wechsel ab.
@@ -75,7 +89,7 @@ Inhalte: `src/content/schwaechen.json` (Kategorien mit Methode, Regeln, Fehlrege
 
 ```
 src/
-  content/        Aufgabenbank: kurs-01.json … kurs-10.json, varianten.json, schwaechen.json
+  content/        Aufgabenbank: kurs-01.json … kurs-10.json, varianten.json, schwaechen.json, zusammenfassen.json
   lib/            Logik ohne Oberfläche
     evaluate.ts   Auswertung aller Übungstypen
     markup.ts     Notationen der Aufgabentexte
@@ -86,6 +100,7 @@ src/
     store.ts      Zustand, Speichern, Sicherung
     db.ts         IndexedDB, Datenversion und Migration
   schwaechen/     Bereich „Meine Schwächen“: Daten, Stufenlogik, Aktionen, Oberfläche
+  zusammenfassen/ Bereich „Zusammenfassen“: Textbank, Prüfhinweise, Lernlogik, KI-Anbindung, Oberfläche
   exercises/      eine Komponente je Übungstyp
   views/          Seiten: Heute, Kurse, Üben, Fehlerbuch, Statistik, Einstellungen
   styles/app.css  Gestaltung: Farben, Schriften, helles und dunkles Design
@@ -131,10 +146,10 @@ Ein Sprachmodell ist in einer reinen Offline-App nicht verfügbar; deshalb gibt 
 Alle Daten liegen in der IndexedDB des Browsers (Datenbank `sprachrichtigkeit`). Unter „Einstellungen → Sicherung“ wird der vollständige Stand als JSON-Datei gespeichert und wieder eingespielt:
 
 ```json
-{ "app": "sprachrichtigkeit", "datenversion": 2, "exportiert": "…", "daten": { "settings": {}, "attempts": [], "reviews": {}, "errors": [], "lessons": {}, "courses": {}, "customTasks": [], "schwaechen": {} } }
+{ "app": "sprachrichtigkeit", "datenversion": 3, "exportiert": "…", "daten": { "settings": {}, "attempts": [], "reviews": {}, "errors": [], "lessons": {}, "courses": {}, "customTasks": [], "schwaechen": {}, "zusammenfassen": {} } }
 ```
 
-Das Datenmodell ist versioniert (`DATA_VERSION` in `src/lib/db.ts`). Ändert sich das Modell, wird die Version erhöht und in `MIGRATIONS` ein Schritt von der alten zur neuen Fassung ergänzt. Er läuft beim Öffnen der App und beim Einspielen älterer Sicherungen. Version 2 ergänzt den Stand von „Meine Schwächen“ (`meta.schwaechen`); ältere Sicherungen erhalten einen leeren Stand.
+Das Datenmodell ist versioniert (`DATA_VERSION` in `src/lib/db.ts`). Ändert sich das Modell, wird die Version erhöht und in `MIGRATIONS` ein Schritt von der alten zur neuen Fassung ergänzt. Er läuft beim Öffnen der App und beim Einspielen älterer Sicherungen. Version 2 ergänzt den Stand von „Meine Schwächen“ (`meta.schwaechen`), Version 3 den von „Zusammenfassen“ (`meta.zusammenfassen`); ältere Sicherungen erhalten jeweils einen leeren Stand.
 
 ## Annahmen und Zweifelsfälle
 

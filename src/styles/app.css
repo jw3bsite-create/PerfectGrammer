@@ -2937,3 +2937,432 @@ html:not(.kbd-nav) .chunk.cursor {
   color: var(--text-2);
   line-height: 1.45;
 }
+
+/* ---------- Zusammenfassen ---------- */
+
+.ok-ink {
+  color: var(--ok);
+}
+
+.bad-ink {
+  color: var(--bad);
+}
+
+.ampel.offen {
+  color: var(--text-3);
+  background: var(--surface-2);
+}
+
+.ampel-card.a-offen {
+  border-left-color: var(--border-strong);
+}
+
+button.ampel-card {
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+
+.zs-text {
+  font-family: var(--font-read);
+  font-size: calc(var(--read-size) - 3px);
+  line-height: 1.7;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.zs-titel {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.zs-absatz {
+  margin: 0 0 12px;
+}
+
+.zs-absatz:last-child {
+  margin-bottom: 0;
+}
+
+.zs-absatz.klein {
+  font-family: var(--font-read);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-2);
+  margin: 6px 0 12px;
+}
+
+.zs-nr {
+  display: inline-block;
+  min-width: 22px;
+  margin-right: 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--text-3);
+  vertical-align: 2px;
+}
+
+.zs-quelle {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-3);
+  margin: 14px 0 0;
+}
+
+.zs-satz {
+  display: inline;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 1px 2px;
+  margin: 0 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.zs-satz:hover {
+  background: var(--accent-soft);
+}
+
+.zs-satz.st-ok {
+  background: var(--ok-soft);
+  box-shadow: inset 0 -2px 0 var(--ok);
+}
+
+.zs-satz.st-bad {
+  background: var(--bad-soft);
+  text-decoration: line-through;
+  text-decoration-color: var(--bad);
+}
+
+.zs-details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 10px 14px;
+}
+
+.zs-details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.zs-details[open] > summary {
+  margin-bottom: 10px;
+}
+
+.zs-details > .zs-text {
+  border: 0;
+  padding: 0;
+}
+
+.zs-janein {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.zs-frage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.zs-frage-text {
+  font-size: 15px;
+  flex: 1;
+}
+
+.zs-auto {
+  margin-top: 6px;
+  font-size: 13.5px;
+}
+
+.zs-frage .segmented {
+  flex: none;
+}
+
+@media (max-width: 560px) {
+  .zs-frage {
+    flex-direction: column;
+  }
+}
+
+.zs-zaehler {
+  font-size: 13px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.zs-zaehler.bad {
+  color: var(--bad);
+  font-weight: 600;
+}
+
+.zs-grenze {
+  display: block;
+  width: 100%;
+  margin: 4px 0 10px;
+  padding: 6px 10px;
+  border: 1px dashed var(--border-strong);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-3);
+  font: 600 12.5px var(--font-ui);
+  cursor: pointer;
+}
+
+.zs-grenze.an {
+  border-style: solid;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.zs-abschnitt + .zs-abschnitt {
+  margin-top: 12px;
+}
+
+.chip.st-ok {
+  background: var(--ok-soft);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.chip.st-bad {
+  background: var(--bad-soft);
+  border-color: var(--bad);
+  color: var(--bad);
+  text-decoration: line-through;
+}
+
+.zs-lueckensatz {
+  margin: 16px 0 12px;
+  font-weight: 560;
+}
+
+.zs-fingersatz .word {
+  font-size: inherit;
+}
+
+.zs-mark {
+  background: var(--frei-soft);
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.zs-rahmen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.zs-rahmen-text {
+  font-family: var(--font-read);
+  font-size: calc(var(--read-size) - 3px);
+}
+
+.zs-rahmen .input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.zs-auswertung {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zs-zwei {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (min-width: 980px) {
+  .zs-zwei {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.practice-body.zs-breit {
+  max-width: 1180px;
+}
+
+.zs-planabsatz {
+  position: relative;
+  border-left: 3px solid transparent;
+  padding-left: 8px;
+  margin-left: -11px;
+}
+
+.zs-planabsatz.these {
+  border-left-color: var(--accent);
+}
+
+.zs-these-knopf {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: -4px 0 12px;
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-3);
+  font: 600 12px var(--font-ui);
+  cursor: pointer;
+}
+
+.zs-these-knopf svg {
+  width: 14px;
+  height: 14px;
+}
+
+.zs-these-knopf.an {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.zs-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zs-plan > .card + .card {
+  margin-top: 0;
+}
+
+.zs-planfelder {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.zs-planfelder .field {
+  gap: 4px;
+}
+
+.zs-planmini {
+  margin-top: 14px;
+}
+
+.zs-planmini ol {
+  margin: 6px 0 0;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.zs-leiste {
+  margin-bottom: 8px;
+}
+
+.zs-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.zs-timer svg {
+  width: 16px;
+  height: 16px;
+}
+
+.zs-schreibfeld {
+  min-height: 360px;
+}
+
+.zs-ki {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.zs-fassung p,
+.zs-muster p {
+  font-family: var(--font-read);
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+
+.zs-musterblock + .zs-musterblock {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.zs-musterblock .eyebrow {
+  margin-bottom: 4px;
+}
+
+.zs-schritte {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.zs-schritte li {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+.zs-schritte li.erledigt {
+  color: var(--ok);
+}
+
+.zs-schritte li[aria-current='step'] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.zs-top,
+.zs-schrittliste {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zs-prompt {
+  white-space: pre-wrap;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin: 8px 0 0;
+}
+
+code {
+  font-size: 0.92em;
+  background: var(--surface-2);
+  padding: 1px 5px;
+  border-radius: 4px;
+}

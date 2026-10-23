@@ -4,9 +4,10 @@ import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import type { AppData, Attempt, CourseState, ErrorEntry, LessonState, ReviewState, Task } from './types';
 import { DEFAULT_SETTINGS } from './types';
 import { leererStand } from '../schwaechen/typen';
+import { leererZStand } from '../zusammenfassen/typen';
 
 /** Version des Datenmodells. Bei Änderungen erhöhen und eine Migration ergänzen. */
-export const DATA_VERSION = 2;
+export const DATA_VERSION = 3;
 
 const DB_NAME = 'sprachrichtigkeit';
 const DB_VERSION = 1;
@@ -60,6 +61,7 @@ export function emptyData(): AppData {
     session: null,
     notices: [],
     schwaechen: leererStand(),
+    zusammenfassen: leererZStand(),
   };
 }
 
@@ -69,6 +71,8 @@ type Migration = (raw: Record<string, unknown>) => Record<string, unknown>;
 const MIGRATIONS: Record<number, Migration> = {
   // 1 → 2: Modul „Meine Schwächen“ kommt hinzu.
   1: (raw) => ({ ...raw, schwaechen: raw.schwaechen ?? leererStand() }),
+  // 2 → 3: Modul „Zusammenfassen“ kommt hinzu.
+  2: (raw) => ({ ...raw, zusammenfassen: raw.zusammenfassen ?? leererZStand() }),
 };
 
 /** Bringt Rohdaten (aus der Datenbank oder einer Sicherung) auf den aktuellen Stand. */
@@ -93,13 +97,17 @@ export function migrate(raw: Record<string, unknown>, from: number): AppData {
     notices: Array.isArray(d.notices) ? d.notices : [],
     placementDone: d.placementDone,
     schwaechen: d.schwaechen && typeof d.schwaechen === 'object' ? { ...leererStand(), ...d.schwaechen } : leererStand(),
+    zusammenfassen:
+      d.zusammenfassen && typeof d.zusammenfassen === 'object'
+        ? { ...leererZStand(), ...d.zusammenfassen, ki: { ...leererZStand().ki, ...(d.zusammenfassen.ki ?? {}) } }
+        : leererZStand(),
   };
 }
 
 export async function loadAll(): Promise<AppData> {
   const d = await db();
   const tx = d.transaction(['meta', 'versuche', 'wiederholung', 'fehlerbuch', 'lektionen', 'kurse', 'eigeneAufgaben']);
-  const [version, settings, session, lastSession, notices, placementDone, schwaechen, attempts, reviews, errors, lessons, courses, custom] = await Promise.all([
+  const [version, settings, session, lastSession, notices, placementDone, schwaechen, zusammenfassen, attempts, reviews, errors, lessons, courses, custom] = await Promise.all([
     tx.objectStore('meta').get('datenversion'),
     tx.objectStore('meta').get('settings'),
     tx.objectStore('meta').get('session'),
@@ -107,6 +115,7 @@ export async function loadAll(): Promise<AppData> {
     tx.objectStore('meta').get('notices'),
     tx.objectStore('meta').get('placementDone'),
     tx.objectStore('meta').get('schwaechen'),
+    tx.objectStore('meta').get('zusammenfassen'),
     tx.objectStore('versuche').getAll(),
     tx.objectStore('wiederholung').getAll(),
     tx.objectStore('fehlerbuch').getAll(),
@@ -124,6 +133,7 @@ export async function loadAll(): Promise<AppData> {
     notices,
     placementDone,
     schwaechen,
+    zusammenfassen,
     attempts,
     reviews: Object.fromEntries(reviews.map((r) => [r.key, r])),
     errors,
@@ -180,6 +190,7 @@ export async function saveAll(data: AppData) {
     meta.put(data.settings, 'settings'),
     meta.put(data.notices, 'notices'),
     meta.put(data.schwaechen, 'schwaechen'),
+    meta.put(data.zusammenfassen, 'zusammenfassen'),
   ];
   if (data.session) ops.push(meta.put(data.session, 'session'));
   if (data.lastSession) ops.push(meta.put(data.lastSession, 'lastSession'));

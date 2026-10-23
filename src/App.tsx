@@ -5,6 +5,9 @@ import { useRoute, type Route } from './lib/router';
 import { reloadFromDb, useApp, useReady } from './lib/store';
 import { APP_VERSION_TEXT } from './lib/version';
 import { SchwaechenBereich } from './schwaechen/Bereich';
+import { ZBereich } from './zusammenfassen/Bereich';
+import { ZUebungsansicht } from './zusammenfassen/Uebung';
+import { ZVolltextSeite } from './zusammenfassen/Volltext';
 import { HAUPTFENSTER, SCHWAECHENFENSTER } from './schwaechen/Teile';
 import type { Settings } from './lib/types';
 import { Heute } from './views/Heute';
@@ -23,10 +26,14 @@ const NAV = [
   { to: '/', key: '', label: 'Heute', icon: 'heute' },
   { to: '/kurse', key: 'kurse', label: 'Kurse', icon: 'kurse' },
   { to: '/ueben', key: 'ueben', label: 'Üben', icon: 'ueben' },
+  { to: '/zusammenfassen', key: 'zusammenfassen', label: 'Zusammenfassen', icon: 'text' },
   { to: '/fehlerbuch', key: 'fehlerbuch', label: 'Fehlerbuch', icon: 'fehlerbuch' },
   { to: '/statistik', key: 'statistik', label: 'Statistik', icon: 'statistik' },
   { to: '/einstellungen', key: 'einstellungen', label: 'Einstellungen', icon: 'einstellungen' },
 ];
+
+/** Auf dem Handy: fünf Plätze in der Leiste; „Zusammenfassen“ erreicht man dort über „Heute“ und „Üben“. */
+const TABBAR = ['', 'kurse', 'ueben', 'fehlerbuch', 'statistik'];
 
 function activeKey(route: Route): string {
   const p = route.parts[0] ?? '';
@@ -89,7 +96,7 @@ function Shell({ route, children }: { route: Route; children: ReactNode }) {
         {children}
       </main>
       <nav className="tabbar" aria-label="Hauptnavigation">
-        {NAV.slice(0, 5).map((n) => (
+        {NAV.filter((n) => TABBAR.includes(n.key)).map((n) => (
           <a key={n.key} className="tab" href={`#${n.to}`} aria-current={active === n.key || (n.key === '' && active === 'einstellungen') ? 'page' : undefined}>
             <Icon name={n.icon} />
             {n.label}
@@ -118,6 +125,8 @@ function Page({ route }: { route: Route }) {
       return b === 'aufgaben' ? <AufgabenListe query={route.query} /> : <Statistik />;
     case 'einstellungen':
       return <Einstellungen />;
+    case 'zusammenfassen':
+      return <ZBereich route={route} />;
     default:
       return <Heute />;
   }
@@ -180,6 +189,8 @@ export function App() {
   }
   if (route.parts[0] === 'sitzung') return <SessionView />;
   if (bereich) return <SchwaechenBereich route={route} />;
+  if (route.parts[0] === 'zusammenfassen' && route.parts[1] === 'uebung') return <ZUebungsansicht />;
+  if (route.parts[0] === 'zusammenfassen' && route.parts[1] === 'schreiben') return <ZVolltextSeite id={route.parts[2] ?? ''} />;
   if (!data.settings.onboardingErledigt) return <Willkommen />;
   if (route.parts[0] === 'fehlerbuch' && route.parts[1] === 'druck') return <FehlerDruck query={route.query} />;
   return (

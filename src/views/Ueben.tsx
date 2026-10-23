@@ -142,6 +142,16 @@ export function Ueben() {
       </div>
 
       <div className="section grid-2">
+        <a className="card" href="#/zusammenfassen" style={{ color: 'inherit' }} data-link="zusammenfassen">
+          <div className="row">
+            <Icon name="text" />
+            <div className="grow">
+              <div className="title-line">Zusammenfassen</div>
+              <div className="sub-line">Strukturierte Textwiedergabe: Einleitung, Hauptteil, Schluss</div>
+            </div>
+            <Icon name="chevronRight" className="chev" />
+          </div>
+        </a>
         <a className="card" href="#/kurse/10" style={{ color: 'inherit' }}>
           <div className="row">
             <Icon name="text" />

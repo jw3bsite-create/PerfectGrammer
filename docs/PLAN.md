@@ -9,7 +9,7 @@ Stand: 10. Oktober 2026
 - **Navigation:** Hash-Routen. Seitenleiste ab 768 px Breite, darunter Tableiste unten. Die Übungsansicht blendet die Navigation aus.
 - **Inhalte:** je Kurs eine JSON-Datei in `src/content/` mit Kurs, Lektionen, Regelkarten und Aufgaben. Neue Dateien und neue Aufgaben werden ohne Codeänderung erkannt.
 
-## Datenmodell (Version 2)
+## Datenmodell (Version 3)
 
 | Objekt | Ort |
 | --- | --- |
@@ -21,6 +21,7 @@ Stand: 10. Oktober 2026
 | Lektionsstand (Beherrschungsgrad, Rückstufung) | IndexedDB `lektionen` |
 | Kursstand (Kurstest, Einstufung) | IndexedDB `kurse` |
 | Einstellungen, laufende Sitzung, Datenversion | IndexedDB `meta` |
+| Zusammenfassen: Teilübungen, Ereignisse je Fehlerkategorie, ganze Zusammenfassungen (Plan, Fassungen, Checklisten), eigene Texte, Stufe, KI-Einstellung | IndexedDB `meta`, Schlüssel `zusammenfassen` |
 | Meine Schwächen: Stufen je Kategorie, Antworten mit Regelwahl, erfasste Fehler, eigene Aufgaben, laufendes Training, Checklisten | IndexedDB `meta`, Schlüssel `schwaechen` |
 
 Die Datenversion steht in `meta`; Migrationen laufen beim Öffnen und beim Import.
@@ -57,3 +58,7 @@ Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 53 Lektionen, 1128 Aufga
 15. Kontrollaufgabe: höchstens zwei in Folge, damit ein Training nicht endlos wächst; sie stammt aus derselben Kategorie und möglichst zur selben Regel.
 16. Transfer-Absätze gehören zu keiner Kategorie und ändern keine Stufe; Fehler darin zählen aber für Gewichtung, Wiederholungstäter und Checkliste und stufen eine gemeisterte Kategorie zurück.
 17. Probe-Aufgaben (erst gebeugte Verben markieren, dann Kommas setzen) werden nach dem Komma gewertet. Die Verbmarkierung ist das Werkzeug; ein Fehler dort wird in Schritt 1 und in der Rückmeldung gezeigt, macht die Aufgabe aber nicht falsch.
+18. „Zusammenfassen“: Die Übungstexte sind selbst geschrieben (echte Zeitungsartikel wären urheberrechtlich geschützt), mit erfundenen Verfassern und Medien, aber echten Sachinformationen. Eigene Texte aus dem Unterricht kann man einfügen.
+19. Freie Texte kann die App ohne Sprachmodell nicht inhaltlich bewerten. Sie gibt automatische Hinweise (Wortzahl, Umgangssprache, Zeilenangaben, mögliche Präteritumformen, Abschwächung, Abdrift-Fallen, fehlende Angaben der Einleitung); die Wertung kommt aus der Selbstprüfung. Eine lokale KI (Ollama) ist optional und standardmäßig aus.
+20. Konjunktiv im Plural folgt der Regel der Lehrkraft: würden + Infinitiv, außer seien und hätten. Kurs 3 lässt bei starken Verben auch den Konjunktiv II gelten (kämen); im Modul „Zusammenfassen“ verlangen die Aufgaben die würden-Form.
+21. Ein Text gilt als bearbeitet, wenn die ganze Zusammenfassung abgeschlossen ist (nach dem Vergleich oder nach der einen Überarbeitung).

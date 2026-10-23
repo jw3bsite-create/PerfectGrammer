@@ -1,6 +1,7 @@
 // Zentrale Typen für Inhalte und gespeicherte Daten.
 
 import type { SchwState } from '../schwaechen/typen';
+import type { ZState } from '../zusammenfassen/typen';
 
 export type TaskType =
   | 'probe'
@@ -327,6 +328,8 @@ export interface AppData {
   placementDone?: number;
   /** Modul „Meine Schwächen“ (seit Datenversion 2). */
   schwaechen: SchwState;
+  /** Modul „Zusammenfassen“ (seit Datenversion 3). */
+  zusammenfassen: ZState;
 }
 
 export const DEFAULT_SETTINGS: Settings = {

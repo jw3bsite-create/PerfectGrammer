@@ -13,6 +13,8 @@ import { singleErrorType } from '../src/lib/sessions';
 import type { Task } from '../src/lib/types';
 import { aufgabe as swAufgabe, KATEGORIEN, regelOptionen, transferKats } from '../src/schwaechen/daten';
 import type { SAufgabe } from '../src/schwaechen/typen';
+import { ARTEN as Z_ARTEN, REGELN as Z_REGELN, text as zText, TEXTSORTEN as Z_SORTEN, musterGesamt } from '../src/zusammenfassen/daten';
+import { DEFEKTE, defektOptionen, schlussOptionen, verbOptionen, verdichtbar } from '../src/zusammenfassen/logik';
 
 const PORT = 4179;
 const BASE = `http://localhost:${PORT}/`;
@@ -341,6 +343,108 @@ async function swSolve(page: Page, falsch: number[] = []): Promise<SAufgabe[]> {
     await swWeiter(page);
   }
   throw new Error('Training endet nicht');
+}
+
+// ---------- Zusammenfassen ----------
+
+async function zJaNein(page: Page, nein: string[] = []) {
+  const fragen = page.locator('[data-frage]');
+  await fragen.first().waitFor();
+  const n = await fragen.count();
+  for (let i = 0; i < n; i++) {
+    const f = fragen.nth(i);
+    const id = (await f.getAttribute('data-frage'))!;
+    await f.getByRole('button', { name: nein.includes(id) ? 'Nein' : 'Ja', exact: true }).click();
+  }
+}
+
+/** Löst die angezeigte Teilübung richtig und prüft die Rückmeldung. */
+async function zLoesen(page: Page): Promise<{ art: string; textId: string }> {
+  const el = page.locator('[data-task]');
+  await el.waitFor();
+  const [art, textId, ns] = (await el.getAttribute('data-task'))!.split(':');
+  const n = Number(ns);
+  const t = zText(textId)!;
+  await page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
+  switch (art) {
+    case 'textsorte':
+      await page.keyboard.press(String(Z_SORTEN.indexOf(t.textsorte) + 1));
+      break;
+    case 'einleitungPruefen': {
+      const d = DEFEKTE[n % DEFEKTE.length];
+      await page.keyboard.press(String(defektOptionen(t, d).indexOf(d) + 1));
+      break;
+    }
+    case 'einleitungSchreiben':
+      await page.getByLabel('Deine Einleitung').fill(t.einleitung);
+      await page.getByRole('button', { name: /^Prüfen/ }).click();
+      await zJaNein(page);
+      await page.getByRole('button', { name: 'Auswerten' }).click();
+      break;
+    case 'struktur': {
+      const starts = new Set(t.abschnitte.map((a) => a.von));
+      for (let i = 1; i < t.absaetze.length; i++) if (starts.has(i)) await page.locator(`[data-grenze="${i}"]`).click();
+      await page.getByRole('button', { name: 'Abschnitte prüfen' }).click();
+      expect(await page.locator('[data-grenzen]').getAttribute('data-grenzen')).toBe('ok');
+      for (let k = 0; k < t.abschnitte.length; k++) await page.locator(`[data-abschnitt="${k}"] [data-funktion="${t.abschnitte[k].funktion}"]`).click();
+      await page.getByRole('button', { name: 'Funktionen prüfen' }).click();
+      break;
+    }
+    case 'these':
+      await page.locator(`[data-satz="${t.these[0]}-${t.these[1]}"]`).click();
+      break;
+    case 'kernBeispiel':
+      await page.keyboard.press(t.kernBeispiel[n].art === 'kern' ? '1' : '2');
+      break;
+    case 'funktionsverb':
+      await page.keyboard.press(String(verbOptionen(t, n).indexOf(t.abschnitte[n].verb) + 1));
+      break;
+    case 'fingertest': {
+      const f = t.fingertest[n];
+      const a = f.satz.indexOf(f.falsch);
+      const toks = [...f.satz.matchAll(/\S+/g)];
+      const i = toks.findIndex((m) => m.index! + m[0].length > a);
+      await page.locator(`[data-wort="${i}"]`).click();
+      await page.getByRole('button', { name: 'Prüfen' }).click();
+      break;
+    }
+    case 'synonym':
+      await page.keyboard.press(t.synonyme[n].gleich ? '1' : '2');
+      break;
+    case 'konjunktiv': {
+      const k = t.konjunktiv[n];
+      await page.getByLabel('Indirekte Rede').fill(k.loesungen[0]);
+      await page.getByLabel('Indirekte Rede').press('Enter');
+      expect(await page.locator('[data-form]').getAttribute('data-form'), `${textId} ${k.loesungen[0]}`).toBe('ok');
+      await page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
+      await page.keyboard.press(String(Z_REGELN.findIndex((r) => r.id === k.regel) + 1));
+      break;
+    }
+    case 'verdichten': {
+      const a = t.abschnitte[verdichtbar(t)[n]];
+      await page.getByLabel('Dein Satz').fill(a.muster);
+      await page.getByRole('button', { name: /^Vergleichen/ }).click();
+      await zJaNein(page);
+      await page.getByRole('button', { name: 'Auswerten' }).click();
+      break;
+    }
+    case 'schlussWaehlen':
+      await page.keyboard.press(String(schlussOptionen(t).findIndex((o) => o.art === 'richtig') + 1));
+      break;
+    case 'schlussSchreiben':
+      await page.getByLabel('Dein Schluss').fill(t.schluss);
+      await page.getByRole('button', { name: /^Vergleichen/ }).click();
+      await zJaNein(page);
+      await page.getByRole('button', { name: 'Auswerten' }).click();
+      break;
+  }
+  await expectFeedback(page, `${art}:${textId}:${n}`, art, true);
+  return { art, textId };
+}
+
+async function zWeiter(page: Page) {
+  await page.getByRole('region', { name: 'Rückmeldung' }).getByRole('button', { name: /Weiter|Abschließen/ }).click();
+  await page.getByRole('region', { name: 'Rückmeldung' }).waitFor({ state: 'detached' });
 }
 
 // ---------- Tests ----------
@@ -913,6 +1017,137 @@ describe('Sprachrichtigkeit im Browser', () => {
       await ctx.close();
     }
   });
+
+  it('Zusammenfassen: alle 13 Teilübungen mit je mindestens drei Texten', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/zusammenfassen`);
+    // Stufe 3: alle Texte im Pool
+    await page.getByRole('group', { name: 'Stufe' }).getByRole('button', { name: 'Stufe 3' }).click();
+    for (const a of Z_ARTEN) {
+      const texte = new Set<string>();
+      for (let runde = 0; runde < 3 && texte.size < 3; runde++) {
+        await page.goto(`${BASE}#/zusammenfassen/${a.teil}`);
+        await page.locator(`[data-art="${a.id}"]`).click();
+        for (let i = 0; i < 6 && texte.size < 3; i++) {
+          const r = await zLoesen(page);
+          expect(r.art).toBe(a.id);
+          texte.add(r.textId);
+          if (i === 0 && runde === 0) await shot(page, `zs-${a.id}`);
+          await zWeiter(page);
+          if (await page.locator('.summary').isVisible()) break;
+        }
+      }
+      expect(texte.size, a.id).toBeGreaterThanOrEqual(3);
+    }
+    // Ergebnisse zählen in den Kategorien
+    await page.goto(`${BASE}#/zusammenfassen`);
+    await page.getByRole('group', { name: 'Stufe' }).waitFor();
+    expect(await page.locator('[data-kat="dazugedichtet"] [data-ampel]').getAttribute('data-ampel')).toBe('gruen');
+    await shot(page, 'zs-uebersicht');
+    await ctx.close();
+  }, 600_000);
+
+  it('Zusammenfassen: ganzer Text mit Plan, Checkliste, KI, Vergleich, Überarbeitung; Stand nach Neustart', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    // Lokale KI als Attrappe
+    await page.route('http://localhost:11434/**', async (route) => {
+      const url = route.request().url();
+      if (url.endsWith('/api/tags')) return route.fulfill({ json: { models: [{ name: 'qwen2.5:7b' }] } });
+      return route.fulfill({ json: { message: { content: JSON.stringify({ fehler: [{ kategorie: 'Präteritum', stelle: 'stellte dar', art: 'Präteritum statt Präsens' }] }) } } });
+    });
+    await onboard(page);
+    await page.goto(`${BASE}#/zusammenfassen/ki`);
+    await page.getByLabel('KI verwenden').check();
+    await page.getByRole('button', { name: 'Speichern' }).click();
+    await page.getByRole('button', { name: 'Verbindung testen' }).click();
+    await page.getByText('Verbunden. Modell').waitFor();
+
+    await page.goto(`${BASE}#/zusammenfassen`);
+    await page.locator('[data-start="volltext"]').click();
+    await page.locator('[data-phase="plan"]').waitFor();
+    const titel = await page.locator('.zs-titel').first().innerText();
+    const t = [...Array(80).keys()].map((i) => zText(`Z${String(i).padStart(2, '0')}`)).find((x) => x && x.titel === titel)!;
+    expect(t).toBeTruthy();
+    await page.locator(`[data-these="${t.these[0]}"]`).click();
+    await page.locator('[data-plan="0"] select').selectOption(t.abschnitte[0].funktion);
+    await page.locator('[data-plan="0"] input').first().fill(t.abschnitte[0].verb);
+    await shot(page, 'zs-volltext-plan');
+    await page.getByRole('button', { name: 'Weiter zum Schreiben' }).click();
+    const feld = page.getByLabel('Deine Zusammenfassung');
+    await feld.fill(musterGesamt(t));
+    await page.getByRole('timer').waitFor();
+    await shot(page, 'zs-volltext-schreiben');
+    await page.getByRole('button', { name: 'Fertig, zur Selbstprüfung' }).click();
+    await page.getByRole('button', { name: 'KI-Rückmeldung holen' }).click();
+    await page.getByText('Präteritum statt Präsens').waitFor();
+    await zJaNein(page, ['laenge']);
+    await shot(page, 'zs-volltext-pruefen');
+    await page.getByRole('button', { name: 'Weiter zur Musterlösung' }).click();
+    await page.locator('[data-muster]').waitFor();
+    await shot(page, 'zs-volltext-vergleich');
+    await page.getByRole('button', { name: 'Einmal überarbeiten' }).click();
+    await page.getByLabel('Deine Zusammenfassung').fill(musterGesamt(t));
+    await page.getByRole('button', { name: 'Fertig, zur Selbstprüfung' }).click();
+    await zJaNein(page);
+    await page.getByRole('button', { name: 'Weiter zur Musterlösung' }).click();
+    await page.getByText('Nach der Überarbeitung verneint').waitFor();
+    expect(await page.getByRole('button', { name: 'Einmal überarbeiten' }).count()).toBe(0);
+    // Nächster Text startet sofort
+    await page.getByRole('button', { name: 'Nächster Text' }).click();
+    await page.locator('[data-phase="plan"]').waitFor();
+    expect(await page.locator('.zs-titel').first().innerText()).not.toBe(titel);
+
+    // Neustart: Stand bleibt
+    await page.reload();
+    await page.goto(`${BASE}#/zusammenfassen`);
+    await page.getByRole('heading', { name: 'Deine Zusammenfassungen' }).waitFor();
+    expect(await page.locator('[data-kat="laenge"]').innerText()).toContain('1 von 2 richtig');
+    expect(await page.locator('[data-kat="these"]').innerText()).toContain('2 von 2 richtig');
+    await page.getByRole('link', { name: 'Weiterschreiben' }).waitFor();
+    await ctx.close();
+  }, 180_000);
+
+  it('Zusammenfassen: eigener Text aus dem Unterricht mit Musterlösung; Handy und dunkles Design', async () => {
+    const ctx = await newContext({ width: 390, height: 844, touch: true, dark: true });
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/zusammenfassen`);
+    await page.getByRole('heading', { name: 'Zusammenfassen', level: 1 }).waitFor();
+    await noOverflow(page, 390, 'Zusammenfassen Übersicht');
+    await shot(page, 'zs-handy-uebersicht');
+    await page.goto(`${BASE}#/zusammenfassen/eigene`);
+    await page.getByLabel('Titel').fill('Erst muss alles zerfallen');
+    await page.getByLabel('Verfasser').fill('Thomas Mayer');
+    await page.getByLabel('Erschienen (Ort, Datum)').fill('Die Weltwoche, 24.09.2025');
+    const absatz = 'Der Staat hat sich als Allversicherer gegen jede Krise unverzichtbar gemacht, und mit jeder Rettung wird er mächtiger. ';
+    await page.getByLabel('Text (Absätze durch eine Leerzeile trennen)').fill(`${absatz.repeat(3)}\n\n${absatz.repeat(2)}\n\n${absatz}`);
+    await page.getByLabel('Musterlösung (freiwillig)').fill('Der Autor vertritt die These, der Sozialstaat sei nicht mehr reformierbar.');
+    await page.getByRole('button', { name: 'Speichern' }).click();
+    await page.locator('[data-eigene="1"]').waitFor();
+    await page.getByRole('button', { name: 'Zusammenfassen', exact: true }).click();
+    await page.locator('[data-phase="plan"]').waitFor();
+    await noOverflow(page, 390, 'Schreibplan');
+    await page.getByRole('button', { name: 'Weiter zum Schreiben' }).click();
+    await page.getByLabel('Deine Zusammenfassung').fill('In seinem Kommentar „Erst muss alles zerfallen“, erschienen am 24.09.2025 in der Weltwoche, setzt sich Thomas Mayer mit dem Sozialstaat auseinander. Er behauptet, der Staat sei als Allversicherer unverzichtbar geworden.');
+    await shot(page, 'zs-handy-schreiben');
+    await page.getByRole('button', { name: 'Fertig, zur Selbstprüfung' }).click();
+    await zJaNein(page);
+    await noOverflow(page, 390, 'Selbstprüfung');
+    await page.getByRole('button', { name: 'Weiter zur Musterlösung' }).click();
+    await page.getByText('Musterlösung (eingefügt)').waitFor();
+    await page.goto(`${BASE}#/zusammenfassen/hauptteil`);
+    await page.locator('[data-art="struktur"]').click();
+    await page.locator('[data-task]').waitFor();
+    await noOverflow(page, 390, 'Struktur erkennen');
+    await shot(page, 'zs-handy-struktur');
+    await ctx.close();
+  }, 180_000);
 
   it('keine Fehler in der Konsole', () => {
     const relevant = pageErrors.filter((e) => !/net::ERR_INTERNET_DISCONNECTED|Failed to load resource/.test(e));

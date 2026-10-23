@@ -52,6 +52,13 @@ export async function updateSchwaechen(fn: (s: AppData['schwaechen']) => AppData
   await DB.putMeta('schwaechen', next);
 }
 
+/** Modul „Zusammenfassen“: Zustand ändern und sofort speichern. */
+export async function updateZusammenfassen(fn: (s: AppData['zusammenfassen']) => AppData['zusammenfassen']) {
+  const next = fn(state.zusammenfassen);
+  set({ ...state, zusammenfassen: next });
+  await DB.putMeta('zusammenfassen', next);
+}
+
 /**
  * Stand neu aus der Datenbank lesen. Hauptfenster und Schwächen-Fenster teilen sich die Datenbank;
  * beim Wechsel ins andere Fenster wird dessen Stand übernommen.

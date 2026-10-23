@@ -90,6 +90,15 @@ Diese Liste nennt jede Stelle, an der das Regelwerk mehrere Fassungen zulässt o
 | *würde* + Infinitiv | siehe Kurs 3 | Nur am Ende der Entscheidungskette, wenn der Konjunktiv II dem Präteritum gleicht. |
 | Selbst geschriebene Sätze | frei formuliert | Geprüft werden nur die Merkmale der Vorgabe; für gleichwertige andere Fassungen gibt es „Meine Fassung ist auch richtig“, sofern die Regel richtig gewählt war. |
 
+## Zusammenfassen
+
+| Fall | Regelstand | Wertung im Bereich |
+| --- | --- | --- |
+| Konjunktiv im Plural bei starken Verben: „sie kämen“ oder „sie würden kommen“ | beides gebräuchlich | Nach der Regel der Lehrkraft gilt im Plural würden + Infinitiv, außer seien und hätten. Kurs 3 bleibt bei der Ausweichkette. |
+| Indikativ nach „dass“ | standardsprachlich möglich | In der Textwiedergabe erlaubt; die Konjunktiv-Übungen fragen deshalb die Form ohne „dass“ ab. |
+| Textsorte Bericht oder Kommentar | oft Mischformen | Die Übungstexte sind eindeutig gebaut; die Begründung nennt die Merkmale. Bei eigenen Texten wählt man die Textsorte selbst. |
+| Mögliche Präteritumformen | „wurde“ kann auch im Zitat oder bei historischen Fakten stehen | Die App markiert nur Stellen zum Prüfen; gezählt wird die eigene Antwort in der Checkliste. |
+
 ## Getippte Antworten
 
 - Ausgeglichen werden nur doppelte, geschützte und Randleerzeichen sowie die Form der Anführungszeichen und Apostrophe.
