@@ -288,14 +288,19 @@ export function FehlerExercise({ task, modus, guided, locked, anweisung, registe
     const final = finalText(ed.chunks);
     const r = evalTask(prep, final);
     const typOk = typMode ? typWahl === richtigerTyp : true;
-    const richtig = r.richtig && typOk;
+    // Gewertet wird die Korrektur; der Fehlertyp hatte in Schritt 1 schon seine eigene Rückmeldung.
+    const richtig = r.richtig;
     const hinweise: string[] = [];
-    if (typMode && !typOk) hinweise.push(`Fehlertyp: richtig wäre „${fehlertypLabel(richtigerTyp)}“, nicht „${fehlertypLabel(typWahl ?? '')}“.`);
+    if (typMode && !typOk)
+      hinweise.push(
+        `Fehlertyp: richtig wäre „${fehlertypLabel(richtigerTyp)}“, nicht „${fehlertypLabel(typWahl ?? '')}“.${r.richtig ? ' Das zählt nicht als Fehler, gewertet wird die Korrektur.' : ''}`,
+      );
     for (const fr of prep.frei) hinweise.push(`Freigestellt: „${fr.falsch.trim()}“ oder „${fr.richtig.trim()}“ – beide Fassungen sind richtig.`);
     if (prep.fehler.length === 0) hinweise.push(r.richtig ? `Der ${einheit} war fehlerfrei. Gut, dass du nichts geändert hast.` : `Der ${einheit} war fehlerfrei.`);
     onResult({
       richtig,
-      antwort: typMode && !typOk ? `${final} (Fehlertyp: ${fehlertypLabel(typWahl ?? '')})` : final,
+      antwort: typMode && !typOk && !r.richtig ? `${final} (Fehlertyp: ${fehlertypLabel(typWahl ?? '')})` : final,
+      ...(typMode && !typOk && r.richtig ? { teilweise: true, kopf: 'Richtig korrigiert, nur der Fehlertyp stimmte nicht' } : {}),
       loesung: prep.base.loesung,
       hinweise,
       fehlertypOverride: typMode ? richtigerTyp : undefined,

@@ -524,6 +524,33 @@ describe('Sprachrichtigkeit im Browser', () => {
     throw new Error('keine Probe-Aufgabe in Lektion 1.1');
   }, 120_000);
 
+  it('Fehlertyp bestimmen: falscher Typ, richtige Korrektur – die Aufgabe zählt als richtig', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    await onboard(page);
+    await page.goto(`${BASE}#/ueben`);
+    await page.getByLabel(/Nur „Fehlertyp bestimmen“/).check();
+    await page.getByRole('button', { name: 'Mischtraining starten' }).click();
+    const { task, modus } = await currentTask(page);
+    expect(modus).toBe('fehlertyp');
+    await page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
+    const label = fehlertypLabel(singleErrorType(task));
+    const opts = await page.locator('.options .option').allInnerTexts();
+    const falsch = opts.findIndex((o) => !o.includes(label));
+    await page.keyboard.press(String(falsch + 1));
+    await page.keyboard.press('Enter');
+    if (task.typ === 'fehler' || task.typ === 'fehlertyp') await applyChunkEdits(page, task.text);
+    await page.keyboard.press('Enter');
+    const fb = page.getByRole('region', { name: 'Rückmeldung' });
+    await fb.waitFor();
+    expect(await fb.getAttribute('class')).toContain('ok');
+    expect(await fb.innerText()).toContain('Richtig korrigiert, nur der Fehlertyp stimmte nicht');
+    expect(await fb.innerText()).not.toContain('Im Fehlerbuch gespeichert');
+    await shot(page, 'fehlertyp-teilweise');
+    await ctx.close();
+  }, 120_000);
+
   it('alle Übungstypen: richtig gelöst werden sie als richtig gewertet', async () => {
     const ctx = await newContext();
     const page = await ctx.newPage();

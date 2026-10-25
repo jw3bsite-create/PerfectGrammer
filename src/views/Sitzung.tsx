@@ -329,8 +329,8 @@ function ruleBeforeAnswer(s: Session): boolean {
 function Feedback({ a, onRule, onNext, onOverride, last }: { a: Answered; onRule: () => void; onNext: () => void; onOverride: () => void; last: boolean }) {
   const r = a.result;
   const ok = r.richtig || a.overridden;
-  const cls = ok ? 'ok' : r.teilweise ? 'part' : 'bad';
-  const head = ok ? (a.overridden ? 'Als richtig gewertet' : 'Richtig') : r.teilweise ? 'Teilweise richtig' : 'Falsch';
+  const cls = ok ? (r.teilweise && !a.overridden ? 'ok part' : 'ok') : r.teilweise ? 'part' : 'bad';
+  const head = ok ? (a.overridden ? 'Als richtig gewertet' : (r.kopf ?? 'Richtig')) : r.teilweise ? 'Teilweise richtig' : 'Falsch';
   const lesson = getLesson(a.task.lektion);
   return (
     <div className={`feedback ${cls}`} role="region" aria-label="Rückmeldung">

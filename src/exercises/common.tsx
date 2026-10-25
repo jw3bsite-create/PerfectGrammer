@@ -16,8 +16,10 @@ export interface ExerciseResult {
   uebersteuerbar?: boolean;
   hinweise?: string[];
   detail?: ReactNode;
-  /** Teilweise richtig (Textwiedergabe, Korrekturtext). */
+  /** Teilweise richtig (Textwiedergabe, Korrekturtext); bei richtig gewerteten Antworten nur als Hinweis in der Kopfzeile. */
   teilweise?: boolean;
+  /** Eigene Kopfzeile der Rückmeldung. */
+  kopf?: string;
   /** Eigene Begründung statt der Aufgabenbegründung. */
   begruendung?: string;
 }
