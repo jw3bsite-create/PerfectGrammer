@@ -2,15 +2,17 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Icon } from '../components/Icon';
-import { Confirm, Empty, Progress } from '../components/ui';
+import { Confirm, Empty, Progress, Sheet } from '../components/ui';
 import { NO_AUTOCORRECT, typingTarget, useKeys } from '../exercises/common';
 import { evalTyped } from '../lib/evaluate';
 import { typo } from '../lib/normalize';
 import { navigate } from '../lib/router';
 import { useApp } from '../lib/store';
 import { ergebnisSpeichern, sitzungAbbrechen, sitzungBeenden, starteSitzung } from './aktionen';
-import { abschnittText, art as artDef, funktionLabel, REGELN, text as textVon, TEXTSORTEN, woerter } from './daten';
-import { DEFEKT_GRUND, DEFEKT_LABEL, DEFEKTE, defektOptionen, einleitungVariante, funktionsOptionen, schlussOptionen, verbOptionen, verdichtbar } from './logik';
+import { abschnittText, art as artDef, funktionLabel, KATEGORIEN, quellenzeile, REGELN, text as textVon, TEXTSORTEN, woerter } from './daten';
+import { ERKLAERUNGEN } from './erklaerungen';
+import { kiAngaben, KiBlock } from './KiBlock';
+import { DEFEKT_GRUND, DEFEKT_LABEL, DEFEKTE, defektOptionen, einleitungVariante, funktionsOptionen, schlussOptionen, verbOptionen, verdichtbar, verdichtGrenze } from './logik';
 import { hinweiseSatz, praeteritum, pruefeEinleitung, wertungen, zeilenangaben } from './pruefen';
 import { Block, HinweisListe, JaNein, PunktListe, Rueckmeldung, TextAnzeige, WortZaehler } from './Teile';
 import type { ZArt, ZKat, ZText } from './typen';
@@ -161,6 +163,66 @@ function EinleitungPruefenU({ t, n, onResult, onWeiter, letzte }: UProps) {
   );
 }
 
+// ---------- Kurzer Kontext für die Schreibübungen ----------
+
+function volltextVon(t: ZText): string {
+  return t.absaetze.map((a) => a.join(' ')).join('\n\n');
+}
+
+function theseAbschnitt(t: ZText): number {
+  const i = t.abschnitte.findIndex((a) => a.funktion === 'these' || a.auch?.includes('these'));
+  return i < 0 ? 0 : i;
+}
+
+function GanzerText({ t }: { t: ZText }) {
+  return (
+    <details className="zs-details zs-ganz">
+      <summary>Ganzen Text zeigen</summary>
+      <TextAnzeige t={t} quelle={false} />
+    </details>
+  );
+}
+
+/** Quellenzeile und ein Abschnitt statt des ganzen Textes. */
+function KurzerText({ t, abschnitt, label, textsorte }: { t: ZText; abschnitt: number; label: string; textsorte?: boolean }) {
+  const a = t.abschnitte[abschnitt];
+  return (
+    <div className="zs-kurz" data-kurz={abschnitt}>
+      <p className="zs-quelle">
+        Quelle: {typo(quellenzeile(t))}
+        {textsorte ? (
+          <>
+            <br />
+            Textsorte: <strong>{t.textsorte}</strong>
+          </>
+        ) : null}
+      </p>
+      <div className="eyebrow" style={{ margin: '12px 0 6px' }}>
+        „{typo(t.titel)}“ · {label}
+      </div>
+      <TextAnzeige t={t} von={a.von} bis={a.bis} quelle={false} titel={false} />
+      <GanzerText t={t} />
+    </div>
+  );
+}
+
+/** Für den Schluss: der Gedankengang in Kurzform (Hauptteil der Musterlösung) statt des ganzen Textes. */
+function Kurzfassung({ t }: { t: ZText }) {
+  return (
+    <div className="zs-kurz" data-kurz="hauptteil">
+      <div className="eyebrow" style={{ marginBottom: 6 }}>
+        „{typo(t.titel)}“ · Der Gedankengang in Kurzform
+      </div>
+      <ol className="zs-kurzfassung">
+        {t.abschnitte.map((a, i) => (
+          <li key={i}>{typo(a.muster)}</li>
+        ))}
+      </ol>
+      <GanzerText t={t} />
+    </div>
+  );
+}
+
 function EinleitungSchreibenU({ t, onResult, onWeiter, letzte }: UProps) {
   const [eigen, setEigen] = useState('');
   const [phase, setPhase] = useState<'schreiben' | 'pruefen' | 'fertig'>('schreiben');
@@ -176,7 +238,7 @@ function EinleitungSchreibenU({ t, onResult, onWeiter, letzte }: UProps) {
   return (
     <div>
       <Anweisung>Schreib die Einleitung: höchstens zwei Sätze mit Textsorte, Titel, Verfasser, Erscheinungsort und -datum, Thema und Kernaussage.</Anweisung>
-      <TextAnzeige t={t} einklappbar />
+      <KurzerText t={t} abschnitt={theseAbschnitt(t)} label="Der Abschnitt mit der Kernaussage" textsorte />
       <div className="answer-area" style={{ marginTop: 16 }}>
         <textarea
           className="textarea read"
@@ -219,6 +281,7 @@ function EinleitungSchreibenU({ t, onResult, onWeiter, letzte }: UProps) {
           <Block label="Musterlösung">
             <p className="fb-solution">{typo(t.einleitung)}</p>
           </Block>
+          <KiBlock anfrage={{ teil: 'einleitung', angaben: kiAngaben(t), original: volltextVon(t), muster: t.einleitung, eigen }} />
           {phase === 'pruefen' ? (
             <JaNein
               fragen={[{ id: 'kern', frage: 'Enthält deine Einleitung die Kernaussage, also die These des Textes?' }]}
@@ -705,18 +768,19 @@ function KonjunktivU({ t, n, onResult, onWeiter, letzte }: UProps) {
 function VerdichtenU({ t, n, onResult, onWeiter, letzte }: UProps) {
   const k = verdichtbar(t)[n] ?? 0;
   const a = t.abschnitte[k];
+  const grenze = verdichtGrenze(t, k);
   const [eigen, setEigen] = useState('');
   const [phase, setPhase] = useState<'schreiben' | 'pruefen' | 'fertig'>('schreiben');
   const [ok, setOk] = useState(false);
   const zahl = woerter(eigen);
-  const hinweise = useMemo(() => (phase === 'schreiben' ? [] : hinweiseSatz(eigen, t, a.schluessel, 30, 1)), [phase, eigen, t, a]);
+  const hinweise = useMemo(() => (phase === 'schreiben' ? [] : hinweiseSatz(eigen, t, a.schluessel, grenze.woerter, grenze.saetze)), [phase, eigen, t, a, grenze.woerter, grenze.saetze]);
   const abgeben = () => {
     if (zahl < 4) return;
     setPhase('pruefen');
   };
   return (
     <div>
-      <Anweisung>Fass den Abschnitt in einem Satz zusammen, höchstens 30 Wörter, mit Funktionsverb.</Anweisung>
+      <Anweisung>{`Fass diesen Abschnitt zusammen: ${grenze.saetze === 1 ? 'ein Satz' : 'ein bis zwei Sätze'}, höchstens ${grenze.woerter} Wörter, mit Funktionsverb.`}</Anweisung>
       <AbschnittAnzeige t={t} k={k} />
       <div className="answer-area" style={{ marginTop: 16 }}>
         <textarea
@@ -737,7 +801,7 @@ function VerdichtenU({ t, n, onResult, onWeiter, letzte }: UProps) {
           {...NO_AUTOCORRECT}
         />
         <div className="row between wrap" style={{ marginTop: 8, gap: 8 }}>
-          <WortZaehler n={zahl} max={30} />
+          <WortZaehler n={zahl} max={grenze.woerter} />
           {phase === 'schreiben' ? (
             <button className="btn primary" onClick={abgeben} disabled={zahl < 4}>
               Vergleichen <span className="kbd">↵</span>
@@ -753,6 +817,7 @@ function VerdichtenU({ t, n, onResult, onWeiter, letzte }: UProps) {
           <Block label="Hinweise">
             <HinweisListe hinweise={hinweise} leer="Keine Auffälligkeiten gefunden. Vergleiche trotzdem genau mit der Musterlösung." />
           </Block>
+          <KiBlock anfrage={{ teil: 'abschnitt', angaben: kiAngaben(t), original: abschnittText(t, k).map((x) => x.join(' ')).join('\n\n'), muster: a.muster, eigen }} />
           {phase === 'pruefen' ? (
             <JaNein
               fragen={[
@@ -761,20 +826,20 @@ function VerdichtenU({ t, n, onResult, onWeiter, letzte }: UProps) {
               ]}
               onFertig={(x) => {
                 const fallen = hinweise.some((h) => h.kat === 'dazugedichtet');
-                const r = x.kern && x.dazu && !fallen && zahl <= 30;
+                const r = x.kern && x.dazu && !fallen && zahl <= grenze.woerter;
                 setOk(r);
                 setPhase('fertig');
                 onResult(r, [
                   { kat: 'beispiel', ok: x.kern },
                   { kat: 'dazugedichtet', ok: x.dazu && !fallen },
-                  { kat: 'laenge', ok: zahl <= 30 },
+                  { kat: 'laenge', ok: zahl <= grenze.woerter },
                 ]);
               }}
             />
           ) : null}
         </div>
       ) : null}
-      {phase === 'fertig' ? <Rueckmeldung ok={ok} kopf={ok ? 'Gut verdichtet' : 'Noch nicht der Kern in einem knappen Satz'} onWeiter={onWeiter} letzte={letzte} /> : null}
+      {phase === 'fertig' ? <Rueckmeldung ok={ok} kopf={ok ? 'Gut zusammengefasst' : 'Noch nicht der Kern, knapp gesagt'} onWeiter={onWeiter} letzte={letzte} /> : null}
     </div>
   );
 }
@@ -839,7 +904,7 @@ function SchlussSchreibenU({ t, onResult, onWeiter, letzte }: UProps) {
   return (
     <div>
       <Anweisung>Schreib den Schluss: die Gesamtaussage des Textes in ein bis zwei Sätzen.</Anweisung>
-      <TextAnzeige t={t} einklappbar />
+      <Kurzfassung t={t} />
       <div className="answer-area" style={{ marginTop: 16 }}>
         <textarea
           className="textarea read"
@@ -875,6 +940,7 @@ function SchlussSchreibenU({ t, onResult, onWeiter, letzte }: UProps) {
           <Block label="Hinweise">
             <HinweisListe hinweise={hinweise} leer="Keine Auffälligkeiten gefunden." />
           </Block>
+          <KiBlock anfrage={{ teil: 'schluss', angaben: kiAngaben(t), original: volltextVon(t), muster: t.schluss, eigen }} />
           {phase === 'pruefen' ? (
             <JaNein
               fragen={[
@@ -924,6 +990,7 @@ export function ZUebungsansicht() {
   const sitz = s.sitzung;
   const [beantwortet, setBeantwortet] = useState<{ index: number; letzte: boolean } | null>(null);
   const [confirmEnd, setConfirmEnd] = useState(false);
+  const [erklaerung, setErklaerung] = useState(false);
   const sitzId = sitz?.id;
   useEffect(() => setBeantwortet(null), [sitzId]);
 
@@ -950,7 +1017,7 @@ export function ZUebungsansicht() {
   // Enter geht nach der Rückmeldung weiter (außer in Eingabefeldern und auf Knöpfen)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Enter' || e.defaultPrevented || !beantwortet || confirmEnd) return;
+      if (e.key !== 'Enter' || e.defaultPrevented || !beantwortet || confirmEnd || erklaerung) return;
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'BUTTON') return;
       e.preventDefault();
@@ -958,7 +1025,7 @@ export function ZUebungsansicht() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [beantwortet, weiter, confirmEnd]);
+  }, [beantwortet, weiter, confirmEnd, erklaerung]);
 
   if (!sitz && !beantwortet) {
     if (s.letzte) return <Ergebnis />;
@@ -988,6 +1055,11 @@ export function ZUebungsansicht() {
           <span className="count">
             {Math.min(done + (beantwortet ? 0 : 1), total)} / {total}
           </span>
+          {item ? (
+            <button className="btn small ghost" onClick={() => setErklaerung(true)} title="Erklärung" data-erklaerung>
+              <Icon name="card" /> Erklärung
+            </button>
+          ) : null}
         </div>
       </header>
       <main className="practice-body">
@@ -1010,6 +1082,11 @@ export function ZUebungsansicht() {
           </div>
         )}
       </main>
+      {erklaerung && item ? (
+        <Sheet title={artDef(item.art).titel} eyebrow="Erklärung" onClose={() => setErklaerung(false)}>
+          <ErklaerungInhalt art={item.art} />
+        </Sheet>
+      ) : null}
       {confirmEnd ? (
         <Confirm
           title="Übung beenden?"
@@ -1023,6 +1100,74 @@ export function ZUebungsansicht() {
             navigate(z);
           }}
         />
+      ) : null}
+    </div>
+  );
+}
+
+export function ErklaerungInhalt({ art }: { art: ZArt }) {
+  const e = ERKLAERUNGEN[art];
+  const kats = KATEGORIEN.filter((k) => artDef(art).kats.includes(k.id));
+  return (
+    <div className="zs-erklaerung" data-erklaerung-art={art}>
+      <p className="sw-methode">{typo(e.kern)}</p>
+      <div className="fb-label" style={{ marginTop: 16 }}>
+        So gehst du vor
+      </div>
+      <ol className="zs-schrittliste">
+        {e.schritte.map((x, i) => (
+          <li key={i}>{typo(x)}</li>
+        ))}
+      </ol>
+      {art === 'konjunktiv' ? (
+        <>
+          <div className="fb-label" style={{ marginTop: 16 }}>
+            Die vier Regeln
+          </div>
+          <ul className="zs-schrittliste">
+            {REGELN.map((r) => (
+              <li key={r.id}>{typo(r.text)}</li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+      {e.beispiele?.length ? (
+        <>
+          <div className="fb-label" style={{ marginTop: 16 }}>
+            Beispiele
+          </div>
+          <div className="list">
+            {e.beispiele.map((b, i) => (
+              <div key={i} className="list-item zs-beispiel">
+                <span className="grow">
+                  {b.falsch ? (
+                    <span className="sub-line">
+                      <Icon name="crossCircle" className="bad-ink" /> <s>{typo(b.falsch)}</s>
+                    </span>
+                  ) : null}
+                  <span className="title-line read">
+                    <Icon name="checkCircle" className="ok-ink" /> {typo(b.richtig)}
+                  </span>
+                  <span className="sub-line">{typo(b.warum)}</span>
+                </span>
+              </div>
+            ))}
+          </div>
+        </>
+      ) : null}
+      {kats.length ? (
+        <>
+          <div className="fb-label" style={{ marginTop: 16 }}>
+            Darauf achtet deine Lehrerin
+          </div>
+          <ul className="zs-schrittliste">
+            {kats.map((k) => (
+              <li key={k.id}>
+                <strong>{k.label}:</strong> {typo(k.tipp)}
+              </li>
+            ))}
+          </ul>
+        </>
       ) : null}
     </div>
   );

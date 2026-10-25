@@ -9,8 +9,8 @@ import { typo } from '../lib/normalize';
 import type { Route } from '../lib/router';
 import { useApp } from '../lib/store';
 import { eigenenTextLoeschen, eigenenTextSpeichern, kiSpeichern, niveauSetzen, starteSitzung, volltextStarten } from './aktionen';
-import { ARTEN, BEREICH_LABEL, eigeneAbsaetze, FUNKTIONSVERBEN, KATEGORIEN, katLabel, TEILE, TEXTE, text as textVon, TEXTSORTEN, woerter } from './daten';
-import { kiSystemPrompt, kiTesten } from './ki';
+import { ARTEN, art as artDef, BEREICH_LABEL, eigeneAbsaetze, FUNKTIONSVERBEN, KATEGORIEN, katLabel, TEILE, TEXTE, text as textVon, TEXTSORTEN, woerter } from './daten';
+import { CLAUDE_STANDARD, kiSchluessel, kiSchluesselSetzen, kiSystemPrompt, kiTesten, OLLAMA_STANDARD, type KiTeil } from './ki';
 import { ampel, haeufigsteFehler, katStatistik, naechsterVolltext, niveau, NIVEAU_TEXT, wochenVerlauf, type ZAmpel } from './logik';
 import type { ZArt, ZKat, ZState, ZTeil } from './typen';
 
@@ -21,7 +21,7 @@ const SUBNAV = [
   { key: 'schluss', label: 'Schluss' },
   { key: 'texte', label: 'Ganzer Text' },
   { key: 'eigene', label: 'Eigene Texte' },
-  { key: 'ki', label: 'KI (optional)' },
+  { key: 'ki', label: 'KI' },
 ];
 
 export function ZBereich({ route }: { route: Route }) {
@@ -60,6 +60,14 @@ function artenFuerKat(k: ZKat): ZArt[] {
   return ARTEN.filter((a) => a.kats.includes(k)).map((a) => a.id);
 }
 
+/** Schnellstarts für das eigene Schreiben: nur Einleitung, nur Abschnitte, nur Schluss oder gemischt. */
+const SCHREIB_HAEPPCHEN: { key: string; titel: string; sub: string; arten: ZArt[]; n: number }[] = [
+  { key: 'abschnitt', titel: 'Abschnitte zusammenfassen', sub: '„Fasse diesen Abschnitt zusammen“ · 6 Abschnitte', arten: ['verdichten'], n: 6 },
+  { key: 'einleitung', titel: 'Nur Einleitungen', sub: 'Quelle und Kernaussage · 5 Texte', arten: ['einleitungSchreiben'], n: 5 },
+  { key: 'schluss', titel: 'Nur Schlüsse', sub: 'Gesamtaussage aus der Kurzfassung · 5 Texte', arten: ['schlussSchreiben'], n: 5 },
+  { key: 'gemischt', titel: 'Schreiben gemischt', sub: 'Einleitung, Abschnitt, Schluss im Wechsel · 6', arten: ['einleitungSchreiben', 'verdichten', 'schlussSchreiben'], n: 6 },
+];
+
 function offenerVolltext(s: ZState) {
   return [...s.volltexte].reverse().find((v) => v.phase !== 'fertig');
 }
@@ -92,7 +100,23 @@ function Uebersicht() {
         </div>
       </div>
 
-      <div className="grid-2" style={{ alignItems: 'stretch' }}>
+      <div className="card zs-haeppchen" data-haeppchen>
+        <div className="card-title">
+          <h2>Selbst schreiben, in kleinen Häppchen</h2>
+          <Icon name="edit" className="muted" />
+        </div>
+        <p className="small muted">Kein langer Text: Du bekommst einen kurzen Abschnitt oder nur die Angaben, die du brauchst, und schreibst selbst. Danach Musterlösung, Hinweise und auf Wunsch die KI-Bewertung.</p>
+        <div className="zs-haeppchen-knoepfe">
+          {SCHREIB_HAEPPCHEN.map((h) => (
+            <button key={h.key} className={`btn${h.key === 'abschnitt' ? ' primary' : ''}`} data-start={`schreiben-${h.key}`} onClick={() => void starteSitzung({ titel: h.arten.length === 1 ? artDef(h.arten[0]).titel : h.titel, zurueck: '/zusammenfassen', arten: h.arten, n: h.n })}>
+              <span className="zs-hk-titel">{h.titel}</span>
+              <span className="zs-hk-sub">{h.sub}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="section grid-2" style={{ alignItems: 'stretch' }}>
         <div className="card">
           <div className="card-title">
             <h2>Gemischtes Training</h2>
@@ -266,6 +290,7 @@ function TeilSeite({ teil }: { teil: ZTeil }) {
   const s = data.zusammenfassen;
   const titel = TEILE.find((x) => x.id === teil)!.titel;
   const arten = ARTEN.filter((a) => a.teil === teil);
+  const schreibArt: ZArt = teil === 'einleitung' ? 'einleitungSchreiben' : teil === 'hauptteil' ? 'verdichten' : 'schlussSchreiben';
   const quote = (a: ZArt) => {
     const u = s.uebungen.filter((x) => x.art === a).slice(-20);
     return u.length ? `${u.filter((x) => x.richtig).length} von ${u.length} richtig` : 'noch nicht geübt';
@@ -307,8 +332,18 @@ function TeilSeite({ teil }: { teil: ZTeil }) {
           <div className="card-title">
             <h3>Übungen</h3>
           </div>
+          {schreibArt ? (
+            <button
+              className="btn primary wide"
+              style={{ marginBottom: 10 }}
+              data-start={`schreiben-teil-${teil}`}
+              onClick={() => void starteSitzung({ titel: artDef(schreibArt).titel, zurueck: `/zusammenfassen/${teil}`, arten: [schreibArt], n: schreibArt === 'verdichten' ? 6 : 5 })}
+            >
+              Selbst schreiben: {artDef(schreibArt).titel}
+            </button>
+          ) : null}
           <button
-            className="btn primary wide"
+            className="btn wide"
             data-start={`teil-${teil}`}
             onClick={() => void starteSitzung({ titel: `${titel} gemischt`, zurueck: `/zusammenfassen/${teil}`, arten: arten.map((a) => a.id), n: teil === 'hauptteil' ? 10 : 8 })}
           >
@@ -539,62 +574,79 @@ function KiSeite() {
   const data = useApp();
   const ki = data.zusammenfassen.ki;
   const [f, setF] = useState(ki);
+  const [schluessel, setSchluessel] = useState(kiSchluessel);
   const [test, setTest] = useState<string | null>(null);
+  const [teil, setTeil] = useState<KiTeil>('abschnitt');
+  const claude = f.anbieter === 'claude';
   return (
     <div>
       <div className="page-head">
         <div>
-          <h1>KI-Rückmeldung (optional)</h1>
+          <h1>KI-Bewertung</h1>
           <p className="lead">
-            Eine lokale KI kann deine ganze Zusammenfassung nach den Kategorien der Checkliste prüfen. Sie nennt Stelle und Fehlerart, aber keine fertige Lösung und kein Lob. Sie läuft auf deinem Rechner; nichts wird ins Internet geschickt.
+            Eine KI bewertet deine Einleitungen, Abschnitte, Schlüsse und ganzen Zusammenfassungen nach den Erwartungen deiner Lehrerin: Kriterium für Kriterium, mit Stelle und Fehlerart. Sie schreibt dir keine fertige Lösung und lobt nicht. Sie kann irren; Checkliste und Musterlösung bleiben maßgeblich.
           </p>
         </div>
       </div>
       <div className="grid-2" style={{ alignItems: 'start' }}>
-        <div className="card">
-          <div className="card-title">
-            <h3>Einrichten unter Windows</h3>
-          </div>
-          <ol className="zs-schrittliste">
-            <li>
-              Ollama von <strong>ollama.com</strong> herunterladen und installieren.
-            </li>
-            <li>
-              PowerShell öffnen und ein Modell laden, zum Beispiel: <code>ollama pull qwen2.5:7b</code> (etwa 5 GB, einmalig).
-            </li>
-            <li>Hier „KI verwenden“ einschalten, speichern und „Verbindung testen“ drücken.</li>
-          </ol>
-          <p className="small muted" style={{ marginTop: 10 }}>
-            Gut sind Rechner mit mindestens 16 GB Arbeitsspeicher. Kleine Modelle irren sich bei Grammatik öfter. Die KI ersetzt die Checkliste und die Musterlösung nicht; nimm ihre Hinweise als zweite Meinung.
-          </p>
-        </div>
         <form
           className="card"
+          data-ki-form
           onSubmit={async (e) => {
             e.preventDefault();
-            await kiSpeichern({ ...f, url: f.url.trim() || 'http://localhost:11434', modell: f.modell.trim() || 'qwen2.5:7b' });
+            kiSchluesselSetzen(schluessel);
+            await kiSpeichern({
+              ...f,
+              url: f.url.trim() || 'http://localhost:11434',
+              modell: f.modell.trim() || OLLAMA_STANDARD,
+              claudeModell: f.claudeModell.trim() || CLAUDE_STANDARD,
+            });
             toast('Gespeichert.');
           }}
         >
           <label className="check">
             <input type="checkbox" checked={f.aktiv} onChange={(e) => setF({ ...f, aktiv: e.target.checked })} />
-            KI verwenden
+            KI-Bewertung verwenden
           </label>
-          <div className="field" style={{ marginTop: 12 }}>
-            <label htmlFor="ki-url">Adresse</label>
-            <input id="ki-url" className="input" value={f.url} onChange={(e) => setF({ ...f, url: e.target.value })} />
+          <div className="segmented" role="group" aria-label="Anbieter" style={{ marginTop: 14 }}>
+            <button type="button" aria-pressed={claude} data-anbieter="claude" onClick={() => setF({ ...f, anbieter: 'claude' })}>
+              Claude (online)
+            </button>
+            <button type="button" aria-pressed={!claude} data-anbieter="ollama" onClick={() => setF({ ...f, anbieter: 'ollama' })}>
+              Lokal (Ollama)
+            </button>
           </div>
-          <div className="field" style={{ marginTop: 12 }}>
-            <label htmlFor="ki-modell">Modell</label>
-            <input id="ki-modell" className="input" value={f.modell} onChange={(e) => setF({ ...f, modell: e.target.value })} />
-          </div>
+          {claude ? (
+            <>
+              <div className="field" style={{ marginTop: 12 }}>
+                <label htmlFor="ki-key">API-Schlüssel</label>
+                <input id="ki-key" className="input" type="password" autoComplete="off" placeholder="sk-ant-…" value={schluessel} onChange={(e) => setSchluessel(e.target.value)} />
+                <span className="small muted">Bleibt nur in diesem Browser auf diesem Rechner, auch nicht in der Datensicherung.</span>
+              </div>
+              <div className="field" style={{ marginTop: 12 }}>
+                <label htmlFor="ki-claude-modell">Modell</label>
+                <input id="ki-claude-modell" className="input" value={f.claudeModell} onChange={(e) => setF({ ...f, claudeModell: e.target.value })} />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="field" style={{ marginTop: 12 }}>
+                <label htmlFor="ki-url">Adresse</label>
+                <input id="ki-url" className="input" value={f.url} onChange={(e) => setF({ ...f, url: e.target.value })} />
+              </div>
+              <div className="field" style={{ marginTop: 12 }}>
+                <label htmlFor="ki-modell">Modell</label>
+                <input id="ki-modell" className="input" value={f.modell} onChange={(e) => setF({ ...f, modell: e.target.value })} />
+              </div>
+            </>
+          )}
           <div className="actions">
             <button
               type="button"
               className="btn"
               onClick={async () => {
                 setTest('Teste …');
-                setTest((await kiTesten(f)).text);
+                setTest((await kiTesten(f, schluessel.trim())).text);
               }}
             >
               Verbindung testen
@@ -609,11 +661,60 @@ function KiSeite() {
             </p>
           ) : null}
         </form>
+        <div className="card">
+          <div className="card-title">
+            <h3>{claude ? 'Claude einrichten' : 'Ollama einrichten (Windows)'}</h3>
+          </div>
+          {claude ? (
+            <>
+              <ol className="zs-schrittliste">
+                <li>
+                  Auf <strong>platform.claude.com</strong> ein Konto anlegen (das ist die Claude Console, getrennt vom normalen Claude-Abo).
+                </li>
+                <li>Unter „Billing“ ein kleines Guthaben aufladen, zum Beispiel 5 Euro.</li>
+                <li>Unter „API Keys“ einen Schlüssel erstellen und kopieren. Er beginnt mit „sk-ant-“.</li>
+                <li>Hier einfügen, „KI-Bewertung verwenden“ einschalten, speichern und „Verbindung testen“ drücken.</li>
+              </ol>
+              <p className="small muted" style={{ marginTop: 10 }}>
+                Kosten: Eine Bewertung kostet je nach Länge etwa 2 bis 6 Cent, eine ganze Zusammenfassung bis etwa 10 Cent. Du bezahlst nur, was du benutzt. Dein Text und der Übungstext werden dafür an Anthropic geschickt. Gib den Schlüssel niemandem weiter.
+              </p>
+            </>
+          ) : (
+            <>
+              <ol className="zs-schrittliste">
+                <li>
+                  Ollama von <strong>ollama.com</strong> herunterladen und installieren.
+                </li>
+                <li>
+                  PowerShell öffnen und ein Modell laden, zum Beispiel: <code>ollama pull qwen2.5:7b</code> (etwa 5 GB, einmalig).
+                </li>
+                <li>Hier „KI-Bewertung verwenden“ einschalten, speichern und „Verbindung testen“ drücken.</li>
+              </ol>
+              <p className="small muted" style={{ marginTop: 10 }}>
+                Kostenlos, und nichts verlässt den Rechner. Gut sind Rechner mit mindestens 16 GB Arbeitsspeicher. Kleine Modelle irren sich bei Grammatik deutlich öfter als Claude.
+              </p>
+            </>
+          )}
+        </div>
       </div>
-      <details className="zs-details section">
-        <summary>Anweisung an die KI ansehen</summary>
-        <pre className="zs-prompt">{kiSystemPrompt()}</pre>
-      </details>
+      <div className="section card">
+        <div className="card-title">
+          <h3>Anweisung an die KI</h3>
+          <span className="small muted">So soll sie bewerten</span>
+        </div>
+        <div className="segmented" role="group" aria-label="Teil">
+          {(['einleitung', 'abschnitt', 'schluss', 'volltext'] as const).map((x) => (
+            <button key={x} type="button" aria-pressed={teil === x} onClick={() => setTeil(x)}>
+              {KI_TEIL_LABEL[x]}
+            </button>
+          ))}
+        </div>
+        <pre className="zs-prompt" data-prompt={teil}>
+          {kiSystemPrompt(teil)}
+        </pre>
+      </div>
     </div>
   );
 }
+
+const KI_TEIL_LABEL: Record<KiTeil, string> = { einleitung: 'Einleitung', abschnitt: 'Abschnitt', schluss: 'Schluss', volltext: 'Ganzer Text' };

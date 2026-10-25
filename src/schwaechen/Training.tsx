@@ -2,10 +2,11 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from '../components/Icon';
-import { Confirm, Empty, Progress } from '../components/ui';
+import { Confirm, Empty, Progress, RuleCard, Sheet } from '../components/ui';
 import type { ExerciseResult } from '../exercises/common';
 import { TaskView } from '../exercises/TaskView';
 import { dayKey } from '../lib/dates';
+import { getLesson } from '../lib/content';
 import { evalTask, prepareTask } from '../lib/evaluate';
 import { typo } from '../lib/normalize';
 import { navigate } from '../lib/router';
@@ -83,6 +84,7 @@ export function Training() {
   const [fertig, setFertig] = useState<Beantwortet | null>(null);
   const [kats, setKats] = useState<string[]>([]);
   const [confirmEnd, setConfirmEnd] = useState(false);
+  const [erklaerung, setErklaerung] = useState(false);
   const submitRef = useRef<(() => void) | null>(null);
   const feedbackRef = useRef<HTMLDivElement>(null);
   const busy = useRef(false);
@@ -185,7 +187,7 @@ export function Training() {
   // Tastatur: Enter prüft und geht weiter, Ziffern wählen die Regel.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.defaultPrevented || confirmEnd || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.defaultPrevented || confirmEnd || erklaerung || e.metaKey || e.ctrlKey || e.altKey) return;
       const target = e.target as HTMLElement;
       const tag = target?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
@@ -207,7 +209,7 @@ export function Training() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [offen, optionen, fertig, confirmEnd, speichern, weiter]);
+  }, [offen, optionen, fertig, confirmEnd, erklaerung, speichern, weiter]);
 
   if (!sitz && !fertig) {
     if (s.letzte) return <Ergebnis />;
@@ -245,6 +247,11 @@ export function Training() {
           <span className="count">
             {Math.min(done + (fertig ? 0 : 1), total)} / {total}
           </span>
+          {a ? (
+            <button className="btn small ghost" onClick={() => setErklaerung(true)} title="Erklärung" data-erklaerung>
+              <Icon name="card" /> Erklärung
+            </button>
+          ) : null}
         </div>
       </header>
 
@@ -342,6 +349,11 @@ export function Training() {
         )}
       </main>
 
+      {erklaerung ? (
+        <Sheet title={zeigeKat && k ? k.titel : a?.kat === 'T' && fertig ? 'Kategorien in diesem Absatz' : 'Alle Methoden'} eyebrow="Erklärung" onClose={() => setErklaerung(false)}>
+          <SwErklaerung kats={zeigeKat && k ? [k.id] : a?.kat === 'T' && fertig ? transferKats(a) : []} regelnZeigen={!offen} />
+        </Sheet>
+      ) : null}
       {confirmEnd ? (
         <Confirm
           title="Training beenden?"
@@ -541,6 +553,65 @@ function Ergebnis() {
           </a>
         </div>
       </main>
+    </div>
+  );
+}
+
+/** Erklärung oben rechts: Methode, Regeln und Regelkarten der Kurse; ohne Kategorie alle Methoden im Überblick. */
+function SwErklaerung({ kats, regelnZeigen }: { kats: string[]; regelnZeigen: boolean }) {
+  if (!kats.length) {
+    return (
+      <div className="list" data-erklaerung-art="alle">
+        {KATEGORIEN.map((k) => (
+          <div key={k.id} className="list-item">
+            <span className="grow">
+              <span className="title-line">{k.titel}</span>
+              <span className="sub-line">{typo(k.methode)}</span>
+            </span>
+          </div>
+        ))}
+        <p className="small muted" style={{ marginTop: 8 }}>
+          Im gemischten Training verrät die Erklärung zur Kategorie die Lösung. Sie erscheint deshalb erst nach deiner Antwort.
+        </p>
+      </div>
+    );
+  }
+  return (
+    <div data-erklaerung-art={kats.join(',')}>
+      {kats.map((id) => {
+        const k = kategorie(id);
+        if (!k) return null;
+        const lessons = k.kurse.map((x) => getLesson(x)).filter((l): l is NonNullable<typeof l> => !!l);
+        return (
+          <div key={id} style={{ marginBottom: 20 }}>
+            {kats.length > 1 ? <h3>{k.titel}</h3> : null}
+            <div className="fb-label">Die Methode</div>
+            <p className="sw-methode">{typo(k.methode)}</p>
+            {regelnZeigen ? (
+              <>
+                <div className="fb-label" style={{ marginTop: 14 }}>
+                  Regeln
+                </div>
+                <ul className="zs-schrittliste">
+                  {k.regeln.map((r) => (
+                    <li key={r.id}>{typo(r.text)}</li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p className="small muted">Die Regeln der Kategorie siehst du nach deiner Wahl der Begründung.</p>
+            )}
+            {lessons.map((l) => (
+              <div key={l.id} style={{ marginTop: 16 }}>
+                <div className="fb-label">
+                  Regelkarte {l.id} {l.titel}
+                </div>
+                <RuleCard karte={l.regelkarte} />
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }

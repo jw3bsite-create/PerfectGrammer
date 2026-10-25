@@ -9,7 +9,7 @@ import { navigate } from '../lib/router';
 import { getState, useApp } from '../lib/store';
 import { checklisteSpeichern, volltextAendern, volltextLoeschen, volltextStarten } from './aktionen';
 import { eigeneAbsaetze, FUNKTIONEN, FUNKTIONSVERBEN, funktionLabel, KATEGORIEN, musterGesamt, musterSaetze, quellenzeile, text as textVon, woerter } from './daten';
-import { kiRueckmeldung, type KiFehler } from './ki';
+import { KiBlock } from './KiBlock';
 import { naechsterVolltext } from './logik';
 import { hinweiseZusammenfassung, type Hinweis } from './pruefen';
 import { Block, HinweisListe, JaNein } from './Teile';
@@ -19,6 +19,7 @@ interface Quelle {
   titel: string;
   autor: string;
   quellenzeile: string;
+  textsorte: string;
   absaetze: string[];
   zText?: ZText;
   muster?: { label: string; text: string }[];
@@ -33,6 +34,7 @@ function quelleVon(v: ZVolltext, eigene: ReturnType<typeof useApp>['zusammenfass
       titel: e.titel,
       autor: e.autor,
       quellenzeile: `${e.autor}: ${e.titel}. ${e.quelle}`,
+      textsorte: e.textsorte,
       absaetze: eigeneAbsaetze(e),
       muster: e.muster ? [{ label: 'Musterlösung (eingefügt)', text: e.muster }] : undefined,
       musterWoerter: e.muster ? woerter(e.muster) : undefined,
@@ -44,6 +46,7 @@ function quelleVon(v: ZVolltext, eigene: ReturnType<typeof useApp>['zusammenfass
     titel: t.titel,
     autor: t.autor,
     quellenzeile: quellenzeile(t),
+    textsorte: t.textsorte,
     absaetze: t.absaetze.map((a) => a.join(' ')),
     zText: t,
     muster: musterSaetze(t),
@@ -285,33 +288,9 @@ function WortZ({ n, ziel }: { n: number; ziel?: number }) {
 // ---------- Selbstprüfung ----------
 
 function Pruefen({ v, q, runde }: { v: ZVolltext; q: Quelle; runde: 1 | 2 }) {
-  const data = useApp();
-  const ki = data.zusammenfassen.ki;
   const fassung = runde === 1 ? v.fassung1 : (v.fassung2 ?? '');
   const hinweise = useMemo(() => hinweiseZusammenfassung(fassung, q.zText, q.musterWoerter, q.absaetze.join(' ')), [fassung, q]);
   const jeKat = (k: string) => hinweise.filter((h) => h.kat === k);
-  const [kiStatus, setKiStatus] = useState<'aus' | 'laeuft' | 'fertig' | 'fehler'>(v.ki ? 'fertig' : 'aus');
-  const [kiFehler, setKiFehler] = useState<KiFehler[]>(() => {
-    try {
-      return v.ki ? (JSON.parse(v.ki) as KiFehler[]) : [];
-    } catch {
-      return [];
-    }
-  });
-  const [kiText, setKiText] = useState('');
-  const kiHolen = async () => {
-    setKiStatus('laeuft');
-    try {
-      const r = await kiRueckmeldung(ki, q.absaetze.join('\n\n'), fassung);
-      setKiFehler(r.fehler);
-      setKiText(r.fehler.length ? '' : r.roh);
-      setKiStatus('fertig');
-      await volltextAendern(v.id, { ki: JSON.stringify(r.fehler) });
-    } catch (e) {
-      setKiText(e instanceof Error ? e.message : String(e));
-      setKiStatus('fehler');
-    }
-  };
   return (
     <div>
       <p className="task-instruction">Schritt 3: Prüf deine Fassung Punkt für Punkt. Jedes „Nein“ wird als Fehler in seiner Kategorie gezählt.</p>
@@ -324,41 +303,12 @@ function Pruefen({ v, q, runde }: { v: ZVolltext; q: Quelle; runde: 1 | 2 }) {
             ))}
           </div>
           <p className="small muted">{woerter(fassung)} Wörter{q.musterWoerter ? ` · Musterlösung etwa ${q.musterWoerter}` : ''}</p>
-          {ki.aktiv ? (
-            <div className="zs-ki" data-ki={kiStatus}>
-              <div className="row between wrap" style={{ gap: 8 }}>
-                <div className="fb-label" style={{ margin: 0 }}>
-                  KI-Rückmeldung (lokal, kann irren)
-                </div>
-                <button className="btn small" onClick={() => void kiHolen()} disabled={kiStatus === 'laeuft'}>
-                  {kiStatus === 'laeuft' ? 'Die KI liest …' : kiStatus === 'fertig' ? 'Erneut fragen' : 'KI-Rückmeldung holen'}
-                </button>
-              </div>
-              {kiStatus === 'fertig' ? (
-                kiFehler.length ? (
-                  <ul className="result-list" style={{ marginTop: 10 }}>
-                    {kiFehler.map((f, i) => (
-                      <li key={i} className="bad">
-                        <Icon name="alert" />
-                        <div>
-                          <strong>{f.kategorie}</strong>: {f.art}
-                          {f.stelle ? <span className="small muted"> · „{f.stelle}“</span> : null}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="small muted" style={{ marginTop: 10 }}>
-                    Die KI hat keine Fehler gemeldet.{kiText ? ` Antwort: ${kiText.slice(0, 300)}` : ''}
-                  </p>
-                )
-              ) : kiStatus === 'fehler' ? (
-                <p className="small bad-ink" style={{ marginTop: 10 }}>
-                  {kiText} Einstellungen unter „KI (optional)“.
-                </p>
-              ) : null}
-            </div>
-          ) : null}
+          <KiBlock
+            anfrage={{ teil: 'volltext', angaben: `${q.quellenzeile} Textsorte: ${q.textsorte}.`, original: q.absaetze.join('\n\n'), muster: q.muster?.map((m) => m.text).join('\n'), eigen: fassung }}
+            key={runde}
+            gespeichert={runde === 1 ? v.ki : undefined}
+            onBewertet={(j) => void volltextAendern(v.id, { ki: j })}
+          />
         </div>
         <div>
           <JaNein

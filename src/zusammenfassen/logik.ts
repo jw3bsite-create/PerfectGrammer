@@ -171,9 +171,15 @@ export function naechsterVolltext(s: ZState): ZText {
   return kand[0]?.t ?? TEXTE[0];
 }
 
-/** Abschnitte, deren Musterlösung ein Satz mit höchstens 30 Wörtern ist (Vergleich beim Verdichten). */
+/** Abschnitte für „Abschnitt zusammenfassen“: jeder Sinnabschnitt ist ein eigenes kleines Häppchen. */
 export function verdichtbar(t: ZText): number[] {
-  return t.abschnitte.map((a, i) => ({ a, i })).filter(({ a }) => woerter(a.muster) <= 30 && saetze(a.muster) === 1).map(({ i }) => i);
+  return t.abschnitte.map((_, i) => i);
+}
+
+/** Erlaubte Länge beim Zusammenfassen eines Abschnitts: mindestens 30 Wörter, sonst gut ein Drittel mehr als die Musterlösung. */
+export function verdichtGrenze(t: ZText, k: number): { woerter: number; saetze: number } {
+  const m = t.abschnitte[k].muster;
+  return { woerter: Math.max(30, Math.ceil((woerter(m) * 1.4) / 5) * 5), saetze: Math.max(1, saetze(m)) };
 }
 
 /** Schlusssätze zur Auswahl, in fester Reihenfolge je Text. */

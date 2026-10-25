@@ -1,4 +1,4 @@
-# Umsetzungsplan „Sprachrichtigkeit“
+# Umsetzungsplan „PerfectGrammar“
 
 Stand: 10. Oktober 2026
 
@@ -62,3 +62,8 @@ Alle Schritte sind umgesetzt. Stand der Bank: 10 Kurse, 53 Lektionen, 1128 Aufga
 19. Freie Texte kann die App ohne Sprachmodell nicht inhaltlich bewerten. Sie gibt automatische Hinweise (Wortzahl, Umgangssprache, Zeilenangaben, mögliche Präteritumformen, Abschwächung, Abdrift-Fallen, fehlende Angaben der Einleitung); die Wertung kommt aus der Selbstprüfung. Eine lokale KI (Ollama) ist optional und standardmäßig aus.
 20. Konjunktiv im Plural folgt der Regel der Lehrkraft: würden + Infinitiv, außer seien und hätten. Kurs 3 lässt bei starken Verben auch den Konjunktiv II gelten (kämen); im Modul „Zusammenfassen“ verlangen die Aufgaben die würden-Form.
 21. Ein Text gilt als bearbeitet, wenn die ganze Zusammenfassung abgeschlossen ist (nach dem Vergleich oder nach der einen Überarbeitung).
+22. Umbenennung in „PerfectGrammar“: Sichtbare Namen, Fenstertitel, PWA und Desktop-Verknüpfung heißen neu. Datenbankname, Kennung der Sicherungsdatei und Installationsordner bleiben `sprachrichtigkeit`, damit Lerndaten, alte Sicherungen und bestehende Installationen weiter funktionieren.
+23. KI-Bewertung über Claude läuft direkt aus dem Browser mit dem eigenen API-Schlüssel (`dangerouslyAllowBrowser`). Das ist vertretbar, weil die App nur lokal für eine Person läuft; der Schlüssel liegt nur im `localStorage`, nicht in der Datensicherung. Die KI-Bewertung zählt nicht in die Statistik; gezählt werden weiter Selbstprüfung und Checkliste.
+24. „Abschnitt zusammenfassen“ (früher „Verdichten“) gilt für alle Sinnabschnitte. Die erlaubte Länge richtet sich nach der Musterlösung: mindestens 30 Wörter, sonst das 1,4-Fache, aufgerundet auf fünf; die Satzzahl folgt der Musterlösung.
+25. Beim Schreiben der Einleitung zeigt die Übung Quellenzeile, Textsorte und den These-Abschnitt; beim Schluss den Hauptteil der Musterlösung als Kurzfassung. Der ganze Text ist aufklappbar.
+26. In „Meine Schwächen“ zeigt „Erklärung“ im gemischten Training vor der Antwort nur den Überblick aller Methoden, und während der Regelwahl keine Regelliste, weil beides sonst die Lösung verrät.

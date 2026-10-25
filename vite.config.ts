@@ -28,8 +28,8 @@ export default defineConfig({
       injectRegister: false,
       includeAssets: ['icon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Sprachrichtigkeit',
-        short_name: 'Sprachrichtigkeit',
+        name: 'PerfectGrammar',
+        short_name: 'PerfectGrammar',
         description: 'Rechtschreibung, Zeichensetzung und Grammatik bis zur Fehlerfreiheit trainieren.',
         lang: 'de-DE',
         start_url: './',

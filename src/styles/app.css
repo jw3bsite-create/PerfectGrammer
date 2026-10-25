@@ -1,4 +1,4 @@
-/* Sprachrichtigkeit – Gestaltung
+/* PerfectGrammar – Gestaltung
    Ruhig und erwachsen: viel Weißraum, eine Akzentfarbe, Typografie trägt die Oberfläche. */
 
 @font-face {
@@ -3365,4 +3365,78 @@ code {
   background: var(--surface-2);
   padding: 1px 5px;
   border-radius: 4px;
+}
+
+/* Zusammenfassen: kleine Schreibhäppchen, kurzer Kontext, KI-Bewertung, Erklärung */
+.zs-haeppchen-knoepfe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.zs-haeppchen-knoepfe .btn {
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+  min-height: 64px;
+  padding: 10px 14px;
+  text-align: left;
+  white-space: normal;
+  gap: 2px;
+}
+
+.zs-hk-titel {
+  font-weight: 650;
+}
+
+.zs-hk-sub {
+  font-size: 12.5px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.zs-kurz .zs-quelle {
+  margin-top: 0;
+}
+
+.zs-kurzfassung {
+  margin: 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-read);
+  line-height: 1.6;
+}
+
+.zs-ganz {
+  margin-top: 12px;
+}
+
+.zs-ki-aus {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.zs-ki-gesamt {
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.zs-beispiel .sub-line s {
+  text-decoration-thickness: 1px;
+}
+
+.zs-beispiel .title-line,
+.zs-beispiel .sub-line {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.zs-erklaerung .sw-methode {
+  margin-top: 0;
 }

@@ -188,8 +188,13 @@ export interface ZEigenerText {
 
 export interface ZKi {
   aktiv: boolean;
+  /** Claude über die Anthropic-API oder ein lokales Modell über Ollama. */
+  anbieter: 'claude' | 'ollama';
+  /** Ollama: Adresse und Modell. */
   url: string;
   modell: string;
+  /** Claude: Modell. Der API-Schlüssel liegt nicht hier, sondern nur im Browser (localStorage). */
+  claudeModell: string;
 }
 
 export interface ZState {
@@ -212,6 +217,6 @@ export function leererZStand(): ZState {
     volltexte: [],
     eigeneTexte: [],
     sitzung: null,
-    ki: { aktiv: false, url: 'http://localhost:11434', modell: 'qwen2.5:7b' },
+    ki: { aktiv: false, anbieter: 'claude', url: 'http://localhost:11434', modell: 'qwen2.5:7b', claudeModell: 'claude-opus-5-5' },
   };
 }

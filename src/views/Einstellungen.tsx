@@ -101,7 +101,7 @@ export function Einstellungen() {
           Alle Daten liegen nur auf diesem Gerät. Sichere sie regelmäßig als Datei, damit ein Gerätewechsel nichts kostet.
         </p>
         <Row title="Daten sichern" text="Vollständiger Stand als JSON-Datei: Antworten, Fehlerbuch, Wiederholung, Lektionsstände, eigene Aufgaben, Einstellungen.">
-          <button className="btn" onClick={() => download(`sprachrichtigkeit-sicherung-${dayKey()}.json`, exportJson(), 'application/json')}>
+          <button className="btn" onClick={() => download(`perfectgrammar-sicherung-${dayKey()}.json`, exportJson(), 'application/json')}>
             <Icon name="download" /> Sichern
           </button>
         </Row>

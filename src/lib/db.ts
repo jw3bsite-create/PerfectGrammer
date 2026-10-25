@@ -4,7 +4,7 @@ import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import type { AppData, Attempt, CourseState, ErrorEntry, LessonState, ReviewState, Task } from './types';
 import { DEFAULT_SETTINGS } from './types';
 import { leererStand } from '../schwaechen/typen';
-import { leererZStand } from '../zusammenfassen/typen';
+import { leererZStand, type ZKi } from '../zusammenfassen/typen';
 
 /** Version des Datenmodells. Bei Änderungen erhöhen und eine Migration ergänzen. */
 export const DATA_VERSION = 3;
@@ -99,9 +99,16 @@ export function migrate(raw: Record<string, unknown>, from: number): AppData {
     schwaechen: d.schwaechen && typeof d.schwaechen === 'object' ? { ...leererStand(), ...d.schwaechen } : leererStand(),
     zusammenfassen:
       d.zusammenfassen && typeof d.zusammenfassen === 'object'
-        ? { ...leererZStand(), ...d.zusammenfassen, ki: { ...leererZStand().ki, ...(d.zusammenfassen.ki ?? {}) } }
+        ? { ...leererZStand(), ...d.zusammenfassen, ki: kiMitStandard(d.zusammenfassen.ki) }
         : leererZStand(),
   };
+}
+
+// Ältere Stände kennen nur Ollama: Wer es schon eingeschaltet hatte, bleibt dabei.
+function kiMitStandard(ki: Partial<ZKi> | undefined): ZKi {
+  const std = leererZStand().ki;
+  if (!ki) return std;
+  return { ...std, ...ki, anbieter: ki.anbieter ?? (ki.aktiv ? 'ollama' : std.anbieter) };
 }
 
 export async function loadAll(): Promise<AppData> {
@@ -220,7 +227,7 @@ export function toBackup(data: AppData): Backup {
 export function fromBackup(json: unknown): AppData {
   if (!json || typeof json !== 'object') throw new Error('Die Datei enthält keine gültige Sicherung.');
   const b = json as Partial<Backup>;
-  if (b.app !== 'sprachrichtigkeit' || !b.daten) throw new Error('Die Datei ist keine Sicherung von „Sprachrichtigkeit“.');
+  if (b.app !== 'sprachrichtigkeit' || !b.daten) throw new Error('Die Datei ist keine Sicherung von „PerfectGrammar“.');
   const v = typeof b.datenversion === 'number' ? b.datenversion : 1;
   if (v > DATA_VERSION) throw new Error('Die Sicherung stammt aus einer neueren Version der App. Aktualisiere die App und versuche es erneut.');
   return migrate(b.daten as unknown as Record<string, unknown>, v);

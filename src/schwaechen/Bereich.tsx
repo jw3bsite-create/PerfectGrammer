@@ -25,7 +25,7 @@ export function SchwaechenBereich({ route }: { route: Route }) {
   const [, b, c] = route.parts;
   useEffect(() => {
     const vorher = document.title;
-    document.title = 'Meine Schwächen · Sprachrichtigkeit';
+    document.title = 'Meine Schwächen · PerfectGrammar';
     return () => {
       document.title = vorher;
     };

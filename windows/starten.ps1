@@ -1,5 +1,5 @@
-﻿# Startet Sprachrichtigkeit und holt vorher automatisch die neueste Version von GitHub.
-# Wird über die Verknüpfung „Sprachrichtigkeit“ auf dem Desktop aufgerufen (siehe einrichten.ps1).
+﻿# Startet PerfectGrammar (früher „Sprachrichtigkeit“) und holt vorher automatisch die neueste Version von GitHub.
+# Wird über die Verknüpfung „PerfectGrammar“ auf dem Desktop aufgerufen (siehe einrichten.ps1).
 # Die Lerndaten liegen im Browser unter http://localhost:5173 und bleiben bei jedem Update erhalten.
 
 $ErrorActionPreference = 'Stop'
@@ -15,7 +15,7 @@ $VersionFile = Join-Path $Base 'version.txt'
 $RestartFile = Join-Path $Base 'neustart.txt'
 $Npm = if ($env:OS -eq 'Windows_NT') { 'npm.cmd' } else { 'npm' }
 
-try { $Host.UI.RawUI.WindowTitle = 'Sprachrichtigkeit' } catch { }
+try { $Host.UI.RawUI.WindowTitle = 'PerfectGrammar' } catch { }
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 } catch { }
 
 function Stop-WithMessage([string]$Text) {
@@ -79,14 +79,28 @@ function Move-WithRetry([string]$From, [string]$To) {
 }
 
 Write-Host ''
-Write-Host '  Sprachrichtigkeit' -ForegroundColor Cyan
+Write-Host '  PerfectGrammar' -ForegroundColor Cyan
 Write-Host ''
+
+# Alte Desktop-Verknüpfung „Sprachrichtigkeit“ in „PerfectGrammar“ umbenennen (der Ordner bleibt, damit nichts verloren geht).
+try {
+  $desk = [Environment]::GetFolderPath('Desktop')
+  $alt = Join-Path $desk 'Sprachrichtigkeit.lnk'
+  $neu = Join-Path $desk 'PerfectGrammar.lnk'
+  if ((Test-Path $alt) -and -not (Test-Path $neu)) {
+    Rename-Item -Path $alt -NewName 'PerfectGrammar.lnk'
+    $sh = New-Object -ComObject WScript.Shell
+    $l = $sh.CreateShortcut($neu)
+    $l.Description = 'PerfectGrammar starten (aktualisiert sich selbst)'
+    $l.Save()
+  }
+} catch { }
 
 # Neueste Version auf GitHub abfragen
 $latest = $null
 Write-Host 'Suche nach Updates …'
 try {
-  $info = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repo/commits/$Branch" -Headers @{ 'User-Agent' = 'Sprachrichtigkeit' } -TimeoutSec 20
+  $info = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repo/commits/$Branch" -Headers @{ 'User-Agent' = 'PerfectGrammar' } -TimeoutSec 20
   $latest = [string]$info.sha
 } catch {
   Write-Host 'Keine Verbindung zu GitHub. Die vorhandene Version wird gestartet.' -ForegroundColor Yellow
@@ -109,7 +123,7 @@ if (Test-PortInUse) {
   Stop-RunningApp
   for ($i = 0; $i -lt 20 -and (Test-PortInUse); $i++) { Start-Sleep -Milliseconds 500 }
   if (Test-PortInUse) {
-    Stop-WithMessage 'Die laufende App ließ sich nicht beenden. Bitte das andere schwarze Fenster „Sprachrichtigkeit“ schließen und die Verknüpfung erneut starten.'
+    Stop-WithMessage 'Die laufende App ließ sich nicht beenden. Bitte das andere schwarze Fenster „PerfectGrammar“ schließen und die Verknüpfung erneut starten.'
   }
   Start-Sleep -Seconds 1
 }

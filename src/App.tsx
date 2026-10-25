@@ -67,7 +67,7 @@ function Shell({ route, children }: { route: Route; children: ReactNode }) {
           <span className="brand-mark" aria-hidden="true">
             ß
           </span>
-          Sprachrichtigkeit
+          PerfectGrammar
         </div>
         <nav className="nav">
           {NAV.map((n) => (

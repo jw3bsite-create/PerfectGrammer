@@ -14,7 +14,7 @@ export function Willkommen() {
           <span className="brand-mark" aria-hidden="true">
             ß
           </span>
-          Sprachrichtigkeit
+          PerfectGrammar
         </div>
         <h1 style={{ fontSize: 32 }}>Fehlerfrei schreiben, Satz für Satz.</h1>
         <p className="lead" style={{ fontSize: 17 }}>

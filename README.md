@@ -1,4 +1,4 @@
-# Sprachrichtigkeit
+# PerfectGrammar
 
 Lern-App für Rechtschreibung, Zeichensetzung und Grammatik auf Abiturniveau (Baden-Württemberg, Abitur 2027). Für jeden Fehlertyp gibt es genau eine Probe; die App lehrt nur diese Probe und übt sie, bis sie sitzt.
 
@@ -24,7 +24,7 @@ npm run preview    # gebaute App lokal ansehen
 
 1. [Node.js](https://nodejs.org) (Version „LTS“) installieren.
 2. Den Branch als ZIP herunterladen, entpacken und im Ordner mit `package.json` die Datei **`Windows einrichten.bat`** doppelklicken.
-3. Auf dem Desktop liegt danach die Verknüpfung **„Sprachrichtigkeit“**. Sie prüft bei jedem Start, ob es auf GitHub eine neue Version gibt, lädt sie bei Bedarf und öffnet die App unter `http://localhost:5173`.
+3. Auf dem Desktop liegt danach die Verknüpfung **„PerfectGrammar“** (früher „Sprachrichtigkeit“; eine alte Verknüpfung wird beim nächsten Start automatisch umbenannt). Sie prüft bei jedem Start, ob es auf GitHub eine neue Version gibt, lädt sie bei Bedarf und öffnet die App unter `http://localhost:5173`.
 
 Verknüpfung neu anlegen (ohne ZIP): PowerShell öffnen und diese Zeile einfügen. Sie erzwingt beim nächsten Start auch die neueste Version.
 
@@ -32,7 +32,7 @@ Verknüpfung neu anlegen (ohne ZIP): PowerShell öffnen und diese Zeile einfüge
 irm https://raw.githubusercontent.com/jw3bsite-create/PerfectGrammer/claude/sprachrichtigkeit-app-xzd9cl/windows/einrichten-online.ps1 | iex
 ```
 
-Läuft die App beim Klick schon und gibt es eine neue Version, beendet die Verknüpfung die laufende App, aktualisiert sie und startet sie neu. Die App liegt danach in `%USERPROFILE%\Sprachrichtigkeit`; der entpackte Download-Ordner kann gelöscht werden. Die Lerndaten liegen im Browser und bleiben bei Updates erhalten. Ohne Internet startet die zuletzt geladene Version.
+Läuft die App beim Klick schon und gibt es eine neue Version, beendet die Verknüpfung die laufende App, aktualisiert sie und startet sie neu. Die App liegt danach in `%USERPROFILE%\Sprachrichtigkeit` (der Ordnername bleibt, damit bestehende Installationen weiterlaufen); der entpackte Download-Ordner kann gelöscht werden. Die Lerndaten liegen im Browser und bleiben bei Updates erhalten. Ohne Internet startet die zuletzt geladene Version.
 
 ## Prüfen
 
@@ -57,18 +57,23 @@ npm run e2e            # Browser-Prüfung mit Chromium (baut vorher die App)
 | Strg + . | spielt das Wort in „Wort tippen“ noch einmal vor |
 | Esc | schließt Regelkarte, Dialog oder Korrekturfeld |
 
-Alles ist ebenso per Antippen bedienbar. In „Meine Schwächen“ wählen die Ziffern nach jeder Antwort die Regel, die sie begründet.
+Alles ist ebenso per Antippen bedienbar. In „Meine Schwächen“ wählen die Ziffern nach jeder Antwort die Regel, die sie begründet. Dort öffnet „Erklärung“ oben rechts Methode, Regeln und die Regelkarten der passenden Kurslektionen; im gemischten Training erst nach der Antwort, vorher den Überblick aller Methoden.
 
 ## Zusammenfassen
 
 Der Bereich `#/zusammenfassen` trainiert die strukturierte Textwiedergabe nach den Erwartungen der Lehrkraft: Einleitung mit Verfasser, Titel, Textsorte, Erscheinungsort und -datum, Thema und Kernaussage in höchstens zwei Sätzen; im Hauptteil etwa ein Satz pro Sinnabschnitt mit Funktionsverb, Präsens und Konjunktiv für Behauptungen (Singular Konjunktiv I, Plural würden + Infinitiv außer seien/hätten, nach „dass“ auch Indikativ); Schluss mit der Gesamtaussage; insgesamt etwa zehn Sätze, ohne Zeilenangaben.
 
-- **Teilübungen** (je ein bis drei Minuten, jede zu einem anderen Text): Textsorte bestimmen, Einleitung prüfen, Einleitung schreiben, Struktur erkennen (Sinnabschnitte und ihre Funktion), These finden, Kern oder Beispiel, Funktionsverb, Fingertest (dazugedichtetes Wort markieren), Bedeutungsgleich, Konjunktiv im Rahmen (mit Begründung), Verdichten (höchstens 30 Wörter), Gesamtaussage wählen, Schluss schreiben. Übungsarten zu den häufigsten Fehlerkategorien kommen öfter.
+- **Teilübungen** (je ein bis drei Minuten, jede zu einem anderen Text): Textsorte bestimmen, Einleitung prüfen, Einleitung schreiben, Struktur erkennen (Sinnabschnitte und ihre Funktion), These finden, Kern oder Beispiel, Funktionsverb, Fingertest (dazugedichtetes Wort markieren), Bedeutungsgleich, Konjunktiv im Rahmen (mit Begründung), Abschnitt zusammenfassen, Gesamtaussage wählen, Schluss schreiben. Übungsarten zu den häufigsten Fehlerkategorien kommen öfter. Oben rechts öffnet „Erklärung“ jederzeit Vorgehen, Beispiele und die Erwartungen der Lehrerin zur aktuellen Übung.
+- **Selbst schreiben in kleinen Häppchen:** „Abschnitte zusammenfassen“ (ein Sinnabschnitt, ein Satz; erlaubt sind mindestens 30 Wörter, sonst gut ein Drittel mehr als die Musterlösung), „Nur Einleitungen“ (Quellenzeile, Textsorte und der Abschnitt mit der Kernaussage statt des ganzen Textes), „Nur Schlüsse“ (der Gedankengang in Kurzform statt des ganzen Textes) und „Schreiben gemischt“. Der ganze Text lässt sich jeweils aufklappen.
 - **Ganzer Text:** Schreibplan (Funktion, Funktionsverb, höchstens fünf Schlüsselwörter je Abschnitt, These am Rand), Text mit Timer und Wortzähler, Selbstprüfung mit zwölf Ja/Nein-Fragen und automatischen Hinweisen (Umgangssprache, Zeilenangaben, mögliche Präteritumformen, Abschwächung, Abdrift-Fallen, Länge), Musterlösung Abschnitt für Abschnitt neben der eigenen Fassung, eine Überarbeitung, dann der nächste Text.
 - **Fehlerkategorien:** Einleitung unvollständig, Struktur nicht erkennbar, These fehlt, Dazugedichtet, Beispiel statt Kern, Rahmen fehlt, Konjunktiv Singular/Plural, Modusmischung, Präteritum, Abschwächung, Umgangssprache, zu lang. Jedes „Nein“ der Checkliste und jeder Fehler in einer Teilübung zählt; die Übersicht zeigt eine Ampel je Kategorie und den Verlauf.
 - **Stufen:** zuerst kurze, klar gegliederte Texte; nach vier ganzen Zusammenfassungen (oder sicheren Teilübungen) mittellange, nach zehn längere mit versteckter These. Die Stufe lässt sich auch selbst wählen.
 - **Eigene Texte:** Texte aus dem Unterricht einfügen, auf Wunsch mit der Musterlösung der Lehrkraft.
-- **KI (optional):** Rückmeldung eines lokalen Modells über [Ollama](https://ollama.com) (`ollama pull qwen2.5:7b`, Adresse `http://localhost:11434`). Die KI nennt Stelle, Kategorie und Fehlerart, aber keine Lösung; ohne KI bleibt es bei Checkliste und Musterlösung. Es werden keine Daten ins Internet geschickt.
+- **KI-Bewertung (optional):** unter „Zusammenfassen → KI“. Zwei Anbieter:
+  - **Claude** über die Anthropic-API (offizielles SDK `@anthropic-ai/sdk`, Modell `claude-opus-5-5`): API-Schlüssel aus der Claude Console (platform.claude.com) eintragen. Der Schlüssel liegt nur im `localStorage` dieses Browsers, nicht in der Datensicherung. Kosten etwa 2 bis 6 Cent je Bewertung. Text und Übungstext gehen dafür an Anthropic.
+  - **Lokal** über [Ollama](https://ollama.com) (`ollama pull qwen2.5:7b`, Adresse `http://localhost:11434`): kostenlos, nichts verlässt den Rechner, aber ungenauer.
+
+  Für Einleitung, Abschnitt, Schluss und ganze Zusammenfassung gibt es je eine eigene Anweisung (`src/zusammenfassen/ki.ts`, einsehbar auf der KI-Seite) mit den Kriterien der Lehrerin. Die KI antwortet als JSON nach festem Schema: je Kriterium erfüllt oder nicht mit Begründung, jeder Fehler mit wörtlicher Stelle, Kategorie und Fehlerart, ein Gesamturteil und ein nächster Übungsschritt. Sie schreibt keine Lösung und lobt nicht. Die Bewertung ist eine zweite Meinung; gezählt werden weiter Checkliste und Selbstprüfung.
 
 Inhalte: `src/content/zusammenfassen.json`. Jeder Text hat Absätze (als Einzelsätze), Sinnabschnitte mit Funktion, Funktionsverb, Falschverben samt Begründung und Musterlösung, den These-Satz, Einleitung und Schluss, Schlüsselbegriffe, Abdrift-Fallen sowie die Daten für Fingertest, Kern/Beispiel, Bedeutungsgleich, Konjunktiv und Schluss-Auswahl. Alle Texte sind selbst geschrieben, mit erfundenen Verfassern und Medien; die Sachinformationen sind echt. `tests/zusammenfassen.test.ts` prüft jeden Text: Längen je Stufe, lückenlose Abschnitte, These im These-Abschnitt, Musterlösung ohne Präteritum, Umgangssprache und Fallen, Einleitung besteht die automatische Prüfung.
 
@@ -143,7 +148,7 @@ Ein Sprachmodell ist in einer reinen Offline-App nicht verfügbar; deshalb gibt 
 
 ## Daten und Sicherung
 
-Alle Daten liegen in der IndexedDB des Browsers (Datenbank `sprachrichtigkeit`). Unter „Einstellungen → Sicherung“ wird der vollständige Stand als JSON-Datei gespeichert und wieder eingespielt:
+Alle Daten liegen in der IndexedDB des Browsers (Datenbank `sprachrichtigkeit`; der interne Name bleibt nach der Umbenennung in PerfectGrammar, damit keine Lerndaten verloren gehen). Unter „Einstellungen → Sicherung“ wird der vollständige Stand als JSON-Datei gespeichert und wieder eingespielt:
 
 ```json
 { "app": "sprachrichtigkeit", "datenversion": 3, "exportiert": "…", "daten": { "settings": {}, "attempts": [], "reviews": {}, "errors": [], "lessons": {}, "courses": {}, "customTasks": [], "schwaechen": {}, "zusammenfassen": {} } }

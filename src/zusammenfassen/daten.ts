@@ -90,7 +90,7 @@ export const ARTEN: { id: ZArt; teil: ZTeil; titel: string; kurz: string; kats: 
   { id: 'fingertest', teil: 'hauptteil', titel: 'Fingertest', kurz: 'Das dazugedichtete Wort markieren.', kats: ['dazugedichtet'] },
   { id: 'synonym', teil: 'hauptteil', titel: 'Bedeutungsgleich?', kurz: 'Sagt das Ersatzwort genau dasselbe?', kats: ['dazugedichtet'] },
   { id: 'konjunktiv', teil: 'hauptteil', titel: 'Konjunktiv im Rahmen', kurz: 'Einen Satz in indirekte Rede bringen und begründen.', kats: ['numerus', 'modus'] },
-  { id: 'verdichten', teil: 'hauptteil', titel: 'Verdichten', kurz: 'Einen Abschnitt in einem Satz (höchstens 30 Wörter).', kats: ['beispiel', 'dazugedichtet', 'laenge'] },
+  { id: 'verdichten', teil: 'hauptteil', titel: 'Abschnitt zusammenfassen', kurz: 'Ein kurzer Abschnitt, du fasst ihn in einem Satz zusammen.', kats: ['beispiel', 'dazugedichtet', 'laenge'] },
   { id: 'schlussWaehlen', teil: 'schluss', titel: 'Gesamtaussage wählen', kurz: 'Welcher Schlusssatz trifft die Gesamtaussage?', kats: ['beispiel', 'dazugedichtet'] },
   { id: 'schlussSchreiben', teil: 'schluss', titel: 'Schluss schreiben', kurz: 'Die Gesamtaussage in ein bis zwei Sätzen.', kats: ['beispiel', 'dazugedichtet'] },
 ];

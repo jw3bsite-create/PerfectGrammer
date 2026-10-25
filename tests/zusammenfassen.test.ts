@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { migrate } from '../src/lib/db';
 import { evalTyped } from '../src/lib/evaluate';
 import { ARTEN, FUNKTIONEN, musterGesamt, saetze, TEXTE, woerter } from '../src/zusammenfassen/daten';
-import { kiAntwortLesen } from '../src/zusammenfassen/ki';
-import { DEFEKTE, einleitungVariante, niveauAuto, sitzungItems, anzahlTeilaufgaben } from '../src/zusammenfassen/logik';
+import { KI_KRITERIEN, kiAntwortLesen, kiNachricht, kiSystemPrompt } from '../src/zusammenfassen/ki';
+import { DEFEKTE, einleitungVariante, niveauAuto, sitzungItems, anzahlTeilaufgaben, verdichtbar, verdichtGrenze } from '../src/zusammenfassen/logik';
 import { fallenIn, hinweiseZusammenfassung, praeteritum, pruefeEinleitung, umgangssprache, zeilenangaben } from '../src/zusammenfassen/pruefen';
 import { leererZStand, type ZState } from '../src/zusammenfassen/typen';
 
@@ -166,7 +166,45 @@ describe('Zusammenfassen: Speicher und KI', () => {
   });
 
   it('liest die Antwort der KI auch mit Text drumherum', () => {
-    expect(kiAntwortLesen('Hier: {"fehler":[{"kategorie":"Präteritum","stelle":"stellte dar","art":"Präteritum statt Präsens"}]} Ende')).toHaveLength(1);
-    expect(kiAntwortLesen('kein json')).toEqual([]);
+    expect(kiAntwortLesen('Hier: {"fehler":[{"kategorie":"Präteritum","stelle":"stellte dar","art":"Präteritum statt Präsens"}]} Ende').fehler).toHaveLength(1);
+    expect(kiAntwortLesen('kein json')).toEqual({ kriterien: [], fehler: [], gesamt: '', tipp: '' });
+    const b = kiAntwortLesen('{"kriterien":[{"kriterium":"Kern","erfuellt":false,"begruendung":"Nur Beispiel"}],"fehler":[],"gesamt":"Knapp daneben.","tipp":"Frag, was das Beispiel belegt."}');
+    expect(b.kriterien[0]).toEqual({ kriterium: 'Kern', erfuellt: false, begruendung: 'Nur Beispiel' });
+    expect(b.tipp).toContain('Beispiel');
+  });
+
+  it('eigene Anweisung je Teil mit den Kriterien der Lehrerin, ohne Musterlösung für die Schüler', () => {
+    for (const teil of ['einleitung', 'abschnitt', 'schluss', 'volltext'] as const) {
+      const p = kiSystemPrompt(teil);
+      for (const k of KI_KRITERIEN[teil]) expect(p).toContain(k);
+      expect(p).toContain('keine Musterlösung');
+      expect(p).toContain('würden + Infinitiv');
+    }
+    expect(kiSystemPrompt('einleitung')).toContain('Kernaussage');
+    expect(kiSystemPrompt('schluss')).toContain('Gesamtaussage');
+    const n = kiNachricht({ teil: 'abschnitt', angaben: 'A: T.', original: 'Text', eigen: 'Satz', muster: 'Muster' });
+    expect(n).toContain('ABSCHNITT DES ORIGINALTEXTES');
+    expect(n.indexOf('SCHÜLERTEXT')).toBeGreaterThan(n.indexOf('MUSTERLÖSUNG'));
+  });
+
+  it('ältere Stände mit eingeschalteter lokaler KI bleiben bei Ollama', () => {
+    const z = migrate({ settings: {}, zusammenfassen: { ki: { aktiv: true, url: 'http://localhost:11434', modell: 'llama3' } } }, 3).zusammenfassen;
+    expect(z.ki.anbieter).toBe('ollama');
+    expect(z.ki.claudeModell).toBe('claude-opus-5-5');
+    expect(migrate({ settings: {} }, 3).zusammenfassen.ki.anbieter).toBe('claude');
+  });
+});
+
+describe('Zusammenfassen: kleine Häppchen', () => {
+  it('jeder Abschnitt jedes Textes lässt sich einzeln zusammenfassen, mit passender Länge', () => {
+    for (const t of TEXTE) {
+      expect(verdichtbar(t)).toHaveLength(t.abschnitte.length);
+      t.abschnitte.forEach((a, k) => {
+        const g = verdichtGrenze(t, k);
+        expect(g.woerter).toBeGreaterThanOrEqual(30);
+        expect(woerter(a.muster)).toBeLessThanOrEqual(g.woerter);
+        expect(saetze(a.muster)).toBeLessThanOrEqual(g.saetze);
+      });
+    }
   });
 });

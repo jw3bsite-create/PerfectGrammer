@@ -460,7 +460,7 @@ afterAll(async () => {
   await new Promise<void>((r) => server?.httpServer.close(() => r()));
 });
 
-describe('Sprachrichtigkeit im Browser', () => {
+describe('PerfectGrammar im Browser', () => {
   it('Lektion 1.1: Probe und Komma per Tastatur, falsche Antwort landet im Fehlerbuch', async () => {
     const ctx = await newContext();
     const page = await ctx.newPage();
@@ -952,6 +952,15 @@ describe('Sprachrichtigkeit im Browser', () => {
     expect(await fb.innerText()).toContain('Kontrollaufgabe');
     expect(await fb.innerText()).toContain('Entscheidungskette');
     await shot(sw, 'schwaechen-rueckmeldung');
+    // Erklärung oben rechts: Methode, Regeln und Regelkarte der Kurslektion
+    await sw.locator('[data-erklaerung]').click();
+    const erkl = sw.locator('[data-erklaerung-art="S1"]');
+    await erkl.waitFor();
+    expect(await erkl.innerText()).toContain('Regelkarte 3.8');
+    await shot(sw, 'schwaechen-erklaerung');
+    await sw.keyboard.press('Escape');
+    await erkl.waitFor({ state: 'detached' });
+    await sw.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
     await sw.keyboard.press('Enter');
     await sw.getByText('Kontrollaufgabe', { exact: true }).waitFor();
     const kontrolle = await swCurrent(sw);
@@ -1089,7 +1098,8 @@ describe('Sprachrichtigkeit im Browser', () => {
     });
     await onboard(page);
     await page.goto(`${BASE}#/zusammenfassen/ki`);
-    await page.getByLabel('KI verwenden').check();
+    await page.getByLabel('KI-Bewertung verwenden').check();
+    await page.locator('[data-anbieter="ollama"]').click();
     await page.getByRole('button', { name: 'Speichern' }).click();
     await page.getByRole('button', { name: 'Verbindung testen' }).click();
     await page.getByText('Verbunden. Modell').waitFor();
@@ -1110,7 +1120,7 @@ describe('Sprachrichtigkeit im Browser', () => {
     await page.getByRole('timer').waitFor();
     await shot(page, 'zs-volltext-schreiben');
     await page.getByRole('button', { name: 'Fertig, zur Selbstprüfung' }).click();
-    await page.getByRole('button', { name: 'KI-Rückmeldung holen' }).click();
+    await page.getByRole('button', { name: 'KI bewerten lassen' }).click();
     await page.getByText('Präteritum statt Präsens').waitFor();
     await zJaNein(page, ['laenge']);
     await shot(page, 'zs-volltext-pruefen');
@@ -1136,6 +1146,93 @@ describe('Sprachrichtigkeit im Browser', () => {
     expect(await page.locator('[data-kat="laenge"]').innerText()).toContain('1 von 2 richtig');
     expect(await page.locator('[data-kat="these"]').innerText()).toContain('2 von 2 richtig');
     await page.getByRole('link', { name: 'Weiterschreiben' }).waitFor();
+    await ctx.close();
+  }, 180_000);
+
+  it('Zusammenfassen: kleine Schreibhäppchen mit Erklärung und KI-Bewertung über Claude', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    // Claude-API als Attrappe
+    const anfragen: { url: string; body: Record<string, unknown>; headers: Record<string, string> }[] = [];
+    await page.route('https://api.anthropic.com/**', async (route) => {
+      const req = route.request();
+      const url = req.url();
+      if (req.method() === 'OPTIONS') return route.fulfill({ status: 204, headers: { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': '*' } });
+      const cors = { 'access-control-allow-origin': '*' };
+      anfragen.push({ url, body: req.postData() ? JSON.parse(req.postData()!) : {}, headers: await req.allHeaders() });
+      if (url.includes('/v1/models/')) return route.fulfill({ headers: cors, json: { type: 'model', id: 'claude-opus-5-5', display_name: 'Claude Opus 5.5', created_at: '2026-01-01T00:00:00Z' } });
+      const bewertung = {
+        kriterien: [
+          { kriterium: 'Kern des Abschnitts getroffen', erfuellt: true, begruendung: 'Der Kern ist da.' },
+          { kriterium: 'Indirekte Rede richtig', erfuellt: false, begruendung: 'Im Plural fehlt die würden-Form.' },
+        ],
+        fehler: [{ kategorie: 'Konjunktiv Singular/Plural', stelle: 'Schüler lernen', art: 'Plural im Indikativ statt würden + Infinitiv' }],
+        gesamt: 'Inhaltlich treffend, sprachlich mit einem Konjunktivfehler.',
+        tipp: 'Übe die würden-Form im Plural.',
+      };
+      return route.fulfill({
+        headers: cors,
+        json: { id: 'msg_1', type: 'message', role: 'assistant', model: 'claude-opus-5-5', stop_reason: 'end_turn', stop_sequence: null, usage: { input_tokens: 10, output_tokens: 10 }, content: [{ type: 'text', text: JSON.stringify(bewertung) }] },
+      });
+    });
+    await onboard(page);
+    await page.goto(`${BASE}#/zusammenfassen/ki`);
+    await page.getByLabel('KI-Bewertung verwenden').check();
+    await page.locator('[data-anbieter="claude"]').click();
+    await page.getByLabel('API-Schlüssel').fill('sk-ant-test');
+    await page.getByRole('button', { name: 'Speichern' }).click();
+    await page.getByRole('button', { name: 'Verbindung testen' }).click();
+    await page.getByText('Verbunden. Modell „Claude Opus 5.5“').waitFor();
+    await shot(page, 'zs-ki-einstellungen');
+    // Der Schlüssel liegt nicht in der Datensicherung
+    expect(await page.evaluate(() => localStorage.getItem('perfectgrammar-claude-key'))).toBe('sk-ant-test');
+
+    // Abschnitt zusammenfassen
+    await page.goto(`${BASE}#/zusammenfassen`);
+    await page.locator('[data-haeppchen]').waitFor();
+    await shot(page, 'zs-haeppchen');
+    await page.locator('[data-start="schreiben-abschnitt"]').click();
+    const el = page.locator('[data-task]');
+    await el.waitFor();
+    const [art, textId, ns] = (await el.getAttribute('data-task'))!.split(':');
+    expect(art).toBe('verdichten');
+    expect(await page.locator('.task-instruction').first().innerText()).toContain('Fass diesen Abschnitt zusammen');
+    await page.locator('[data-erklaerung]').click();
+    await page.locator('[data-erklaerung-art="verdichten"]').waitFor();
+    await shot(page, 'zs-erklaerung');
+    await page.keyboard.press('Escape');
+    await page.locator('[data-erklaerung-art="verdichten"]').waitFor({ state: 'detached' });
+    const t = zText(textId)!;
+    await page.getByLabel('Dein Satz').fill(t.abschnitte[verdichtbar(t)[Number(ns)]].muster);
+    await page.getByRole('button', { name: /^Vergleichen/ }).click();
+    await page.getByRole('button', { name: 'KI bewerten lassen' }).click();
+    await page.getByText('Plural im Indikativ statt würden + Infinitiv').waitFor();
+    await page.getByText('Übe die würden-Form im Plural.').waitFor();
+    await shot(page, 'zs-ki-abschnitt');
+    const msg = anfragen.find((a) => a.url.endsWith('/v1/messages'))!;
+    expect(msg.body.model).toBe('claude-opus-5-5');
+    expect(String(msg.body.system)).toContain('Sinnabschnitts');
+    expect(msg.body).not.toHaveProperty('temperature');
+    expect((msg.body.output_config as { format: { type: string } }).format.type).toBe('json_schema');
+    expect(`${msg.headers['x-api-key'] ?? ''} ${msg.headers.authorization ?? ''}`).toContain('sk-ant-test');
+    expect(msg.headers['anthropic-dangerous-direct-browser-access']).toBe('true');
+    await zJaNein(page);
+    await page.getByRole('button', { name: 'Auswerten' }).click();
+    await expectFeedback(page, `${art}:${textId}:${ns}`, art, true);
+
+    // Nur Einleitungen: kurzer Kontext statt ganzem Text
+    await page.goto(`${BASE}#/zusammenfassen`);
+    await page.locator('[data-start="schreiben-einleitung"]').click();
+    await page.locator('[data-task^="einleitungSchreiben"]').waitFor();
+    await page.locator('[data-kurz]').waitFor();
+    expect(await page.locator('.zs-ganz').evaluate((d) => (d as HTMLDetailsElement).open)).toBe(false);
+    await shot(page, 'zs-einleitung-kurz');
+    // Nur Schlüsse: Kurzfassung des Gedankengangs
+    await page.goto(`${BASE}#/zusammenfassen/schluss`);
+    await page.locator('[data-start="schreiben-teil-schluss"]').click();
+    await page.locator('[data-task^="schlussSchreiben"]').waitFor();
+    await page.locator('[data-kurz="hauptteil"]').waitFor();
     await ctx.close();
   }, 180_000);
 
