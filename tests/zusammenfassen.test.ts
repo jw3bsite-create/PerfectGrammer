@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { migrate } from '../src/lib/db';
 import { evalTyped } from '../src/lib/evaluate';
 import { ARTEN, FUNKTIONEN, musterGesamt, saetze, TEXTE, woerter } from '../src/zusammenfassen/daten';
-import { KI_KRITERIEN, kiAntwortLesen, kiNachricht, kiSystemPrompt } from '../src/zusammenfassen/ki';
+import { KI_KRITERIEN, kiAntwortLesen, kiNachricht, kiSystemPrompt, modellVorschlag } from '../src/zusammenfassen/ki';
 import { DEFEKTE, einleitungVariante, niveauAuto, sitzungItems, anzahlTeilaufgaben, verdichtbar, verdichtGrenze } from '../src/zusammenfassen/logik';
 import { fallenIn, hinweiseZusammenfassung, praeteritum, pruefeEinleitung, umgangssprache, zeilenangaben } from '../src/zusammenfassen/pruefen';
 import { leererZStand, type ZState } from '../src/zusammenfassen/typen';
@@ -171,6 +171,13 @@ describe('Zusammenfassen: Speicher und KI', () => {
     const b = kiAntwortLesen('{"kriterien":[{"kriterium":"Kern","erfuellt":false,"begruendung":"Nur Beispiel"}],"fehler":[],"gesamt":"Knapp daneben.","tipp":"Frag, was das Beispiel belegt."}');
     expect(b.kriterien[0]).toEqual({ kriterium: 'Kern', erfuellt: false, begruendung: 'Nur Beispiel' });
     expect(b.tipp).toContain('Beispiel');
+  });
+
+  it('überspringt den Denkteil lokaler Modelle und schlägt ein Modell mit gutem Deutsch vor', () => {
+    expect(kiAntwortLesen('<think>Ich prüfe {zuerst} den Text.</think>{"kriterien":[],"fehler":[],"gesamt":"Gut lesbar.","tipp":"x"}').gesamt).toBe('Gut lesbar.');
+    expect(modellVorschlag(['llama3.1:8b', 'phi3', 'qwen2.5:7b'])).toBe('qwen2.5:7b');
+    expect(modellVorschlag(['phi3'])).toBe('phi3');
+    expect(modellVorschlag([])).toBe('');
   });
 
   it('eigene Anweisung je Teil mit den Kriterien der Lehrerin, ohne Musterlösung für die Schüler', () => {

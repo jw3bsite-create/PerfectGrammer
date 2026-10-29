@@ -188,9 +188,9 @@ export interface ZEigenerText {
 
 export interface ZKi {
   aktiv: boolean;
-  /** Claude über die Anthropic-API oder ein lokales Modell über Ollama. */
-  anbieter: 'claude' | 'ollama';
-  /** Ollama: Adresse und Modell. */
+  /** Claude über die Anthropic-API oder ein lokales Modell: Ollama oder ein Server mit OpenAI-Schnittstelle (LM Studio, Jan, llama.cpp). */
+  anbieter: 'claude' | 'ollama' | 'openai';
+  /** Lokale KI: Adresse und Modell. */
   url: string;
   modell: string;
   /** Claude: Modell. Der API-Schlüssel liegt nicht hier, sondern nur im Browser (localStorage). */

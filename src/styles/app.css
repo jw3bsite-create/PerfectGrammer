@@ -3440,3 +3440,13 @@ code {
 .zs-erklaerung .sw-methode {
   margin-top: 0;
 }
+
+.zs-prompt[data-ki-befehl] {
+  overflow-wrap: anywhere;
+  margin: 8px 0;
+}
+
+.zs-ki-fund .select {
+  margin-top: 6px;
+  max-width: 100%;
+}

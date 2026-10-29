@@ -4,7 +4,7 @@
 declare const __APP_COMMIT__: string;
 
 /** Datum der letzten inhaltlichen Änderung; bei jeder Änderung mitziehen. */
-export const APP_STAND = '25.10.2026';
+export const APP_STAND = '29.10.2026';
 
 /** Kurzkennung der Version (aus Git oder aus der Datei des Windows-Starts). */
 export const APP_COMMIT = typeof __APP_COMMIT__ !== 'undefined' ? __APP_COMMIT__ : '';

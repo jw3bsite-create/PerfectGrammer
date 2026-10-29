@@ -1,6 +1,7 @@
 // Optionale KI-Bewertung eigener Texte: Einleitung, Abschnitt, Schluss oder ganze Zusammenfassung.
-// Zwei Anbieter: Claude über die Anthropic-API (eigener API-Schlüssel, kostet pro Anfrage ein paar Cent)
-// oder ein lokales Modell über Ollama (kostenlos, die Daten bleiben auf dem Rechner).
+// Anbieter: Claude über die Anthropic-API (eigener API-Schlüssel, kostet pro Anfrage ein paar Cent)
+// oder eine lokale KI (kostenlos, die Daten bleiben auf dem Rechner): Ollama oder ein Programm mit
+// OpenAI-Schnittstelle wie LM Studio, Jan oder llama.cpp.
 // Die KI ist eine zweite Meinung; Checkliste und Musterlösung bleiben maßgeblich.
 
 import { KATEGORIEN } from './daten';
@@ -178,7 +179,8 @@ export const KI_SCHEMA = {
 
 export function kiAntwortLesen(roh: string): KiBewertung {
   const leer: KiBewertung = { kriterien: [], fehler: [], gesamt: '', tipp: '' };
-  const m = roh.match(/\{[\s\S]*\}/);
+  // Denkende lokale Modelle schreiben vorher „<think>…</think>“; das gehört nicht zur Antwort.
+  const m = roh.replace(/<think>[\s\S]*?<\/think>/g, '').match(/\{[\s\S]*\}/);
   if (!m) return leer;
   try {
     const j = JSON.parse(m[0]) as Record<string, unknown>;
@@ -262,8 +264,9 @@ async function claudeBewerten(ki: ZKi, a: KiAnfrage, signal?: AbortSignal): Prom
   }
 }
 
-function basis(ki: ZKi): string {
-  return ki.url.replace(/\/+$/, '');
+/** Adresse ohne Schrägstrich und ohne „/v1“ am Ende (LM Studio zeigt die Adresse mit „/v1“ an). */
+function basis(ki: Pick<ZKi, 'url'>): string {
+  return ki.url.trim().replace(/\/+$/, '').replace(/\/v1$/, '');
 }
 
 async function ollamaBewerten(ki: ZKi, a: KiAnfrage, signal?: AbortSignal): Promise<string> {
@@ -277,7 +280,8 @@ async function ollamaBewerten(ki: ZKi, a: KiAnfrage, signal?: AbortSignal): Prom
         model: ki.modell,
         stream: false,
         format: KI_SCHEMA,
-        options: { temperature: 0.1 },
+        // Ohne größeres Kontextfenster schneidet Ollama lange Texte stillschweigend ab.
+        options: { temperature: 0.1, num_ctx: 8192 },
         messages: [
           { role: 'system', content: kiSystemPrompt(a.teil) },
           { role: 'user', content: kiNachricht(a) },
@@ -292,8 +296,41 @@ async function ollamaBewerten(ki: ZKi, a: KiAnfrage, signal?: AbortSignal): Prom
   return j.message?.content ?? '';
 }
 
+const OPENAI_HILFE = 'Läuft der Server? In LM Studio: links „Developer“, dann „Start Server“ und in den Einstellungen „Enable CORS“ einschalten.';
+
+async function openaiBewerten(ki: ZKi, a: KiAnfrage, signal?: AbortSignal): Promise<string> {
+  const anfrage = (mitSchema: boolean) =>
+    fetch(`${basis(ki)}/v1/chat/completions`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      signal,
+      body: JSON.stringify({
+        model: ki.modell,
+        stream: false,
+        temperature: 0.1,
+        messages: [
+          { role: 'system', content: kiSystemPrompt(a.teil) },
+          { role: 'user', content: kiNachricht(a) },
+        ],
+        ...(mitSchema ? { response_format: { type: 'json_schema', json_schema: { name: 'bewertung', strict: true, schema: KI_SCHEMA } } } : {}),
+      }),
+    });
+  let res: Response;
+  try {
+    res = await anfrage(true);
+    // Nicht jeder Server kennt „json_schema“: dann ohne, die Anweisung verlangt JSON ohnehin.
+    if (res.status === 400 || res.status === 422) res = await anfrage(false);
+  } catch (e) {
+    if (signal?.aborted) throw e;
+    throw new Error(`Keine Verbindung zur lokalen KI unter ${basis(ki)}. ${OPENAI_HILFE}`);
+  }
+  if (!res.ok) throw new Error(`Die lokale KI antwortet mit Fehler ${res.status}. Ist das Modell „${ki.modell}“ geladen?`);
+  const j = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+  return j.choices?.[0]?.message?.content ?? '';
+}
+
 export async function kiBewerten(ki: ZKi, a: KiAnfrage, signal?: AbortSignal): Promise<KiAntwort> {
-  const roh = ki.anbieter === 'claude' ? await claudeBewerten(ki, a, signal) : await ollamaBewerten(ki, a, signal);
+  const roh = ki.anbieter === 'claude' ? await claudeBewerten(ki, a, signal) : ki.anbieter === 'openai' ? await openaiBewerten(ki, a, signal) : await ollamaBewerten(ki, a, signal);
   const b = kiAntwortLesen(roh);
   if (!b.kriterien.length && !b.fehler.length && !b.gesamt) throw new Error('Die Antwort der KI war nicht lesbar. Versuch es noch einmal.');
   return { ...b, roh };
@@ -310,21 +347,78 @@ export async function kiTesten(ki: ZKi, apiKey = kiSchluessel()): Promise<{ ok: 
       return { ok: false, text: claudeFehler(e).message };
     }
   }
+  const name = ki.anbieter === 'openai' ? 'Die lokale KI' : 'Ollama';
   try {
-    const res = await fetch(`${basis(ki)}/api/tags`);
-    if (!res.ok) return { ok: false, text: `Ollama antwortet mit Fehler ${res.status}.` };
-    const j = (await res.json()) as { models?: { name: string }[] };
-    const modelle = (j.models ?? []).map((m) => m.name);
+    const modelle = await modelleLaden(ki.anbieter === 'openai' ? 'openai' : 'ollama', ki.url);
+    if (!ki.modell.trim()) return { ok: false, text: `Verbunden, aber es ist kein Modell gewählt. Verfügbar: ${modelle.join(', ') || 'keins'}.` };
     const da = modelle.some((m) => m === ki.modell || m.split(':')[0] === ki.modell);
     return da
-      ? { ok: true, text: `Verbunden. Modell „${ki.modell}“ ist installiert.` }
-      : { ok: false, text: `Verbunden, aber das Modell „${ki.modell}“ fehlt. Installiert: ${modelle.join(', ') || 'keins'}.` };
-  } catch {
-    return { ok: false, text: 'Keine Verbindung. Läuft Ollama auf diesem Rechner?' };
+      ? { ok: true, text: `Verbunden. Modell „${ki.modell}“ ist bereit.` }
+      : { ok: false, text: `Verbunden, aber das Modell „${ki.modell}“ fehlt. Verfügbar: ${modelle.join(', ') || 'keins'}.` };
+  } catch (e) {
+    if (e instanceof Error && e.message.startsWith('Fehler')) return { ok: false, text: `${name} antwortet mit ${e.message}.` };
+    return { ok: false, text: ki.anbieter === 'openai' ? `Keine Verbindung. ${OPENAI_HILFE}` : 'Keine Verbindung. Läuft Ollama auf diesem Rechner? Unter Windows sitzt es nach dem Start als Lama-Symbol unten rechts bei der Uhr.' };
   }
 }
 
 /** Ist die KI eingeschaltet und (bei Claude) ein Schlüssel eingetragen? */
 export function kiBereit(ki: ZKi): boolean {
   return ki.aktiv && (ki.anbieter !== 'claude' || !!kiSchluessel());
+}
+
+// ---------- Lokale KI finden ----------
+
+export type LokalArt = 'ollama' | 'openai';
+
+export interface LokalFund {
+  anbieter: LokalArt;
+  name: string;
+  url: string;
+  modelle: string[];
+}
+
+/** Übliche Adressen lokaler KI-Programme. */
+export const LOKAL_KANDIDATEN: { anbieter: LokalArt; name: string; url: string }[] = [
+  { anbieter: 'ollama', name: 'Ollama', url: 'http://localhost:11434' },
+  { anbieter: 'openai', name: 'LM Studio', url: 'http://localhost:1234' },
+  { anbieter: 'openai', name: 'Jan', url: 'http://localhost:1337' },
+  { anbieter: 'openai', name: 'GPT4All', url: 'http://localhost:4891' },
+  { anbieter: 'openai', name: 'llama.cpp oder LocalAI', url: 'http://localhost:8080' },
+];
+
+/** Installierte Modelle; Einbettungsmodelle (embed) können keine Texte bewerten und fallen weg. */
+export async function modelleLaden(anbieter: LokalArt, url: string, signal?: AbortSignal): Promise<string[]> {
+  const b = basis({ url });
+  const res = await fetch(anbieter === 'ollama' ? `${b}/api/tags` : `${b}/v1/models`, { signal });
+  if (!res.ok) throw new Error(`Fehler ${res.status}`);
+  const j = (await res.json()) as { models?: { name: string }[]; data?: { id: string }[] };
+  const namen = anbieter === 'ollama' ? (j.models ?? []).map((m) => m.name) : (j.data ?? []).map((m) => m.id);
+  return namen.filter((n) => n && !/embed/i.test(n));
+}
+
+/** Sucht auf diesem Rechner nach laufenden lokalen KI-Programmen (je höchstens drei Sekunden). */
+export async function lokaleKiSuchen(kandidaten = LOKAL_KANDIDATEN): Promise<LokalFund[]> {
+  const funde = await Promise.all(
+    kandidaten.map(async (k) => {
+      const c = new AbortController();
+      const timer = setTimeout(() => c.abort(), 3000);
+      try {
+        return { ...k, modelle: await modelleLaden(k.anbieter, k.url, c.signal) };
+      } catch {
+        return null;
+      } finally {
+        clearTimeout(timer);
+      }
+    }),
+  );
+  return funde.filter((f): f is LokalFund => !!f);
+}
+
+/** Vorschlag aus den gefundenen Modellen: bekannte Familien mit gutem Deutsch zuerst. */
+export function modellVorschlag(modelle: string[]): string {
+  const rang = (m: string) => {
+    const i = [/qwen/i, /gemma/i, /mistral/i, /llama/i].findIndex((r) => r.test(m));
+    return i < 0 ? 9 : i;
+  };
+  return [...modelle].sort((a, b) => rang(a) - rang(b))[0] ?? '';
 }

@@ -71,7 +71,13 @@ Der Bereich `#/zusammenfassen` trainiert die strukturierte Textwiedergabe nach d
 - **Eigene Texte:** Texte aus dem Unterricht einfügen, auf Wunsch mit der Musterlösung der Lehrkraft.
 - **KI-Bewertung (optional):** unter „Zusammenfassen → KI“. Zwei Anbieter:
   - **Claude** über die Anthropic-API (offizielles SDK `@anthropic-ai/sdk`, Modell `claude-opus-5-5`): API-Schlüssel aus der Claude Console (platform.claude.com) eintragen. Der Schlüssel liegt nur im `localStorage` dieses Browsers, nicht in der Datensicherung. Kosten etwa 2 bis 6 Cent je Bewertung. Text und Übungstext gehen dafür an Anthropic.
-  - **Lokal** über [Ollama](https://ollama.com) (`ollama pull qwen2.5:7b`, Adresse `http://localhost:11434`): kostenlos, nichts verlässt den Rechner, aber ungenauer.
+  - **Lokale KI** auf dem eigenen PC: kostenlos, nichts verlässt den Rechner, aber ungenauer. „Lokale KI suchen“ findet laufende Programme selbst (Ollama auf Port 11434, LM Studio 1234, Jan 1337, GPT4All 4891, llama.cpp/LocalAI 8080), listet ihre Modelle (ohne Einbettungsmodelle) und verbindet mit „Verwenden“. Ollama samt passendem Modell installiert unter Windows diese Zeile in PowerShell (Modell nach Arbeitsspeicher: ab 16 GB `qwen2.5:7b`, sonst `qwen2.5:3b`):
+
+    ```powershell
+    irm https://raw.githubusercontent.com/jw3bsite-create/PerfectGrammer/claude/sprachrichtigkeit-app-xzd9cl/windows/ki-einrichten-online.ps1 | iex
+    ```
+
+    LM Studio braucht einen gestarteten Server mit „Enable CORS“. Programme mit OpenAI-Schnittstelle bekommen das Antwortschema als `response_format`; kennen sie es nicht, fragt die App ohne Schema noch einmal.
 
   Für Einleitung, Abschnitt, Schluss und ganze Zusammenfassung gibt es je eine eigene Anweisung (`src/zusammenfassen/ki.ts`, einsehbar auf der KI-Seite) mit den Kriterien der Lehrerin. Die KI antwortet als JSON nach festem Schema: je Kriterium erfüllt oder nicht mit Begründung, jeder Fehler mit wörtlicher Stelle, Kategorie und Fehlerart, ein Gesamturteil und ein nächster Übungsschritt. Sie schreibt keine Lösung und lobt nicht. Die Bewertung ist eine zweite Meinung; gezählt werden weiter Checkliste und Selbstprüfung.
 

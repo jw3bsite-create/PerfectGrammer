@@ -1098,9 +1098,14 @@ describe('PerfectGrammar im Browser', () => {
     });
     await onboard(page);
     await page.goto(`${BASE}#/zusammenfassen/ki`);
-    await page.getByLabel('KI-Bewertung verwenden').check();
-    await page.locator('[data-anbieter="ollama"]').click();
-    await page.getByRole('button', { name: 'Speichern' }).click();
+    // „Lokale KI“ sucht sofort und findet Ollama; „Verwenden“ schaltet die Bewertung ein
+    await page.locator('[data-anbieter="lokal"]').click();
+    const fund = page.locator('[data-ki-fund="Ollama"]');
+    await fund.waitFor();
+    await shot(page, 'zs-ki-lokal');
+    await fund.getByRole('button', { name: 'Verwenden' }).click();
+    await page.getByText('Verbunden mit Ollama (qwen2.5:7b)').waitFor();
+    expect(await page.getByLabel('KI-Bewertung verwenden').isChecked()).toBe(true);
     await page.getByRole('button', { name: 'Verbindung testen' }).click();
     await page.getByText('Verbunden. Modell').waitFor();
 
@@ -1235,6 +1240,49 @@ describe('PerfectGrammar im Browser', () => {
     await page.locator('[data-kurz="hauptteil"]').waitFor();
     await ctx.close();
   }, 180_000);
+
+  it('Zusammenfassen: LM Studio wird gefunden und bewertet einen Abschnitt', async () => {
+    const ctx = await newContext();
+    const page = await ctx.newPage();
+    watchErrors(page);
+    const anfragen: Record<string, unknown>[] = [];
+    await page.route('http://localhost:11434/**', (route) => route.abort());
+    await page.route('http://localhost:1234/**', async (route) => {
+      const req = route.request();
+      const cors = { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*' };
+      if (req.method() === 'OPTIONS') return route.fulfill({ status: 204, headers: cors });
+      if (req.url().endsWith('/v1/models')) return route.fulfill({ headers: cors, json: { data: [{ id: 'text-embedding-nomic' }, { id: 'meta-llama-3.1-8b' }, { id: 'qwen2.5-7b-instruct' }] } });
+      anfragen.push(JSON.parse(req.postData()!));
+      const bewertung = { kriterien: [{ kriterium: 'Kern des Abschnitts getroffen', erfuellt: true, begruendung: 'Passt.' }], fehler: [], gesamt: 'Knapp und treffend.', tipp: 'Achte weiter auf das Funktionsverb.' };
+      return route.fulfill({ headers: cors, json: { choices: [{ message: { role: 'assistant', content: `<think>{erst nachdenken}</think>${JSON.stringify(bewertung)}` } }] } });
+    });
+    await onboard(page);
+    await page.goto(`${BASE}#/zusammenfassen/ki`);
+    await page.locator('[data-anbieter="lokal"]').click();
+    const fund = page.locator('[data-ki-fund="LM Studio"]');
+    await fund.waitFor();
+    // Einbettungsmodelle fehlen, Qwen ist vorgeschlagen
+    const auswahl = fund.getByRole('combobox');
+    expect(await auswahl.locator('option').allInnerTexts()).toEqual(['meta-llama-3.1-8b', 'qwen2.5-7b-instruct']);
+    expect(await auswahl.inputValue()).toBe('qwen2.5-7b-instruct');
+    await fund.getByRole('button', { name: 'Verwenden' }).click();
+    await page.getByText('Verbunden mit LM Studio').waitFor();
+
+    await page.goto(`${BASE}#/zusammenfassen/hauptteil`);
+    await page.locator('[data-start="schreiben-teil-hauptteil"]').click();
+    const el = page.locator('[data-task]');
+    await el.waitFor();
+    const [, textId, ns] = (await el.getAttribute('data-task'))!.split(':');
+    const t = zText(textId)!;
+    await page.getByLabel('Dein Satz').fill(t.abschnitte[verdichtbar(t)[Number(ns)]].muster);
+    await page.getByRole('button', { name: /^Vergleichen/ }).click();
+    expect(await page.locator('.zs-ki .fb-label').first().innerText()).toContain('lokal');
+    await page.getByRole('button', { name: 'KI bewerten lassen' }).click();
+    await page.getByText('Knapp und treffend.').waitFor();
+    expect(anfragen[0].model).toBe('qwen2.5-7b-instruct');
+    expect((anfragen[0].response_format as { type: string }).type).toBe('json_schema');
+    await ctx.close();
+  }, 120_000);
 
   it('Zusammenfassen: eigener Text aus dem Unterricht mit Musterlösung; Handy und dunkles Design', async () => {
     const ctx = await newContext({ width: 390, height: 844, touch: true, dark: true });

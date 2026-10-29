@@ -10,7 +10,7 @@ import type { Route } from '../lib/router';
 import { useApp } from '../lib/store';
 import { eigenenTextLoeschen, eigenenTextSpeichern, kiSpeichern, niveauSetzen, starteSitzung, volltextStarten } from './aktionen';
 import { ARTEN, art as artDef, BEREICH_LABEL, eigeneAbsaetze, FUNKTIONSVERBEN, KATEGORIEN, katLabel, TEILE, TEXTE, text as textVon, TEXTSORTEN, woerter } from './daten';
-import { CLAUDE_STANDARD, kiSchluessel, kiSchluesselSetzen, kiSystemPrompt, kiTesten, OLLAMA_STANDARD, type KiTeil } from './ki';
+import { CLAUDE_STANDARD, kiSchluessel, kiSchluesselSetzen, kiSystemPrompt, kiTesten, lokaleKiSuchen, modellVorschlag, OLLAMA_STANDARD, type KiTeil, type LokalFund } from './ki';
 import { ampel, haeufigsteFehler, katStatistik, naechsterVolltext, niveau, NIVEAU_TEXT, wochenVerlauf, type ZAmpel } from './logik';
 import type { ZArt, ZKat, ZState, ZTeil } from './typen';
 
@@ -577,7 +577,23 @@ function KiSeite() {
   const [schluessel, setSchluessel] = useState(kiSchluessel);
   const [test, setTest] = useState<string | null>(null);
   const [teil, setTeil] = useState<KiTeil>('abschnitt');
+  const [suche, setSuche] = useState<'aus' | 'laeuft' | LokalFund[]>('aus');
+  const [wahl, setWahl] = useState<Record<string, string>>({});
   const claude = f.anbieter === 'claude';
+  const suchen = async () => {
+    setSuche('laeuft');
+    const funde = await lokaleKiSuchen();
+    setWahl(Object.fromEntries(funde.map((x) => [x.url, x.url === f.url && x.modelle.includes(f.modell) ? f.modell : modellVorschlag(x.modelle)])));
+    setSuche(funde);
+  };
+  const verwenden = async (x: LokalFund) => {
+    const modell = wahl[x.url] ?? modellVorschlag(x.modelle);
+    const neu = { ...f, aktiv: true, anbieter: x.anbieter, url: x.url, modell };
+    setF(neu);
+    await kiSpeichern(neu);
+    setTest(null);
+    toast(`Verbunden mit ${x.name} (${modell}).`);
+  };
   return (
     <div>
       <div className="page-head">
@@ -612,8 +628,16 @@ function KiSeite() {
             <button type="button" aria-pressed={claude} data-anbieter="claude" onClick={() => setF({ ...f, anbieter: 'claude' })}>
               Claude (online)
             </button>
-            <button type="button" aria-pressed={!claude} data-anbieter="ollama" onClick={() => setF({ ...f, anbieter: 'ollama' })}>
-              Lokal (Ollama)
+            <button
+              type="button"
+              aria-pressed={!claude}
+              data-anbieter="lokal"
+              onClick={() => {
+                if (claude) setF({ ...f, anbieter: 'ollama' });
+                if (suche === 'aus') void suchen();
+              }}
+            >
+              Lokale KI (auf dem PC)
             </button>
           </div>
           {claude ? (
@@ -630,14 +654,63 @@ function KiSeite() {
             </>
           ) : (
             <>
-              <div className="field" style={{ marginTop: 12 }}>
-                <label htmlFor="ki-url">Adresse</label>
-                <input id="ki-url" className="input" value={f.url} onChange={(e) => setF({ ...f, url: e.target.value })} />
+              <div className="zs-ki-suche" data-ki-suche={suche === 'aus' || suche === 'laeuft' ? suche : suche.length}>
+                <button type="button" className="btn wide" style={{ marginTop: 14 }} onClick={() => void suchen()} disabled={suche === 'laeuft'} data-ki-suchen>
+                  <Icon name="search" /> {suche === 'laeuft' ? 'Suche auf diesem PC …' : 'Lokale KI suchen'}
+                </button>
+                {Array.isArray(suche) && suche.length ? (
+                  <div className="list" style={{ marginTop: 10 }}>
+                    {suche.map((x) => (
+                      <div key={x.url} className="list-item zs-ki-fund" data-ki-fund={x.name}>
+                        <span className="grow">
+                          <span className="title-line">
+                            <Icon name="checkCircle" className="ok-ink" /> {x.name} gefunden
+                          </span>
+                          {x.modelle.length ? (
+                            <select className="select" aria-label={`Modell in ${x.name}`} value={wahl[x.url] ?? ''} onChange={(e) => setWahl({ ...wahl, [x.url]: e.target.value })}>
+                              {x.modelle.map((m) => (
+                                <option key={m} value={m}>
+                                  {m}
+                                </option>
+                              ))}
+                            </select>
+                          ) : (
+                            <span className="sub-line">Noch kein Modell geladen. {x.anbieter === 'ollama' ? 'In PowerShell: ollama pull qwen2.5:7b' : 'Lade in dem Programm ein Modell und such dann noch einmal.'}</span>
+                          )}
+                        </span>
+                        {x.modelle.length ? (
+                          <button type="button" className="btn primary small" onClick={() => void verwenden(x)}>
+                            {f.aktiv && f.url === x.url && f.modell === wahl[x.url] ? 'Verbunden' : 'Verwenden'}
+                          </button>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+                {Array.isArray(suche) && !suche.length ? (
+                  <p className="small bad-ink" style={{ marginTop: 10 }}>
+                    Keine lokale KI gefunden. Läuft das Programm? Ollama sitzt nach dem Start als Lama-Symbol unten rechts bei der Uhr. In LM Studio unter „Developer“ den Server starten und „Enable CORS“ einschalten. Anleitung rechts.
+                  </p>
+                ) : null}
               </div>
-              <div className="field" style={{ marginTop: 12 }}>
-                <label htmlFor="ki-modell">Modell</label>
-                <input id="ki-modell" className="input" value={f.modell} onChange={(e) => setF({ ...f, modell: e.target.value })} />
-              </div>
+              <details className="zs-details" style={{ marginTop: 12 }}>
+                <summary>Von Hand einstellen</summary>
+                <div className="field" style={{ marginTop: 10 }}>
+                  <label htmlFor="ki-art">Programm</label>
+                  <select id="ki-art" className="select" value={f.anbieter} onChange={(e) => setF({ ...f, anbieter: e.target.value as 'ollama' | 'openai' })}>
+                    <option value="ollama">Ollama</option>
+                    <option value="openai">LM Studio, Jan, llama.cpp oder andere (OpenAI-Schnittstelle)</option>
+                  </select>
+                </div>
+                <div className="field" style={{ marginTop: 12 }}>
+                  <label htmlFor="ki-url">Adresse</label>
+                  <input id="ki-url" className="input" value={f.url} onChange={(e) => setF({ ...f, url: e.target.value })} />
+                </div>
+                <div className="field" style={{ marginTop: 12 }}>
+                  <label htmlFor="ki-modell">Modell</label>
+                  <input id="ki-modell" className="input" value={f.modell} onChange={(e) => setF({ ...f, modell: e.target.value })} />
+                </div>
+              </details>
             </>
           )}
           <div className="actions">
@@ -663,7 +736,7 @@ function KiSeite() {
         </form>
         <div className="card">
           <div className="card-title">
-            <h3>{claude ? 'Claude einrichten' : 'Ollama einrichten (Windows)'}</h3>
+            <h3>{claude ? 'Claude einrichten' : 'Lokale KI einrichten (Windows)'}</h3>
           </div>
           {claude ? (
             <>
@@ -681,17 +754,41 @@ function KiSeite() {
             </>
           ) : (
             <>
+              <div className="fb-label">Noch keine lokale KI? Am einfachsten mit Ollama:</div>
               <ol className="zs-schrittliste">
+                <li>Windows-Taste drücken, „PowerShell“ tippen, öffnen.</li>
                 <li>
-                  Ollama von <strong>ollama.com</strong> herunterladen und installieren.
+                  Diese Zeile hineinkopieren und Enter drücken. Sie installiert Ollama und ein passendes Modell (etwa 2 bis 5 GB, einmalig):
+                  <pre className="zs-prompt" data-ki-befehl>
+                    {KI_EINRICHTEN_BEFEHL}
+                  </pre>
+                  <button
+                    type="button"
+                    className="btn small"
+                    onClick={async () => {
+                      try {
+                        await navigator.clipboard.writeText(KI_EINRICHTEN_BEFEHL);
+                        toast('Kopiert.');
+                      } catch {
+                        toast('Kopieren ging nicht; bitte markieren und kopieren.');
+                      }
+                    }}
+                  >
+                    Zeile kopieren
+                  </button>
                 </li>
-                <li>
-                  PowerShell öffnen und ein Modell laden, zum Beispiel: <code>ollama pull qwen2.5:7b</code> (etwa 5 GB, einmalig).
-                </li>
-                <li>Hier „KI-Bewertung verwenden“ einschalten, speichern und „Verbindung testen“ drücken.</li>
+                <li>Danach hier „Lokale KI suchen“ drücken und „Verwenden“.</li>
+              </ol>
+              <div className="fb-label" style={{ marginTop: 14 }}>
+                Du hast schon LM Studio?
+              </div>
+              <ol className="zs-schrittliste">
+                <li>Ein Modell laden, zum Beispiel Qwen 2.5 7B Instruct.</li>
+                <li>Links „Developer“ öffnen, „Start Server“ und in den Einstellungen „Enable CORS“ einschalten.</li>
+                <li>Hier „Lokale KI suchen“ drücken.</li>
               </ol>
               <p className="small muted" style={{ marginTop: 10 }}>
-                Kostenlos, und nichts verlässt den Rechner. Gut sind Rechner mit mindestens 16 GB Arbeitsspeicher. Kleine Modelle irren sich bei Grammatik deutlich öfter als Claude.
+                Kostenlos, und nichts verlässt den Rechner. Gut sind Rechner mit mindestens 16 GB Arbeitsspeicher; eine Bewertung kann eine halbe bis zwei Minuten dauern. Kleine Modelle irren sich bei Grammatik deutlich öfter als Claude.
               </p>
             </>
           )}
@@ -716,5 +813,7 @@ function KiSeite() {
     </div>
   );
 }
+
+const KI_EINRICHTEN_BEFEHL = 'irm https://raw.githubusercontent.com/jw3bsite-create/PerfectGrammer/claude/sprachrichtigkeit-app-xzd9cl/windows/ki-einrichten-online.ps1 | iex';
 
 const KI_TEIL_LABEL: Record<KiTeil, string> = { einleitung: 'Einleitung', abschnitt: 'Abschnitt', schluss: 'Schluss', volltext: 'Ganzer Text' };
